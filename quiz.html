@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Outcomes · Self-Inquiry</title>
+  <meta name="description" content="AI-powered self-inquiry rooted in Bhagavad Gita teachings.">
+  <link rel="stylesheet" href="css/beyond-outcomes.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="bo-body">
+
+<div class="page">
+<div class="page-glow"></div>
+
+<div class="page-mandala">
+  <svg width="380" height="280" viewBox="0 0 380 280" fill="none">
+    <circle cx="190" cy="140" r="130" stroke="#c9a84c" stroke-width=".5"/>
+    <circle cx="190" cy="140" r="100" stroke="#c9a84c" stroke-width=".5"/>
+    <circle cx="190" cy="140" r="70" stroke="#c9a84c" stroke-width=".5"/>
+    <polygon points="190,15 320,200 60,200" stroke="#c9a84c" stroke-width=".5" fill="none"/>
+    <polygon points="190,265 60,80 320,80" stroke="#c9a84c" stroke-width=".5" fill="none"/>
+  </svg>
+</div>
+
+<div class="left-leaf">
+  <svg width="80" height="240" viewBox="0 0 80 240" fill="none">
+    <path d="M65 10 C30 35 8 75 18 130 C28 185 50 215 70 235" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
+    <g stroke="#c9a84c" stroke-width=".6" fill="none" opacity=".55">
+      <path d="M60 28 C42 24 28 32 25 46"/>
+      <path d="M52 52 C34 46 22 56 18 70"/>
+      <path d="M44 78 C26 72 14 84 12 98"/>
+      <path d="M38 105 C20 102 10 114 10 128"/>
+    </g>
+  </svg>
+</div>
+
+<div class="right-leaf">
+  <svg width="80" height="240" viewBox="0 0 80 240" fill="none">
+    <path d="M65 10 C30 35 8 75 18 130 C28 185 50 215 70 235" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
+    <g stroke="#c9a84c" stroke-width=".6" fill="none" opacity=".55">
+      <path d="M60 28 C42 24 28 32 25 46"/>
+      <path d="M52 52 C34 46 22 56 18 70"/>
+      <path d="M44 78 C26 72 14 84 12 98"/>
+      <path d="M38 105 C20 102 10 114 10 128"/>
+    </g>
+  </svg>
+</div>
+
+<div class="container">
+
+  <div id="screen-landing" class="screen active">
+    <div class="lang-bar">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('hi')">हिं</button>
+    </div>
+    <div class="hero-section">
+      <div class="bo-brand-stamp" style="margin-bottom: 1.5rem;">Beyond Outcomes</div>
+      <span class="hero-om bo-anim-om-pulse">ॐ</span>
+      <div class="lotus-icon">
+        <svg viewBox="0 0 60 60" fill="none">
+          <path d="M30 50 C30 50 9 37 9 22 C9 14.5 16 9.5 23 13 C25 14 27.5 16 30 18.5 C32.5 16 35 14 37 13 C44 9.5 51 14.5 51 22 C51 37 30 50 30 50Z" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.12)"/>
+          <circle cx="30" cy="25" r="4" stroke="#c9a84c" stroke-width=".75" fill="rgba(201,168,76,0.2)"/>
+          <circle cx="30" cy="25" r="1.5" fill="#a07830"/>
+        </svg>
+      </div>
+      <h1 class="bo-title-hero" id="l-title"></h1>
+      <div class="hero-chapter" id="l-chapter"></div>
+      <div class="bo-divider"><div class="bo-divider-line"></div><div class="bo-divider-dot"></div><div class="bo-divider-line"></div></div>
+      <p class="intro-text" id="l-intro"></p>
+      <p class="bo-label" style="text-align: center; margin-bottom: 1.25rem;" id="l-depth-label"></p>
+      <div class="depth-options">
+        <div class="depth-card" id="depth-10" onclick="selectDepth(10)">
+          <div class="depth-num">10</div>
+          <div class="depth-desc" id="l-q10">Questions</div>
+          <div class="depth-detail" id="l-d10">Focused reflection</div>
+        </div>
+        <div class="depth-card" id="depth-15" onclick="selectDepth(15)">
+          <div class="depth-num">15</div>
+          <div class="depth-desc" id="l-q15">Questions</div>
+          <div class="depth-detail" id="l-d15">Deeper inquiry</div>
+        </div>
+      </div>
+      <button class="bo-btn-primary" id="btn-start" disabled onclick="startQuiz()" style="display:block; margin: 0 auto;"></button>
+    </div>
+  </div>
+
+  <div id="screen-quiz" class="screen">
+    <div class="lang-bar">
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('hi')">हिं</button>
+    </div>
+    <div class="quiz-header">
+      <div class="progress-meta">
+        <span id="q-label">Question 1</span>
+        <span id="q-fraction">1 / 10</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="q-tag" id="q-num-tag"></div>
+    <div class="question-text" id="q-text"></div>
+    <div class="options-list" id="options-list"></div>
+    <div class="nav-row">
+      <button class="btn-back" id="btn-back" onclick="goBack()">← <span id="l-back">Back</span></button>
+      <button class="btn-next" id="btn-next" disabled onclick="goNext()"><span id="l-next">Next</span> →</button>
+    </div>
+  </div>
+
+  <div id="screen-loading" class="screen">
+    <div class="loading-wrap">
+      <div class="loading-lotus">
+        <svg viewBox="0 0 80 80" fill="none">
+          <path d="M40 68 C40 68 12 50 12 30 C12 20 22 12 32 17 C35 18.5 38 21 40 23.5 C42 21 45 18.5 48 17 C58 12 68 20 68 30 C68 50 40 68 40 68Z" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.15)"/>
+          <circle cx="40" cy="35" r="4" stroke="#a07830" stroke-width=".75" fill="rgba(201,168,76,0.3)"/>
+        </svg>
+      </div>
+      <div class="loading-title" id="loading-msg"></div>
+      <div class="loading-sub" id="l-loading-sub"></div>
+    </div>
+  </div>
+
+  <div id="screen-result" class="screen">
+    <div class="lang-bar">
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('hi')">हिं</button>
+    </div>
+    <div class="result-hero">
+      <div class="result-tag" id="l-your-guna"></div>
+      <div class="result-guna-wrap">
+        <div class="result-halo bo-anim-halo"></div>
+        <div class="result-guna" id="result-guna"></div>
+      </div>
+      <div class="result-sub" id="result-subtitle"></div>
+    </div>
+    <div class="guna-bars" id="guna-bars-wrap">
+      <!-- Bars are rendered dynamically based on quiz categories -->
+    </div>
+    <div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-glyph">॥</div><div class="section-divider-line"></div></div>
+    <div class="result-body" id="result-body"></div>
+    <div class="shloka-card" id="shloka-box">
+      <div class="shloka-om-text">ॐ</div>
+      <div class="shloka-text" id="shloka-text"></div>
+      <div class="bo-label-tag" id="shloka-ref-el" style="margin-bottom: 0.75rem;"></div>
+      <div class="shloka-meaning" id="shloka-meaning"></div>
+    </div>
+    <div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-glyph">✦</div><div class="section-divider-line"></div></div>
+    <div class="email-card">
+      <div class="email-title" id="l-email-title"></div>
+      <div class="email-sub" id="l-email-sub"></div>
+      <div class="email-row">
+        <input class="bo-input" type="email" id="email-input" placeholder="your@email.com">
+        <button class="bo-btn-primary" onclick="submitEmail()" id="l-email-btn" style="white-space:nowrap; padding: 0.85rem 1.4rem;"></button>
+      </div>
+      <div class="email-success" id="email-success"></div>
+    </div>
+    <div class="bo-label-tag" id="l-share-label" style="text-align:center; margin-bottom: 1.25rem;"></div>
+    <div class="share-card-visual">
+      <div class="sc-om">ॐ</div>
+      <div class="sc-brand">Beyond Outcomes · Self-Inquiry</div>
+      <div class="sc-guna" id="sc-guna"></div>
+      <div class="sc-sub" id="sc-sub"></div>
+      <div class="sc-bars" id="sc-bars-wrap">
+        <!-- Share-card bars rendered dynamically -->
+      </div>
+      <div class="sc-quote" id="sc-quote"></div>
+      <div class="sc-url">beyondoutcomes.in</div>
+    </div>
+    <div class="share-btns">
+      <button class="btn-share" onclick="shareWhatsApp()" id="l-wa-btn">WhatsApp</button>
+      <button class="btn-share btn-share-gold" onclick="copyText()" id="l-copy-btn">Copy Text</button>
+    </div>
+    <div class="copy-confirm" id="copy-confirm"></div>
+    <div class="bottom-actions">
+      <button class="bo-btn-primary" onclick="retake()" id="l-retake"></button>
+      <a href="quizzes.html" class="btn-explore" id="l-explore"></a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+// Detect which quiz to load from ?q= URL parameter (default: guna)
+const urlParams = new URLSearchParams(window.location.search);
+const quizId = urlParams.get('q') || 'guna';
+const script = document.createElement('script');
+script.src = 'js/quizzes/' + quizId + '.js';
+script.onload = function() {
+  // After data loads, build the result bars based on this quiz's categories
+  const categories = window.QUIZ_DATA.categories;
+  const colors = ['bo-fill-sattva', 'bo-fill-rajas', 'bo-fill-tamas', 'fill-fourth'];
+  const barsWrap = document.getElementById('guna-bars-wrap');
+  const scBarsWrap = document.getElementById('sc-bars-wrap');
+  barsWrap.innerHTML = '';
+  scBarsWrap.innerHTML = '';
+  categories.forEach((cat, i) => {
+    const colorClass = colors[i] || 'fill-fourth';
+    barsWrap.innerHTML += '<div class="guna-bar-row"><div class="guna-bar-label" id="lb-' + i + '"></div><div class="guna-bar-track"><div class="guna-bar-fill ' + colorClass + '" id="bar-' + i + '" style="width:0%"></div></div><div class="guna-bar-pct" id="pct-' + i + '">0%</div></div>';
+    scBarsWrap.innerHTML += '<div class="sc-bar-row"><div class="sc-bar-label" id="sc-lb-' + i + '"></div><div class="sc-bar-track"><div class="sc-bar-fill ' + colorClass + '" id="sc-bar-' + i + '" style="width:0%"></div></div><div class="sc-bar-pct" id="sc-pct-' + i + '">0%</div></div>';
+  });
+  // Now load shared logic
+  const sharedScript = document.createElement('script');
+  sharedScript.src = 'js/quiz-shared.js';
+  document.body.appendChild(sharedScript);
+};
+script.onerror = function() {
+  document.querySelector('.container').innerHTML = '<div style="padding: 4rem 1rem; text-align:center;"><h1 class="bo-title-section">Quiz Not Found</h1><p class="bo-prose" style="margin-top: 1rem;">The quiz you requested could not be loaded.</p><a href="quizzes.html" class="bo-btn-primary" style="display:inline-block; margin-top:2rem; text-decoration:none;">Browse All Quizzes</a></div>';
+};
+document.body.appendChild(script);
+</script>
+
+<style>
+.fill-fourth { background: linear-gradient(90deg, #c9924a, #7a5a1e); }
+</style>
+
+</body>
+</html>

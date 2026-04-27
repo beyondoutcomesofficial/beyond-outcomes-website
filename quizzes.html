@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Inquiry Quizzes — Beyond Outcomes</title>
+  <meta name="description" content="A library of AI-powered Gita-rooted self-inquiry quizzes. Discover your dominant Guna, your Karma Yoga style, and more.">
+  <link rel="stylesheet" href="css/beyond-outcomes.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bo-cream); }
+    .page { background: var(--bo-gradient-page); min-height: 100vh; padding: 0 0 4rem; }
+    .nav { padding: 1.5rem 1.5rem 0; max-width: 720px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; transition: color 0.2s; }
+    .nav a:hover { color: var(--bo-text-primary); }
+    .hero { text-align: center; padding: 3rem 1.5rem 2rem; max-width: 640px; margin: 0 auto; }
+    .hero-om { font-family: var(--bo-font-body); font-size: 2.4rem; color: var(--bo-gold); display: block; margin-bottom: 0.75rem; }
+    .hero-tagline { font-family: var(--bo-font-body); font-size: 1.2rem; font-style: italic; color: var(--bo-text-muted); margin-top: 0.5rem; }
+    .hero-desc { font-family: var(--bo-font-body); font-size: 1.1rem; line-height: 1.85; color: var(--bo-text-secondary); max-width: 540px; margin: 1.5rem auto 0; }
+    .quiz-grid { max-width: 720px; margin: 2rem auto 0; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .quiz-grid { grid-template-columns: 1fr; } }
+    .quiz-card { background: var(--bo-warm-white); border: 1px solid var(--bo-border); border-radius: 14px; padding: 1.75rem 1.5rem; text-decoration: none; color: var(--bo-text-primary); transition: all 0.4s var(--bo-ease); cursor: pointer; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .quiz-card.live:hover { border-color: var(--bo-gold); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(160,120,48,0.15); }
+    .quiz-card.live:hover .card-arrow { transform: translateX(4px); color: var(--bo-gold-dark); }
+    .quiz-card.coming-soon { opacity: 0.7; cursor: not-allowed; background: linear-gradient(135deg, #faf3e0, #f4ead0); }
+    .quiz-card.coming-soon:hover { opacity: 0.85; }
+    .card-status { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bo-gold-deep); margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .card-soon-badge { background: rgba(169,126,48,0.15); color: var(--bo-gold-dark); padding: 3px 10px; border-radius: 12px; font-size: 9px; letter-spacing: 0.15em; }
+    .card-title { font-family: var(--bo-font-display); font-size: 1.15rem; font-weight: 500; color: var(--bo-text-primary); margin-bottom: 0.4rem; line-height: 1.3; }
+    .card-subtitle { font-family: var(--bo-font-body); font-size: 1rem; font-style: italic; color: var(--bo-gold-deep); margin-bottom: 1rem; }
+    .card-desc { font-family: var(--bo-font-body); font-size: 0.95rem; line-height: 1.7; color: var(--bo-text-muted); margin-bottom: 1.25rem; flex: 1; }
+    .card-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--bo-border-faint); font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.1em; color: var(--bo-text-faint); text-transform: uppercase; }
+    .card-arrow { color: var(--bo-gold-deep); transition: all 0.3s; font-size: 1.2rem; line-height: 1; }
+    .lang-bar { display: flex; gap: 6px; }
+    .lang-btn { padding: 4px 12px; border: 1px solid var(--bo-border-strong); border-radius: var(--bo-radius-pill); background: rgba(255,253,245,0.6); color: var(--bo-gold-deep); font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s; }
+    .lang-btn.active { border-color: var(--bo-gold); background: var(--bo-gold); color: var(--bo-warm-white); }
+    .footer { text-align: center; padding: 3rem 1.5rem 1rem; max-width: 640px; margin: 0 auto; }
+    .footer p { font-family: var(--bo-font-body); font-size: 1rem; font-style: italic; color: var(--bo-text-muted); }
+  </style>
+</head>
+<body class="bo-body">
+<div class="page">
+<div class="nav">
+  <a href="index.html">← Beyond Outcomes</a>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('hi')">हिं</button>
+  </div>
+</div>
+<div class="hero">
+  <span class="hero-om bo-anim-om-pulse">ॐ</span>
+  <h1 class="bo-title-hero" id="hero-title">Self-Inquiry</h1>
+  <p class="hero-tagline" id="hero-sub">A library of Gita-rooted explorations</p>
+  <div class="bo-divider" style="margin: 1.5rem auto 1rem; max-width: 240px;"><div class="bo-divider-line"></div><div class="bo-divider-dot"></div><div class="bo-divider-line"></div></div>
+  <p class="hero-desc" id="hero-desc">Each quiz is a doorway. Drawn from different chapters of the Bhagavad Gita, each reveals a different facet of your inner landscape. Choose what calls to you today.</p>
+</div>
+<div class="quiz-grid" id="quiz-grid"></div>
+<div class="footer">
+  <p id="footer-text">More quizzes coming soon. Each one rooted in a different Gita teaching.</p>
+</div>
+</div>
+
+<script src="js/quizzes-index.js"></script>
+<script>
+let lang = 'en';
+const COPY = {
+  en: { title: 'Self-Inquiry', sub: 'A library of Gita-rooted explorations', desc: 'Each quiz is a doorway. Drawn from different chapters of the Bhagavad Gita, each reveals a different facet of your inner landscape. Choose what calls to you today.', soon: 'Coming Soon', explore: 'Explore', footer: 'More quizzes coming soon. Each one rooted in a different Gita teaching.' },
+  hi: { title: 'आत्म-जिज्ञासा', sub: 'गीता-आधारित अन्वेषणों का संग्रह', desc: 'प्रत्येक प्रश्नोत्तरी एक द्वार है। भगवद्गीता के विभिन्न अध्यायों से ली गई, प्रत्येक आपके आंतरिक स्वरूप का एक भिन्न पहलू प्रकट करती है।', soon: 'जल्द आ रहा', explore: 'अन्वेषण करें', footer: 'और प्रश्नोत्तरियां जल्द आ रही हैं।' }
+};
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', (l === 'en' && b.textContent === 'EN') || (l === 'hi' && b.textContent === 'हिं')));
+  render();
+}
+
+function render() {
+  const c = COPY[lang];
+  document.getElementById('hero-title').textContent = c.title;
+  document.getElementById('hero-sub').textContent = c.sub;
+  document.getElementById('hero-desc').textContent = c.desc;
+  document.getElementById('footer-text').textContent = c.footer;
+
+  const grid = document.getElementById('quiz-grid');
+  grid.innerHTML = '';
+  window.QUIZZES_INDEX.forEach(q => {
+    const isLive = q.status === 'live';
+    const card = document.createElement(isLive ? 'a' : 'div');
+    if (isLive) card.href = 'quiz.html?q=' + q.id;
+    card.className = 'quiz-card ' + q.status;
+    const statusBadge = isLive ? '' : '<span class="card-soon-badge">' + c.soon + '</span>';
+    card.innerHTML =
+      '<div class="card-status">' + q.chapter + statusBadge + '</div>' +
+      '<div class="card-title">' + q.title[lang] + '</div>' +
+      '<div class="card-subtitle">' + q.subtitle[lang] + '</div>' +
+      '<div class="card-desc">' + q.description[lang] + '</div>' +
+      '<div class="card-meta"><span>' + q.duration[lang] + '</span><span class="card-arrow">' + (isLive ? '→' : '✦') + '</span></div>';
+    grid.appendChild(card);
+  });
+}
+
+render();
+</script>
+</body>
+</html>

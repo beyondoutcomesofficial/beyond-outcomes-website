@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon — Beyond Outcomes</title>
+  <link rel="stylesheet" href="css/beyond-outcomes.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .page { background: var(--bo-gradient-page); min-height: 100vh; padding: 0 0 4rem; position: relative; }
+    .nav { padding: 1.5rem 1.5rem 0; max-width: 720px; margin: 0 auto; }
+    .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; transition: color 0.2s; }
+    .nav a:hover { color: var(--bo-text-primary); }
+    .hero { text-align: center; padding: 4rem 1.5rem 2rem; max-width: 600px; margin: 0 auto; }
+    .hero-om { font-family: var(--bo-font-body); font-size: 2.4rem; color: var(--bo-gold); display: block; margin-bottom: 1rem; }
+    .feature-tag { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--bo-gold-deep); margin-bottom: 1.5rem; }
+    .lotus { width: 70px; height: 70px; margin: 0 auto 2rem; }
+    .desc-card { background: linear-gradient(135deg, var(--bo-warm-white), var(--bo-cream-deep)); border: 1px solid var(--bo-border); border-radius: var(--bo-radius-lg); padding: 2rem; max-width: 540px; margin: 2rem auto 0; }
+    .desc-text { font-family: var(--bo-font-body); font-size: 1.1rem; line-height: 1.85; color: var(--bo-text-secondary); font-style: italic; }
+    .waitlist-card { background: var(--bo-warm-white); border: 1px solid var(--bo-border-strong); border-radius: var(--bo-radius-lg); padding: 2rem; max-width: 540px; margin: 1.5rem auto 0; text-align: center; }
+    .waitlist-title { font-family: var(--bo-font-display); font-size: 1.1rem; color: var(--bo-text-primary); margin-bottom: 0.5rem; }
+    .waitlist-sub { font-family: var(--bo-font-body); font-size: 1rem; font-style: italic; color: var(--bo-text-muted); margin-bottom: 1.5rem; }
+    .waitlist-row { display: flex; gap: 8px; max-width: 380px; margin: 0 auto; }
+    .waitlist-success { font-family: var(--bo-font-body); font-style: italic; font-size: 14px; color: var(--bo-success); margin-top: 1rem; display: none; }
+    .footer-link { display: block; text-align: center; margin-top: 2.5rem; font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+    .footer-link:hover { color: var(--bo-text-primary); }
+  </style>
+</head>
+<body class="bo-body">
+<div class="page">
+<div class="nav"><a href="index.html">← Beyond Outcomes</a></div>
+<div class="hero">
+  <span class="hero-om bo-anim-om-pulse">ॐ</span>
+  <div class="feature-tag" id="feature-name">Coming Soon</div>
+  <div class="lotus bo-anim-lotus-breathe">
+    <svg viewBox="0 0 70 70" fill="none">
+      <path d="M35 58 C35 58 11 43 11 26 C11 17 19 11 27 15 C29 16 32 19 35 21.5 C38 19 41 16 43 15 C51 11 59 17 59 26 C59 43 35 58 35 58Z" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.12)"/>
+      <circle cx="35" cy="29" r="5" stroke="#c9a84c" stroke-width=".75" fill="rgba(201,168,76,0.2)"/>
+      <circle cx="35" cy="29" r="2" fill="#a07830"/>
+    </svg>
+  </div>
+  <h1 class="bo-title-hero" id="hero-title">Coming Soon</h1>
+  <div class="bo-divider" style="margin: 1.5rem auto 0; max-width: 200px;"><div class="bo-divider-line"></div><div class="bo-divider-dot"></div><div class="bo-divider-line"></div></div>
+</div>
+<div class="desc-card">
+  <p class="desc-text" id="desc-text">This offering is being prepared with the same care as everything else at Beyond Outcomes. We'll announce launch when it's ready — not before.</p>
+</div>
+<div class="waitlist-card">
+  <div class="waitlist-title">Join the Waitlist</div>
+  <div class="waitlist-sub">Be the first to know when we launch. No spam, ever.</div>
+  <div class="waitlist-row">
+    <input class="bo-input" type="email" id="waitlist-email" placeholder="your@email.com" style="flex:1;">
+    <button class="bo-btn-primary" onclick="joinWaitlist()" style="white-space:nowrap; padding: 0.85rem 1.4rem;">Notify Me</button>
+  </div>
+  <div class="waitlist-success" id="waitlist-success">You are on the waitlist. We will write to you when this opens.</div>
+</div>
+<a href="index.html" class="footer-link">← Back to Beyond Outcomes</a>
+</div>
+<script>
+const FEATURES = {
+  'nlp': { name: 'NLP Coaching', title: 'NLP Coaching with Satya', desc: 'One-to-one Neuro-Linguistic Programming sessions designed for students, young professionals, sportspersons, and anyone navigating relationship clarity. Each session bridges Gita wisdom with practical NLP tools — book is opening soon.' },
+  'newsletter': { name: 'Weekly Newsletter', title: 'Guna-Aligned Wisdom', desc: 'A weekly letter tailored to your dominant Guna. One shloka, one reflection, one practice. Nothing more — but nothing wasted. The newsletter system is being prepared and will launch with care.' },
+  'groups': { name: 'Group Programs', title: 'Gita for Groups', desc: 'Guided group programs for teams, students, and communities. The Gita\'s timeless frameworks applied to modern challenges, in the company of fellow seekers. Group cohorts will open soon.' },
+  'default': { name: 'New Offering', title: 'Coming Soon', desc: 'This offering is being prepared with the same care as everything else at Beyond Outcomes. We will announce launch when it is ready — not before.' }
+};
+const params = new URLSearchParams(window.location.search);
+const fkey = params.get('feature') || 'default';
+const f = FEATURES[fkey] || FEATURES.default;
+document.getElementById('feature-name').textContent = f.name;
+document.getElementById('hero-title').textContent = f.title;
+document.getElementById('desc-text').textContent = f.desc;
+document.title = f.title + ' — Coming Soon — Beyond Outcomes';
+
+function joinWaitlist() {
+  const email = document.getElementById('waitlist-email').value.trim();
+  const success = document.getElementById('waitlist-success');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    success.style.color = '#a04040';
+    success.textContent = 'Please enter a valid email.';
+    success.style.display = 'block';
+    return;
+  }
+  success.style.color = 'var(--bo-success)';
+  success.textContent = 'You are on the waitlist. We will write to you when this opens.';
+  success.style.display = 'block';
+  document.getElementById('waitlist-email').value = '';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Outcomes — Timeless Gita Wisdom for Modern Life</title>
+  <meta name="description" content="The Bhagavad Gita is a living map of the human mind. Discover your inner patterns through AI-powered self-inquiry rooted in ancient wisdom.">
+  <link rel="stylesheet" href="css/beyond-outcomes.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .hero { position: relative; width: 100%; overflow: hidden; background: var(--bo-gradient-page); }
+    .hero-glow { position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(232,201,122,0.45) 0%, rgba(249,240,210,0.3) 40%, transparent 70%); pointer-events: none; }
+    .hero-leaf-left, .hero-leaf-right { position: absolute; top: 15%; opacity: 0.25; pointer-events: none; }
+    .hero-leaf-left { left: 0; }
+    .hero-leaf-right { right: 0; transform: scaleX(-1); }
+    .hero-mandala { position: absolute; top: 8%; left: 50%; transform: translateX(-50%); opacity: 0.12; pointer-events: none; }
+    .hero-content { position: relative; z-index: 2; text-align: center; padding: 4rem 1.5rem 3.5rem; max-width: 640px; margin: 0 auto; }
+    .hero-om { font-family: var(--bo-font-body); font-size: 2.1rem; color: var(--bo-gold); margin-bottom: 1rem; display: block; }
+    .hero-lotus { margin: 1.5rem auto 2rem; display: flex; justify-content: center; }
+    .hero-desc { font-family: var(--bo-font-body); font-size: 1.15rem; line-height: 1.9; color: var(--bo-text-secondary); margin-bottom: 2.5rem; opacity: 0.9; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .pillar-card { background: var(--bo-warm-white); border: 1px solid var(--bo-border); border-radius: var(--bo-radius-lg); padding: 1.5rem 1rem; text-align: center; transition: all 0.3s var(--bo-ease); text-decoration: none; color: inherit; display: block; cursor: pointer; }
+    .pillar-card:hover { border-color: var(--bo-border-strong); box-shadow: var(--bo-shadow-warm); transform: translateY(-2px); }
+    .pillar-icon { margin: 0 auto 0.75rem; }
+    .pillar-name { font-family: var(--bo-font-display); font-size: 1rem; color: var(--bo-text-primary); margin-bottom: 0.4rem; }
+    .pillar-desc { font-family: var(--bo-font-body); font-size: 1rem; color: var(--bo-text-muted); line-height: 1.6; font-style: italic; }
+    .shloka-section { background: var(--bo-gradient-shloka); border-top: 1px solid var(--bo-border); border-bottom: 1px solid var(--bo-border); padding: 2.5rem 1.5rem; text-align: center; }
+    .shloka-om { font-family: var(--bo-font-body); font-size: 1.6rem; color: var(--bo-gold); opacity: 0.55; margin-bottom: 0.75rem; }
+    .shloka-sanskrit { font-family: var(--bo-font-body); font-size: 1.2rem; font-style: italic; color: var(--bo-text-muted); margin-bottom: 0.5rem; line-height: 1.7; }
+    .shloka-meaning { font-family: var(--bo-font-body); font-size: 1.05rem; color: var(--bo-text-secondary); line-height: 1.8; max-width: 480px; margin: 0 auto; font-style: italic; }
+    .quiz-cta { background: var(--bo-gradient-cta); border: 1px solid var(--bo-border-strong); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 2rem 0; }
+    .quiz-cta-title { font-family: var(--bo-font-display); font-size: 1.7rem; color: var(--bo-text-primary); margin-bottom: 0.5rem; line-height: 1.2; }
+    .quiz-cta-sub { font-family: var(--bo-font-body); font-size: 1.05rem; font-style: italic; color: var(--bo-text-muted); margin-bottom: 1.5rem; line-height: 1.6; }
+    .quiz-guna-tags { display: flex; gap: 8px; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .guna-tag { padding: 5px 16px; border-radius: var(--bo-radius-pill); font-size: 13px; letter-spacing: 0.1em; }
+    .offerings { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .offering-card { background: var(--bo-warm-white); border: 1px solid var(--bo-border); border-radius: var(--bo-radius-lg); overflow: hidden; }
+    .offering-header { padding: 1.25rem; border-bottom: 1px solid var(--bo-border-faint); }
+    .offering-title { font-family: var(--bo-font-display); font-size: 1.05rem; color: var(--bo-text-primary); }
+    .offering-body { padding: 1.25rem; }
+    .offering-desc { font-family: var(--bo-font-body); font-size: 1rem; color: var(--bo-text-muted); line-height: 1.7; margin-bottom: 0.75rem; }
+    .offering-link { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bo-gold-deep); cursor: pointer; text-decoration: none; }
+    .offering-link:hover { color: var(--bo-text-primary); }
+    .nlp-strip { background: var(--bo-dark-bg); padding: 2.5rem 1.5rem; text-align: center; }
+    .nlp-title { font-family: var(--bo-font-display); font-size: 1.5rem; color: var(--bo-dark-text); margin-bottom: 0.5rem; }
+    .nlp-sub { font-family: var(--bo-font-body); font-size: 1.05rem; font-style: italic; color: var(--bo-dark-muted); margin-bottom: 1.5rem; line-height: 1.6; }
+    .nlp-chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .nlp-chip { padding: 4px 14px; border-radius: var(--bo-radius-pill); font-size: 12px; border: 1px solid rgba(201,168,76,0.3); color: rgba(201,168,76,0.7); }
+    .btn-gold-outline { padding: 0.85rem 2rem; background: transparent; border: 1px solid rgba(201,168,76,0.5); border-radius: var(--bo-radius); color: var(--bo-gold); font-family: var(--bo-font-ui); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; }
+    .btn-gold-outline:hover { background: rgba(201,168,76,0.1); border-color: var(--bo-gold); }
+    .footer-strip { background: var(--bo-cream-deep); border-top: 1px solid var(--bo-border); padding: 2rem 1.5rem; text-align: center; }
+    .footer-brand { font-family: var(--bo-font-display); font-size: 1.15rem; color: var(--bo-text-primary); margin-bottom: 0.3rem; }
+    .footer-sub { font-family: var(--bo-font-body); font-size: 0.95rem; font-style: italic; color: var(--bo-text-faint); margin-bottom: 1rem; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-link { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-gold-deep); cursor: pointer; text-decoration: none; }
+    .footer-link:hover { color: var(--bo-text-primary); }
+    .footer-copy { font-size: 12px; color: var(--bo-text-faint); margin-top: 1.25rem; letter-spacing: 0.05em; }
+    @media (max-width: 600px) { .pillars { grid-template-columns: 1fr; } .offerings { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="bo-body">
+
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-leaf-left">
+    <svg width="100" height="260" viewBox="0 0 100 260" fill="none">
+      <path d="M80 10 C40 40 10 80 20 140 C30 200 60 230 80 250" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
+      <g stroke="#c9a84c" stroke-width=".75" fill="none" opacity=".6">
+        <path d="M75 30 C55 25 40 35 35 50"/><path d="M68 55 C48 48 33 58 28 74"/>
+        <path d="M58 82 C38 76 24 87 20 103"/><path d="M50 110 C30 105 16 116 14 132"/>
+        <path d="M42 138 C24 133 11 146 10 162"/><path d="M36 165 C20 162 9 175 10 191"/>
+        <path d="M32 192 C18 191 9 205 12 220"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-leaf-right">
+    <svg width="100" height="260" viewBox="0 0 100 260" fill="none">
+      <path d="M80 10 C40 40 10 80 20 140 C30 200 60 230 80 250" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
+      <g stroke="#c9a84c" stroke-width=".75" fill="none" opacity=".6">
+        <path d="M75 30 C55 25 40 35 35 50"/><path d="M68 55 C48 48 33 58 28 74"/>
+        <path d="M58 82 C38 76 24 87 20 103"/><path d="M50 110 C30 105 16 116 14 132"/>
+        <path d="M42 138 C24 133 11 146 10 162"/><path d="M36 165 C20 162 9 175 10 191"/>
+        <path d="M32 192 C18 191 9 205 12 220"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-mandala">
+    <svg width="320" height="240" viewBox="0 0 320 240" fill="none">
+      <circle cx="160" cy="120" r="110" stroke="#c9a84c" stroke-width=".5"/>
+      <circle cx="160" cy="120" r="80" stroke="#c9a84c" stroke-width=".5"/>
+      <circle cx="160" cy="120" r="50" stroke="#c9a84c" stroke-width=".5"/>
+      <polygon points="160,15 245,165 75,165" stroke="#c9a84c" stroke-width=".5" fill="none"/>
+      <polygon points="160,225 75,75 245,75" stroke="#c9a84c" stroke-width=".5" fill="none"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <span class="hero-om bo-anim-om-pulse">ॐ</span>
+    <h1 class="bo-title-hero">Beyond Outcomes</h1>
+    <p class="bo-tagline" style="font-size: 1.3rem; margin-top: 0.5rem;">Timeless Gita Wisdom for Modern Life</p>
+    <div class="hero-lotus">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+        <path d="M28 46 C28 46 8 33 8 20 C8 13 15 8 22 11.5 C24 12.5 26 14.5 28 16.5 C30 14.5 32 12.5 34 11.5 C41 8 48 13 48 20 C48 33 28 46 28 46Z" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.1)"/>
+        <circle cx="28" cy="23" r="4" stroke="#c9a84c" stroke-width=".75" fill="rgba(201,168,76,0.15)"/>
+        <circle cx="28" cy="23" r="1.5" fill="#c9a84c" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="bo-divider"><div class="bo-divider-line"></div><div class="bo-divider-dot"></div><div class="bo-divider-line"></div></div>
+    <p class="hero-desc">The Bhagavad Gita is not a relic of the past. It is a living map of the human mind — one that speaks to every anxiety, ambition, relationship, and moment of doubt you have ever felt. This is where ancient wisdom meets your actual life.</p>
+    <div class="hero-btns">
+      <a href="https://www.youtube.com/@BeyondOutcomes" class="bo-btn-primary" style="text-decoration:none;">Explore the Channel</a>
+      <a href="quizzes.html" class="bo-btn-outline" style="text-decoration:none;">Self-Inquiry Quizzes</a>
+    </div>
+  </div>
+</div>
+
+<div class="bo-divider-glyph">✦ · ॥ · ✦</div>
+
+<section class="bo-section">
+  <div class="bo-section-tag">The Three Pillars</div>
+  <h2 class="bo-title-section">What Beyond Outcomes Offers</h2>
+  <p class="bo-tagline" style="font-size: 1.1rem; margin-bottom: 2rem;">Three paths into the Gita's living wisdom</p>
+  <div class="pillars">
+    <a href="https://www.youtube.com/@BeyondOutcomes" target="_blank" rel="noopener" class="pillar-card">
+      <div class="pillar-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 28 C16 28 4 20 4 12 C4 7.5 8.5 4.5 12 6.5 C13.5 7.3 15 9 16 10.5 C17 9 18.5 7.3 20 6.5 C23.5 4.5 28 7.5 28 12 C28 20 16 28 16 28Z" stroke="#c9a84c" stroke-width=".75" fill="rgba(201,168,76,0.08)"/>
+          <circle cx="16" cy="14" r="2.5" stroke="#c9a84c" stroke-width=".6" fill="rgba(201,168,76,0.2)"/>
+        </svg>
+      </div>
+      <div class="pillar-name">Gita Wisdom</div>
+      <div class="pillar-desc">Shorts & long-form videos translating ancient shlokas into modern insight</div>
+    </a>
+    <a href="quizzes.html" class="pillar-card">
+      <div class="pillar-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="12" stroke="#c9a84c" stroke-width=".75" fill="none"/>
+          <circle cx="16" cy="16" r="7" stroke="#c9a84c" stroke-width=".5" fill="none" opacity=".5"/>
+          <circle cx="16" cy="16" r="2" fill="#c9a84c" opacity=".5"/>
+        </svg>
+      </div>
+      <div class="pillar-name">Self Inquiry</div>
+      <div class="pillar-desc">AI-powered quizzes to reveal your inner patterns, drawn from the Gita</div>
+    </a>
+    <a href="coming-soon.html?feature=nlp" class="pillar-card">
+      <div class="pillar-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M8 10 Q16 4 24 10 L24 22 Q16 28 8 22 Z" stroke="#c9a84c" stroke-width=".75" fill="rgba(201,168,76,0.08)"/>
+          <line x1="12" y1="14" x2="20" y2="14" stroke="#c9a84c" stroke-width=".6" opacity=".6"/>
+          <line x1="12" y1="17" x2="20" y2="17" stroke="#c9a84c" stroke-width=".6" opacity=".4"/>
+        </svg>
+      </div>
+      <div class="pillar-name">NLP Coaching</div>
+      <div class="pillar-desc">One-to-one sessions bridging Gita philosophy with NLP for transformation</div>
+    </a>
+  </div>
+</section>
+
+<div class="shloka-section">
+  <div class="shloka-om">ॐ</div>
+  <div class="shloka-sanskrit">sattvam rajas tama iti gunah prakriti-sambhavah<br>nibadhnanti maha-baho dehe dehinam avyayam</div>
+  <div class="bo-label-tag" style="margin-bottom: 0.75rem;">Bhagavad Gita · 14.5</div>
+  <div class="shloka-meaning">Sattva, Rajas, and Tamas — born of nature — bind the eternal self to the body, O mighty-armed one.</div>
+</div>
+
+<section class="bo-section">
+  <div class="bo-section-tag">Free Self-Inquiry</div>
+  <div class="quiz-cta">
+    <div class="bo-label" style="margin-bottom: 0.75rem;">A library of Gita-rooted quizzes</div>
+    <div class="quiz-cta-title">Discover the Patterns<br>That Shape Your Mind</div>
+    <div class="quiz-cta-sub">Each quiz is a doorway. Drawn from different chapters of the Bhagavad Gita, each reveals a different facet of your inner landscape — your dominant Guna, your Karma Yoga style, and more.</div>
+    <div class="quiz-guna-tags">
+      <span class="guna-tag bo-tag-sattva">Guna</span>
+      <span class="guna-tag bo-tag-rajas">Karma Yoga</span>
+      <span class="guna-tag bo-tag-tamas">Coming: Desire, Fear, Pandavas</span>
+    </div>
+    <a href="quizzes.html" class="bo-btn-primary" style="text-decoration:none;">Browse All Quizzes</a>
+  </div>
+</section>
+
+<section class="bo-section" style="padding-top:0;">
+  <div class="bo-section-tag">Content & Services</div>
+  <h2 class="bo-title-section">More Ways to Go Deeper</h2>
+  <p class="bo-tagline" style="font-size: 1.1rem; margin-bottom: 2rem;">Each offering carries the same intention — clarity through wisdom</p>
+  <div class="offerings">
+    <div class="offering-card">
+      <div class="offering-header">
+        <div class="bo-label-tag" style="margin-bottom: 0.3rem;">YouTube · Free</div>
+        <div class="offering-title">Beyond Outcomes Channel</div>
+      </div>
+      <div class="offering-body">
+        <div class="offering-desc">Shorts and long-form videos on Gita shlokas for everyday life. Mind mastery, desire, courage, peace — each video one shloka, one insight.</div>
+        <a href="https://www.youtube.com/@BeyondOutcomes" class="offering-link">Watch on YouTube →</a>
+      </div>
+    </div>
+    <div class="offering-card">
+      <div class="offering-header">
+        <div class="bo-label-tag" style="margin-bottom: 0.3rem;">Newsletter · Coming Soon</div>
+        <div class="offering-title">Guna-Aligned Wisdom</div>
+      </div>
+      <div class="offering-body">
+        <div class="offering-desc">A weekly letter tailored to your dominant Guna. One shloka, one reflection, one practice. Nothing more — but nothing wasted.</div>
+        <a href="coming-soon.html?feature=newsletter" class="offering-link">Join the Waitlist →</a>
+      </div>
+    </div>
+    <div class="offering-card">
+      <div class="offering-header">
+        <div class="bo-label-tag" style="margin-bottom: 0.3rem;">Coaching · Coming Soon</div>
+        <div class="offering-title">NLP Coaching Sessions</div>
+      </div>
+      <div class="offering-body">
+        <div class="offering-desc">Work one-to-one with a certified NLP practitioner. Sessions for students, professionals, and anyone navigating a difficult inner season.</div>
+        <a href="coming-soon.html?feature=nlp" class="offering-link">Join the Waitlist →</a>
+      </div>
+    </div>
+    <div class="offering-card">
+      <div class="offering-header">
+        <div class="bo-label-tag" style="margin-bottom: 0.3rem;">Group Programs · Coming Soon</div>
+        <div class="offering-title">Gita for Groups</div>
+      </div>
+      <div class="offering-body">
+        <div class="offering-desc">Guided group programs for teams, students, and communities. The Gita's timeless frameworks applied to modern challenges collectively.</div>
+        <a href="coming-soon.html?feature=groups" class="offering-link">Join the Waitlist →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="nlp-strip">
+  <div class="bo-label-tag" style="color:#c9a84c; opacity:0.7; margin-bottom:0.75rem;">NLP Coaching · Coming Soon</div>
+  <div class="nlp-title">Ready to Work Directly With Satya?</div>
+  <div class="nlp-sub">A certified NLP practitioner bringing Gita wisdom into modern coaching. Sessions launching soon — join the waitlist now.</div>
+  <div class="nlp-chips">
+    <span class="nlp-chip">Students</span>
+    <span class="nlp-chip">Young Professionals</span>
+    <span class="nlp-chip">Sportspersons</span>
+    <span class="nlp-chip">Relationship Clarity</span>
+  </div>
+  <a href="coming-soon.html?feature=nlp" class="btn-gold-outline">Join the Waitlist</a>
+</div>
+
+<div class="footer-strip">
+  <div class="footer-brand">Beyond Outcomes</div>
+  <div class="footer-sub">Timeless Gita Wisdom for Modern Life</div>
+  <div class="footer-links">
+    <a href="https://www.youtube.com/@BeyondOutcomes" class="footer-link">YouTube</a>
+    <a href="quizzes.html" class="footer-link">Quizzes</a>
+    <a href="coming-soon.html?feature=nlp" class="footer-link">NLP Coaching</a>
+    <a href="coming-soon.html?feature=newsletter" class="footer-link">Newsletter</a>
+  </div>
+  <div class="footer-copy">© 2026 Beyond Outcomes · Chennai, India</div>
+</div>
+
+</body>
+</html>

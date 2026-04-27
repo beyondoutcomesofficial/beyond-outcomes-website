@@ -1,0 +1,7 @@
+{
+  "name": "beyond-outcomes-website",
+  "version": "2.0.0",
+  "description": "Beyond Outcomes — Timeless Gita Wisdom for Modern Life",
+  "private": true,
+  "engines": { "node": "20.x" }
+}
