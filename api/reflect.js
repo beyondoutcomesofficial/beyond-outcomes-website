@@ -1,75 +1,66 @@
-// api/reflect.js
+// Vercel Serverless Function — POST /api/reflect
+// Generates personalized AI reflection using Google Gemini API
+// Requires environment variable: GEMINI_API_KEY
 
 export default async function handler(req, res) {
-  // ✅ Allow only POST
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) return res.status(500).json({ error: 'API key not configured' });
 
   try {
-    // ✅ DO NOT JSON.parse — Vercel already parses it
-    const { input } = req.body;
+    const { quizId, answers, questions, percentages, dom } = req.body;
 
-    if (!input || typeof input !== "string") {
-      return res.status(400).json({ error: "Invalid input" });
-    }
+    const summary = questions.map((q, i) => `Q: ${q.text}\nA: ${q.options[answers[i]]} [${q.tags[answers[i]]}]`).join('\n\n');
+    const pctsStr = Object.entries(percentages).map(([k, v]) => `${k}: ${v}%`).join(', ');
 
-    // ✅ Check API key
-    const apiKey = process.env.GEMINI_API_KEY;
+    const quizContext = quizId === 'karma-yoga'
+      ? 'This is a Karma Yoga quiz from Bhagavad Gita Chapter 3. The categories are: nishkama (selfless action), sakama (desire-driven action), inert (reluctant action), compulsive (restless action).'
+      : 'This is a Guna quiz from Bhagavad Gita Chapter 14. The categories are Sattva (clarity, harmony), Rajas (passion, restlessness), Tamas (inertia, heaviness).';
 
-    if (!apiKey) {
-      console.warn("⚠️ GEMINI_API_KEY missing — using fallback");
+    const prompt = `You are a wise teacher of the Bhagavad Gita. ${quizContext}
 
-      return res.status(200).json({
-        reply:
-          "Pause for a moment. Notice what you're feeling right now. That itself is the beginning of clarity."
-      });
-    }
+Quiz answers:
+${summary}
 
-    // ✅ Call Gemini API (REST — stable, no SDK issues)
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`,
+Scores: ${pctsStr}
+Dominant: ${dom}
+
+Return ONLY valid JSON (no markdown code blocks, no preamble, just the raw JSON object) with these exact keys:
+{"dominant":"English name","dominantHi":"Hindi name in Devanagari","subtitle":"poetic 6-8 word English description","subtitleHi":"Hindi","reflection":"3-4 paragraphs English, 180-220 words, warm, personalized to their answers","reflectionHi":"natural Hindi translation in Devanagari","shloka":"Sanskrit transliteration of relevant BG verse","shlokaHi":"Devanagari script","shlokaRef":"e.g. BG 14.6","shlokaMeaning":"poetic English 20-30 words","shlokaMeaningHi":"Hindi"}`;
+
+    const geminiResp = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          contents: [
-            {
-              parts: [
-                {
-                  text: `You are a calm, insightful guide inspired by the Bhagavad Gita.
-
-User reflection:
-"${input}"
-
-Respond with a short, clear, introspective insight (2–4 sentences max).
-No fluff. No jargon. Just clarity.`,
-                },
-              ],
-            },
-          ],
-        }),
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: {
+            temperature: 0.8,
+            maxOutputTokens: 2000,
+            responseMimeType: 'application/json'
+          }
+        })
       }
     );
 
-    const data = await response.json();
+    if (!geminiResp.ok) {
+      const errText = await geminiResp.text();
+      console.error('Gemini API error:', errText);
+      return res.status(500).json({ error: 'AI service error' });
+    }
 
-    // ✅ Safe extraction (Gemini responses can vary)
-    const reply =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Observe the pattern behind your thoughts. That awareness itself creates distance.";
+    const data = await geminiResp.json();
+    const raw = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    if (!raw) {
+      console.error('Empty Gemini response:', JSON.stringify(data));
+      return res.status(500).json({ error: 'Empty AI response' });
+    }
 
-    return res.status(200).json({ reply });
-
-  } catch (error) {
-    console.error("Reflection error:", error);
-
-    // ✅ Never break UI
-    return res.status(200).json({
-      reply:
-        "Something interrupted the flow. Take a breath and return to the question — what is this moment asking of you?"
-    });
+    return res.status(200).json(JSON.parse(raw.replace(/```json|```/g, '').trim()));
+  } catch (e) {
+    console.error('Reflection error:', e);
+    return res.status(500).json({ error: e.message });
   }
 }

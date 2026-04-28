@@ -25,6 +25,15 @@
     .footer-link { display: block; text-align: center; margin-top: 2.5rem; font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
     .footer-link:hover { color: var(--bo-text-primary); }
   </style>
+  <!-- Google Analytics 4 — Replace G-70BM48WVYR with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-70BM48WVYR');
+  </script>
+
 </head>
 <body class="bo-body">
 <div class="page">
@@ -71,7 +80,7 @@ document.getElementById('hero-title').textContent = f.title;
 document.getElementById('desc-text').textContent = f.desc;
 document.title = f.title + ' — Coming Soon — Beyond Outcomes';
 
-function joinWaitlist() {
+async function joinWaitlist() {
   const email = document.getElementById('waitlist-email').value.trim();
   const success = document.getElementById('waitlist-success');
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -80,10 +89,35 @@ function joinWaitlist() {
     success.style.display = 'block';
     return;
   }
-  success.style.color = 'var(--bo-success)';
-  success.textContent = 'You are on the waitlist. We will write to you when this opens.';
-  success.style.display = 'block';
-  document.getElementById('waitlist-email').value = '';
+  // Map feature to source tag (fkey is set when page loads)
+  const sourceMap = {
+    'nlp': 'nlp-waitlist',
+    'newsletter': 'newsletter-waitlist',
+    'groups': 'groups-waitlist',
+    'default': 'unknown'
+  };
+  const source = sourceMap[fkey] || 'unknown';
+  // Disable button while submitting
+  const btn = document.querySelector('.waitlist-row button');
+  if (btn) { btn.disabled = true; btn.style.opacity = '0.6'; }
+  try {
+    const resp = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source })
+    });
+    if (!resp.ok) throw new Error('Subscribe failed');
+    success.style.color = 'var(--bo-success)';
+    success.textContent = 'You are on the waitlist. We will write to you when this opens.';
+    success.style.display = 'block';
+    document.getElementById('waitlist-email').value = '';
+  } catch (e) {
+    success.style.color = '#a04040';
+    success.textContent = 'Something went wrong. Please try again.';
+    success.style.display = 'block';
+  } finally {
+    if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+  }
 }
 </script>
 </body>

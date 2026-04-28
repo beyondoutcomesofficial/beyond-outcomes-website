@@ -166,11 +166,34 @@ async function submitQuiz() {
   showScreen('screen-result');
 }
 
-function submitEmail() {
+async function submitEmail() {
   const ui = UI_LANG[lang], v = document.getElementById('email-input').value.trim();
   const s = document.getElementById('email-success');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { s.style.color = '#a04040'; s.textContent = ui.emailError; s.style.display = 'block'; return; }
-  s.style.color = '#3a7a52'; s.textContent = ui.emailSuccess; s.style.display = 'block'; document.getElementById('email-input').value = '';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+    s.style.color = '#a04040'; s.textContent = ui.emailError; s.style.display = 'block';
+    return;
+  }
+  // Disable button while submitting
+  const btn = document.getElementById('l-email-btn');
+  if (btn) { btn.disabled = true; btn.style.opacity = '0.6'; }
+  try {
+    const resp = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: v, source: 'quiz-taker' })
+    });
+    if (!resp.ok) throw new Error('Subscribe failed');
+    s.style.color = '#3a7a52';
+    s.textContent = ui.emailSuccess;
+    s.style.display = 'block';
+    document.getElementById('email-input').value = '';
+  } catch (e) {
+    s.style.color = '#a04040';
+    s.textContent = ui.emailError + ' Please try again.';
+    s.style.display = 'block';
+  } finally {
+    if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+  }
 }
 
 function buildShareText() {
