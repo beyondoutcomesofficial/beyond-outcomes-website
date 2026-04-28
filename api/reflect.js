@@ -57,8 +57,7 @@ Return ONLY the JSON object. No other text.`;
           contents: [{ parts: [{ text: prompt }] }],
           generationConfig: {
             temperature: 0.8,
-            maxOutputTokens: 2000,
-            responseMimeType: 'application/json'
+            maxOutputTokens: 2000
           }
         })
       }
