@@ -1,13 +1,13 @@
 // Vercel Serverless Function — POST /api/reflect
-// Generates personalized AI reflection using Google Gemini API
-// Requires environment variable: GEMINI_API_KEY
+// Generates personalized AI reflection using Claude API
+// Requires environment variable: ANTHROPIC_API_KEY
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
-    console.error('GEMINI_API_KEY not configured');
+    console.error('ANTHROPIC_API_KEY not configured');
     return res.status(500).json({ error: 'API key not configured' });
   }
 
@@ -29,57 +29,62 @@ ${summary}
 Scores: ${pctsStr}
 Dominant: ${dom}
 
-Create a personalized reflection. Return ONLY a valid JSON object with these exact keys (no markdown, no code blocks, no preamble):
+Create a personalized reflection based on their specific answers. Return ONLY a valid JSON object with these exact keys (no markdown, no preamble, no code blocks):
 
 {
-  "dominant": "English name",
+  "dominant": "English name of dominant category",
   "dominantHi": "Hindi name in Devanagari",
   "subtitle": "poetic 6-8 word English description",
   "subtitleHi": "Hindi translation",
-  "reflection": "3-4 paragraphs in English, 180-220 words total, warm and personalized to their specific answers",
+  "reflection": "3-4 paragraphs in English, 180-220 words total, warm and personalized to their specific quiz answers",
   "reflectionHi": "natural Hindi translation in Devanagari",
-  "shloka": "Sanskrit transliteration of a relevant BG verse",
-  "shlokaHi": "Devanagari script",
-  "shlokaRef": "e.g. BG 14.6",
+  "shloka": "Sanskrit transliteration of a relevant Bhagavad Gita verse",
+  "shlokaHi": "Devanagari script of the verse",
+  "shlokaRef": "verse reference like BG 14.6",
   "shlokaMeaning": "poetic English translation, 20-30 words",
-  "shlokaMeaningHi": "Hindi translation"
+  "shlokaMeaningHi": "Hindi translation of the meaning"
 }
 
-Return ONLY the JSON object. No other text.`;
+Return ONLY the JSON object. Start with { and end with }. No other text before or after.`;
 
-    const geminiResp = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+    const claudeResp = await fetch(
+      'https://api.anthropic.com/v1/messages',
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01'
+        },
         body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.8,
-            maxOutputTokens: 2000
-          }
+          model: 'claude-3-5-haiku-20241022',
+          max_tokens: 2000,
+          messages: [{
+            role: 'user',
+            content: prompt
+          }]
         })
       }
     );
 
-    if (!geminiResp.ok) {
-      const errText = await geminiResp.text();
-      console.error('Gemini API error:', geminiResp.status, errText);
+    if (!claudeResp.ok) {
+      const errText = await claudeResp.text();
+      console.error('Claude API error:', claudeResp.status, errText);
       return res.status(500).json({ error: 'AI service error' });
     }
 
-    const data = await geminiResp.json();
-    let raw = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    const data = await claudeResp.json();
+    let raw = data.content?.[0]?.text || '';
     
     if (!raw) {
-      console.error('Empty Gemini response:', JSON.stringify(data));
+      console.error('Empty Claude response:', JSON.stringify(data));
       return res.status(500).json({ error: 'Empty AI response' });
     }
 
     // Clean the response - remove markdown code blocks if present
     raw = raw.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
     
-    // Remove any leading/trailing non-JSON text
+    // Find JSON boundaries
     const jsonStart = raw.indexOf('{');
     const jsonEnd = raw.lastIndexOf('}');
     if (jsonStart !== -1 && jsonEnd !== -1) {
@@ -89,7 +94,7 @@ Return ONLY the JSON object. No other text.`;
     // Parse and validate
     const parsed = JSON.parse(raw);
     
-    // Basic validation - ensure required fields exist
+    // Basic validation
     const required = ['dominant', 'dominantHi', 'subtitle', 'subtitleHi', 'reflection', 'reflectionHi', 'shloka', 'shlokaHi', 'shlokaRef', 'shlokaMeaning', 'shlokaMeaningHi'];
     for (const field of required) {
       if (!parsed[field]) {
