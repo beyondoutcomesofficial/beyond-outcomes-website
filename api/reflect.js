@@ -21,7 +21,6 @@ export default async function handler(req, res) {
       ? 'This is a Karma Yoga quiz from Bhagavad Gita Chapter 3. The categories are: nishkama (selfless action), sakama (desire-driven action), inert (reluctant action), compulsive (restless action).'
       : 'This is a Guna quiz from Bhagavad Gita Chapter 14. The categories are Sattva (clarity, harmony), Rajas (passion, restlessness), Tamas (inertia, heaviness).';
 
-    // Simplified prompt asking for pure JSON output
     const prompt = `You are a wise Bhagavad Gita teacher. ${quizContext}
 
 Quiz results:
@@ -49,7 +48,7 @@ Create a personalized reflection. Return ONLY a valid JSON object with these exa
 Return ONLY the JSON object. No other text.`;
 
     const geminiResp = await fetch(
-      https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
