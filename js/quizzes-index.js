@@ -39,12 +39,13 @@ window.QUIZZES_INDEX = [
     duration: { en: '~5 min', hi: '~५ मि' }
   },
   {
-    id: 'inner-battle',
-    status: 'coming-soon',
+    id: 'pandava',
+    status: 'live',
     title: { en: 'Which Pandava Are You?', hi: 'आप कौन से पांडव हैं?' },
-    subtitle: { en: 'The inner battle', hi: 'भीतरी युद्ध' },
+    subtitle: { en: 'Discover your archetype', hi: 'अपना आर्कीटाइप जानें' },
     description: { en: 'Five archetypes from the Mahabharata — discover which warrior energy lives inside you right now.', hi: 'महाभारत के पांच आदर्श।' },
     chapter: 'Mahabharata',
-    duration: { en: '~5 min', hi: '~५ मि' }
+    duration: { en: '~5 min', hi: '~५ मि' },
+    fileName: 'pandava'
   }
 ];
