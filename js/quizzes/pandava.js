@@ -449,4 +449,3 @@ const PANDAVA_QUIZ = {
     }
   }
 };
-
