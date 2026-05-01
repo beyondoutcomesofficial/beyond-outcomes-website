@@ -77,10 +77,11 @@ function showQ() {
   document.getElementById('q-num-tag').textContent = meta.tagPrefix + ' ' + ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV'][currentQ];
   document.getElementById('q-text').textContent = q.text;
   const list = document.getElementById('options-list'); list.innerHTML = '';
-  ['A','B','C','D'].forEach((lt, i) => {
+  const optLetters = ['A','B','C','D','E','F'];
+  q.options.forEach((opt, i) => {
     const btn = document.createElement('button');
     btn.className = 'option-btn' + (answers[currentQ] === i ? ' selected' : '');
-    btn.innerHTML = '<span class="opt-letter">' + lt + '</span>' + q.options[i];
+    btn.innerHTML = '<span class="opt-letter">' + (optLetters[i] || (i+1)) + '</span>' + opt;
     btn.onclick = () => selectOption(i);
     list.appendChild(btn);
   });
