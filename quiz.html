@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beyond Outcomes · Self-Inquiry</title>
   <meta name="description" content="AI-powered self-inquiry rooted in Bhagavad Gita teachings.">
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="Beyond Outcomes">
+  <meta property="og:title"       content="Beyond Outcomes · Self-Inquiry Quiz">
+  <meta property="og:description" content="AI-powered self-inquiry rooted in Bhagavad Gita teachings.">
+  <meta property="og:image"       content="">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter / X -->
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="Beyond Outcomes · Self-Inquiry Quiz">
+  <meta name="twitter:description" content="AI-powered self-inquiry rooted in Bhagavad Gita teachings.">
+  <meta name="twitter:image"      content="">
   <link rel="stylesheet" href="css/beyond-outcomes.css">
   <link rel="stylesheet" href="css/quiz.css">
   <!-- Google Analytics 4 — Replace G-XXXXXXXXXX with your Measurement ID -->
@@ -208,6 +221,15 @@ script.onload = function() {
     barsWrap.innerHTML += '<div class="guna-bar-row"><div class="guna-bar-label" id="lb-' + i + '"></div><div class="guna-bar-track"><div class="guna-bar-fill ' + colorClass + '" id="bar-' + i + '" style="width:0%"></div></div><div class="guna-bar-pct" id="pct-' + i + '">0%</div></div>';
     scBarsWrap.innerHTML += '<div class="sc-bar-row"><div class="sc-bar-label" id="sc-lb-' + i + '"></div><div class="sc-bar-track"><div class="sc-bar-fill ' + colorClass + '" id="sc-bar-' + i + '" style="width:0%"></div></div><div class="sc-bar-pct" id="sc-pct-' + i + '">0%</div></div>';
   });
+  // Set default OG image for this quiz (first category result)
+  const base = window.location.origin;
+  const defaultOgImg = base + '/images/og/' + quizId + '-' + categories[0] + '.png';
+  const qMeta = window.QUIZ_DATA.meta.en;
+  const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute('content', val); };
+  setMeta('meta[property="og:image"]', defaultOgImg);
+  setMeta('meta[name="twitter:image"]', defaultOgImg);
+  setMeta('meta[property="og:title"]', qMeta.shareTitle + ' — Beyond Outcomes');
+  setMeta('meta[property="og:description"]', qMeta.intro);
   // Now load shared logic
   const sharedScript = document.createElement('script');
   sharedScript.src = 'js/quiz-shared.js';
