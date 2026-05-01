@@ -44,6 +44,11 @@ function applyLang() {
 
 function applyResultLang() {
   const isHi = lang === 'hi', d = resultData;
+  const imgEl = document.getElementById('result-image');
+  if (imgEl) {
+    if (d.image) { imgEl.src = d.image; imgEl.alt = isHi ? d.dominantHi : d.dominant; imgEl.style.display = 'block'; }
+    else { imgEl.style.display = 'none'; }
+  }
   document.getElementById('result-guna').textContent = isHi ? d.dominantHi : d.dominant;
   document.getElementById('result-subtitle').textContent = isHi ? d.subtitleHi : d.subtitle;
   document.getElementById('result-body').textContent = isHi ? d.reflectionHi : d.reflection;

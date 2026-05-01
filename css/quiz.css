@@ -54,12 +54,13 @@
 .result-hero { text-align: center; padding: 2.5rem 0 2rem; }
 .result-tag { font-family: var(--bo-font-display); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--bo-gold-deep); margin-bottom: 1.25rem; }
 .result-guna-wrap { position: relative; display: inline-block; margin-bottom: 0.75rem; }
+.result-archetype-img { display: block; width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid var(--bo-gold); box-shadow: 0 0 30px rgba(201,168,76,0.35), 0 8px 24px rgba(0,0,0,0.12); margin: 0 auto 1rem; }
 .result-guna { font-family: var(--bo-font-display); font-size: clamp(3rem, 9vw, 5rem); font-weight: 500; color: var(--bo-gold-dark); line-height: 1; letter-spacing: 0.05em; text-shadow: 0 4px 30px rgba(201,168,76,0.4); }
 .result-halo { position: absolute; inset: -30px; border-radius: 50%; background: radial-gradient(ellipse, rgba(232,201,122,0.4), transparent 65%); pointer-events: none; z-index: -1; }
 .result-sub { font-family: var(--bo-font-body); font-size: 1.25rem; font-style: italic; color: var(--bo-gold-deep); margin-bottom: 2rem; }
 .guna-bars { max-width: 400px; margin: 0 auto 2.5rem; display: flex; flex-direction: column; gap: 14px; }
 .guna-bar-row { display: flex; align-items: center; gap: 14px; }
-.guna-bar-label { font-family: var(--bo-font-display); font-size: 13px; letter-spacing: 0.12em; color: var(--bo-gold-dark); width: 90px; text-align: right; }
+.guna-bar-label { font-family: var(--bo-font-display); font-size: 13px; letter-spacing: 0.12em; color: var(--bo-gold-dark); min-width: 130px; text-align: right; white-space: nowrap; }
 .guna-bar-track { flex: 1; height: 3px; background: rgba(169,126,48,0.12); border-radius: 2px; }
 .guna-bar-fill { height: 100%; border-radius: 2px; transition: width 1.2s var(--bo-ease); }
 .guna-bar-pct { font-family: var(--bo-font-body); font-size: 14px; font-style: italic; color: var(--bo-gold-deep); width: 38px; }
