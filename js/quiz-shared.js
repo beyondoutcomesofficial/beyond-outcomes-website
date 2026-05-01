@@ -140,6 +140,9 @@ async function submitQuiz() {
     if (aiResp.ok) {
       resultData = await aiResp.json();
       resultData._pcts = pcts;
+      if (QD.staticReflections[dom] && QD.staticReflections[dom].image) {
+        resultData.image = QD.staticReflections[dom].image;
+      }
       useAI = true;
     }
   } catch (e) { useAI = false; }
