@@ -22,21 +22,23 @@ window.QUIZZES_INDEX = [
   },
   {
     id: 'desire',
-    status: 'coming-soon',
+    status: 'live',
     title: { en: 'Your Relationship with Desire', hi: 'इच्छा से आपका संबंध' },
     subtitle: { en: 'Desire profile', hi: 'इच्छा का स्वरूप' },
     description: { en: 'Are you driven, detached, conflicted, or surrendered? The Gita maps four ways we relate to wanting.', hi: 'गीता चार प्रकार से इच्छा को देखती है।' },
     chapter: 'BG · Chapter 2',
-    duration: { en: '~5 min', hi: '~५ मि' }
+    duration: { en: '~5 min', hi: '~५ मि' },
+    fileName: 'desire'
   },
   {
     id: 'fear',
-    status: 'coming-soon',
+    status: 'live',
     title: { en: 'What Is Your Dominant Fear?', hi: 'आपका प्रमुख भय क्या है?' },
     subtitle: { en: 'Fear pattern', hi: 'भय का स्वरूप' },
     description: { en: 'Fear of failure, judgment, loss, or insignificance — the Gita names them all and offers the cure.', hi: 'गीता सभी भय बताती है और उपाय देती है।' },
     chapter: 'BG · Chapter 2',
-    duration: { en: '~5 min', hi: '~५ मि' }
+    duration: { en: '~5 min', hi: '~५ मि' },
+    fileName: 'fear'
   },
   {
     id: 'pandava',
