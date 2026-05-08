@@ -1,0 +1,470 @@
+/* ============================================================
+   BEYOND OUTCOMES — BRAND DESIGN TOKENS
+   Timeless Gita Wisdom for Modern Life
+   Version 1.0
+   ============================================================
+   USAGE
+   1. Drop this file into your project: /css/beyond-outcomes.css
+   2. Link it in your HTML <head> BEFORE any other stylesheet:
+      <link rel="stylesheet" href="/css/beyond-outcomes.css">
+   3. Use the CSS variables (e.g. var(--bo-gold)) and utility
+      classes (e.g. .bo-title) anywhere in your project.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   FONT IMPORTS
+   ------------------------------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap');
+
+
+/* ------------------------------------------------------------
+   ROOT TOKENS — single source of truth for the entire brand
+   ------------------------------------------------------------ */
+
+:root {
+
+  /* === COLOR — BACKGROUNDS === */
+  --bo-warm-white:       #fffdf5;   /* card surfaces, input fields              */
+  --bo-cream:            #fdf6e8;   /* default page background                  */
+  --bo-cream-deep:       #f7ead0;   /* hero gradients, shloka cards             */
+  --bo-cream-darker:     #ede0c0;   /* subtle layered surfaces                  */
+
+  /* === COLOR — GOLD ACCENTS === */
+  --bo-gold-light:       #e8c97a;   /* gradient endpoints, highlight glow       */
+  --bo-gold:             #c9a84c;   /* primary brand accent, all icons          */
+  --bo-gold-deep:        #a07830;   /* button gradients, secondary text         */
+  --bo-gold-dark:        #7a5a1e;   /* secondary headings, prominent labels     */
+
+  /* === COLOR — TEXT === */
+  --bo-text-primary:     #3a2505;   /* main body & heading text                 */
+  --bo-text-secondary:   #5c3d0a;   /* paragraphs, longer prose                 */
+  --bo-text-muted:       #7a5a1e;   /* italic subtitles, soft body              */
+  --bo-text-faint:       #b08a4a;   /* labels, footer text, tertiary info       */
+
+  /* === COLOR — INVERTED (for dark gold strips e.g. NLP CTA) === */
+  --bo-dark-bg:          #3a2505;   /* deep brown, used sparingly               */
+  --bo-dark-text:        #f7ead0;   /* cream text on dark brown                 */
+  --bo-dark-muted:       rgba(247, 234, 208, 0.6);
+
+  /* === COLOR — BORDERS === */
+  --bo-border-faint:     rgba(169, 126, 48, 0.15);  /* default subtle borders   */
+  --bo-border:           rgba(169, 126, 48, 0.25);  /* card & input borders     */
+  --bo-border-strong:    rgba(169, 126, 48, 0.45);  /* hover states             */
+  --bo-border-gold:      #c9a84c;                    /* selected & focus states  */
+
+  /* === COLOR — GUNA-SPECIFIC === */
+  --bo-sattva:           #3a7a52;   /* clarity, harmony — green                 */
+  --bo-sattva-light:     #5da876;
+  --bo-sattva-bg:        rgba(80, 160, 100, 0.08);
+  --bo-rajas:            #8b6914;   /* passion, action — gold-amber             */
+  --bo-rajas-light:      #c9a84c;
+  --bo-rajas-bg:         rgba(169, 126, 48, 0.08);
+  --bo-tamas:            #4a3a7a;   /* inertia, heaviness — purple              */
+  --bo-tamas-light:      #9b85b8;
+  --bo-tamas-bg:         rgba(100, 80, 140, 0.08);
+
+  /* === COLOR — STATUS === */
+  --bo-success:          #3a7a52;
+  --bo-error:            #a04040;
+
+  /* === GRADIENTS — copy-paste ready === */
+  --bo-gradient-page:    linear-gradient(160deg, #f7ead0 0%, #fdf6e8 35%, #fffdf5 60%, #f7ead0 100%);
+  --bo-gradient-hero:    linear-gradient(135deg, #f7ead0, #fdf6e8, #fffdf5);
+  --bo-gradient-gold:    linear-gradient(135deg, #c9a84c, #a07830);
+  --bo-gradient-shloka:  linear-gradient(135deg, #f7ead0, #fdf6e8);
+  --bo-gradient-card:    linear-gradient(135deg, #fffdf5, #fbf3df);
+  --bo-gradient-cta:     linear-gradient(135deg, #f0e0b0, #f7ead0, #ede0c0);
+
+  /* === GLOW & SHADOW === */
+  --bo-glow-soft:        0 0 24px rgba(232, 201, 122, 0.3);
+  --bo-glow-strong:      0 0 40px rgba(201, 168, 76, 0.5);
+  --bo-shadow-warm-sm:   0 4px 18px rgba(160, 120, 48, 0.12);
+  --bo-shadow-warm:      0 8px 32px rgba(160, 120, 48, 0.18);
+  --bo-shadow-warm-lg:   0 12px 36px rgba(160, 120, 48, 0.22);
+  --bo-shadow-button:    0 6px 24px rgba(160, 120, 48, 0.25);
+  --bo-shadow-button-hover: 0 8px 32px rgba(160, 120, 48, 0.40);
+
+  /* === TYPOGRAPHY === */
+  --bo-font-display:     'Cinzel', 'Times New Roman', serif;        /* sacred titles, Guna names, logo */
+  --bo-font-body:        'Cormorant Garamond', Georgia, serif;       /* body text, shlokas, reflections */
+  --bo-font-ui:          'Jost', system-ui, -apple-system, sans-serif; /* labels, buttons, navigation */
+
+  --bo-letter-spacing-tight:  0.04em;
+  --bo-letter-spacing:        0.12em;
+  --bo-letter-spacing-wide:   0.20em;
+  --bo-letter-spacing-x-wide: 0.30em;
+
+  /* === LAYOUT === */
+  --bo-radius-sm:        6px;
+  --bo-radius:           8px;       /* default for buttons, inputs              */
+  --bo-radius-lg:        12px;      /* default for cards                        */
+  --bo-radius-xl:        14px;
+  --bo-radius-pill:      20px;      /* badges, chips, language toggle           */
+
+  --bo-container:        640px;     /* max content width — keep narrow & sacred */
+  --bo-container-wide:   720px;     /* for landing pages with offerings         */
+
+  /* === MOTION === */
+  --bo-ease:             cubic-bezier(0.16, 1, 0.3, 1);
+  --bo-ease-warm:        cubic-bezier(0.4, 0, 0.2, 1);
+  --bo-duration-fast:    0.2s;
+  --bo-duration:         0.35s;
+  --bo-duration-slow:    0.7s;
+}
+
+
+/* ------------------------------------------------------------
+   BASE — apply to <body> for instant brand alignment
+   ------------------------------------------------------------ */
+
+body.bo-body {
+  margin: 0;
+  background: var(--bo-cream);
+  color: var(--bo-text-primary);
+  font-family: var(--bo-font-ui);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bo-page {
+  background: var(--bo-gradient-page);
+  min-height: 100vh;
+}
+
+
+/* ------------------------------------------------------------
+   TYPOGRAPHY UTILITIES
+   ------------------------------------------------------------ */
+
+.bo-brand-stamp {
+  font-family: var(--bo-font-display);
+  font-size: 11px;
+  letter-spacing: var(--bo-letter-spacing-x-wide);
+  color: var(--bo-gold-deep);
+  text-transform: uppercase;
+}
+
+.bo-title {
+  font-family: var(--bo-font-display);
+  font-weight: 400;
+  color: var(--bo-text-primary);
+  line-height: 1.15;
+}
+
+.bo-title-hero {
+  font-family: var(--bo-font-display);
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  font-weight: 400;
+  color: var(--bo-text-primary);
+  line-height: 1.1;
+  text-shadow: 0 2px 40px rgba(201, 168, 76, 0.2);
+}
+
+.bo-title-section {
+  font-family: var(--bo-font-display);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 400;
+  color: var(--bo-text-primary);
+  line-height: 1.25;
+}
+
+.bo-tagline {
+  font-family: var(--bo-font-body);
+  font-style: italic;
+  color: var(--bo-text-muted);
+}
+
+.bo-prose {
+  font-family: var(--bo-font-body);
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--bo-text-secondary);
+}
+
+.bo-prose-italic {
+  font-family: var(--bo-font-body);
+  font-style: italic;
+}
+
+.bo-label {
+  font-family: var(--bo-font-ui);
+  font-size: 11px;
+  letter-spacing: var(--bo-letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--bo-text-faint);
+}
+
+.bo-label-tag {
+  font-family: var(--bo-font-display);
+  font-size: 11px;
+  letter-spacing: var(--bo-letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--bo-gold-deep);
+}
+
+
+/* ------------------------------------------------------------
+   BUTTONS
+   ------------------------------------------------------------ */
+
+.bo-btn,
+.bo-btn-primary,
+.bo-btn-outline,
+.bo-btn-ghost {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  font-family: var(--bo-font-ui);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: var(--bo-letter-spacing-wide);
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--bo-radius);
+  cursor: pointer;
+  transition: all var(--bo-duration) var(--bo-ease);
+  border: 1px solid transparent;
+}
+
+.bo-btn-primary {
+  background: var(--bo-gradient-gold);
+  color: var(--bo-warm-white);
+  border-color: transparent;
+  box-shadow: var(--bo-shadow-button);
+}
+
+.bo-btn-primary:hover {
+  box-shadow: var(--bo-shadow-button-hover);
+  transform: translateY(-1px);
+}
+
+.bo-btn-primary:disabled {
+  background: #ddd0aa;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  color: rgba(255, 253, 245, 0.7);
+}
+
+.bo-btn-outline {
+  background: transparent;
+  color: var(--bo-text-muted);
+  border-color: var(--bo-border-strong);
+}
+
+.bo-btn-outline:hover {
+  background: rgba(169, 126, 48, 0.07);
+  border-color: var(--bo-border-gold);
+  color: var(--bo-text-primary);
+}
+
+.bo-btn-ghost {
+  background: transparent;
+  color: var(--bo-gold-deep);
+  border-color: var(--bo-border);
+}
+
+.bo-btn-ghost:hover {
+  border-color: var(--bo-border-strong);
+  color: var(--bo-text-primary);
+  background: rgba(255, 253, 245, 0.6);
+}
+
+
+/* ------------------------------------------------------------
+   CARDS & SURFACES
+   ------------------------------------------------------------ */
+
+.bo-card {
+  background: var(--bo-warm-white);
+  border: 1px solid var(--bo-border);
+  border-radius: var(--bo-radius-lg);
+  padding: 1.5rem;
+  transition: all var(--bo-duration) var(--bo-ease);
+}
+
+.bo-card:hover {
+  border-color: var(--bo-border-strong);
+  box-shadow: var(--bo-shadow-warm);
+  transform: translateY(-2px);
+}
+
+.bo-card-shloka {
+  background: var(--bo-gradient-shloka);
+  border: 1px solid var(--bo-border);
+  border-radius: var(--bo-radius-lg);
+  padding: 1.75rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bo-card-shloka::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.75rem;
+  right: 1.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bo-border-strong), transparent);
+}
+
+
+/* ------------------------------------------------------------
+   FORM ELEMENTS
+   ------------------------------------------------------------ */
+
+.bo-input {
+  padding: 0.85rem 1rem;
+  background: rgba(255, 253, 245, 0.8);
+  border: 1px solid var(--bo-border);
+  border-radius: var(--bo-radius);
+  color: var(--bo-text-primary);
+  font-family: var(--bo-font-ui);
+  font-size: 14px;
+  outline: none;
+  transition: all var(--bo-duration) var(--bo-ease);
+  width: 100%;
+}
+
+.bo-input:focus {
+  border-color: var(--bo-gold);
+  background: var(--bo-warm-white);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+.bo-input::placeholder {
+  color: var(--bo-text-faint);
+}
+
+
+/* ------------------------------------------------------------
+   ORNAMENTS — sacred dividers, ॥ glyphs, ✦ stars
+   ------------------------------------------------------------ */
+
+.bo-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 280px;
+  margin: 1.5rem auto 2rem;
+}
+
+.bo-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bo-border-strong), transparent);
+}
+
+.bo-divider-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--bo-gold);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.bo-divider-glyph {
+  text-align: center;
+  font-family: var(--bo-font-body);
+  color: var(--bo-gold);
+  opacity: 0.5;
+  font-size: 1.4rem;
+  letter-spacing: 0.5em;
+  padding: 1.5rem 0;
+}
+
+
+/* ------------------------------------------------------------
+   GUNA-SPECIFIC UTILITIES
+   ------------------------------------------------------------ */
+
+.bo-tag-sattva { color: var(--bo-sattva); background: var(--bo-sattva-bg); border: 1px solid rgba(80,160,100,0.25); }
+.bo-tag-rajas  { color: var(--bo-rajas);  background: var(--bo-rajas-bg);  border: 1px solid rgba(169,126,48,0.30); }
+.bo-tag-tamas  { color: var(--bo-tamas);  background: var(--bo-tamas-bg);  border: 1px solid rgba(100,80,140,0.20); }
+
+.bo-fill-sattva { background: linear-gradient(90deg, #5da876, #3a7a52); }
+.bo-fill-rajas  { background: linear-gradient(90deg, #e8c97a, #a07830); }
+.bo-fill-tamas  { background: linear-gradient(90deg, #9b85b8, #5e4a82); }
+
+
+/* ------------------------------------------------------------
+   ANIMATIONS — keyframes only, opt-in via classes
+   ------------------------------------------------------------ */
+
+@keyframes bo-om-pulse {
+  0%, 100% { opacity: 0.55; text-shadow: 0 0 20px rgba(201, 168, 76, 0.3); }
+  50%      { opacity: 0.90; text-shadow: 0 0 40px rgba(201, 168, 76, 0.6); }
+}
+
+@keyframes bo-lotus-breathe {
+  0%, 100% { transform: scale(1);    filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.3)); }
+  50%      { transform: scale(1.04); filter: drop-shadow(0 0 16px rgba(201, 168, 76, 0.5)); }
+}
+
+@keyframes bo-halo-breathe {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%      { opacity: 1.0; transform: scale(1.15); }
+}
+
+@keyframes bo-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bo-anim-om-pulse      { animation: bo-om-pulse 4s ease-in-out infinite; }
+.bo-anim-lotus-breathe { animation: bo-lotus-breathe 5s ease-in-out infinite; }
+.bo-anim-halo          { animation: bo-halo-breathe 3s ease-in-out infinite; }
+.bo-anim-fade-up       { animation: bo-fade-up var(--bo-duration-slow) var(--bo-ease); }
+
+
+/* ------------------------------------------------------------
+   LAYOUT HELPERS
+   ------------------------------------------------------------ */
+
+.bo-container {
+  max-width: var(--bo-container);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.bo-container-wide {
+  max-width: var(--bo-container-wide);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.bo-section {
+  padding: 3rem 1.5rem;
+  max-width: var(--bo-container);
+  margin: 0 auto;
+}
+
+.bo-section-tag {
+  font-size: 10px;
+  letter-spacing: var(--bo-letter-spacing-x-wide);
+  text-transform: uppercase;
+  color: var(--bo-text-faint);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bo-section-tag::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--bo-border);
+}
+
+
+/* ------------------------------------------------------------
+   ENDS — Brand Tokens v1.0
+   Questions? Add new tokens here, never override at usage site.
+   ------------------------------------------------------------ */
