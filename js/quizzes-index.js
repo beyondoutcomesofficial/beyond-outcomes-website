@@ -49,5 +49,15 @@ window.QUIZZES_INDEX = [
     chapter: 'Mahabharata',
     duration: { en: '~5 min', hi: '~५ मि' },
     fileName: 'pandava'
+  },
+  {
+    id: 'sthitaprajna',
+    status: 'live',
+    title: { en: 'How Steady Is Your Mind?', hi: 'आपका मन कितना स्थिर है?' },
+    subtitle: { en: 'Mind steadiness profile', hi: 'मन की स्थिरता' },
+    description: { en: 'The Gita\'s most precise portrait of an awakened mind — discover where you stand on the spectrum from stirred to established in wisdom.', hi: 'गीता का सबसे सटीक चित्र — जानें आपका मन विक्षिप्त से स्थितप्रज्ञ के बीच कहाँ है।' },
+    chapter: 'BG · Chapter 2',
+    duration: { en: '~5 min', hi: '~५ मि' },
+    fileName: 'sthitaprajna'
   }
 ];
