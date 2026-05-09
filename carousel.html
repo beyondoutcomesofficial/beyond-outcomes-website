@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Outcomes — Instagram Carousel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a1008;
+      font-family: 'Jost', sans-serif;
+      padding: 40px 20px;
+    }
+
+    /* ── INSTRUCTIONS BAR ── */
+    .instructions {
+      max-width: 1080px;
+      margin: 0 auto 32px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 10px;
+      padding: 16px 24px;
+      color: #c9a84c;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .instructions strong { color: #e8c97a; }
+    .slide-counter {
+      margin-left: auto;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* ── SLIDE WRAPPER ── */
+    .slide-wrap {
+      max-width: 1080px;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+    .slide-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.5);
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+
+    /* ── SLIDE BASE ── */
+    .slide {
+      width: 1080px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Scale down for screen display */
+    @media (max-width: 1180px) {
+      .slide { transform-origin: top left; transform: scale(0.75); margin-bottom: -270px; }
+      .slide-wrap { max-width: 810px; }
+    }
+    @media (max-width: 900px) {
+      .slide { transform-origin: top left; transform: scale(0.55); margin-bottom: -486px; }
+      .slide-wrap { max-width: 594px; }
+    }
+    @media (max-width: 650px) {
+      .slide { transform-origin: top left; transform: scale(0.38); margin-bottom: -669px; }
+      .slide-wrap { max-width: 410px; }
+    }
+
+    /* ── BACKGROUNDS ── */
+    .bg-cream {
+      background: linear-gradient(160deg, #f7ead0 0%, #fdf6e8 35%, #fffdf5 60%, #f0e0b0 100%);
+    }
+    .bg-dark {
+      background: linear-gradient(160deg, #2a1a05 0%, #3a2505 40%, #2a1a05 100%);
+    }
+    .bg-gold {
+      background: linear-gradient(135deg, #f0e0b0 0%, #f7ead0 40%, #ede0c0 100%);
+    }
+
+    /* ── MANDALA WATERMARK ── */
+    .mandala {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.07;
+      pointer-events: none;
+    }
+    .mandala-corner {
+      position: absolute;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    /* ── SLIDE CONTENT ZONES ── */
+    .slide-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 90px;
+      text-align: center;
+    }
+    .slide-inner.left { align-items: flex-start; text-align: left; }
+
+    /* ── BRAND MARK ── */
+    .brand-mark {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #a07830;
+      opacity: 0.8;
+    }
+    .brand-mark-light { color: rgba(201,168,76,0.6); }
+
+    /* ── OM SYMBOL ── */
+    .om {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      color: #c9a84c;
+      line-height: 1;
+      opacity: 0.85;
+    }
+    .om-light { color: rgba(201,168,76,0.7); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 260px;
+    }
+    .div-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(169,126,48,0.5), transparent);
+    }
+    .div-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #c9a84c;
+      opacity: 0.5;
+    }
+    .divider-light .div-line { background: linear-gradient(90deg, transparent, rgba(201,168,76,0.35), transparent); }
+    .divider-light .div-dot  { background: rgba(201,168,76,0.6); }
+
+    /* ── TYPOGRAPHY ── */
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: 68px;
+      font-weight: 500;
+      color: #3a2505;
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+    }
+    .hero-title-light { color: #f7ead0; }
+
+    .slide-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-style: italic;
+      color: #7a5a1e;
+      line-height: 1.5;
+    }
+    .slide-subtitle-light { color: rgba(247,234,208,0.7); }
+
+    .quiz-name {
+      font-family: 'Cinzel', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #3a2505;
+      line-height: 1.15;
+      letter-spacing: 0.03em;
+    }
+
+    .quiz-question {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 30px;
+      color: #a07830;
+      line-height: 1.5;
+    }
+
+    .body-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      line-height: 1.75;
+      color: #5c3d0a;
+    }
+    .body-text-light { color: rgba(247,234,208,0.8); }
+
+    .chapter-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      opacity: 0.8;
+    }
+    .chapter-tag-dark { color: #7a5a1e; }
+
+    .swipe-hint {
+      font-family: 'Jost', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a07830;
+      opacity: 0.7;
+    }
+    .swipe-hint-light { color: rgba(201,168,76,0.6); }
+
+    /* ── SLIDE NUMBER ── */
+    .slide-num {
+      position: absolute;
+      top: 52px;
+      right: 64px;
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: rgba(160,120,48,0.4);
+    }
+    .slide-num-light { color: rgba(201,168,76,0.3); }
+
+    /* ── URL FOOTER ── */
+    .url-footer {
+      position: absolute;
+      bottom: 52px;
+      left: 0; right: 0;
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      letter-spacing: 0.2em;
+      color: #a07830;
+      opacity: 0.7;
+    }
+    .url-footer-light { color: rgba(201,168,76,0.5); }
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; text-align: left; }
+    .checklist li {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      color: #5c3d0a;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .check-icon {
+      width: 34px; height: 34px;
+      background: linear-gradient(135deg, #c9a84c, #a07830);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: #fffdf5;
+      font-size: 16px;
+    }
+
+    /* ── QUIZ CARD (slides 3-8) ── */
+    .quiz-number {
+      position: absolute;
+      top: 52px;
+      left: 64px;
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 0.25em;
+      color: rgba(160,120,48,0.45);
+    }
+
+    /* ── HOW IT WORKS STEPS ── */
+    .steps { display: flex; flex-direction: column; gap: 36px; width: 100%; }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      background: rgba(255,253,245,0.6);
+      border: 1px solid rgba(169,126,48,0.2);
+      border-radius: 16px;
+      padding: 32px 40px;
+    }
+    .step-num {
+      font-family: 'Cinzel', serif;
+      font-size: 42px;
+      color: #c9a84c;
+      opacity: 0.6;
+      flex-shrink: 0;
+      line-height: 1;
+      width: 60px;
+    }
+    .step-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: #3a2505;
+      line-height: 1.4;
+    }
+    .step-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: #7a5a1e;
+      font-style: italic;
+    }
+
+    /* ── CTA SLIDE SPECIAL ── */
+    .cta-url {
+      font-family: 'Cinzel', serif;
+      font-size: 44px;
+      font-weight: 500;
+      color: #c9a84c;
+      letter-spacing: 0.08em;
+    }
+    .cta-comment {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-style: italic;
+      color: #7a5a1e;
+      opacity: 0.8;
+    }
+
+    /* ── PRINT — one slide per page ── */
+    @media print {
+      body { background: white; padding: 0; }
+      .instructions { display: none; }
+      .slide-label { display: none; }
+      .slide-wrap { margin: 0; max-width: 100%; page-break-after: always; }
+      .slide { transform: none !important; width: 100vw; height: 100vw; margin-bottom: 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <strong>How to export:</strong> Open in Chrome → right-click each slide → "Save image as" (if using screenshot extension), or use Cmd+Shift+4 to screenshot each slide individually at 1080×1080px.
+  <span class="slide-counter">11 Slides · 1080 × 1080 px</span>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 01 — COVER
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 01 · Cover</div>
+  <div class="slide bg-cream">
+
+    <!-- Mandala watermark -->
+    <svg class="mandala" width="900" height="900" viewBox="0 0 900 900" fill="none">
+      <circle cx="450" cy="450" r="420" stroke="#c9a84c" stroke-width="1"/>
+      <circle cx="450" cy="450" r="330" stroke="#c9a84c" stroke-width="0.75"/>
+      <circle cx="450" cy="450" r="240" stroke="#c9a84c" stroke-width="0.75"/>
+      <circle cx="450" cy="450" r="150" stroke="#c9a84c" stroke-width="0.5"/>
+      <circle cx="450" cy="450" r="60"  stroke="#c9a84c" stroke-width="0.5"/>
+      <polygon points="450,60 790,615 110,615"  stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+      <polygon points="450,840 110,285 790,285" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+      <polygon points="450,150 720,555 180,555" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+      <polygon points="450,750 180,345 720,345" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+    </svg>
+
+    <div class="slide-inner">
+      <div class="brand-mark" style="margin-bottom: 32px; letter-spacing: 0.4em;">BEYOND OUTCOMES</div>
+
+      <div class="om" style="margin-bottom: 28px;">ॐ</div>
+
+      <div class="divider" style="margin-bottom: 44px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <div class="hero-title" style="margin-bottom: 28px;">
+        6 QUIZZES<br>TO DECODE<br>YOURSELF
+      </div>
+
+      <div class="slide-subtitle" style="margin-bottom: 48px;">
+        Ancient wisdom meets modern AI
+      </div>
+
+      <div class="divider" style="margin-bottom: 44px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <!-- Lotus SVG -->
+      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style="margin-bottom: 36px; opacity: 0.6;">
+        <path d="M26 44 C26 44 6 31 6 18 C6 11 13.5 6.5 20 9.5 C22 10.5 24 12.5 26 14.5 C28 12.5 30 10.5 32 9.5 C38.5 6.5 46 11 46 18 C46 31 26 44 26 44Z" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.12)"/>
+        <circle cx="26" cy="21" r="4" stroke="#c9a84c" stroke-width="0.75" fill="rgba(201,168,76,0.2)"/>
+        <circle cx="26" cy="21" r="1.5" fill="#c9a84c" opacity="0.7"/>
+      </svg>
+
+      <div class="swipe-hint">Swipe to explore →</div>
+    </div>
+
+    <div class="url-footer">beyondoutcomes.in</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 02 — THE STORY
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 02 · The Story</div>
+  <div class="slide bg-cream">
+
+    <svg class="mandala" width="700" height="700" viewBox="0 0 700 700" fill="none">
+      <circle cx="350" cy="350" r="320" stroke="#c9a84c" stroke-width="0.75"/>
+      <circle cx="350" cy="350" r="220" stroke="#c9a84c" stroke-width="0.5"/>
+      <polygon points="350,60 600,475 100,475" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+      <polygon points="350,640 100,225 600,225" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+    </svg>
+
+    <div class="slide-num">02 / 11</div>
+
+    <div class="slide-inner">
+      <div class="brand-mark chapter-tag-dark" style="margin-bottom: 40px; font-size: 12px;">The Story</div>
+
+      <div class="om" style="font-size: 38px; margin-bottom: 32px; opacity: 0.5;">ॐ</div>
+
+      <div class="divider" style="margin-bottom: 48px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <div class="body-text" style="max-width: 860px; text-align: center;">
+        "I spent months translating the Bhagavad Gita into something you can actually <em>use.</em>"
+      </div>
+
+      <div style="height: 36px;"></div>
+
+      <div class="body-text" style="max-width: 860px; text-align: center; font-size: 24px; color: #7a5a1e;">
+        6 AI-powered quizzes. Each one maps a different dimension of your inner self — drawn from one of the world's most profound psychological frameworks.
+      </div>
+
+      <div style="height: 48px;"></div>
+
+      <div class="divider">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <div style="height: 36px;"></div>
+
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #a07830; font-style: italic; letter-spacing: 0.05em;">
+        5,000 years old. More relevant than ever.
+      </div>
+    </div>
+
+    <div class="url-footer">beyondoutcomes.in</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 03 — QUIZ 1: GUNA
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 03 · Quiz 1 — Guna</div>
+  <div class="slide bg-gold">
+
+    <svg class="mandala" width="800" height="800" viewBox="0 0 800 800" fill="none" style="opacity: 0.06;">
+      <circle cx="400" cy="400" r="370" stroke="#c9a84c" stroke-width="1.5"/>
+      <circle cx="400" cy="400" r="260" stroke="#c9a84c" stroke-width="1"/>
+      <circle cx="400" cy="400" r="150" stroke="#c9a84c" stroke-width="0.75"/>
+      <polygon points="400,60 680,520 120,520" stroke="#c9a84c" stroke-width="1" fill="none"/>
+      <polygon points="400,740 120,280 680,280" stroke="#c9a84c" stroke-width="1" fill="none"/>
+    </svg>
+
+    <div class="quiz-number">QUIZ 01</div>
+    <div class="slide-num">03 / 11</div>
+
+    <div class="slide-inner">
+
+      <!-- Icon: Three concentric circles for Gunas -->
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" style="margin-bottom: 40px;">
+        <circle cx="50" cy="50" r="46" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/>
+        <circle cx="50" cy="50" r="32" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/>
+        <circle cx="50" cy="50" r="18" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.18)"/>
+        <circle cx="50" cy="50" r="6"  fill="#c9a84c" opacity="0.7"/>
+      </svg>
+
+      <div class="chapter-tag" style="margin-bottom: 20px; color: #a07830;">BG · Chapter 14</div>
+
+      <div class="quiz-name" style="margin-bottom: 20px;">Guna Quiz</div>
+
+      <div class="quiz-question" style="margin-bottom: 36px;">
+        What quality dominates your mind?
+      </div>
+
+      <div class="divider" style="margin-bottom: 36px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <!-- Three gunas -->
+      <div style="display: flex; gap: 24px; justify-content: center; margin-bottom: 44px; flex-wrap: wrap;">
+        <div style="background: rgba(80,160,100,0.12); border: 1px solid rgba(80,160,100,0.3); border-radius: 30px; padding: 12px 28px; font-family: 'Cinzel', serif; font-size: 18px; color: #3a7a52; letter-spacing: 0.1em;">Sattva</div>
+        <div style="background: rgba(169,126,48,0.12); border: 1px solid rgba(169,126,48,0.35); border-radius: 30px; padding: 12px 28px; font-family: 'Cinzel', serif; font-size: 18px; color: #8b6914; letter-spacing: 0.1em;">Rajas</div>
+        <div style="background: rgba(100,80,140,0.1); border: 1px solid rgba(100,80,140,0.25); border-radius: 30px; padding: 12px 28px; font-family: 'Cinzel', serif; font-size: 18px; color: #4a3a7a; letter-spacing: 0.1em;">Tamas</div>
+      </div>
+
+      <div class="body-text" style="font-size: 23px; color: #7a5a1e; max-width: 760px;">
+        The three subtle forces that weave your mind, drawn from the Gita's most precise psychological map.
+      </div>
+    </div>
+
+    <div class="url-footer" style="color: #a07830;">beyondoutcomes.in/quiz.html?q=guna</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 04 — QUIZ 2: KARMA YOGA
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 04 · Quiz 2 — Karma Yoga</div>
+  <div class="slide bg-cream">
+
+    <svg class="mandala" width="800" height="800" viewBox="0 0 800 800" fill="none">
+      <circle cx="400" cy="400" r="370" stroke="#c9a84c" stroke-width="1"/>
+      <circle cx="400" cy="400" r="260" stroke="#c9a84c" stroke-width="0.75"/>
+      <polygon points="400,60 680,520 120,520" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+      <polygon points="400,740 120,280 680,280" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+    </svg>
+
+    <div class="quiz-number">QUIZ 02</div>
+    <div class="slide-num">04 / 11</div>
+
+    <div class="slide-inner">
+
+      <!-- Icon: Wheel / Chakra for Karma -->
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" style="margin-bottom: 40px;">
+        <circle cx="50" cy="50" r="46" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.05)"/>
+        <circle cx="50" cy="50" r="12" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.15)"/>
+        <!-- Spokes -->
+        <line x1="50" y1="4"  x2="50" y2="38" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="50" y1="62" x2="50" y2="96" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="4"  y1="50" x2="38" y2="50" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="62" y1="50" x2="96" y2="50" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="17" y1="17" x2="39" y2="39" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="61" y1="61" x2="83" y2="83" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="83" y1="17" x2="61" y2="39" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="39" y1="61" x2="17" y2="83" stroke="#c9a84c" stroke-width="1"/>
+        <circle cx="50" cy="50" r="5" fill="#c9a84c" opacity="0.7"/>
+      </svg>
+
+      <div class="chapter-tag chapter-tag-dark" style="margin-bottom: 20px;">BG · Chapter 3</div>
+
+      <div class="quiz-name" style="margin-bottom: 20px;">Karma Yoga Quiz</div>
+
+      <div class="quiz-question" style="margin-bottom: 36px;">
+        How do you relate to action?
+      </div>
+
+      <div class="divider" style="margin-bottom: 36px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 44px; flex-wrap: wrap;">
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Nishkama</div>
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Sakama</div>
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Inert</div>
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Compulsive</div>
+      </div>
+
+      <div class="body-text" style="font-size: 23px; color: #7a5a1e; max-width: 760px;">
+        Reveal the inner stance behind your action — are you free, driven, reluctant, or restless?
+      </div>
+    </div>
+
+    <div class="url-footer">beyondoutcomes.in/quiz.html?q=karma-yoga</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 05 — QUIZ 3: PANDAVA
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 05 · Quiz 3 — Pandava</div>
+  <div class="slide bg-dark">
+
+    <!-- Light mandala on dark -->
+    <svg class="mandala" width="900" height="900" viewBox="0 0 900 900" fill="none" style="opacity: 0.12;">
+      <circle cx="450" cy="450" r="420" stroke="#c9a84c" stroke-width="1"/>
+      <circle cx="450" cy="450" r="300" stroke="#c9a84c" stroke-width="0.75"/>
+      <circle cx="450" cy="450" r="180" stroke="#c9a84c" stroke-width="0.5"/>
+      <polygon points="450,60 750,555 150,555" stroke="#c9a84c" stroke-width="0.75" fill="none"/>
+      <polygon points="450,840 150,345 750,345" stroke="#c9a84c" stroke-width="0.75" fill="none"/>
+    </svg>
+
+    <div class="quiz-number" style="color: rgba(201,168,76,0.4);">QUIZ 03</div>
+    <div class="slide-num slide-num-light">05 / 11</div>
+
+    <div class="slide-inner">
+
+      <!-- Icon: Five-pointed star / shield -->
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" style="margin-bottom: 40px;">
+        <polygon points="50,8 61,35 90,35 68,54 76,82 50,65 24,82 32,54 10,35 39,35" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/>
+        <circle cx="50" cy="50" r="18" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.12)"/>
+        <circle cx="50" cy="50" r="5" fill="#c9a84c" opacity="0.6"/>
+      </svg>
+
+      <div class="chapter-tag" style="margin-bottom: 20px;">Mahabharata</div>
+
+      <div class="quiz-name hero-title-light" style="margin-bottom: 20px;">Pandava Quiz</div>
+
+      <div class="quiz-question slide-subtitle-light" style="margin-bottom: 36px;">
+        Which warrior energy lives in you?
+      </div>
+
+      <div class="divider divider-light" style="margin-bottom: 40px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <!-- Five Pandavas -->
+      <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 44px; flex-wrap: wrap;">
+        <div style="border: 1px solid rgba(201,168,76,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cinzel', serif; font-size: 17px; color: rgba(247,234,208,0.75); letter-spacing: 0.08em;">Yudhishthira</div>
+        <div style="border: 1px solid rgba(201,168,76,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cinzel', serif; font-size: 17px; color: rgba(247,234,208,0.75); letter-spacing: 0.08em;">Bhima</div>
+        <div style="border: 1px solid rgba(201,168,76,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cinzel', serif; font-size: 17px; color: rgba(247,234,208,0.75); letter-spacing: 0.08em;">Arjuna</div>
+        <div style="border: 1px solid rgba(201,168,76,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cinzel', serif; font-size: 17px; color: rgba(247,234,208,0.75); letter-spacing: 0.08em;">Nakula</div>
+        <div style="border: 1px solid rgba(201,168,76,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cinzel', serif; font-size: 17px; color: rgba(247,234,208,0.75); letter-spacing: 0.08em;">Sahadeva</div>
+      </div>
+
+      <div class="body-text-light" style="font-family: 'Cormorant Garamond', serif; font-size: 23px; max-width: 760px; text-align: center; line-height: 1.7;">
+        Five archetypes from the Mahabharata — each a distinct leadership energy. Which one are you right now?
+      </div>
+    </div>
+
+    <div class="url-footer url-footer-light">beyondoutcomes.in/quiz.html?q=pandava</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 06 — QUIZ 4: DESIRE
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 06 · Quiz 4 — Desire</div>
+  <div class="slide bg-gold">
+
+    <svg class="mandala" width="800" height="800" viewBox="0 0 800 800" fill="none" style="opacity: 0.07;">
+      <circle cx="400" cy="400" r="370" stroke="#c9a84c" stroke-width="1.5"/>
+      <circle cx="400" cy="400" r="240" stroke="#c9a84c" stroke-width="1"/>
+      <polygon points="400,60 680,520 120,520" stroke="#c9a84c" stroke-width="1" fill="none"/>
+      <polygon points="400,740 120,280 680,280" stroke="#c9a84c" stroke-width="1" fill="none"/>
+    </svg>
+
+    <div class="quiz-number">QUIZ 04</div>
+    <div class="slide-num">06 / 11</div>
+
+    <div class="slide-inner">
+
+      <!-- Icon: Flame -->
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" style="margin-bottom: 40px;">
+        <path d="M50 90 C28 90 14 74 14 58 C14 42 28 30 36 22 C38 38 46 42 50 46 C54 30 62 18 74 10 C80 28 86 40 86 58 C86 74 72 90 50 90Z" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/>
+        <path d="M50 90 C36 90 28 78 28 68 C28 56 36 50 42 46 C42 56 46 62 50 66 C54 54 58 46 66 42 C70 52 72 60 72 68 C72 78 64 90 50 90Z" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.18)" opacity="0.7"/>
+        <circle cx="50" cy="72" r="5" fill="#c9a84c" opacity="0.5"/>
+      </svg>
+
+      <div class="chapter-tag chapter-tag-dark" style="margin-bottom: 20px;">BG · Chapter 2</div>
+
+      <div class="quiz-name" style="margin-bottom: 20px;">Desire Profile</div>
+
+      <div class="quiz-question" style="margin-bottom: 36px;">
+        What drives your attachments?
+      </div>
+
+      <div class="divider" style="margin-bottom: 36px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 44px; flex-wrap: wrap;">
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Driven</div>
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Conflicted</div>
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Detached</div>
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Surrendered</div>
+      </div>
+
+      <div class="body-text" style="font-size: 23px; color: #7a5a1e; max-width: 760px;">
+        The Gita doesn't condemn desire — it maps it. Four ways we relate to wanting. Where do you stand?
+      </div>
+    </div>
+
+    <div class="url-footer" style="color: #a07830;">beyondoutcomes.in/quiz.html?q=desire</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 07 — QUIZ 5: FEAR
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 07 · Quiz 5 — Fear</div>
+  <div class="slide bg-cream">
+
+    <svg class="mandala" width="800" height="800" viewBox="0 0 800 800" fill="none">
+      <circle cx="400" cy="400" r="370" stroke="#c9a84c" stroke-width="1"/>
+      <circle cx="400" cy="400" r="260" stroke="#c9a84c" stroke-width="0.75"/>
+      <polygon points="400,60 680,520 120,520" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+      <polygon points="400,740 120,280 680,280" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+    </svg>
+
+    <div class="quiz-number">QUIZ 05</div>
+    <div class="slide-num">07 / 11</div>
+
+    <div class="slide-inner">
+
+      <!-- Icon: Eye / shield -->
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" style="margin-bottom: 40px;">
+        <path d="M10 50 C10 50 25 20 50 20 C75 20 90 50 90 50 C90 50 75 80 50 80 C25 80 10 50 10 50Z" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.07)"/>
+        <circle cx="50" cy="50" r="16" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.12)"/>
+        <circle cx="50" cy="50" r="7"  fill="#c9a84c" opacity="0.5"/>
+        <circle cx="44" cy="44" r="3"  fill="white" opacity="0.6"/>
+      </svg>
+
+      <div class="chapter-tag chapter-tag-dark" style="margin-bottom: 20px;">BG · Chapter 2</div>
+
+      <div class="quiz-name" style="margin-bottom: 20px;">Fear Pattern Quiz</div>
+
+      <div class="quiz-question" style="margin-bottom: 36px;">
+        What do you avoid, and why?
+      </div>
+
+      <div class="divider" style="margin-bottom: 36px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 44px; flex-wrap: wrap;">
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Fear of Failure</div>
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Judgment</div>
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Loss</div>
+        <div style="background: rgba(169,126,48,0.1); border: 1px solid rgba(169,126,48,0.25); border-radius: 30px; padding: 10px 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7a5a1e;">Insignificance</div>
+      </div>
+
+      <div class="body-text" style="font-size: 23px; color: #7a5a1e; max-width: 760px;">
+        The Gita names every fear — and offers the path through each one. Which fear runs deepest in you?
+      </div>
+    </div>
+
+    <div class="url-footer">beyondoutcomes.in/quiz.html?q=fear</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 08 — QUIZ 6: STHITAPRAJNA
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 08 · Quiz 6 — Sthitaprajna</div>
+  <div class="slide bg-dark">
+
+    <svg class="mandala" width="900" height="900" viewBox="0 0 900 900" fill="none" style="opacity: 0.12;">
+      <circle cx="450" cy="450" r="420" stroke="#c9a84c" stroke-width="1"/>
+      <circle cx="450" cy="450" r="300" stroke="#c9a84c" stroke-width="0.75"/>
+      <circle cx="450" cy="450" r="180" stroke="#c9a84c" stroke-width="0.5"/>
+      <polygon points="450,60 750,555 150,555" stroke="#c9a84c" stroke-width="0.75" fill="none"/>
+      <polygon points="450,840 150,345 750,345" stroke="#c9a84c" stroke-width="0.75" fill="none"/>
+    </svg>
+
+    <div class="quiz-number" style="color: rgba(201,168,76,0.4);">QUIZ 06</div>
+    <div class="slide-num slide-num-light">08 / 11</div>
+
+    <div class="slide-inner">
+
+      <!-- Icon: Steady lamp / flame -->
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" style="margin-bottom: 40px;">
+        <!-- Lamp base -->
+        <rect x="34" y="72" width="32" height="8" rx="4" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/>
+        <rect x="40" y="56" width="20" height="18" rx="3" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.08)"/>
+        <!-- Flame -->
+        <path d="M50 52 C44 52 38 44 38 36 C38 28 44 22 50 18 C56 22 62 28 62 36 C62 44 56 52 50 52Z" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.15)"/>
+        <path d="M50 48 C46 48 42 42 42 36 C42 32 46 28 50 26 C54 28 58 32 58 36 C58 42 54 48 50 48Z" fill="rgba(201,168,76,0.25)" stroke="none"/>
+        <circle cx="50" cy="36" r="4" fill="#c9a84c" opacity="0.6"/>
+        <!-- Glow lines -->
+        <line x1="50" y1="10" x2="50" y2="5"  stroke="#c9a84c" stroke-width="1" opacity="0.4"/>
+        <line x1="30" y1="18" x2="26" y2="14" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+        <line x1="70" y1="18" x2="74" y2="14" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+      </svg>
+
+      <div class="chapter-tag" style="margin-bottom: 20px;">BG · Chapter 2</div>
+
+      <div class="quiz-name hero-title-light" style="margin-bottom: 20px; font-size: 42px;">Sthitaprajna Quiz</div>
+
+      <div class="quiz-question slide-subtitle-light" style="margin-bottom: 36px;">
+        How steady is your mind?
+      </div>
+
+      <div class="divider divider-light" style="margin-bottom: 36px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <div style="display: flex; gap: 14px; justify-content: center; margin-bottom: 44px; flex-wrap: wrap;">
+        <div style="border: 1px solid rgba(201,168,76,0.2); border-radius: 30px; padding: 10px 20px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: rgba(247,234,208,0.7);">Stirred</div>
+        <div style="border: 1px solid rgba(201,168,76,0.2); border-radius: 30px; padding: 10px 20px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: rgba(247,234,208,0.7);">Striving</div>
+        <div style="border: 1px solid rgba(201,168,76,0.2); border-radius: 30px; padding: 10px 20px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: rgba(247,234,208,0.7);">Steady</div>
+        <div style="border: 1px solid rgba(201,168,76,0.2); border-radius: 30px; padding: 10px 20px; font-family: 'Cinzel', serif; font-size: 17px; color: #c9a84c; letter-spacing: 0.05em;">Sthitaprajna</div>
+      </div>
+
+      <div class="body-text-light" style="font-family: 'Cormorant Garamond', serif; font-size: 23px; max-width: 760px; text-align: center; line-height: 1.7;">
+        "Like a lamp in a windless place — unflickering." The Gita's portrait of an awakened mind. Where are you on this spectrum?
+      </div>
+    </div>
+
+    <div class="url-footer url-footer-light">beyondoutcomes.in/quiz.html?q=sthitaprajna</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 09 — HOW IT WORKS
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 09 · How It Works</div>
+  <div class="slide bg-cream">
+
+    <svg class="mandala" width="700" height="700" viewBox="0 0 700 700" fill="none">
+      <circle cx="350" cy="350" r="320" stroke="#c9a84c" stroke-width="0.75"/>
+      <circle cx="350" cy="350" r="200" stroke="#c9a84c" stroke-width="0.5"/>
+      <polygon points="350,60 600,475 100,475" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+      <polygon points="350,640 100,225 600,225" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+    </svg>
+
+    <div class="slide-num">09 / 11</div>
+
+    <div class="slide-inner" style="justify-content: center;">
+      <div class="brand-mark chapter-tag-dark" style="margin-bottom: 28px; font-size: 12px;">How It Works</div>
+
+      <div style="font-family: 'Cinzel', serif; font-size: 52px; color: #3a2505; line-height: 1.1; margin-bottom: 16px;">
+        3 Steps.<br>
+        <span style="color: #a07830; font-weight: 400;">Deep Insight.</span>
+      </div>
+
+      <div style="height: 40px;"></div>
+
+      <div class="steps" style="max-width: 840px; width: 100%;">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <div class="step-text">Answer 15 questions</div>
+            <div class="step-sub">Honest, reflective — drawn from Gita psychology</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <div class="step-text">AI analyses your pattern</div>
+            <div class="step-sub">Not generic categories — your specific answers</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <div class="step-text">Receive personalised Gita wisdom</div>
+            <div class="step-sub">With the relevant shloka and its meaning for you</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="url-footer">beyondoutcomes.in</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 10 — IT'S FREE
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 10 · It's Free</div>
+  <div class="slide bg-gold">
+
+    <svg class="mandala" width="800" height="800" viewBox="0 0 800 800" fill="none" style="opacity: 0.06;">
+      <circle cx="400" cy="400" r="370" stroke="#c9a84c" stroke-width="1.5"/>
+      <circle cx="400" cy="400" r="240" stroke="#c9a84c" stroke-width="1"/>
+      <polygon points="400,60 680,520 120,520" stroke="#c9a84c" stroke-width="1" fill="none"/>
+      <polygon points="400,740 120,280 680,280" stroke="#c9a84c" stroke-width="1" fill="none"/>
+    </svg>
+
+    <div class="slide-num">10 / 11</div>
+
+    <div class="slide-inner">
+      <div class="om" style="font-size: 40px; margin-bottom: 28px; opacity: 0.55;">ॐ</div>
+
+      <div style="font-family: 'Cinzel', serif; font-size: 60px; color: #3a2505; line-height: 1.1; margin-bottom: 12px;">
+        Completely
+      </div>
+      <div style="font-family: 'Cinzel', serif; font-size: 72px; font-weight: 600; color: #a07830; line-height: 1.0; margin-bottom: 48px;">
+        FREE.
+      </div>
+
+      <div class="divider" style="margin-bottom: 52px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <ul class="checklist" style="max-width: 680px;">
+        <li><div class="check-icon">✓</div> No login required</li>
+        <li><div class="check-icon">✓</div> No hidden costs. No ads.</li>
+        <li><div class="check-icon">✓</div> Bilingual — English &amp; Hindi</li>
+        <li><div class="check-icon">✓</div> 3–5 minutes per quiz</li>
+        <li><div class="check-icon">✓</div> AI-personalised reflections</li>
+        <li><div class="check-icon">✓</div> 6 quizzes. Your complete inner map.</li>
+      </ul>
+    </div>
+
+    <div class="url-footer" style="color: #a07830;">beyondoutcomes.in</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 11 — CTA
+═══════════════════════════════════════════════ -->
+<div class="slide-wrap">
+  <div class="slide-label">Slide 11 · CTA</div>
+  <div class="slide bg-dark">
+
+    <svg class="mandala" width="900" height="900" viewBox="0 0 900 900" fill="none" style="opacity: 0.15;">
+      <circle cx="450" cy="450" r="420" stroke="#c9a84c" stroke-width="1"/>
+      <circle cx="450" cy="450" r="310" stroke="#c9a84c" stroke-width="0.75"/>
+      <circle cx="450" cy="450" r="200" stroke="#c9a84c" stroke-width="0.5"/>
+      <circle cx="450" cy="450" r="90"  stroke="#c9a84c" stroke-width="0.5"/>
+      <polygon points="450,60 780,600 120,600" stroke="#c9a84c" stroke-width="0.75" fill="none"/>
+      <polygon points="450,840 120,300 780,300" stroke="#c9a84c" stroke-width="0.75" fill="none"/>
+    </svg>
+
+    <div class="slide-num slide-num-light">11 / 11</div>
+
+    <div class="slide-inner">
+      <div class="brand-mark brand-mark-light" style="margin-bottom: 36px; letter-spacing: 0.4em;">BEYOND OUTCOMES</div>
+
+      <div class="om om-light" style="font-size: 56px; margin-bottom: 32px;">ॐ</div>
+
+      <div class="divider divider-light" style="margin-bottom: 44px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <div style="font-family: 'Cinzel', serif; font-size: 40px; color: rgba(247,234,208,0.7); letter-spacing: 0.08em; margin-bottom: 20px;">
+        Start Your Journey
+      </div>
+
+      <div class="cta-url" style="margin-bottom: 40px;">beyondoutcomes.in</div>
+
+      <div class="divider divider-light" style="margin-bottom: 44px;">
+        <div class="div-line"></div><div class="div-dot"></div><div class="div-line"></div>
+      </div>
+
+      <div class="cta-comment" style="margin-bottom: 52px;">
+        Take one quiz or all six. Start wherever it calls to you.
+      </div>
+
+      <!-- Lotus -->
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="margin-bottom: 36px; opacity: 0.5;">
+        <path d="M30 52 C30 52 8 37 8 22 C8 14 16 8.5 23 12 C25.5 13.2 28 15.5 30 18 C32 15.5 34.5 13.2 37 12 C44 8.5 52 14 52 22 C52 37 30 52 30 52Z" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.12)"/>
+        <circle cx="30" cy="25" r="5" stroke="#c9a84c" stroke-width="0.75" fill="rgba(201,168,76,0.2)"/>
+        <circle cx="30" cy="25" r="2" fill="#c9a84c" opacity="0.6"/>
+      </svg>
+
+      <div style="font-family: 'Jost', sans-serif; font-size: 17px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(201,168,76,0.5);">
+        Link in bio · Comment below 👇
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
