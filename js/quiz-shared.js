@@ -1,7 +1,7 @@
 // Shared Quiz Logic — works with any quiz that follows the QUIZ_DATA contract
 const UI_LANG = {
-  en: { depthLabel: 'Choose the depth of your inquiry', qLabel: 'Questions', d10: 'Focused reflection', d15: 'Deeper inquiry', start: 'Begin the Inquiry', back: 'Back', next: 'Next', seeResult: 'See My Result', question: 'Question', loadingMsgs: ['The Gita contemplates your answers...', 'Reading the pattern within...', 'Weaving your inner portrait...'], loadingSub: 'A moment of patience', yourResult: 'Your dominant pattern', emailTitle: 'Carry this insight with you', emailSub: 'Weekly Gita wisdom tailored to your inner pattern. No noise — only depth.', emailBtn: 'Subscribe', emailSuccess: 'You are now on the path. Check your inbox.', emailError: 'Please enter a valid email.', shareLabel: 'Share your result', waBtn: 'WhatsApp', copyBtn: 'Copy Text', copied: 'Copied to clipboard', retake: 'Retake Quiz', explore: 'More Quizzes ↗' },
-  hi: { depthLabel: 'अपनी जिज्ञासा की गहराई चुनें', qLabel: 'प्रश्न', d10: 'केंद्रित चिंतन', d15: 'गहरी जिज्ञासा', start: 'जिज्ञासा आरंभ करें', back: 'वापस', next: 'आगे', seeResult: 'परिणाम देखें', question: 'प्रश्न', loadingMsgs: ['गीता आपके उत्तरों पर विचार कर रही है...', 'भीतर का स्वरूप पढ़ा जा रहा है...'], loadingSub: 'धैर्य का एक क्षण', yourResult: 'आपका प्रमुख स्वरूप', emailTitle: 'इस अंतर्दृष्टि को साथ ले जाएं', emailSub: 'आपके अनुरूप साप्ताहिक गीता ज्ञान।', emailBtn: 'सदस्य बनें', emailSuccess: 'आप मार्ग पर हैं।', emailError: 'कृपया वैध ईमेल दर्ज करें।', shareLabel: 'अपना परिणाम साझा करें', waBtn: 'WhatsApp', copyBtn: 'टेक्स्ट कॉपी', copied: 'क्लिपबोर्ड पर कॉपी', retake: 'पुनः प्रयास', explore: 'और प्रश्नोत्तरी ↗' }
+  en: { depthLabel: 'Choose the depth of your inquiry', qLabel: 'Questions', d10: 'Focused reflection', d15: 'Deeper inquiry', start: 'Begin the Inquiry', back: 'Back', next: 'Next', seeResult: 'See My Result', question: 'Question', loadingMsgs: ['The Gita contemplates your answers...', 'Reading the pattern within...', 'Weaving your inner portrait...'], loadingSub: 'A moment of patience', yourResult: 'Your dominant pattern', emailTitle: 'Get your results in your inbox', emailSub: "We'll send you this reflection to revisit — and let you know when new quizzes arrive.", emailBtn: 'Send My Results', emailSuccess: 'Done. Check your inbox.', emailError: 'Please enter a valid email.', shareLabel: 'Share your result', waBtn: 'WhatsApp', copyBtn: 'Copy Text', copied: 'Copied to clipboard', retake: 'Retake Quiz', explore: 'More Quizzes ↗' },
+  hi: { depthLabel: 'अपनी जिज्ञासा की गहराई चुनें', qLabel: 'प्रश्न', d10: 'केंद्रित चिंतन', d15: 'गहरी जिज्ञासा', start: 'जिज्ञासा आरंभ करें', back: 'वापस', next: 'आगे', seeResult: 'परिणाम देखें', question: 'प्रश्न', loadingMsgs: ['गीता आपके उत्तरों पर विचार कर रही है...', 'भीतर का स्वरूप पढ़ा जा रहा है...'], loadingSub: 'धैर्य का एक क्षण', yourResult: 'आपका प्रमुख स्वरूप', emailTitle: 'अपने परिणाम inbox में पाएं', emailSub: 'यह चिंतन दोबारा देखने के लिए भेजेंगे — और नई प्रश्नोत्तरी आने पर सूचित करेंगे।', emailBtn: 'परिणाम भेजें', emailSuccess: 'हो गया। अपना inbox देखें।', emailError: 'कृपया वैध ईमेल दर्ज करें।', shareLabel: 'अपना परिणाम साझा करें', waBtn: 'WhatsApp', copyBtn: 'टेक्स्ट कॉपी', copied: 'क्लिपबोर्ड पर कॉपी', retake: 'पुनः प्रयास', explore: 'और प्रश्नोत्तरी ↗' }
 };
 
 let lang = 'en', selectedDepth = 0, currentQ = 0, answers = [], questions = [], resultData = null;
@@ -202,10 +202,21 @@ async function submitEmail() {
   const btn = document.getElementById('l-email-btn');
   if (btn) { btn.disabled = true; btn.style.opacity = '0.6'; }
   try {
+    const d = resultData;
     const resp = await fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: v, source: 'quiz-taker' })
+      body: JSON.stringify({
+        email: v,
+        source: 'quiz-taker',
+        quizTitle: QD.meta.en.shareTitle,
+        dominant: d.dominant,
+        subtitle: d.subtitle,
+        reflection: d.reflection,
+        shloka: d.shloka,
+        shlokaRef: d.shlokaRef || '',
+        shlokaMeaning: d.shlokaMeaning
+      })
     });
     if (!resp.ok) throw new Error('Subscribe failed');
     s.style.color = '#3a7a52';

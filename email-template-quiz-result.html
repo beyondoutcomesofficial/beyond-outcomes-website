@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Beyond Outcomes Quiz Result</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+    body { margin: 0; padding: 0; background-color: #f5edd8; font-family: Georgia, 'Times New Roman', serif; }
+    * { box-sizing: border-box; }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#f5edd8;">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5edd8; padding: 32px 16px;">
+  <tr>
+    <td align="center">
+
+      <!-- Outer card -->
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:580px; background-color:#fffdf5; border-radius:16px; border:1px solid rgba(169,126,48,0.25); overflow:hidden;">
+
+        <!-- Header -->
+        <tr>
+          <td align="center" style="background: linear-gradient(160deg, #2c2417 0%, #3d3020 100%); padding: 40px 32px 32px;">
+            <p style="margin:0 0 6px; font-family:Georgia,serif; font-size:22px; color:#c9a84c; letter-spacing:0.08em;">ॐ</p>
+            <p style="margin:0 0 4px; font-family:Georgia,serif; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:#c9a84c; opacity:0.8;">Beyond Outcomes</p>
+            <div style="width:48px; height:1px; background:rgba(201,168,76,0.4); margin:14px auto;"></div>
+            <h1 style="margin:0; font-family:Georgia,serif; font-size:15px; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:#e8d9b0;">Self-Inquiry Result</h1>
+          </td>
+        </tr>
+
+        <!-- Krishna image -->
+        <tr>
+          <td align="center" style="padding:0; line-height:0; font-size:0;">
+            <img src="https://beyondoutcomes.in/images/Krishna.jpg" alt="Krishna" width="580" style="display:block; width:100%; max-width:580px; height:320px; object-fit:cover; object-position:center top;">
+          </td>
+        </tr>
+
+        <!-- Result hero -->
+        <tr>
+          <td align="center" style="padding: 40px 32px 28px; background-color:#fffdf5;">
+            <p style="margin:0 0 8px; font-family:Georgia,serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#a07830;">{{ params.QUIZ_TITLE }}</p>
+            <h2 style="margin:0 0 8px; font-family:Georgia,serif; font-size:32px; font-weight:500; color:#2c2417; line-height:1.2;">{{ params.DOMINANT }}</h2>
+            <p style="margin:0; font-family:Georgia,serif; font-size:16px; font-style:italic; color:#a07830;">{{ params.SUBTITLE }}</p>
+            <div style="width:64px; height:1px; background:linear-gradient(90deg, transparent, #c9a84c, transparent); margin:24px auto 0;"></div>
+          </td>
+        </tr>
+
+        <!-- Divider glyph -->
+        <tr>
+          <td align="center" style="padding: 0 32px 0; background-color:#fffdf5;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="border-bottom:1px solid rgba(169,126,48,0.2); width:45%;"></td>
+                <td align="center" style="padding:0 12px; font-family:Georgia,serif; font-size:14px; color:#c9a84c; white-space:nowrap;">॥</td>
+                <td style="border-bottom:1px solid rgba(169,126,48,0.2); width:45%;"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Reflection -->
+        <tr>
+          <td style="padding: 32px 36px; background-color:#fffdf5;">
+            <p style="margin:0 0 6px; font-family:Georgia,serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#a07830;">Your Reflection</p>
+            <p style="margin:0; font-family:Georgia,serif; font-size:16px; line-height:1.9; color:#3d2e1a; white-space:pre-line;">{{ params.REFLECTION }}</p>
+          </td>
+        </tr>
+
+        <!-- Shloka card -->
+        <tr>
+          <td style="padding: 0 28px 32px; background-color:#fffdf5;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #fdf3d8, #f5e8c0); border-radius:12px; border:1px solid rgba(169,126,48,0.3); padding:0;">
+              <tr>
+                <td style="padding:28px 28px 24px;">
+                  <p style="margin:0 0 14px; font-family:Georgia,serif; font-size:20px; color:#c9a84c; text-align:center;">ॐ</p>
+                  <p style="margin:0 0 10px; font-family:Georgia,serif; font-size:15px; font-style:italic; color:#2c2417; line-height:1.8; text-align:center;">{{ params.SHLOKA }}</p>
+                  <p style="margin:0 0 14px; font-family:Georgia,serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#a07830; text-align:center;">{{ params.SHLOKA_REF }}</p>
+                  <div style="width:40px; height:1px; background:rgba(169,126,48,0.4); margin:0 auto 14px;"></div>
+                  <p style="margin:0; font-family:Georgia,serif; font-size:14px; font-style:italic; color:#5c4a2a; line-height:1.75; text-align:center;">{{ params.SHLOKA_MEANING }}</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr>
+          <td align="center" style="padding: 0 32px 0; background-color:#fffdf5;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="border-bottom:1px solid rgba(169,126,48,0.2); width:45%;"></td>
+                <td align="center" style="padding:0 12px; font-family:Georgia,serif; font-size:14px; color:#c9a84c; white-space:nowrap;">✦</td>
+                <td style="border-bottom:1px solid rgba(169,126,48,0.2); width:45%;"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- YouTube section -->
+        <tr>
+          <td style="padding: 32px 28px; background-color:#fffdf5;">
+            <p style="margin:0 0 6px; font-family:Georgia,serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#a07830; text-align:center;">Go Deeper</p>
+            <p style="margin:0 0 20px; font-family:Georgia,serif; font-size:15px; color:#3d2e1a; text-align:center; line-height:1.7;">Watch short teachings from the Bhagavad Gita on our YouTube channel.</p>
+
+            <!-- YouTube preview card -->
+            <a href="https://www.youtube.com/@BeyondOutcomes" target="_blank" style="text-decoration:none; display:block;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#1a1a1a; border-radius:12px; overflow:hidden; cursor:pointer;">
+                <tr>
+                  <!-- Thumbnail placeholder with play button -->
+                  <td align="center" style="padding:36px 24px; background:linear-gradient(135deg, #1a1208, #2c2010);">
+                    <!-- Play button circle -->
+                    <div style="width:56px; height:56px; background:rgba(201,168,76,0.15); border:2px solid #c9a84c; border-radius:50%; margin:0 auto 16px; display:table; text-align:center; line-height:52px;">
+                      <span style="font-size:20px; color:#c9a84c; padding-left:4px;">&#9654;</span>
+                    </div>
+                    <p style="margin:0 0 4px; font-family:Georgia,serif; font-size:16px; font-weight:500; color:#e8d9b0; letter-spacing:0.05em;">Beyond Outcomes</p>
+                    <p style="margin:0; font-family:Georgia,serif; font-size:12px; color:rgba(232,217,176,0.6); letter-spacing:0.1em;">youtube.com/@BeyondOutcomes</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding:14px 24px; background:rgba(201,168,76,0.12); border-top:1px solid rgba(201,168,76,0.2);">
+                    <p style="margin:0; font-family:Georgia,serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#c9a84c;">Watch on YouTube →</p>
+                  </td>
+                </tr>
+              </table>
+            </a>
+          </td>
+        </tr>
+
+        <!-- CTA — explore more quizzes -->
+        <tr>
+          <td align="center" style="padding: 8px 28px 36px; background-color:#fffdf5;">
+            <a href="https://beyondoutcomes.in/quizzes.html" target="_blank" style="display:inline-block; background:linear-gradient(135deg, #c9a84c, #a07830); color:#fffdf5; font-family:Georgia,serif; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; padding:14px 32px; border-radius:32px;">Explore More Quizzes</a>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td align="center" style="padding:24px 32px; background:linear-gradient(160deg, #2c2417 0%, #3d3020 100%); border-top:1px solid rgba(201,168,76,0.15);">
+            <p style="margin:0 0 8px; font-family:Georgia,serif; font-size:13px; color:rgba(232,217,176,0.7); font-style:italic;">Rooted in the Bhagavad Gita</p>
+            <p style="margin:0 0 14px; font-family:Georgia,serif; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:#c9a84c; opacity:0.7;">Beyond Outcomes</p>
+            <p style="margin:0; font-family:Georgia,serif; font-size:11px; color:rgba(232,217,176,0.35); line-height:1.7;">You received this because you completed a self-inquiry quiz at beyondoutcomes.in.<br>
+            <a href="{{ unsubscribe }}" style="color:rgba(201,168,76,0.5); text-decoration:underline;">Unsubscribe</a></p>
+          </td>
+        </tr>
+
+      </table>
+      <!-- /Outer card -->
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
