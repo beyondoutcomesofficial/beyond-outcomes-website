@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /coming-soon.html
+Disallow: /carousel.html
+Disallow: /email-template-quiz-result.html
+
+Sitemap: https://www.beyondoutcomes.in/sitemap.xml
