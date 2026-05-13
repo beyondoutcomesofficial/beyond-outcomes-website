@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommended Reading — Beyond Outcomes</title>
+  <meta name="description" content="Books on the Bhagavad Gita, spirituality, and behavioural psychology — curated for seekers of clarity, courage, and inner growth.">
+  <link rel="stylesheet" href="css/beyond-outcomes.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .page-hero { text-align: center; padding: 3.5rem 1.5rem 2.5rem; background: var(--bo-gradient-page); border-bottom: 1px solid var(--bo-border); position: relative; overflow: hidden; }
+    .page-hero-glow { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(232,201,122,0.35) 0%, rgba(249,240,210,0.2) 40%, transparent 70%); pointer-events: none; }
+    .page-hero-content { position: relative; z-index: 2; }
+    .page-hero-om { font-family: var(--bo-font-body); font-size: 1.8rem; color: var(--bo-gold); display: block; margin-bottom: 0.75rem; }
+    .page-hero p { font-family: var(--bo-font-body); font-size: 1.1rem; color: var(--bo-text-secondary); line-height: 1.8; max-width: 460px; margin: 0.75rem auto 0; font-style: italic; opacity: 0.85; }
+
+    .resources-wrap { max-width: 860px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.7; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--bo-border); display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: '✦'; font-size: 0.6rem; color: var(--bo-gold); }
+
+    .books-section { margin-bottom: 3rem; }
+
+    .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+
+    .book-card { background: var(--bo-warm-white); border: 1px solid var(--bo-border); border-radius: var(--bo-radius-lg); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; transition: all 0.3s var(--bo-ease); }
+    .book-card:hover { border-color: var(--bo-border-strong); box-shadow: var(--bo-shadow-warm); transform: translateY(-2px); }
+
+    .book-tag { display: inline-block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: var(--bo-radius-pill); align-self: flex-start; }
+    .book-tag--gita { background: rgba(201,168,76,0.12); color: var(--bo-gold-deep); border: 1px solid rgba(201,168,76,0.25); }
+    .book-tag--spirituality { background: rgba(201,168,76,0.07); color: var(--bo-gold-deep); border: 1px solid rgba(201,168,76,0.18); }
+    .book-tag--psychology { background: rgba(139,115,85,0.1); color: var(--bo-text-secondary); border: 1px solid rgba(139,115,85,0.2); }
+
+    .book-title { font-family: var(--bo-font-display); font-size: 1.05rem; color: var(--bo-text-primary); line-height: 1.35; }
+    .book-author { font-family: var(--bo-font-body); font-size: 0.82rem; color: var(--bo-text-muted); font-style: italic; }
+    .book-desc { font-family: var(--bo-font-body); font-size: 0.9rem; color: var(--bo-text-muted); line-height: 1.65; flex: 1; }
+
+    .book-link { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; margin-top: 0.25rem; display: inline-block; transition: color 0.2s; }
+    .book-link:hover { color: var(--bo-text-primary); }
+
+    .affiliate-note { text-align: center; font-family: var(--bo-font-body); font-size: 0.78rem; color: var(--bo-text-faint); margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--bo-border-faint); line-height: 1.7; font-style: italic; }
+
+    .footer-strip { background: var(--bo-cream-deep); border-top: 1px solid var(--bo-border); padding: 2rem 1.5rem; text-align: center; }
+    .footer-brand { font-family: var(--bo-font-display); font-size: 1.15rem; color: var(--bo-text-primary); margin-bottom: 0.3rem; }
+    .footer-sub { font-family: var(--bo-font-body); font-size: 0.95rem; font-style: italic; color: var(--bo-text-faint); margin-bottom: 1rem; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-link { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+    .footer-link:hover { color: var(--bo-text-primary); }
+    .footer-copy { font-size: 12px; color: var(--bo-text-faint); margin-top: 1.25rem; letter-spacing: 0.05em; }
+
+    @media (max-width: 600px) {
+      .books-grid { grid-template-columns: 1fr; }
+      .resources-wrap { padding: 2rem 1rem 4rem; }
+    }
+  </style>
+</head>
+<body class="bo-body">
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="page-hero-content">
+    <span class="page-hero-om">ॐ</span>
+    <h1 class="bo-title-hero">Recommended Reading</h1>
+    <div class="bo-divider" style="margin: 1.25rem auto;"><div class="bo-divider-line"></div><div class="bo-divider-dot"></div><div class="bo-divider-line"></div></div>
+    <p>Books that shaped this channel — curated for seekers of clarity, courage, and inner growth.</p>
+  </div>
+</div>
+
+<div class="bo-divider-glyph">✦ · ॥ · ✦</div>
+
+<!-- Books -->
+<div class="resources-wrap">
+
+  <!-- Section 1: Gita & Spirituality -->
+  <div class="books-section">
+    <div class="section-label">Bhagavad Gita &amp; Spirituality</div>
+    <div class="books-grid">
+
+      <div class="book-card">
+        <span class="book-tag book-tag--gita">Gita</span>
+        <div class="book-title">Bhagavad Gita As It Is</div>
+        <div class="book-author">A.C. Bhaktivedanta Swami Prabhupada</div>
+        <div class="book-desc">The most complete and authoritative edition of the Gita — original Sanskrit, transliteration, translation, and deep purports.</div>
+        <a href="https://amzn.to/4n72qfr" target="_blank" rel="noopener noreferrer" class="book-link">Buy on Amazon →</a>
+      </div>
+
+      <div class="book-card">
+        <span class="book-tag book-tag--gita">Gita</span>
+        <div class="book-title">The Bhagavad Gita</div>
+        <div class="book-author">Eknath Easwaran</div>
+        <div class="book-desc">A deeply accessible translation with rich introductory chapters that bring the Gita's wisdom into everyday modern life.</div>
+        <a href="https://amzn.to/4n46E7r" target="_blank" rel="noopener noreferrer" class="book-link">Buy on Amazon →</a>
+      </div>
+
+      <div class="book-card">
+        <span class="book-tag book-tag--spirituality">Spirituality</span>
+        <div class="book-title">Autobiography of a Yogi</div>
+        <div class="book-author">Paramahansa Yogananda</div>
+        <div class="book-desc">A timeless spiritual classic that has guided millions — including Steve Jobs — on the path of self-realisation.</div>
+        <a href="https://amzn.to/4d3uOdI" target="_blank" rel="noopener noreferrer" class="book-link">Buy on Amazon →</a>
+      </div>
+
+      <div class="book-card">
+        <span class="book-tag book-tag--spirituality">Spirituality</span>
+        <div class="book-title">The Upanishads</div>
+        <div class="book-author">Eknath Easwaran</div>
+        <div class="book-desc">The foundational texts of Indian philosophy, translated with extraordinary clarity and depth by one of its finest interpreters.</div>
+        <a href="https://amzn.to/4up5BBx" target="_blank" rel="noopener noreferrer" class="book-link">Buy on Amazon →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section 2: Psychology -->
+  <div class="books-section">
+    <div class="section-label">Psychology &amp; Behavioural Science</div>
+    <div class="books-grid">
+
+      <div class="book-card">
+        <span class="book-tag book-tag--psychology">Psychology</span>
+        <div class="book-title">Thinking, Fast and Slow</div>
+        <div class="book-author">Daniel Kahneman</div>
+        <div class="book-desc">Nobel laureate Kahneman's landmark exploration of how we think — and all the ways our minds quietly mislead us.</div>
+        <a href="https://amzn.to/4un1x4F" target="_blank" rel="noopener noreferrer" class="book-link">Buy on Amazon →</a>
+      </div>
+
+      <div class="book-card">
+        <span class="book-tag book-tag--psychology">Psychology</span>
+        <div class="book-title">Influence</div>
+        <div class="book-author">Robert Cialdini</div>
+        <div class="book-desc">The definitive guide to the psychology of persuasion — why we say yes, and how to protect ourselves from manipulation.</div>
+        <a href="https://amzn.to/4w8JBwz" target="_blank" rel="noopener noreferrer" class="book-link">Buy on Amazon →</a>
+      </div>
+
+      <div class="book-card">
+        <span class="book-tag book-tag--psychology">Psychology</span>
+        <div class="book-title">Atomic Habits</div>
+        <div class="book-author">James Clear</div>
+        <div class="book-desc">A proven framework for building good habits and breaking bad ones — grounded in behavioural psychology research.</div>
+        <a href="https://amzn.to/4usXwMj" target="_blank" rel="noopener noreferrer" class="book-link">Buy on Amazon →</a>
+      </div>
+
+      <div class="book-card">
+        <span class="book-tag book-tag--psychology">Psychology</span>
+        <div class="book-title">The Art of Thinking Clearly</div>
+        <div class="book-author">Rolf Dobelli</div>
+        <div class="book-desc">99 cognitive biases that distort our thinking — explained simply and memorably. Essential reading for clearer decisions.</div>
+        <a href="https://amzn.to/4cOWKTR" target="_blank" rel="noopener noreferrer" class="book-link">Buy on Amazon →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="affiliate-note">Some links on this page are affiliate links. If you purchase through them, I earn a small commission at no extra cost to you.<br>I only recommend books I genuinely believe in.</p>
+
+</div>
+
+<!-- Footer -->
+<div class="footer-strip">
+  <div class="footer-brand">Beyond Outcomes</div>
+  <div class="footer-sub">Timeless Gita Wisdom for Modern Life</div>
+  <div class="footer-links">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="https://www.youtube.com/@BeyondOutcomes" class="footer-link">YouTube</a>
+    <a href="quizzes.html" class="footer-link">Quizzes</a>
+    <a href="resources.html" class="footer-link">Reading</a>
+    <a href="coming-soon.html?feature=nlp" class="footer-link">NLP Coaching</a>
+  </div>
+  <div class="footer-copy">© 2026 Beyond Outcomes · Chennai, India</div>
+</div>
+
+</body>
+</html>
