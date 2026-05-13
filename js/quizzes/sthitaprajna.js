@@ -7,7 +7,7 @@ window.QUIZ_DATA = {
       title: 'How Steady Is<br><span style="color: var(--bo-gold-deep); font-weight: 500;">Your Mind?</span>',
       shareTitle: 'Mind Steadiness',
       chapter: 'Bhagavad Gita · Chapter 2 · The Sthitaprajna',
-      intro: 'In Chapter 2, Arjuna asks Krishna: "What does a person of steady wisdom look like? How do they speak, sit, move?" Krishna's answer — spanning 18 verses — is the Gita's most precise portrait of an awakened mind. This inquiry reveals where your mind stands on that spectrum.',
+      intro: 'In Chapter 2, Arjuna asks Krishna: "What does a person of steady wisdom look like? How do they speak, sit, move?" Krishna’s answer — spanning 18 verses — is the Gita’s most precise portrait of an awakened mind. This inquiry reveals where your mind stands on that spectrum.',
       tagPrefix: 'MIND · STEADINESS',
       categoryNames: {
         stirred: 'The Stirred Mind',

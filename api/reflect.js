@@ -17,9 +17,19 @@ export default async function handler(req, res) {
     const summary = questions.map((q, i) => `Q: ${q.text}\nA: ${q.options[answers[i]]} [${q.tags[answers[i]]}]`).join('\n\n');
     const pctsStr = Object.entries(percentages).map(([k, v]) => `${k}: ${v}%`).join(', ');
 
-    const quizContext = quizId === 'karma-yoga'
-      ? 'This is a Karma Yoga quiz from Bhagavad Gita Chapter 3. The categories are: nishkama (selfless action), sakama (desire-driven action), inert (reluctant action), compulsive (restless action).'
-      : 'This is a Guna quiz from Bhagavad Gita Chapter 14. The categories are Sattva (clarity, harmony), Rajas (passion, restlessness), Tamas (inertia, heaviness).';
+    const quizContextMap = {
+      'guna': 'This is a Guna quiz from Bhagavad Gita Chapter 14. The categories are: sattva (clarity, harmony, wisdom), rajas (passion, ambition, restlessness), tamas (inertia, heaviness, delusion).',
+      'karma-yoga': 'This is a Karma Yoga quiz from Bhagavad Gita Chapter 3. The categories are: nishkama (selfless, desireless action), sakama (desire-driven action seeking reward), inert (reluctant, dragged-along action), compulsive (restless, driven-by-habit action).',
+      'desire': 'This is a desire-pattern quiz from Bhagavad Gita Chapter 2. The categories are: driven (consumed by desire, chasing outcomes), conflicted (pulled between wanting and renouncing), detached (cool withdrawal from desire), surrendered (transcended desire through wisdom and surrender).',
+      'fear': 'This is a fear-pattern quiz from Bhagavad Gita Chapter 2. The categories are: failure (fear of not achieving or being enough), judgment (fear of others\' opinions and rejection), loss (fear of losing what one holds dear), insignificance (fear of being forgotten or meaningless).',
+      'pandava': 'This is a Pandava archetype quiz from the Mahabharata. The categories are: yudhishthira (dharma, righteousness, moral clarity), bhima (raw strength, loyalty, direct action), arjuna (skill, discipline, spiritual quest), nakula (beauty, grace, practical intelligence), sahadeva (wisdom, foresight, quiet knowing).',
+      'sthitaprajna': 'This is a Sthitaprajna (steady wisdom) quiz from Bhagavad Gita Chapter 2. The categories are: stirred (easily moved by pleasure, pain, desire, and fear), striving (actively working toward steadiness but still reactive), steady (largely even-minded, only occasionally shaken), established (the Sthitaprajna — fully rooted in the Self, unshaken).',
+      'yoga-path': 'This is a yoga path quiz from Bhagavad Gita Chapter 12. The categories are: bhakti (the path of love and devotion), jnana (the path of wisdom and inquiry), karma (the path of selfless action), dhyana (the path of meditation and stillness).',
+      'inner-enemy': 'This is an inner-enemy quiz from Bhagavad Gita Chapters 3 and 16. The categories are: kama (the veil of restless craving), krodha (the veil of reactive anger), lobha (the veil of greed and tight-holding), moha (the veil of confusion and delusion).',
+      'shraddha': 'This is a shraddha (faith) quiz from Bhagavad Gita Chapter 17. The categories are: sattvic (faith rooted in truth, clarity, and the highest good), rajasic (faith conditioned by desire and outcome), tamasic (faith that is mechanical, dim, or absent).',
+      'svadharma': 'This is a svadharma (essential nature) quiz from Bhagavad Gita Chapter 18. The categories are: seeker (the Brahmanic nature — wisdom, inquiry, teaching), warrior (the Kshatriya nature — courage, duty, leadership), builder (the Vaishya nature — enterprise, creativity, abundance), server (the service nature — devotion, care, nurturing).'
+    };
+    const quizContext = quizContextMap[quizId] || quizContextMap['guna'];
 
     const prompt = `You are a wise Bhagavad Gita teacher. ${quizContext}
 
