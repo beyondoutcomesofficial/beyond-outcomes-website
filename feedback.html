@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Your Feedback — Beyond Outcomes</title>
+  <meta name="description" content="Share your thoughts, suggestions, or reflections with the Beyond Outcomes team.">
+  <link rel="stylesheet" href="css/beyond-outcomes.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .page { background: var(--bo-gradient-page); min-height: 100vh; padding: 0 0 4rem; }
+    .nav { padding: 1.5rem 1.5rem 0; max-width: 720px; margin: 0 auto; }
+    .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; transition: color 0.2s; }
+    .nav a:hover { color: var(--bo-text-primary); }
+    .hero { text-align: center; padding: 3.5rem 1.5rem 1.5rem; max-width: 600px; margin: 0 auto; }
+    .hero-om { font-family: var(--bo-font-body); font-size: 2.4rem; color: var(--bo-gold); display: block; margin-bottom: 1rem; }
+    .lotus { width: 70px; height: 70px; margin: 0 auto 2rem; }
+    .form-card { background: var(--bo-warm-white); border: 1px solid var(--bo-border-strong); border-radius: var(--bo-radius-lg); padding: 2rem; max-width: 560px; margin: 0 auto; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label { display: block; font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); margin-bottom: 0.5rem; }
+    .bo-textarea { width: 100%; padding: 0.85rem 1rem; background: var(--bo-cream); border: 1px solid var(--bo-border); border-radius: var(--bo-radius); font-family: var(--bo-font-body); font-size: 1rem; color: var(--bo-text-primary); line-height: 1.6; resize: vertical; min-height: 130px; transition: border-color 0.2s; outline: none; }
+    .bo-textarea:focus { border-color: var(--bo-border-gold); }
+    .char-count { font-family: var(--bo-font-ui); font-size: 11px; color: var(--bo-text-faint); text-align: right; margin-top: 0.3rem; }
+    .guidelines { background: linear-gradient(135deg, var(--bo-cream-deep), var(--bo-cream)); border: 1px solid var(--bo-border); border-radius: var(--bo-radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+    .guidelines-title { font-family: var(--bo-font-display); font-size: 0.95rem; color: var(--bo-text-primary); margin-bottom: 0.75rem; }
+    .guidelines-list { list-style: none; }
+    .guidelines-list li { font-family: var(--bo-font-body); font-size: 0.95rem; color: var(--bo-text-secondary); line-height: 1.7; padding-left: 1.25rem; position: relative; }
+    .guidelines-list li::before { content: '·'; position: absolute; left: 0; color: var(--bo-gold); font-size: 1.1rem; line-height: 1.5; }
+    .guidelines-list li + li { margin-top: 0.3rem; }
+    .form-msg { font-family: var(--bo-font-body); font-style: italic; font-size: 14px; margin-top: 1rem; display: none; }
+    .footer-link { display: block; text-align: center; margin-top: 2.5rem; font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+    .footer-link:hover { color: var(--bo-text-primary); }
+  </style>
+  <!-- Google Analytics 4 — G-70BM48WVYR -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-70BM48WVYR');
+  </script>
+</head>
+<body class="bo-body">
+<div class="page">
+
+<div class="nav"><a href="index.html">← Beyond Outcomes</a></div>
+
+<div class="hero">
+  <span class="hero-om bo-anim-om-pulse">ॐ</span>
+  <div class="lotus bo-anim-lotus-breathe">
+    <svg viewBox="0 0 70 70" fill="none">
+      <path d="M35 58 C35 58 11 43 11 26 C11 17 19 11 27 15 C29 16 32 19 35 21.5 C38 19 41 16 43 15 C51 11 59 17 59 26 C59 43 35 58 35 58Z" stroke="#c9a84c" stroke-width="1" fill="rgba(201,168,76,0.12)"/>
+      <circle cx="35" cy="29" r="5" stroke="#c9a84c" stroke-width=".75" fill="rgba(201,168,76,0.2)"/>
+      <circle cx="35" cy="29" r="2" fill="#a07830"/>
+    </svg>
+  </div>
+  <h1 class="bo-title-hero">Share Your Feedback</h1>
+  <p class="bo-tagline" style="font-size: 1.1rem; margin-top: 0.5rem; font-style: italic;">Your words help us grow with intention</p>
+  <div class="bo-divider" style="margin: 1.5rem auto 0; max-width: 200px;"><div class="bo-divider-line"></div><div class="bo-divider-dot"></div><div class="bo-divider-line"></div></div>
+</div>
+
+<div style="max-width: 560px; margin: 2rem auto 0; padding: 0 1.5rem;">
+
+  <div class="guidelines">
+    <div class="guidelines-title">A few things to keep in mind</div>
+    <ul class="guidelines-list">
+      <li>Share what genuinely helped, what felt unclear, or what you'd love to see</li>
+      <li>Be as specific as you can — it helps us understand you better</li>
+      <li>Please do not include promotional links or unrelated content</li>
+      <li>This form is for feedback only, not customer support queries</li>
+    </ul>
+  </div>
+
+  <div class="form-card">
+    <div class="form-group">
+      <label class="form-label" for="fb-email">Your Email</label>
+      <input class="bo-input" type="email" id="fb-email" placeholder="your@email.com" style="width:100%;">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="fb-message">Your Feedback</label>
+      <textarea class="bo-textarea" id="fb-message" placeholder="What's on your mind?" maxlength="2000" oninput="updateCount()"></textarea>
+      <div class="char-count"><span id="char-count">0</span> / 2000</div>
+    </div>
+    <button class="bo-btn-primary" onclick="submitFeedback()" style="width:100%;">Submit Feedback</button>
+    <div class="form-msg" id="fb-msg"></div>
+  </div>
+
+</div>
+
+<a href="index.html" class="footer-link">← Back to Beyond Outcomes</a>
+
+</div>
+
+<script>
+function updateCount() {
+  const msg = document.getElementById('fb-message');
+  document.getElementById('char-count').textContent = msg.value.length;
+}
+
+async function submitFeedback() {
+  const email = document.getElementById('fb-email').value.trim();
+  const message = document.getElementById('fb-message').value.trim();
+  const msgEl = document.getElementById('fb-msg');
+  const btn = document.querySelector('.form-card button');
+
+  msgEl.style.display = 'none';
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msgEl.style.color = 'var(--bo-error)';
+    msgEl.textContent = 'Please enter a valid email address.';
+    msgEl.style.display = 'block';
+    return;
+  }
+
+  if (message.length < 10) {
+    msgEl.style.color = 'var(--bo-error)';
+    msgEl.textContent = 'Please write a little more before submitting.';
+    msgEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+  btn.textContent = 'Sending…';
+
+  try {
+    const resp = await fetch('/api/feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, message })
+    });
+
+    if (!resp.ok) throw new Error('Failed');
+
+    msgEl.style.color = 'var(--bo-success)';
+    msgEl.textContent = 'Thank you. Your feedback has been received.';
+    msgEl.style.display = 'block';
+    document.getElementById('fb-email').value = '';
+    document.getElementById('fb-message').value = '';
+    document.getElementById('char-count').textContent = '0';
+    btn.textContent = 'Submitted';
+  } catch (e) {
+    msgEl.style.color = 'var(--bo-error)';
+    msgEl.textContent = 'Something went wrong. Please try again.';
+    msgEl.style.display = 'block';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    btn.textContent = 'Submit Feedback';
+  }
+}
+</script>
+</body>
+</html>
