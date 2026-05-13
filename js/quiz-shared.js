@@ -225,7 +225,7 @@ async function submitEmail() {
     document.getElementById('email-input').value = '';
   } catch (e) {
     s.style.color = '#a04040';
-    s.textContent = ui.emailError + ' Please try again.';
+    s.textContent = 'Something went wrong. Please try again.';
     s.style.display = 'block';
   } finally {
     if (btn) { btn.disabled = false; btn.style.opacity = '1'; }

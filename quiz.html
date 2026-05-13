@@ -209,6 +209,10 @@ const quizId = urlParams.get('q') || 'guna';
 const script = document.createElement('script');
 script.src = 'js/quizzes/' + quizId + '.js';
 script.onload = function() {
+  if (!window.QUIZ_DATA) {
+    document.querySelector('.container').innerHTML = '<div style="padding: 4rem 1rem; text-align:center;"><h1 class="bo-title-section">Quiz Unavailable</h1><p class="bo-prose" style="margin-top: 1rem;">This quiz could not be loaded. Please try again.</p><a href="quizzes.html" class="bo-btn-primary" style="display:inline-block; margin-top:2rem; text-decoration:none;">Browse All Quizzes</a></div>';
+    return;
+  }
   // After data loads, build the result bars based on this quiz's categories
   const categories = window.QUIZ_DATA.categories;
   const colors = ['bo-fill-sattva', 'bo-fill-rajas', 'bo-fill-tamas', 'fill-fourth'];
