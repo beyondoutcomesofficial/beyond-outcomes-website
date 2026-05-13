@@ -42,7 +42,8 @@ export default async function handler(req, res) {
       })
     });
 
-    const data = await brevoResp.json();
+    // Brevo returns 204 No Content (empty body) when updating an existing contact
+    const data = brevoResp.status === 204 ? {} : await brevoResp.json();
 
     if (!brevoResp.ok && data.code !== 'duplicate_parameter') {
       console.error('Brevo contact error:', data);
