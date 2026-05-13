@@ -1,7 +1,7 @@
 // Shared Quiz Logic — works with any quiz that follows the QUIZ_DATA contract
 const UI_LANG = {
-  en: { depthLabel: 'Choose the depth of your inquiry', qLabel: 'Questions', d10: 'Focused reflection', d15: 'Deeper inquiry', start: 'Begin the Inquiry', back: 'Back', next: 'Next', seeResult: 'See My Result', question: 'Question', loadingMsgs: ['The Gita contemplates your answers...', 'Reading the pattern within...', 'Weaving your inner portrait...'], loadingSub: 'A moment of patience', yourResult: 'Your dominant pattern', emailTitle: 'Get your results in your inbox', emailSub: "We'll send you this reflection to revisit — and let you know when new quizzes arrive.", emailBtn: 'Send My Results', emailSuccess: 'Done. Check your inbox.', emailError: 'Please enter a valid email.', shareLabel: 'Share your result', waBtn: 'WhatsApp', copyBtn: 'Copy Text', copied: 'Copied to clipboard', retake: 'Retake Quiz', explore: 'More Quizzes ↗' },
-  hi: { depthLabel: 'अपनी जिज्ञासा की गहराई चुनें', qLabel: 'प्रश्न', d10: 'केंद्रित चिंतन', d15: 'गहरी जिज्ञासा', start: 'जिज्ञासा आरंभ करें', back: 'वापस', next: 'आगे', seeResult: 'परिणाम देखें', question: 'प्रश्न', loadingMsgs: ['गीता आपके उत्तरों पर विचार कर रही है...', 'भीतर का स्वरूप पढ़ा जा रहा है...'], loadingSub: 'धैर्य का एक क्षण', yourResult: 'आपका प्रमुख स्वरूप', emailTitle: 'अपने परिणाम inbox में पाएं', emailSub: 'यह चिंतन दोबारा देखने के लिए भेजेंगे — और नई प्रश्नोत्तरी आने पर सूचित करेंगे।', emailBtn: 'परिणाम भेजें', emailSuccess: 'हो गया। अपना inbox देखें।', emailError: 'कृपया वैध ईमेल दर्ज करें।', shareLabel: 'अपना परिणाम साझा करें', waBtn: 'WhatsApp', copyBtn: 'टेक्स्ट कॉपी', copied: 'क्लिपबोर्ड पर कॉपी', retake: 'पुनः प्रयास', explore: 'और प्रश्नोत्तरी ↗' }
+  en: { depthLabel: 'Choose the depth of your inquiry', qLabel: 'Questions', d10: 'Focused reflection', d15: 'Deeper inquiry', start: 'Begin the Inquiry', back: 'Back', next: 'Next', seeResult: 'See My Result', question: 'Question', loadingMsgs: ['The Gita contemplates your answers...', 'Reading the pattern within...', 'Weaving your inner portrait...'], loadingSub: 'A moment of patience', yourResult: 'Your dominant pattern', emailTitle: 'Get your results in your inbox', emailSub: "We'll send you this reflection to revisit — and let you know when new quizzes arrive.", emailBtn: 'Send My Results', emailSuccess: 'Done. Check your inbox.', emailError: 'Please enter a valid email.', shareLabel: 'Share your result', saveBtn: 'Save as Image', saveSub: 'Share to Instagram, WhatsApp Stories & more', waBtn: 'WhatsApp', copyBtn: 'Copy Text', copied: 'Copied to clipboard', retake: 'Retake Quiz', explore: 'More Quizzes ↗' },
+  hi: { depthLabel: 'अपनी जिज्ञासा की गहराई चुनें', qLabel: 'प्रश्न', d10: 'केंद्रित चिंतन', d15: 'गहरी जिज्ञासा', start: 'जिज्ञासा आरंभ करें', back: 'वापस', next: 'आगे', seeResult: 'परिणाम देखें', question: 'प्रश्न', loadingMsgs: ['गीता आपके उत्तरों पर विचार कर रही है...', 'भीतर का स्वरूप पढ़ा जा रहा है...'], loadingSub: 'धैर्य का एक क्षण', yourResult: 'आपका प्रमुख स्वरूप', emailTitle: 'अपने परिणाम inbox में पाएं', emailSub: 'यह चिंतन दोबारा देखने के लिए भेजेंगे — और नई प्रश्नोत्तरी आने पर सूचित करेंगे।', emailBtn: 'परिणाम भेजें', emailSuccess: 'हो गया। अपना inbox देखें।', emailError: 'कृपया वैध ईमेल दर्ज करें।', shareLabel: 'अपना परिणाम साझा करें', saveBtn: 'चित्र सहेजें', saveSub: 'Instagram, WhatsApp Stories पर शेयर करें', waBtn: 'WhatsApp', copyBtn: 'टेक्स्ट कॉपी', copied: 'क्लिपबोर्ड पर कॉपी', retake: 'पुनः प्रयास', explore: 'और प्रश्नोत्तरी ↗' }
 };
 
 let lang = 'en', selectedDepth = 0, currentQ = 0, answers = [], questions = [], resultData = null;
@@ -28,7 +28,7 @@ function applyLang() {
   set('l-loading-sub', ui.loadingSub);
   set('l-your-guna', ui.yourResult);
   set('l-email-title', ui.emailTitle); set('l-email-sub', ui.emailSub); set('l-email-btn', ui.emailBtn);
-  set('l-share-label', ui.shareLabel); set('l-wa-btn', ui.waBtn); set('l-copy-btn', ui.copyBtn);
+  set('l-share-label', ui.shareLabel); set('l-save-btn', ui.saveBtn); set('l-save-sub', ui.saveSub); set('l-wa-btn', ui.waBtn); set('l-copy-btn', ui.copyBtn);
   set('l-retake', ui.retake); set('l-explore', ui.explore);
   // Update category labels in result bars
   const cats = QD.categories;
@@ -246,6 +246,195 @@ function copyText() {
     const el = document.getElementById('copy-confirm'); el.textContent = UI_LANG[lang].copied; el.style.display = 'block';
     setTimeout(() => el.style.display = 'none', 2500);
   });
+}
+
+function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+  const words = text.split(' ');
+  let line = '';
+  let lines = [];
+  for (const word of words) {
+    const test = line ? line + ' ' + word : word;
+    if (ctx.measureText(test).width > maxWidth && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = test;
+    }
+  }
+  if (line) lines.push(line);
+  lines.forEach((l, i) => ctx.fillText(l, x, y + i * lineHeight));
+  return lines.length;
+}
+
+async function downloadCard() {
+  const d = resultData;
+  if (!d) return;
+
+  const btn = document.getElementById('btn-save-img');
+  if (btn) { btn.disabled = true; btn.style.opacity = '0.6'; }
+
+  await document.fonts.ready;
+
+  const S = 1080;
+  const canvas = document.createElement('canvas');
+  canvas.width = S; canvas.height = S;
+  const ctx = canvas.getContext('2d');
+
+  // Background
+  const bg = ctx.createLinearGradient(0, 0, S, S);
+  bg.addColorStop(0, '#fbf3df');
+  bg.addColorStop(0.5, '#f7ead0');
+  bg.addColorStop(1, '#ede0c0');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, S, S);
+
+  // Outer border
+  ctx.strokeStyle = 'rgba(169,126,48,0.4)';
+  ctx.lineWidth = 3;
+  ctx.strokeRect(44, 44, S - 88, S - 88);
+  // Inner border
+  ctx.strokeStyle = 'rgba(169,126,48,0.18)';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(58, 58, S - 116, S - 116);
+
+  const isHi = lang === 'hi';
+  const dominant = isHi ? d.dominantHi : d.dominant;
+  const subtitle = isHi ? d.subtitleHi : d.subtitle;
+  const shloka = (isHi ? d.shlokaHi : d.shloka) || '';
+  const meta = QD.meta[lang];
+
+  ctx.textAlign = 'center';
+  let y = 130;
+
+  // ॐ
+  ctx.font = '64px "Cormorant Garamond"';
+  ctx.fillStyle = '#c9a84c';
+  ctx.globalAlpha = 0.65;
+  ctx.fillText('ॐ', S / 2, y);
+  ctx.globalAlpha = 1;
+  y += 56;
+
+  // Brand
+  ctx.font = '500 19px "Cinzel"';
+  ctx.fillStyle = '#a07830';
+  ctx.fillText('BEYOND OUTCOMES', S / 2, y);
+  y += 24;
+  ctx.font = '400 15px "Cinzel"';
+  ctx.fillStyle = '#c9a84c';
+  ctx.globalAlpha = 0.6;
+  ctx.fillText('· SELF-INQUIRY ·', S / 2, y);
+  ctx.globalAlpha = 1;
+  y += 48;
+
+  // Divider
+  const drawDivider = (yy) => {
+    ctx.strokeStyle = 'rgba(169,126,48,0.28)';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(160, yy); ctx.lineTo(S / 2 - 20, yy); ctx.stroke();
+    ctx.beginPath(); ctx.arc(S / 2, yy, 4, 0, Math.PI * 2);
+    ctx.fillStyle = '#c9a84c'; ctx.globalAlpha = 0.5; ctx.fill(); ctx.globalAlpha = 1;
+    ctx.beginPath(); ctx.moveTo(S / 2 + 20, yy); ctx.lineTo(S - 160, yy); ctx.stroke();
+  };
+  drawDivider(y);
+  y += 52;
+
+  // "Your dominant pattern"
+  ctx.font = '300 16px "Jost"';
+  ctx.fillStyle = '#a07830';
+  ctx.globalAlpha = 0.7;
+  ctx.fillText((isHi ? 'आपका प्रमुख स्वरूप' : 'YOUR DOMINANT PATTERN'), S / 2, y);
+  ctx.globalAlpha = 1;
+  y += 78;
+
+  // Dominant result
+  const domFontSize = dominant.length > 12 ? 68 : dominant.length > 8 ? 80 : 92;
+  ctx.font = '500 ' + domFontSize + 'px "Cinzel"';
+  ctx.fillStyle = '#7a5a1e';
+  ctx.fillText(dominant, S / 2, y);
+  y += 44;
+
+  // Subtitle
+  ctx.font = 'italic 300 30px "Cormorant Garamond"';
+  ctx.fillStyle = '#a07830';
+  const subLines = wrapText(ctx, subtitle, S / 2, y, 780, 38);
+  y += subLines * 38 + 52;
+
+  // Score bars
+  const cats = QD.categories;
+  const barW = 420, barH = 7;
+  const barX = (S - barW) / 2;
+  const barColors = ['#5da876', '#c9a84c', '#9b85b8', '#c9924a'];
+
+  cats.forEach((c, i) => {
+    const pct = d._pcts[c] || 0;
+    const label = meta.categoryNames[c];
+    const color = barColors[i] || '#c9a84c';
+
+    ctx.font = '400 17px "Cinzel"';
+    ctx.fillStyle = '#7a5a1e';
+    ctx.textAlign = 'left';
+    ctx.fillText(label, barX, y);
+
+    ctx.font = 'italic 17px "Cormorant Garamond"';
+    ctx.fillStyle = '#a07830';
+    ctx.textAlign = 'right';
+    ctx.fillText(pct + '%', barX + barW, y);
+    y += 14;
+
+    ctx.fillStyle = 'rgba(169,126,48,0.15)';
+    ctx.fillRect(barX, y, barW, barH);
+    ctx.fillStyle = color;
+    ctx.fillRect(barX, y, barW * (pct / 100), barH);
+    y += 28;
+  });
+
+  y += 24;
+  drawDivider(y);
+  y += 44;
+
+  // Shloka
+  const shlokaShort = shloka.length > 90 ? shloka.slice(0, 88) + '…' : shloka;
+  ctx.font = 'italic 300 24px "Cormorant Garamond"';
+  ctx.fillStyle = '#7a5a1e';
+  ctx.globalAlpha = 0.78;
+  ctx.textAlign = 'center';
+  wrapText(ctx, shlokaShort, S / 2, y, 740, 34);
+  ctx.globalAlpha = 1;
+  if (d.shlokaRef) {
+    const shlokaLines = Math.ceil(shlokaShort.length / 55);
+    y += shlokaLines * 34 + 8;
+    ctx.font = '300 16px "Jost"';
+    ctx.fillStyle = '#b08a4a';
+    ctx.fillText(d.shlokaRef, S / 2, y);
+  }
+
+  // URL at bottom
+  ctx.font = '500 17px "Cinzel"';
+  ctx.fillStyle = '#a07830';
+  ctx.globalAlpha = 0.85;
+  ctx.fillText('BEYONDOUTCOMES.IN', S / 2, S - 72);
+  ctx.globalAlpha = 1;
+
+  // Export
+  const fileName = 'beyond-outcomes-' + (d._dom || 'result') + '.png';
+  canvas.toBlob(async (blob) => {
+    if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+    // Native share on mobile if supported
+    if (navigator.share && navigator.canShare) {
+      const file = new File([blob], fileName, { type: 'image/png' });
+      if (navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file], title: dominant + ' — Beyond Outcomes', text: buildShareText() });
+          return;
+        } catch (e) { /* fall through to download */ }
+      }
+    }
+    // Download fallback
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = fileName; a.click();
+    URL.revokeObjectURL(url);
+  }, 'image/png');
 }
 
 function retake() {
