@@ -106,7 +106,7 @@ function render() {
   window.QUIZZES_INDEX.forEach(q => {
     const isLive = q.status === 'live';
     const card = document.createElement(isLive ? 'a' : 'div');
-    if (isLive) card.href = 'quiz.html?q=' + q.id;
+    if (isLive) card.href = 'quiz-' + q.id + '.html';
     card.className = 'quiz-card ' + q.status;
     const statusBadge = isLive ? '' : '<span class="card-soon-badge">' + c.soon + '</span>';
     card.innerHTML =
