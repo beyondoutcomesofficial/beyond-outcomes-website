@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Bhagavad Gita Verse | Beyond Outcomes</title>
+  <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .page { background: var(--bo-gradient-page); min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    .nav { padding: 1.5rem 1.5rem 0; max-width: 680px; width: 100%; display: flex; gap: 1rem; }
+    .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+    .nav-sep { font-family: var(--bo-font-ui); font-size: 12px; color: var(--bo-text-faint); }
+    .coming { text-align: center; padding: 5rem 1.5rem; max-width: 520px; }
+    .coming-om { font-family: var(--bo-font-body); font-size: 2.2rem; color: var(--bo-gold); display: block; margin-bottom: 1rem; }
+    .coming-ref { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.7; margin-bottom: 1.25rem; }
+    .coming-title { font-family: var(--bo-font-display); font-size: 1.8rem; color: var(--bo-text-primary); margin-bottom: 1.25rem; }
+    .coming-text { font-family: var(--bo-font-body); font-size: 1rem; font-style: italic; color: var(--bo-text-secondary); line-height: 1.8; }
+    .back-link { margin-top: 2.5rem; display: inline-block; font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body">
+<div class="page">
+
+  <div class="nav">
+    <a href="index.html">← Gita Library</a>
+    <span class="nav-sep">/</span>
+    <a id="chapterLink" href="chapter.html">Chapter</a>
+  </div>
+
+  <div class="coming">
+    <span class="coming-om bo-anim-om-pulse">ॐ</span>
+    <div class="coming-ref" id="verseRef">BG —</div>
+    <h1 class="coming-title">Commentary Coming Soon</h1>
+    <p class="coming-text">We are building verse-by-verse commentary for the entire Bhagavad Gita — Sanskrit, transliteration, translation, and reflection for modern life. This verse will be available soon.</p>
+    <a id="backLink" href="chapter.html" class="back-link">← Back to Chapter</a>
+  </div>
+
+</div>
+
+<script src="../js/gita/chapters.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const cId = parseInt(params.get('c')) || 1;
+  const vId = parseInt(params.get('v')) || 1;
+  const ch = window.GITA_CHAPTERS.find(c => c.id === cId);
+
+  document.getElementById('pageTitle').textContent = `BG ${cId}.${vId} — ${ch ? ch.name : ''} | Bhagavad Gita | Beyond Outcomes`;
+  document.getElementById('verseRef').textContent = `BG ${cId}.${vId}`;
+  document.getElementById('chapterLink').textContent = ch ? `Chapter ${cId} · ${ch.name}` : `Chapter ${cId}`;
+  document.getElementById('chapterLink').href = `chapter.html?c=${cId}`;
+  document.getElementById('backLink').href = `chapter.html?c=${cId}`;
+</script>
+</body>
+</html>

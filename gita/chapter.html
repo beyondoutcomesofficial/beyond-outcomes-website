@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Bhagavad Gita Chapter | Beyond Outcomes</title>
+  <meta name="description" id="pageDesc" content="Explore this chapter of the Bhagavad Gita with verse-by-verse commentary for modern life. Free on Beyond Outcomes.">
+  <link id="canonical" rel="canonical" href="https://www.beyondoutcomes.in/gita/chapter.html">
+  <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .page { background: var(--bo-gradient-page); min-height: 100vh; }
+
+    .nav { padding: 1.5rem 1.5rem 0; max-width: 720px; margin: 0 auto; display: flex; gap: 1rem; }
+    .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+    .nav a:hover { color: var(--bo-text-primary); }
+    .nav-sep { font-family: var(--bo-font-ui); font-size: 12px; color: var(--bo-text-faint); }
+
+    .hero { text-align: center; padding: 3rem 1.5rem 2rem; max-width: 680px; margin: 0 auto; }
+    .hero-label { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bo-gold-deep); margin-bottom: 0.75rem; opacity: 0.8; }
+    .hero-sanskrit { font-family: var(--bo-font-display); font-size: 1rem; color: var(--bo-gold-deep); letter-spacing: 0.08em; margin-bottom: 0.5rem; opacity: 0.85; }
+    .hero-name { font-family: var(--bo-font-display); font-size: 2rem; font-weight: 500; color: var(--bo-text-primary); line-height: 1.15; margin-bottom: 0.5rem; }
+    .hero-tagline { font-family: var(--bo-font-body); font-size: 1.05rem; font-style: italic; color: var(--bo-text-secondary); line-height: 1.75; margin-top: 0.75rem; }
+
+    .content { max-width: 680px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+
+    /* Summary card */
+    .summary-card {
+      background: linear-gradient(135deg, var(--bo-warm-white), var(--bo-cream-deep));
+      border: 1px solid var(--bo-border);
+      border-radius: var(--bo-radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .summary-label { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.8; margin-bottom: 0.85rem; }
+    .summary-text { font-family: var(--bo-font-body); font-size: 1.05rem; color: var(--bo-text-secondary); line-height: 1.85; }
+
+    /* Themes */
+    .themes { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1.1rem; }
+    .theme-chip { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-gold-deep); background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 20px; padding: 5px 12px; }
+
+    /* Related quiz */
+    .quiz-card {
+      background: var(--bo-gradient-cta);
+      border: 1px solid var(--bo-border-strong);
+      border-radius: var(--bo-radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-decoration: none;
+    }
+    .quiz-card:hover { border-color: var(--bo-gold); }
+    .quiz-card-label { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.7; margin-bottom: 0.25rem; }
+    .quiz-card-title { font-family: var(--bo-font-display); font-size: 1rem; color: var(--bo-text-primary); }
+    .quiz-card-arrow { font-family: var(--bo-font-ui); font-size: 18px; color: var(--bo-gold); flex-shrink: 0; }
+
+    /* Verse list */
+    .verse-section { margin-bottom: 3rem; }
+    .verse-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .verse-section-title { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.8; }
+    .verse-count-badge { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bo-text-faint); }
+
+    .verse-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px; }
+    .verse-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+      background: linear-gradient(135deg, var(--bo-warm-white), var(--bo-cream-deep));
+      border: 1px solid var(--bo-border);
+      border-radius: 10px;
+      font-family: var(--bo-font-display);
+      font-size: 0.9rem;
+      color: var(--bo-text-primary);
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .verse-link:hover { border-color: var(--bo-gold); background: rgba(201,168,76,0.06); color: var(--bo-gold-deep); }
+
+    /* Chapter nav */
+    .chapter-nav { display: flex; gap: 12px; margin-top: 2rem; }
+    .chapter-nav a {
+      flex: 1;
+      text-align: center;
+      padding: 0.85rem;
+      border: 1px solid var(--bo-border);
+      border-radius: var(--bo-radius-lg);
+      font-family: var(--bo-font-ui);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bo-gold-deep);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .chapter-nav a:hover { border-color: var(--bo-gold); }
+
+    .footer-strip { background: var(--bo-cream-deep); border-top: 1px solid var(--bo-border); padding: 2rem 1.5rem; text-align: center; }
+    .footer-brand { font-family: var(--bo-font-display); font-size: 1.1rem; color: var(--bo-text-primary); margin-bottom: 0.25rem; }
+    .footer-sub { font-family: var(--bo-font-body); font-size: 0.9rem; font-style: italic; color: var(--bo-text-faint); margin-bottom: 1rem; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-link { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+    .footer-copy { font-size: 12px; color: var(--bo-text-faint); margin-top: 1.25rem; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body">
+<div class="page">
+
+  <div class="nav">
+    <a href="../index.html">← Beyond Outcomes</a>
+    <span class="nav-sep">/</span>
+    <a href="index.html">Gita Library</a>
+  </div>
+
+  <div id="heroSection" class="hero">
+    <div class="hero-label" id="heroLabel">Loading…</div>
+    <div class="hero-sanskrit" id="heroSanskrit"></div>
+    <h1 class="hero-name" id="heroName"></h1>
+    <div class="bo-divider" style="margin: 1.1rem auto;">
+      <div class="bo-divider-line"></div>
+      <div class="bo-divider-dot"></div>
+      <div class="bo-divider-line"></div>
+    </div>
+    <p class="hero-tagline" id="heroTagline"></p>
+  </div>
+
+  <div class="content">
+    <div class="summary-card">
+      <div class="summary-label">About This Chapter</div>
+      <div class="summary-text" id="summaryText"></div>
+      <div class="themes" id="themesRow"></div>
+    </div>
+
+    <div id="relatedQuizSlot"></div>
+
+    <div class="verse-section">
+      <div class="verse-section-header">
+        <div class="verse-section-title">All Verses</div>
+        <div class="verse-count-badge" id="verseCountBadge"></div>
+      </div>
+      <div class="verse-grid" id="verseGrid"></div>
+    </div>
+
+    <div class="chapter-nav" id="chapterNav"></div>
+  </div>
+
+  <div class="footer-strip">
+    <div class="footer-brand">Beyond Outcomes</div>
+    <div class="footer-sub">Timeless Gita Wisdom for Modern Life</div>
+    <div class="footer-links">
+      <a href="../index.html" class="footer-link">Home</a>
+      <a href="../quizzes.html" class="footer-link">Quizzes</a>
+      <a href="index.html" class="footer-link">Gita Library</a>
+      <a href="../about.html" class="footer-link">About</a>
+    </div>
+    <div class="footer-copy">© 2025 Beyond Outcomes · beyondoutcomes.in</div>
+  </div>
+
+</div>
+
+<script src="../js/gita/chapters.js"></script>
+<script>
+  // Read chapter id from ?c=N
+  const params = new URLSearchParams(window.location.search);
+  const cId = parseInt(params.get('c')) || 1;
+  const ch = window.GITA_CHAPTERS.find(c => c.id === cId);
+
+  if (!ch) {
+    document.getElementById('heroLabel').textContent = 'Chapter not found';
+  } else {
+    // Meta
+    document.getElementById('pageTitle').textContent = `Chapter ${ch.id}: ${ch.sanskrit} — ${ch.name} | Bhagavad Gita | Beyond Outcomes`;
+    document.getElementById('pageDesc').setAttribute('content', ch.summary.slice(0, 160));
+    document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/gita/chapter.html?c=${ch.id}`);
+
+    // Hero
+    document.getElementById('heroLabel').textContent = `Chapter ${ch.id} · Bhagavad Gita`;
+    document.getElementById('heroSanskrit').textContent = ch.sanskrit;
+    document.getElementById('heroName').textContent = ch.name;
+    document.getElementById('heroTagline').textContent = ch.tagline;
+
+    // Summary
+    document.getElementById('summaryText').textContent = ch.summary;
+
+    // Themes
+    const themesRow = document.getElementById('themesRow');
+    ch.themes.forEach(t => {
+      const chip = document.createElement('span');
+      chip.className = 'theme-chip';
+      chip.textContent = t;
+      themesRow.appendChild(chip);
+    });
+
+    // Related quiz
+    if (ch.relatedQuiz) {
+      const slot = document.getElementById('relatedQuizSlot');
+      const qCard = document.createElement('a');
+      qCard.href = ch.relatedQuiz.url;
+      qCard.className = 'quiz-card';
+      qCard.innerHTML = `
+        <div>
+          <div class="quiz-card-label">Related Self-Inquiry Quiz</div>
+          <div class="quiz-card-title">${ch.relatedQuiz.title}</div>
+        </div>
+        <div class="quiz-card-arrow">→</div>
+      `;
+      slot.appendChild(qCard);
+    }
+
+    // Verse count
+    document.getElementById('verseCountBadge').textContent = `${ch.verses} verses`;
+
+    // Verse grid
+    const grid = document.getElementById('verseGrid');
+    for (let v = 1; v <= ch.verses; v++) {
+      const link = document.createElement('a');
+      link.href = `verse.html?c=${ch.id}&v=${v}`;
+      link.className = 'verse-link';
+      link.textContent = `${ch.id}.${v}`;
+      grid.appendChild(link);
+    }
+
+    // Chapter nav
+    const nav = document.getElementById('chapterNav');
+    if (ch.id > 1) {
+      const prev = window.GITA_CHAPTERS.find(c => c.id === ch.id - 1);
+      const a = document.createElement('a');
+      a.href = `chapter.html?c=${ch.id - 1}`;
+      a.textContent = `← Ch ${ch.id - 1} · ${prev.name}`;
+      nav.appendChild(a);
+    }
+    if (ch.id < 18) {
+      const next = window.GITA_CHAPTERS.find(c => c.id === ch.id + 1);
+      const a = document.createElement('a');
+      a.href = `chapter.html?c=${ch.id + 1}`;
+      a.style.marginLeft = ch.id === 1 ? 'auto' : '';
+      a.textContent = `Ch ${ch.id + 1} · ${next.name} →`;
+      nav.appendChild(a);
+    }
+  }
+</script>
+</body>
+</html>
