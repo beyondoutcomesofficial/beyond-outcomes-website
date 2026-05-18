@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Satya — Beyond Outcomes</title>
+  <meta name="description" content="The story behind Beyond Outcomes — an NLP practitioner's journey from Sanskrit in school to building a Bhagavad Gita self-inquiry platform for the modern world.">
+  <link rel="canonical" href="https://www.beyondoutcomes.in/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Beyond Outcomes">
+  <meta property="og:url" content="https://www.beyondoutcomes.in/about.html">
+  <meta property="og:title" content="About Satya — Beyond Outcomes">
+  <meta property="og:description" content="NLP Practitioner. Bhagavad Gita student. Someone still finding himself — but clear about one thing: helping others find themselves.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Satya — Beyond Outcomes">
+  <meta name="twitter:description" content="NLP Practitioner. Bhagavad Gita student. Someone still finding himself — but clear about one thing: helping others find themselves.">
+  <link rel="stylesheet" href="css/beyond-outcomes.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .page { background: var(--bo-gradient-page); min-height: 100vh; }
+
+    /* Nav */
+    .nav { padding: 1.5rem 1.5rem 0; max-width: 680px; margin: 0 auto; }
+    .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; transition: color 0.2s; }
+    .nav a:hover { color: var(--bo-text-primary); }
+
+    /* Hero */
+    .hero { text-align: center; padding: 3.5rem 1.5rem 2rem; max-width: 620px; margin: 0 auto; }
+    .hero-om { font-family: var(--bo-font-body); font-size: 2.2rem; color: var(--bo-gold); display: block; margin-bottom: 0.75rem; }
+    .hero-label { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bo-gold-deep); margin-bottom: 1.5rem; opacity: 0.8; }
+    .hero-tagline { font-family: var(--bo-font-body); font-size: 1.15rem; color: var(--bo-text-secondary); line-height: 1.85; font-style: italic; margin-top: 1rem; }
+
+    /* Content */
+    .content { max-width: 620px; margin: 0 auto; padding: 0 1.5rem 2rem; }
+
+    /* Section */
+    .section { margin-bottom: 1.5rem; }
+    .section-card {
+      background: linear-gradient(135deg, var(--bo-warm-white), var(--bo-cream-deep));
+      border: 1px solid var(--bo-border);
+      border-radius: var(--bo-radius-lg);
+      padding: 1.75rem;
+    }
+    .section-label {
+      font-family: var(--bo-font-display);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--bo-gold-deep);
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+    .section-heading {
+      font-family: var(--bo-font-display);
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: var(--bo-text-primary);
+      line-height: 1.25;
+      margin-bottom: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+    .section-body {
+      font-family: var(--bo-font-body);
+      font-size: 1.05rem;
+      color: var(--bo-text-secondary);
+      line-height: 1.85;
+    }
+    .section-body p { margin-bottom: 1rem; }
+    .section-body p:last-child { margin-bottom: 0; }
+    .section-body em { font-style: italic; color: var(--bo-text-primary); }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 2px solid var(--bo-gold);
+      padding: 0.5rem 0 0.5rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .pull-quote p {
+      font-family: var(--bo-font-body);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--bo-text-primary);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* Credentials bar */
+    .credentials {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .credential-chip {
+      font-family: var(--bo-font-ui);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bo-gold-deep);
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 30px;
+      padding: 6px 14px;
+    }
+
+    /* Closing shloka */
+    .shloka-card {
+      background: var(--bo-gradient-cta);
+      border: 1px solid var(--bo-border-strong);
+      border-radius: var(--bo-radius-lg);
+      padding: 1.75rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .shloka-text {
+      font-family: var(--bo-font-body);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--bo-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 0.6rem;
+    }
+    .shloka-ref {
+      font-family: var(--bo-font-display);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bo-gold-deep);
+      opacity: 0.75;
+    }
+
+    /* CTA */
+    .cta-section { text-align: center; margin-bottom: 3rem; }
+    .cta-note { font-family: var(--bo-font-body); font-size: 0.85rem; font-style: italic; color: var(--bo-text-faint); margin-top: 0.75rem; }
+
+    /* Footer */
+    .footer-strip { background: var(--bo-cream-deep); border-top: 1px solid var(--bo-border); padding: 2rem 1.5rem; text-align: center; }
+    .footer-brand { font-family: var(--bo-font-display); font-size: 1.1rem; color: var(--bo-text-primary); margin-bottom: 0.25rem; }
+    .footer-sub { font-family: var(--bo-font-body); font-size: 0.9rem; font-style: italic; color: var(--bo-text-faint); margin-bottom: 1rem; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-link { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+    .footer-link:hover { color: var(--bo-text-primary); }
+    .footer-copy { font-size: 12px; color: var(--bo-text-faint); margin-top: 1.25rem; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body">
+<div class="page">
+
+  <div class="nav"><a href="index.html">← Beyond Outcomes</a></div>
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <span class="hero-om bo-anim-om-pulse">ॐ</span>
+    <div class="hero-label">The Person Behind the Platform</div>
+    <h1 class="bo-title-hero">Still Finding.<br>Always Helping.</h1>
+    <div class="bo-divider" style="margin: 1.25rem auto;">
+      <div class="bo-divider-line"></div>
+      <div class="bo-divider-dot"></div>
+      <div class="bo-divider-line"></div>
+    </div>
+    <p class="hero-tagline">I am Satya — NLP Practitioner, Bhagavad Gita student, and someone who has spent years on winding roads, only to discover that nothing on the journey was ever wasted.</p>
+  </div>
+
+  <div class="content">
+
+    <!-- ── SECTION 1 ── -->
+    <div class="section">
+      <div class="section-card">
+        <div class="section-label">The Beginning</div>
+        <div class="section-heading">The Gita Was Always There</div>
+        <div class="section-body">
+          <p>I studied Sanskrit in school. Then left it behind — the way most of us leave behind the things we quietly love when the world asks us to move on.</p>
+          <p>But through the years, as a Hindu growing up in this culture, the Gita was never truly absent. A shloka here. A teaching there. At a family gathering, in a moment of difficulty, on the lips of someone older and wiser. It arrived in fragments, always meaningful, never quite studied.</p>
+          <p>Somewhere in the back of my mind, an intention settled quietly: <em>I will study this properly. One day.</em></p>
+          <p>That day came slowly — which is exactly how the Gita says it should come.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 2 ── -->
+    <div class="section">
+      <div class="section-card">
+        <div class="section-label">The Journey</div>
+        <div class="section-heading">No Path Is the Wrong Path</div>
+        <div class="section-body">
+          <p>From the time I was in school, what fascinated me most was the human mind. How people think. Why they behave the way they do. The invisible architecture of motivation, fear, desire, and belief. I wanted to study psychology.</p>
+          <p>Life had other plans. Commerce in school. English Literature for graduation. A Master's degree in Journalism and Mass Communication. A career that took me somewhere else entirely.</p>
+          <p>And then — eventually — NLP found me. Or rather, I found my way back.</p>
+          <div class="pull-quote">
+            <p>One lesson I have learnt well: no path is the wrong path unless you deem it to be one. As long as you are following sincerely, things fall into place. Many paths merge with yours. You merge with theirs. Nothing is ever wasted.</p>
+          </div>
+          <p>I completed my NLP Practitioner certification and began the work I had always been moving toward — helping people understand their own patterns, their language, their inner world.</p>
+          <div class="credentials">
+            <span class="credential-chip">NLP Practitioner</span>
+            <span class="credential-chip">MA Journalism & Mass Communication</span>
+            <span class="credential-chip">BA English Literature</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 3 ── -->
+    <div class="section">
+      <div class="section-card">
+        <div class="section-label">The Discovery</div>
+        <div class="section-heading">It Was Already Written</div>
+        <div class="section-body">
+          <p>The more I studied NLP — the more I studied the human mind — the more I kept arriving at the same place.</p>
+          <p>Every framework. Every model of consciousness. Every insight about how we think, fear, desire, act, and seek — it had already been written down. Over five thousand years ago. In 700 verses. In a conversation between a warrior and his charioteer, on the edge of a battlefield.</p>
+          <p>The Bhagavad Gita is not simply a spiritual text. It is the most complete map of the human mind that has ever existed — capturing the <em>why</em> and <em>how</em> and <em>what</em> of the way we live, not just in this world, but across all of existence.</p>
+          <p>When I read a verse now, I do not find religion. I find a mirror.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 4 ── -->
+    <div class="section">
+      <div class="section-card">
+        <div class="section-label">Why This Exists</div>
+        <div class="section-heading">A Bridge Between Ancient Wisdom and Modern Seeking</div>
+        <div class="section-body">
+          <p>We live in a time of extraordinary stress. Of answers that do not satisfy. Of systems that measure and label us — and leave us more confused about who we are than when we started.</p>
+          <p>The Gita has been offering answers for fifty centuries. The problem was never the wisdom. It was the distance between the text and the person who needed it.</p>
+          <p>Beyond Outcomes is my attempt to close that distance. To make something ancient feel immediate. To let someone who has never opened the Gita — or someone who has carried it their whole life — find something real and personal in its teachings.</p>
+          <p>Through honest questions. Through reflection. Through the kind of self-inquiry that the Gita itself asks us to do.</p>
+          <div class="pull-quote">
+            <p>I am still finding myself. But the portion I am clear about: I want to help people. With so much stress in the world, if this work can be of assistance — and bring even a few seekers a moment of clarity and peace — that is enough. That is more than enough.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SHLOKA ── -->
+    <div class="shloka-card">
+      <div class="shloka-text">
+        "Whoever, at the time of death, gives up the body remembering Me alone, reaches my state. Of this there is no doubt."<br><br>
+        But more than destination — it is the quality of attention we bring to each step of the path that matters.
+      </div>
+      <div style="width:40px; height:1px; background:var(--bo-gold); opacity:0.4; margin: 1rem auto;"></div>
+      <div class="shloka-ref">Bhagavad Gita · The Teaching of Krishna</div>
+    </div>
+
+    <!-- ── CTA ── -->
+    <div class="cta-section">
+      <a href="quizzes.html" class="bo-btn-primary" style="display:inline-block;">Explore the Quizzes</a>
+      <p class="cta-note">Free · No login required · Available in English and Hindi</p>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- ── FOOTER ── -->
+  <div class="footer-strip">
+    <div class="footer-brand">Beyond Outcomes</div>
+    <div class="footer-sub">Timeless Gita Wisdom for Modern Life</div>
+    <div class="footer-links">
+      <a href="index.html" class="footer-link">Home</a>
+      <a href="quizzes.html" class="footer-link">Quizzes</a>
+      <a href="resources.html" class="footer-link">Reading</a>
+      <a href="feedback.html" class="footer-link">Feedback</a>
+    </div>
+    <div class="footer-copy">© 2025 Beyond Outcomes · beyondoutcomes.in</div>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
