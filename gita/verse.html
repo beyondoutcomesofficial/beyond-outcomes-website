@@ -74,6 +74,7 @@
       color: var(--bo-text-primary);
       line-height: 1.8;
       font-style: italic;
+      font-weight: 500;
     }
 
     /* Word meanings */
@@ -91,7 +92,7 @@
     .commentary-text {
       font-family: var(--bo-font-body);
       font-size: 1.05rem;
-      color: var(--bo-text-secondary);
+      color: var(--bo-text-primary);
       line-height: 1.9;
       white-space: pre-line;
     }
@@ -289,6 +290,11 @@
         <div class="verse-nav">
           ${prevHTML}
           ${nextHTML}
+        </div>
+
+        <div class="verse-nav" style="margin-top: 10px;">
+          <a href="chapter.html?c=${cId}">← Back to Chapter ${cId}</a>
+          <a href="index.html">← Chapter Index</a>
         </div>
 
       </div>
