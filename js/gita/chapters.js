@@ -15,7 +15,8 @@ window.GITA_CHAPTERS = [
     verses: 72,
     tagline: 'The foundation of all Gita wisdom',
     summary: 'Krishna begins his teaching with the foundational truth: the soul is eternal, beyond birth and death. He introduces the nature of the self, the concept of duty (dharma), and the principle of equanimity. This chapter contains the most searched and most quoted verses in the Gita — including the timeless call to action without attachment to outcomes. It is the philosophical cornerstone on which all other chapters rest.',
-    themes: ['The Eternal Soul', 'Duty', 'Equanimity', 'Nishkama Karma', 'Sthitaprajna']
+    themes: ['The Eternal Soul', 'Duty', 'Equanimity', 'Nishkama Karma', 'Sthitaprajna'],
+    youtubeShort: { title: 'Karmanye Vadhikaraste — BG 2.47 Explained', url: 'https://www.youtube.com/shorts/zctk1KQ59EY' }
   },
   {
     id: 3,

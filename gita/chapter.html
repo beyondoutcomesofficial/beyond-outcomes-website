@@ -83,22 +83,31 @@
     .verse-section-title { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.8; }
     .verse-count-badge { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bo-text-faint); }
 
-    .verse-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px; }
-    .verse-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 52px;
-      background: linear-gradient(135deg, var(--bo-warm-white), var(--bo-cream-deep));
-      border: 1px solid var(--bo-border);
-      border-radius: 10px;
-      font-family: var(--bo-font-display);
-      font-size: 0.9rem;
-      color: var(--bo-text-primary);
+    .verse-table { width: 100%; border-collapse: collapse; }
+    .verse-table thead tr { border-bottom: 1px solid rgba(169,126,48,0.35); }
+    .verse-table th { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.75; padding: 0 0 0.75rem 0; text-align: left; font-weight: 400; }
+    .verse-table th:not(:first-child) { text-align: center; }
+    .verse-table tbody tr { border-bottom: 1px solid rgba(169,126,48,0.12); transition: background 0.15s; }
+    .verse-table tbody tr:hover { background: rgba(201,168,76,0.04); }
+    .verse-table td { padding: 0.7rem 0; vertical-align: middle; }
+    .verse-table td:not(:first-child) { text-align: center; }
+    .td-verse-num { font-family: var(--bo-font-display); font-size: 0.9rem; color: var(--bo-text-secondary); width: 60px; }
+    .td-study a, .td-listen a {
+      font-family: var(--bo-font-ui);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
       text-decoration: none;
-      transition: border-color 0.15s, background 0.15s;
+      transition: background 0.15s, border-color 0.15s;
+      display: inline-block;
     }
-    .verse-link:hover { border-color: var(--bo-gold); background: rgba(201,168,76,0.06); color: var(--bo-gold-deep); }
+    .td-study a { border: 1px solid rgba(169,126,48,0.4); color: var(--bo-gold-deep); }
+    .td-study a:hover { background: rgba(201,168,76,0.08); border-color: var(--bo-gold); }
+    .td-listen a { border: 1px solid rgba(255,0,0,0.25); color: #cc0000; }
+    .td-listen a:hover { background: rgba(255,0,0,0.05); border-color: rgba(255,0,0,0.5); }
+    .td-listen-empty { color: var(--bo-text-faint); font-size: 0.75rem; }
 
     /* Chapter nav */
     .chapter-nav { display: flex; gap: 12px; margin-top: 2rem; }
@@ -163,7 +172,16 @@
         <div class="verse-section-title">All Verses</div>
         <div class="verse-count-badge" id="verseCountBadge"></div>
       </div>
-      <div class="verse-grid" id="verseGrid"></div>
+      <table class="verse-table">
+        <thead>
+          <tr>
+            <th>Verse</th>
+            <th>Study</th>
+            <th>Listen</th>
+          </tr>
+        </thead>
+        <tbody id="verseTableBody"></tbody>
+      </table>
     </div>
 
     <div class="chapter-nav" id="chapterNav"></div>
@@ -254,14 +272,30 @@
     // Verse count
     document.getElementById('verseCountBadge').textContent = `${ch.verses} verses`;
 
-    // Verse grid
-    const grid = document.getElementById('verseGrid');
-    for (let v = 1; v <= ch.verses; v++) {
-      const link = document.createElement('a');
-      link.href = `verse.html?c=${ch.id}&v=${v}`;
-      link.className = 'verse-link';
-      link.textContent = `${ch.id}.${v}`;
-      grid.appendChild(link);
+    // Load chapter data file to get per-verse YouTube URLs
+    const chScript = document.createElement('script');
+    chScript.src = `../js/gita/chapter-${String(ch.id).padStart(2,'0')}.js`;
+    chScript.onload = buildVerseTable;
+    chScript.onerror = buildVerseTable; // build table even without data file
+    document.head.appendChild(chScript);
+
+    function buildVerseTable() {
+      const chData = window[`GITA_CHAPTER_${String(ch.id).padStart(2,'0')}`];
+      const tbody = document.getElementById('verseTableBody');
+      for (let v = 1; v <= ch.verses; v++) {
+        const verse = chData && chData.verses && chData.verses[v];
+        const ytUrl = verse && verse.youtubeShort ? verse.youtubeShort.url : null;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="td-verse-num">${ch.id}.${v}</td>
+          <td class="td-study"><a href="verse.html?c=${ch.id}&v=${v}">Study →</a></td>
+          <td class="td-listen">${ytUrl
+            ? `<a href="${ytUrl}" target="_blank" rel="noopener">▶ Listen</a>`
+            : `<span class="td-listen-empty">—</span>`
+          }</td>
+        `;
+        tbody.appendChild(tr);
+      }
     }
 
     // Chapter nav
