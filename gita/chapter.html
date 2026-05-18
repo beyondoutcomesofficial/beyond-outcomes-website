@@ -252,24 +252,6 @@
       slot.appendChild(qCard);
     }
 
-    // YouTube short
-    if (ch.youtubeShort) {
-      const slot = document.getElementById('relatedQuizSlot');
-      const ytCard = document.createElement('a');
-      ytCard.href = ch.youtubeShort.url;
-      ytCard.target = '_blank';
-      ytCard.rel = 'noopener';
-      ytCard.className = 'yt-card';
-      ytCard.innerHTML = `
-        <div class="yt-icon">▶</div>
-        <div style="flex:1;">
-          <div class="yt-label">Watch on YouTube · Beyond Outcomes</div>
-          <div class="yt-title">${ch.youtubeShort.title}</div>
-        </div>
-        <div class="yt-arrow">→</div>
-      `;
-      slot.appendChild(ytCard);
-    }
 
     // Verse count
     document.getElementById('verseCountBadge').textContent = `${ch.verses} verses`;
