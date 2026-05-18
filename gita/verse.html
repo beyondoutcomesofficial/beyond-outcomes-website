@@ -290,6 +290,7 @@
     document.getElementById('mainContent').innerHTML = `
       <div class="hero">
         <div class="hero-ref">Bhagavad Gita · ${cId}.${vId} · ${chName}</div>
+        ${verse.name ? `<h1 class="bo-title-hero" style="margin-top:0.75rem;">${verse.name}</h1>` : ''}
         <div class="bo-divider" style="margin: 1rem auto;">
           <div class="bo-divider-line"></div>
           <div class="bo-divider-dot"></div>

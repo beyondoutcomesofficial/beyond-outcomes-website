@@ -4,6 +4,7 @@ window.GITA_CHAPTER_02 = {
 
     47: {
       id: 47,
+      name: 'The Verse of Selfless Action',
       devanagari: 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥',
       transliteration: 'karmaṇy evādhikāras te mā phaleṣu kadācana\nmā karma-phala-hetur bhūr mā te saṅgo \'stv akarmaṇi',
       translation: 'You have the right to perform your duties, but never to the fruits thereof. Let not the fruits of action be your motive, nor let your attachment be to inaction.',

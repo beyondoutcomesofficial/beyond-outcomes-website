@@ -92,6 +92,7 @@
     .verse-table td { padding: 0.7rem 0; vertical-align: middle; }
     .verse-table td:not(:first-child) { text-align: center; }
     .td-verse-num { font-family: var(--bo-font-display); font-size: 0.9rem; color: var(--bo-text-secondary); width: 60px; }
+    .td-verse-name { font-family: var(--bo-font-body); font-size: 0.95rem; font-style: italic; color: var(--bo-text-primary); }
     .td-study a, .td-listen a {
       font-family: var(--bo-font-ui);
       font-size: 11px;
@@ -176,6 +177,7 @@
         <thead>
           <tr>
             <th>Verse</th>
+            <th style="text-align:left;">Name</th>
             <th>Study</th>
             <th>Listen</th>
           </tr>
@@ -285,9 +287,11 @@
       for (let v = 1; v <= ch.verses; v++) {
         const verse = chData && chData.verses && chData.verses[v];
         const ytUrl = verse && verse.youtubeShort ? verse.youtubeShort.url : null;
+        const verseName = verse && verse.name ? verse.name : '';
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td class="td-verse-num">${ch.id}.${v}</td>
+          <td class="td-verse-name">${verseName}</td>
           <td class="td-study"><a href="verse.html?c=${ch.id}&v=${v}">Study →</a></td>
           <td class="td-listen">${ytUrl
             ? `<a href="${ytUrl}" target="_blank" rel="noopener">▶ Listen</a>`
