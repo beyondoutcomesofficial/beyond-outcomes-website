@@ -237,7 +237,12 @@
   function render() {
     const chapterData = window[`GITA_CHAPTER_${String(cId).padStart(2,'0')}`];
     const verse = chapterData && chapterData.verses && chapterData.verses[vId];
+
+    // If no verse data at all, show coming soon
     if (!verse) { renderComingSoon(); return; }
+
+    // If verse exists but has no full content yet (only name/youtubeShort), show partial page
+    if (!verse.transliteration) { renderPartial(verse); return; }
 
     // Meta
     document.getElementById('pageTitle').textContent = `BG ${cId}.${vId} — ${verse.transliteration.split('\n')[0].slice(0,40)}… | Beyond Outcomes`;
@@ -331,6 +336,43 @@
           <a href="index.html">← Chapter Index</a>
         </div>
 
+      </div>
+    `;
+  }
+
+  function renderPartial(verse) {
+    // Verse exists (has name + YouTube short) but full commentary not written yet
+    document.getElementById('pageTitle').textContent = `BG ${cId}.${vId}${verse.name ? ' — ' + verse.name : ''} | Bhagavad Gita | Beyond Outcomes`;
+    document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/gita/verse.html?c=${cId}&v=${vId}`);
+
+    const ytHTML = verse.youtubeShort ? `
+      <a href="${verse.youtubeShort.url}" target="_blank" rel="noopener" class="yt-card">
+        <div class="yt-icon">▶</div>
+        <div style="flex:1;">
+          <div class="yt-label">Watch on YouTube · Beyond Outcomes</div>
+          <div class="yt-title">${verse.youtubeShort.title}</div>
+        </div>
+        <div class="yt-arrow">→</div>
+      </a>` : '';
+
+    const prevHTML = vId > 1 ? `<a href="verse.html?c=${cId}&v=${vId-1}">← BG ${cId}.${vId-1}</a>` : '';
+    const nextHTML = vId < totalV ? `<a href="verse.html?c=${cId}&v=${vId+1}">BG ${cId}.${vId+1} →</a>` : '';
+
+    document.getElementById('mainContent').innerHTML = `
+      <div class="coming">
+        <span class="coming-om bo-anim-om-pulse">ॐ</span>
+        <div class="coming-ref">BG ${cId}.${vId}</div>
+        ${verse.name ? `<h1 class="coming-title">${verse.name}</h1>` : '<h1 class="coming-title">Commentary Coming Soon</h1>'}
+        <p class="coming-text">Sanskrit text, transliteration, word meanings and commentary for this verse are being written. Check back soon — or watch the short below while you wait.</p>
+        ${ytHTML}
+        <div class="verse-nav" style="margin-top: 1.5rem;">
+          ${prevHTML}
+          ${nextHTML}
+        </div>
+        <div class="verse-nav" style="margin-top: 10px;">
+          <a href="chapter.html?c=${cId}">← Back to Chapter ${cId}</a>
+          <a href="index.html">← Chapter Index</a>
+        </div>
       </div>
     `;
   }
