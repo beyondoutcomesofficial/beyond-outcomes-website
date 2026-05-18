@@ -4,54 +4,309 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">Bhagavad Gita Verse | Beyond Outcomes</title>
+  <meta name="description" id="pageDesc" content="Bhagavad Gita verse with Sanskrit, transliteration, translation and commentary for modern life.">
+  <link id="canonical" rel="canonical" href="https://www.beyondoutcomes.in/gita/verse.html">
   <link rel="stylesheet" href="../css/beyond-outcomes.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    .page { background: var(--bo-gradient-page); min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
-    .nav { padding: 1.5rem 1.5rem 0; max-width: 680px; width: 100%; display: flex; gap: 1rem; }
-    .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+    .page { background: var(--bo-gradient-page); min-height: 100vh; }
+
+    /* Nav */
+    .nav { padding: 1.5rem 1.5rem 0; max-width: 680px; margin: 0 auto; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; transition: color 0.2s; }
+    .nav a:hover { color: var(--bo-text-primary); }
     .nav-sep { font-family: var(--bo-font-ui); font-size: 12px; color: var(--bo-text-faint); }
-    .coming { text-align: center; padding: 5rem 1.5rem; max-width: 520px; }
+
+    /* Hero */
+    .hero { text-align: center; padding: 3rem 1.5rem 1.5rem; max-width: 680px; margin: 0 auto; }
+    .hero-ref { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.75; margin-bottom: 1.5rem; }
+
+    /* Sanskrit block */
+    .sanskrit-card {
+      background: linear-gradient(135deg, #f0e0b0, #f7ead0);
+      border: 1px solid var(--bo-border-strong);
+      border-radius: var(--bo-radius-lg);
+      padding: 2.25rem 2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .devanagari {
+      font-family: 'Noto Sans Devanagari', 'Mangal', serif;
+      font-size: 1.6rem;
+      color: var(--bo-text-primary);
+      line-height: 2;
+      margin-bottom: 1.25rem;
+      white-space: pre-line;
+    }
+    .transliteration {
+      font-family: var(--bo-font-body);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--bo-text-secondary);
+      line-height: 1.85;
+      white-space: pre-line;
+    }
+
+    /* Content */
+    .content { max-width: 680px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+
+    .section-card {
+      background: linear-gradient(135deg, var(--bo-warm-white), var(--bo-cream-deep));
+      border: 1px solid var(--bo-border);
+      border-radius: var(--bo-radius-lg);
+      padding: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .section-label {
+      font-family: var(--bo-font-display);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--bo-gold-deep);
+      opacity: 0.75;
+      margin-bottom: 0.85rem;
+    }
+
+    /* Translation */
+    .translation-text {
+      font-family: var(--bo-font-body);
+      font-size: 1.2rem;
+      color: var(--bo-text-primary);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* Word meanings */
+    .word-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .word-chip {
+      background: rgba(201,168,76,0.07);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      padding: 7px 12px;
+    }
+    .word-sanskrit { font-family: var(--bo-font-display); font-size: 0.8rem; color: var(--bo-gold-deep); letter-spacing: 0.04em; margin-bottom: 2px; }
+    .word-meaning { font-family: var(--bo-font-body); font-size: 0.82rem; color: var(--bo-text-secondary); font-style: italic; }
+
+    /* Commentary */
+    .commentary-text {
+      font-family: var(--bo-font-body);
+      font-size: 1.05rem;
+      color: var(--bo-text-secondary);
+      line-height: 1.9;
+      white-space: pre-line;
+    }
+    .commentary-text p { margin-bottom: 1rem; }
+
+    /* Pull quote — first para of commentary */
+    .pull-quote {
+      border-left: 2px solid var(--bo-gold);
+      padding: 0.4rem 0 0.4rem 1.15rem;
+      margin-bottom: 1rem;
+    }
+    .pull-quote p {
+      font-family: var(--bo-font-body);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--bo-text-primary);
+      line-height: 1.75;
+    }
+
+    /* Related quiz */
+    .quiz-card {
+      background: var(--bo-gradient-cta);
+      border: 1px solid var(--bo-border-strong);
+      border-radius: var(--bo-radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .quiz-card:hover { border-color: var(--bo-gold); }
+    .quiz-card-label { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.7; margin-bottom: 0.25rem; }
+    .quiz-card-title { font-family: var(--bo-font-display); font-size: 1rem; color: var(--bo-text-primary); }
+    .quiz-card-arrow { font-size: 18px; color: var(--bo-gold); flex-shrink: 0; }
+
+    /* Verse nav */
+    .verse-nav { display: flex; gap: 12px; margin-top: 1.5rem; }
+    .verse-nav a {
+      flex: 1;
+      text-align: center;
+      padding: 0.85rem;
+      border: 1px solid var(--bo-border);
+      border-radius: var(--bo-radius-lg);
+      font-family: var(--bo-font-ui);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bo-gold-deep);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .verse-nav a:hover { border-color: var(--bo-gold); }
+
+    /* Coming soon state */
+    .coming { text-align: center; padding: 5rem 1.5rem; max-width: 520px; margin: 0 auto; }
     .coming-om { font-family: var(--bo-font-body); font-size: 2.2rem; color: var(--bo-gold); display: block; margin-bottom: 1rem; }
     .coming-ref { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.7; margin-bottom: 1.25rem; }
     .coming-title { font-family: var(--bo-font-display); font-size: 1.8rem; color: var(--bo-text-primary); margin-bottom: 1.25rem; }
     .coming-text { font-family: var(--bo-font-body); font-size: 1rem; font-style: italic; color: var(--bo-text-secondary); line-height: 1.8; }
     .back-link { margin-top: 2.5rem; display: inline-block; font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+
+    .footer-strip { background: var(--bo-cream-deep); border-top: 1px solid var(--bo-border); padding: 2rem 1.5rem; text-align: center; }
+    .footer-brand { font-family: var(--bo-font-display); font-size: 1.1rem; color: var(--bo-text-primary); margin-bottom: 0.25rem; }
+    .footer-sub { font-family: var(--bo-font-body); font-size: 0.9rem; font-style: italic; color: var(--bo-text-faint); margin-bottom: 1rem; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-link { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; }
+    .footer-copy { font-size: 12px; color: var(--bo-text-faint); margin-top: 1.25rem; }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
 </head>
 <body class="bo-body">
-<div class="page">
+<div class="page" id="pageRoot">
 
   <div class="nav">
-    <a href="index.html">← Gita Library</a>
+    <a href="../index.html">← Beyond Outcomes</a>
+    <span class="nav-sep">/</span>
+    <a href="index.html">Gita Library</a>
     <span class="nav-sep">/</span>
     <a id="chapterLink" href="chapter.html">Chapter</a>
   </div>
 
-  <div class="coming">
-    <span class="coming-om bo-anim-om-pulse">ॐ</span>
-    <div class="coming-ref" id="verseRef">BG —</div>
-    <h1 class="coming-title">Commentary Coming Soon</h1>
-    <p class="coming-text">We are building verse-by-verse commentary for the entire Bhagavad Gita — Sanskrit, transliteration, translation, and reflection for modern life. This verse will be available soon.</p>
-    <a id="backLink" href="chapter.html" class="back-link">← Back to Chapter</a>
+  <div id="mainContent"></div>
+
+  <div class="footer-strip">
+    <div class="footer-brand">Beyond Outcomes</div>
+    <div class="footer-sub">Timeless Gita Wisdom for Modern Life</div>
+    <div class="footer-links">
+      <a href="../index.html" class="footer-link">Home</a>
+      <a href="../quizzes.html" class="footer-link">Quizzes</a>
+      <a href="index.html" class="footer-link">Gita Library</a>
+      <a href="../about.html" class="footer-link">About</a>
+    </div>
+    <div class="footer-copy">© 2025 Beyond Outcomes · beyondoutcomes.in</div>
   </div>
 
 </div>
 
 <script src="../js/gita/chapters.js"></script>
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const cId = parseInt(params.get('c')) || 1;
-  const vId = parseInt(params.get('v')) || 1;
-  const ch = window.GITA_CHAPTERS.find(c => c.id === cId);
+  const params  = new URLSearchParams(window.location.search);
+  const cId     = parseInt(params.get('c')) || 1;
+  const vId     = parseInt(params.get('v')) || 1;
+  const ch      = window.GITA_CHAPTERS ? window.GITA_CHAPTERS.find(c => c.id === cId) : null;
+  const chName  = ch ? ch.name : `Chapter ${cId}`;
+  const totalV  = ch ? ch.verses : 0;
 
-  document.getElementById('pageTitle').textContent = `BG ${cId}.${vId} — ${ch ? ch.name : ''} | Bhagavad Gita | Beyond Outcomes`;
-  document.getElementById('verseRef').textContent = `BG ${cId}.${vId}`;
-  document.getElementById('chapterLink').textContent = ch ? `Chapter ${cId} · ${ch.name}` : `Chapter ${cId}`;
+  // Update nav
+  document.getElementById('chapterLink').textContent = `Chapter ${cId} · ${chName}`;
   document.getElementById('chapterLink').href = `chapter.html?c=${cId}`;
-  document.getElementById('backLink').href = `chapter.html?c=${cId}`;
+
+  // Load chapter data file, then render
+  const script = document.createElement('script');
+  script.src = `../js/gita/chapter-${String(cId).padStart(2,'0')}.js`;
+  script.onload = render;
+  script.onerror = renderComingSoon;
+  document.head.appendChild(script);
+
+  function render() {
+    const chapterData = window[`GITA_CHAPTER_${String(cId).padStart(2,'0')}`];
+    const verse = chapterData && chapterData.verses && chapterData.verses[vId];
+    if (!verse) { renderComingSoon(); return; }
+
+    // Meta
+    document.getElementById('pageTitle').textContent = `BG ${cId}.${vId} — ${verse.transliteration.split('\n')[0].slice(0,40)}… | Beyond Outcomes`;
+    document.getElementById('pageDesc').setAttribute('content', verse.translation);
+    document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/gita/verse.html?c=${cId}&v=${vId}`);
+
+    // Word meanings HTML
+    const wordsHTML = verse.words ? `
+      <div class="section-card">
+        <div class="section-label">Word by Word</div>
+        <div class="word-grid">
+          ${verse.words.map(w => `
+            <div class="word-chip">
+              <div class="word-sanskrit">${w.word}</div>
+              <div class="word-meaning">${w.meaning}</div>
+            </div>`).join('')}
+        </div>
+      </div>` : '';
+
+    // Related quiz HTML
+    const quizHTML = verse.relatedQuiz ? `
+      <a href="${verse.relatedQuiz.url}" class="quiz-card">
+        <div>
+          <div class="quiz-card-label">Related Self-Inquiry</div>
+          <div class="quiz-card-title">${verse.relatedQuiz.title}</div>
+        </div>
+        <div class="quiz-card-arrow">→</div>
+      </a>` : '';
+
+    // Verse nav
+    const prevHTML = vId > 1
+      ? `<a href="verse.html?c=${cId}&v=${vId-1}">← BG ${cId}.${vId-1}</a>` : '';
+    const nextHTML = vId < totalV
+      ? `<a href="verse.html?c=${cId}&v=${vId+1}">BG ${cId}.${vId+1} →</a>` : '';
+
+    // Commentary paragraphs
+    const commentaryParas = verse.commentary.split('\n\n').map(p => `<p>${p}</p>`).join('');
+
+    document.getElementById('mainContent').innerHTML = `
+      <div class="hero">
+        <div class="hero-ref">Bhagavad Gita · ${cId}.${vId} · ${chName}</div>
+        <div class="bo-divider" style="margin: 1rem auto;">
+          <div class="bo-divider-line"></div>
+          <div class="bo-divider-dot"></div>
+          <div class="bo-divider-line"></div>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <div class="sanskrit-card">
+          <div class="devanagari">${verse.devanagari}</div>
+          <div class="transliteration">${verse.transliteration}</div>
+        </div>
+
+        <div class="section-card">
+          <div class="section-label">Translation</div>
+          <div class="translation-text">${verse.translation}</div>
+        </div>
+
+        ${wordsHTML}
+
+        <div class="section-card">
+          <div class="section-label">Commentary</div>
+          <div class="commentary-text">${commentaryParas}</div>
+        </div>
+
+        ${quizHTML}
+
+        <div class="verse-nav">
+          ${prevHTML}
+          ${nextHTML}
+        </div>
+
+      </div>
+    `;
+  }
+
+  function renderComingSoon() {
+    document.getElementById('pageTitle').textContent = `BG ${cId}.${vId} | Bhagavad Gita | Beyond Outcomes`;
+    document.getElementById('mainContent').innerHTML = `
+      <div class="coming">
+        <span class="coming-om bo-anim-om-pulse">ॐ</span>
+        <div class="coming-ref">BG ${cId}.${vId}</div>
+        <h1 class="coming-title">Commentary Coming Soon</h1>
+        <p class="coming-text">We are building verse-by-verse commentary for the entire Bhagavad Gita — Sanskrit, transliteration, translation, and reflection for modern life. This verse will be available soon.</p>
+        <a href="chapter.html?c=${cId}" class="back-link">← Back to Chapter ${cId}</a>
+      </div>
+    `;
+  }
 </script>
 </body>
 </html>
