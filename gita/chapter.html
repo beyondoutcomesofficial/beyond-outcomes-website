@@ -57,6 +57,26 @@
     .quiz-card-title { font-family: var(--bo-font-display); font-size: 1rem; color: var(--bo-text-primary); }
     .quiz-card-arrow { font-family: var(--bo-font-ui); font-size: 18px; color: var(--bo-gold); flex-shrink: 0; }
 
+    /* YouTube card */
+    .yt-card {
+      background: linear-gradient(135deg, #fff8f0, #fdf2e0);
+      border: 1px solid rgba(169,126,48,0.45);
+      border-radius: var(--bo-radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .yt-card:hover { border-color: rgba(255,0,0,0.4); }
+    .yt-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .yt-label { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #cc0000; opacity: 0.8; margin-bottom: 0.25rem; }
+    .yt-title { font-family: var(--bo-font-display); font-size: 1rem; color: var(--bo-text-primary); }
+    .yt-arrow { font-size: 18px; color: var(--bo-gold); flex-shrink: 0; }
+
     /* Verse list */
     .verse-section { margin-bottom: 3rem; }
     .verse-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
@@ -204,12 +224,31 @@
       qCard.className = 'quiz-card';
       qCard.innerHTML = `
         <div>
-          <div class="quiz-card-label">Related Self-Inquiry Quiz</div>
+          <div class="quiz-card-label">Related Self-Inquiry</div>
           <div class="quiz-card-title">${ch.relatedQuiz.title}</div>
         </div>
         <div class="quiz-card-arrow">→</div>
       `;
       slot.appendChild(qCard);
+    }
+
+    // YouTube short
+    if (ch.youtubeShort) {
+      const slot = document.getElementById('relatedQuizSlot');
+      const ytCard = document.createElement('a');
+      ytCard.href = ch.youtubeShort.url;
+      ytCard.target = '_blank';
+      ytCard.rel = 'noopener';
+      ytCard.className = 'yt-card';
+      ytCard.innerHTML = `
+        <div class="yt-icon">▶</div>
+        <div style="flex:1;">
+          <div class="yt-label">Watch on YouTube · Beyond Outcomes</div>
+          <div class="yt-title">${ch.youtubeShort.title}</div>
+        </div>
+        <div class="yt-arrow">→</div>
+      `;
+      slot.appendChild(ytCard);
     }
 
     // Verse count

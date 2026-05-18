@@ -112,6 +112,26 @@
       line-height: 1.75;
     }
 
+    /* YouTube card */
+    .yt-card {
+      background: linear-gradient(135deg, #fff8f0, #fdf2e0);
+      border: 1px solid rgba(169,126,48,0.45);
+      border-radius: var(--bo-radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .yt-card:hover { border-color: rgba(255,0,0,0.4); }
+    .yt-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .yt-label { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #cc0000; opacity: 0.8; margin-bottom: 0.25rem; }
+    .yt-title { font-family: var(--bo-font-display); font-size: 1rem; color: var(--bo-text-primary); }
+    .yt-arrow { font-size: 18px; color: var(--bo-gold); flex-shrink: 0; }
+
     /* Related quiz */
     .quiz-card {
       background: var(--bo-gradient-cta);
@@ -237,6 +257,17 @@
         </div>
       </div>` : '';
 
+    // YouTube short HTML
+    const ytHTML = verse.youtubeShort ? `
+      <a href="${verse.youtubeShort.url}" target="_blank" rel="noopener" class="yt-card">
+        <div class="yt-icon">▶</div>
+        <div style="flex:1;">
+          <div class="yt-label">Watch on YouTube · Beyond Outcomes</div>
+          <div class="yt-title">${verse.youtubeShort.title}</div>
+        </div>
+        <div class="yt-arrow">→</div>
+      </a>` : '';
+
     // Related quiz HTML
     const quizHTML = verse.relatedQuiz ? `
       <a href="${verse.relatedQuiz.url}" class="quiz-card">
@@ -284,6 +315,8 @@
           <div class="section-label">Commentary</div>
           <div class="commentary-text">${commentaryParas}</div>
         </div>
+
+        ${ytHTML}
 
         ${quizHTML}
 
