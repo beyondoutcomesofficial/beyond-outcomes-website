@@ -29,30 +29,74 @@
     .stats { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
     .stat-chip { font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-gold-deep); background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25); border-radius: 30px; padding: 6px 14px; }
 
-    .grid { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
-
-    .chapter-card {
-      background: linear-gradient(135deg, var(--bo-warm-white), var(--bo-cream-deep));
-      border: 1px solid var(--bo-border);
-      border-radius: var(--bo-radius-lg);
-      padding: 1.4rem 1.5rem;
-      text-decoration: none;
-      display: block;
-      transition: border-color 0.2s, transform 0.15s;
-      position: relative;
+    /* Table */
+    .table-wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .chapter-table { width: 100%; border-collapse: collapse; }
+    .chapter-table thead tr {
+      border-bottom: 1px solid var(--bo-border-strong);
     }
-    .chapter-card:hover { border-color: var(--bo-gold); transform: translateY(-2px); }
-
-    .card-num { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.2em; color: var(--bo-gold); opacity: 0.7; margin-bottom: 0.4rem; }
-    .card-sanskrit { font-family: var(--bo-font-display); font-size: 0.85rem; color: var(--bo-gold-deep); letter-spacing: 0.05em; margin-bottom: 0.3rem; }
-    .card-name { font-family: var(--bo-font-display); font-size: 1.15rem; font-weight: 500; color: var(--bo-text-primary); line-height: 1.2; margin-bottom: 0.5rem; }
-    .card-tagline { font-family: var(--bo-font-body); font-size: 0.88rem; font-style: italic; color: var(--bo-text-secondary); line-height: 1.55; margin-bottom: 0.75rem; }
-    .card-footer { display: flex; align-items: center; justify-content: space-between; }
-    .card-verses { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-text-faint); }
-    .card-arrow { font-family: var(--bo-font-ui); font-size: 12px; color: var(--bo-gold); opacity: 0; transition: opacity 0.2s; }
-    .chapter-card:hover .card-arrow { opacity: 1; }
-    .card-quiz-tag { font-family: var(--bo-font-ui); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-gold-deep); background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2); border-radius: 20px; padding: 3px 8px; margin-top: 0.5rem; display: inline-block; }
+    .chapter-table th {
+      font-family: var(--bo-font-display);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--bo-gold-deep);
+      opacity: 0.75;
+      padding: 0 1rem 0.85rem 0;
+      text-align: left;
+      font-weight: 400;
+    }
+    .chapter-table th:last-child { text-align: right; padding-right: 0; }
+    .chapter-table tbody tr {
+      border-bottom: 1px solid var(--bo-border-faint);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .chapter-table tbody tr:hover { background: rgba(201,168,76,0.05); }
+    .chapter-table td {
+      padding: 1rem 1rem 1rem 0;
+      vertical-align: middle;
+    }
+    .chapter-table td:last-child { text-align: right; padding-right: 0; }
+    .td-num {
+      font-family: var(--bo-font-display);
+      font-size: 0.85rem;
+      color: var(--bo-gold);
+      opacity: 0.75;
+      white-space: nowrap;
+      width: 60px;
+    }
+    .td-sanskrit {
+      font-family: var(--bo-font-display);
+      font-size: 0.8rem;
+      color: var(--bo-gold-deep);
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+    .td-name {
+      font-family: var(--bo-font-display);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--bo-text-primary);
+    }
+    .td-verses {
+      font-family: var(--bo-font-display);
+      font-size: 0.95rem;
+      color: var(--bo-text-secondary);
+      white-space: nowrap;
+    }
+    .td-arrow {
+      font-size: 14px;
+      color: var(--bo-gold);
+      opacity: 0;
+      transition: opacity 0.15s;
+      padding-left: 0.5rem;
+    }
+    .chapter-table tbody tr:hover .td-arrow { opacity: 1; }
+    .td-quiz-tag { font-family: var(--bo-font-ui); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bo-gold-deep); background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2); border-radius: 20px; padding: 2px 8px; display: inline-block; margin-top: 4px; }
+    @media (max-width: 520px) {
+      .td-sanskrit { display: none; }
+    }
 
     .footer-strip { background: var(--bo-cream-deep); border-top: 1px solid var(--bo-border); padding: 2rem 1.5rem; text-align: center; }
     .footer-brand { font-family: var(--bo-font-display); font-size: 1.1rem; color: var(--bo-text-primary); margin-bottom: 0.25rem; }
@@ -86,7 +130,18 @@
     </div>
   </div>
 
-  <div class="grid" id="chapterGrid"></div>
+  <div class="table-wrap">
+    <table class="chapter-table">
+      <thead>
+        <tr>
+          <th>Ch</th>
+          <th>Chapter</th>
+          <th style="text-align:right;">Verses</th>
+        </tr>
+      </thead>
+      <tbody id="chapterTableBody"></tbody>
+    </table>
+  </div>
 
   <div class="footer-strip">
     <div class="footer-brand">Beyond Outcomes</div>
@@ -104,23 +159,20 @@
 
 <script src="../js/gita/chapters.js"></script>
 <script>
-  const grid = document.getElementById('chapterGrid');
+  const tbody = document.getElementById('chapterTableBody');
   window.GITA_CHAPTERS.forEach(ch => {
-    const card = document.createElement('a');
-    card.href = `chapter.html?c=${ch.id}`;
-    card.className = 'chapter-card';
-    card.innerHTML = `
-      <div class="card-num">Chapter ${ch.id}</div>
-      <div class="card-sanskrit">${ch.sanskrit}</div>
-      <div class="card-name">${ch.name}</div>
-      <div class="card-tagline">${ch.tagline}</div>
-      ${ch.relatedQuiz ? `<div class="card-quiz-tag">Quiz: ${ch.relatedQuiz.title}</div>` : ''}
-      <div class="card-footer">
-        <span class="card-verses">${ch.verses} verses</span>
-        <span class="card-arrow">→</span>
-      </div>
+    const tr = document.createElement('tr');
+    tr.onclick = () => window.location.href = `chapter.html?c=${ch.id}`;
+    tr.innerHTML = `
+      <td class="td-num">${ch.id}</td>
+      <td>
+        <div class="td-sanskrit">${ch.sanskrit}</div>
+        <div class="td-name">${ch.name}</div>
+        ${ch.relatedQuiz ? `<div class="td-quiz-tag">Quiz available</div>` : ''}
+      </td>
+      <td class="td-verses">${ch.verses} <span class="td-arrow">→</span></td>
     `;
-    grid.appendChild(card);
+    tbody.appendChild(tr);
   });
 </script>
 </body>
