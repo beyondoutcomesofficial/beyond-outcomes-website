@@ -1,10 +1,14 @@
 // Shared Quiz Logic — works with any quiz that follows the QUIZ_DATA contract
+
+// NLP quizzes gate the AI reflection behind email capture
+const NLP_QUIZZES = ['stress', 'locus', 'bias', 'belief', 'decision'];
+
 const UI_LANG = {
-  en: { depthLabel: 'Choose the depth of your inquiry', qLabel: 'Questions', d10: 'Focused reflection', d15: 'Deeper inquiry', start: 'Begin the Inquiry', back: 'Back', next: 'Next', seeResult: 'See My Result', question: 'Question', loadingMsgs: ['The Gita contemplates your answers...', 'Reading the pattern within...', 'Weaving your inner portrait...'], loadingSub: 'A moment of patience', yourResult: 'Your dominant pattern', emailTitle: 'Get this reflection + weekly Gita wisdom', emailSub: "We'll email you this reflection to revisit — and send a weekly shloka tailored to your inner pattern. One insight, every week. No noise.", emailBtn: 'Send My Results', emailSuccess: 'Done. Check your inbox.', emailError: 'Please enter a valid email.', shareLabel: 'Share your result', saveBtn: 'Save as Image', saveSub: 'Share to Instagram, WhatsApp Stories & more', waBtn: 'WhatsApp', copyBtn: 'Copy Text', copied: 'Copied to clipboard', retake: 'Retake Quiz', explore: 'More Quizzes ↗' },
-  hi: { depthLabel: 'अपनी जिज्ञासा की गहराई चुनें', qLabel: 'प्रश्न', d10: 'केंद्रित चिंतन', d15: 'गहरी जिज्ञासा', start: 'जिज्ञासा आरंभ करें', back: 'वापस', next: 'आगे', seeResult: 'परिणाम देखें', question: 'प्रश्न', loadingMsgs: ['गीता आपके उत्तरों पर विचार कर रही है...', 'भीतर का स्वरूप पढ़ा जा रहा है...'], loadingSub: 'धैर्य का एक क्षण', yourResult: 'आपका प्रमुख स्वरूप', emailTitle: 'यह चिंतन + साप्ताहिक गीता ज्ञान पाएं', emailSub: 'यह चिंतन inbox में भेजेंगे — और आपके स्वरूप के अनुसार एक साप्ताहिक श्लोक। हर सप्ताह एक अंतर्दृष्टि। कोई शोर नहीं।', emailBtn: 'परिणाम भेजें', emailSuccess: 'हो गया। अपना inbox देखें।', emailError: 'कृपया वैध ईमेल दर्ज करें।', shareLabel: 'अपना परिणाम साझा करें', saveBtn: 'चित्र सहेजें', saveSub: 'Instagram, WhatsApp Stories पर शेयर करें', waBtn: 'WhatsApp', copyBtn: 'टेक्स्ट कॉपी', copied: 'क्लिपबोर्ड पर कॉपी', retake: 'पुनः प्रयास', explore: 'और प्रश्नोत्तरी ↗' }
+  en: { depthLabel: 'Choose the depth of your inquiry', qLabel: 'Questions', d10: 'Focused reflection', d15: 'Deeper inquiry', start: 'Begin the Inquiry', back: 'Back', next: 'Next', seeResult: 'See My Result', question: 'Question', loadingMsgs: ['The Gita contemplates your answers...', 'Reading the pattern within...', 'Weaving your inner portrait...'], loadingSub: 'A moment of patience', yourResult: 'Your dominant pattern', emailTitle: 'Get this reflection + weekly Gita wisdom', emailSub: "We'll email you this reflection to revisit — and send a weekly shloka tailored to your inner pattern. One insight, every week. No noise.", emailBtn: 'Send My Results', emailSuccess: 'Done. Check your inbox.', emailError: 'Please enter a valid email.', shareLabel: 'Share your result', saveBtn: 'Save as Image', saveSub: 'Share to Instagram, WhatsApp Stories & more', waBtn: 'WhatsApp', copyBtn: 'Copy Text', copied: 'Copied to clipboard', retake: 'Retake Quiz', explore: 'More Quizzes ↗', gateTitle: 'Your reflection is ready.', gateSub: 'Enter your email to unlock your personalised reflection — written for you based on how you answered.', gateBtn: 'Unlock My Reflection →', gateNote: 'No spam. Satya may follow up personally.' },
+  hi: { depthLabel: 'अपनी जिज्ञासा की गहराई चुनें', qLabel: 'प्रश्न', d10: 'केंद्रित चिंतन', d15: 'गहरी जिज्ञासा', start: 'जिज्ञासा आरंभ करें', back: 'वापस', next: 'आगे', seeResult: 'परिणाम देखें', question: 'प्रश्न', loadingMsgs: ['गीता आपके उत्तरों पर विचार कर रही है...', 'भीतर का स्वरूप पढ़ा जा रहा है...'], loadingSub: 'धैर्य का एक क्षण', yourResult: 'आपका प्रमुख स्वरूप', emailTitle: 'यह चिंतन + साप्ताहिक गीता ज्ञान पाएं', emailSub: 'यह चिंतन inbox में भेजेंगे — और आपके स्वरूप के अनुसार एक साप्ताहिक श्लोक। हर सप्ताह एक अंतर्दृष्टि। कोई शोर नहीं।', emailBtn: 'परिणाम भेजें', emailSuccess: 'हो गया। अपना inbox देखें।', emailError: 'कृपया वैध ईमेल दर्ज करें।', shareLabel: 'अपना परिणाम साझा करें', saveBtn: 'चित्र सहेजें', saveSub: 'Instagram, WhatsApp Stories पर शेयर करें', waBtn: 'WhatsApp', copyBtn: 'टेक्स्ट कॉपी', copied: 'क्लिपबोर्ड पर कॉपी', retake: 'पुनः प्रयास', explore: 'और प्रश्नोत्तरी ↗', gateTitle: 'आपका चिंतन तैयार है।', gateSub: 'अपना व्यक्तिगत चिंतन अनलॉक करने के लिए ईमेल दर्ज करें — आपके उत्तरों के आधार पर लिखा गया।', gateBtn: 'चिंतन अनलॉक करें →', gateNote: 'कोई स्पैम नहीं। सत्या व्यक्तिगत रूप से संपर्क कर सकते हैं।' }
 };
 
-let lang = 'en', selectedDepth = 0, currentQ = 0, answers = [], questions = [], resultData = null;
+let lang = 'en', selectedDepth = 0, currentQ = 0, answers = [], questions = [], resultData = null, reflectionUnlocked = false;
 const QD = window.QUIZ_DATA;
 
 function setLang(l) {
@@ -189,6 +193,74 @@ async function submitQuiz() {
   }, 500);
 
   showScreen('screen-result');
+
+  // NLP quizzes: show email gate, hide reflection until unlocked
+  const isNLP = NLP_QUIZZES.includes(QD.id);
+  const gate = document.getElementById('reflection-gate');
+  const content = document.getElementById('reflection-content');
+  if (isNLP && !reflectionUnlocked) {
+    if (gate) gate.style.display = 'block';
+    if (content) content.style.display = 'none';
+    const ui = UI_LANG[lang];
+    const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    setEl('l-gate-title', ui.gateTitle);
+    setEl('l-gate-sub', ui.gateSub);
+    setEl('gate-email-btn', ui.gateBtn);
+    setEl('l-gate-note', ui.gateNote);
+  } else {
+    if (gate) gate.style.display = 'none';
+    if (content) content.style.display = 'block';
+  }
+}
+
+function unlockReflection() {
+  if (reflectionUnlocked) return;
+  reflectionUnlocked = true;
+  const gate = document.getElementById('reflection-gate');
+  const content = document.getElementById('reflection-content');
+  if (gate) gate.style.display = 'none';
+  if (content) {
+    content.style.display = 'block';
+    content.classList.add('revealed');
+  }
+  setTimeout(() => {
+    const body = document.getElementById('result-body');
+    if (body) body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 250);
+}
+
+async function submitGateEmail() {
+  const ui = UI_LANG[lang];
+  const input = document.getElementById('gate-email-input');
+  const btn = document.getElementById('gate-email-btn');
+  const msg = document.getElementById('gate-msg');
+  const v = input ? input.value.trim() : '';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+    if (msg) { msg.style.color = '#a04040'; msg.textContent = ui.emailError; msg.style.display = 'block'; }
+    return;
+  }
+  if (btn) { btn.disabled = true; btn.textContent = '...'; }
+  // Unlock immediately — reflection is already in memory
+  unlockReflection();
+  // Subscribe in background
+  try {
+    const d = resultData;
+    await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: v,
+        source: 'quiz-gate-nlp',
+        quizTitle: QD.meta.en.shareTitle,
+        dominant: d.dominant,
+        subtitle: d.subtitle,
+        reflection: d.reflection,
+        shloka: d.shloka,
+        shlokaRef: d.shlokaRef || '',
+        shlokaMeaning: d.shlokaMeaning
+      })
+    });
+  } catch (e) { /* silent — reflection already shown */ }
 }
 
 async function submitEmail() {
@@ -438,7 +510,15 @@ async function downloadCard() {
 }
 
 function retake() {
-  answers = []; currentQ = 0; selectedDepth = 0; resultData = null;
+  answers = []; currentQ = 0; selectedDepth = 0; resultData = null; reflectionUnlocked = false;
+  const gate = document.getElementById('reflection-gate');
+  const content = document.getElementById('reflection-content');
+  if (gate) gate.style.display = 'none';
+  if (content) { content.style.display = 'block'; content.classList.remove('revealed'); }
+  const gateInput = document.getElementById('gate-email-input');
+  if (gateInput) gateInput.value = '';
+  const gateMsg = document.getElementById('gate-msg');
+  if (gateMsg) gateMsg.style.display = 'none';
   document.querySelectorAll('.depth-card').forEach(c => c.classList.remove('selected'));
   document.getElementById('btn-start').disabled = true;
   showScreen('screen-landing'); applyLang();

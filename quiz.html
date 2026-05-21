@@ -159,6 +159,24 @@
       <!-- Bars are rendered dynamically based on quiz categories -->
     </div>
     <div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-glyph">॥</div><div class="section-divider-line"></div></div>
+
+    <!-- REFLECTION GATE — shown for NLP quizzes before email unlock -->
+    <div id="reflection-gate" style="display:none;">
+      <div class="gate-card">
+        <div class="gate-icon">◈</div>
+        <div class="gate-title" id="l-gate-title">Your reflection is ready.</div>
+        <div class="gate-sub" id="l-gate-sub">Enter your email to unlock your personalised reflection — written for you based on how you answered.</div>
+        <div class="email-row" style="margin-top: 1.25rem;">
+          <input class="bo-input" type="email" id="gate-email-input" placeholder="your@email.com">
+          <button class="bo-btn-primary" onclick="submitGateEmail()" id="gate-email-btn" style="white-space:nowrap; padding: 0.85rem 1.4rem;">Unlock →</button>
+        </div>
+        <div class="gate-note" id="l-gate-note">No spam. Satya may follow up personally.</div>
+        <div class="gate-msg" id="gate-msg" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- REFLECTION CONTENT — always visible for Gita quizzes, unlocked for NLP -->
+    <div id="reflection-content">
     <div class="result-body" id="result-body"></div>
     <div class="shloka-card" id="shloka-box">
       <div class="shloka-om-text">ॐ</div>
@@ -208,6 +226,7 @@
       <button class="bo-btn-primary" onclick="retake()" id="l-retake"></button>
       <a href="quizzes.html" class="btn-explore" id="l-explore"></a>
     </div>
+    </div><!-- /reflection-content -->
   </div>
 
 </div>
@@ -295,6 +314,57 @@ document.body.appendChild(script);
   font-style: italic;
   color: var(--bo-text-faint);
   margin-top: 0.65rem;
+}
+/* Reflection gate */
+.gate-card {
+  background: linear-gradient(135deg, #f5efe0, #ede3cc);
+  border: 1px solid rgba(169,126,48,0.35);
+  border-radius: var(--bo-radius-lg);
+  padding: 2rem 1.75rem;
+  margin: 0.5rem 0 1.5rem;
+  text-align: center;
+}
+.gate-icon {
+  font-size: 1.6rem;
+  color: var(--bo-gold);
+  margin-bottom: 0.75rem;
+  opacity: 0.65;
+}
+.gate-title {
+  font-family: var(--bo-font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--bo-text-primary);
+  margin-bottom: 0.6rem;
+}
+.gate-sub {
+  font-family: var(--bo-font-body);
+  font-size: 0.97rem;
+  color: var(--bo-text-secondary);
+  line-height: 1.78;
+  font-style: italic;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.gate-note {
+  font-family: var(--bo-font-body);
+  font-size: 0.82rem;
+  color: var(--bo-text-faint);
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+.gate-msg {
+  font-family: var(--bo-font-body);
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+@keyframes reflectionReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#reflection-content.revealed {
+  animation: reflectionReveal 0.65s ease forwards;
 }
 </style>
 
