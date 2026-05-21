@@ -4,37 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Self-Inquiry Quizzes — Beyond Outcomes</title>
-  <meta name="description" content="A library of AI-powered Gita-rooted self-inquiry quizzes. Discover your dominant Guna, your Karma Yoga style, and more.">
+  <meta name="description" content="A library of AI-powered self-inquiry quizzes — Gita-rooted explorations and NLP pattern tools. Discover your dominant Guna, your stress pattern, your limiting beliefs, and more.">
   <link rel="canonical" href="https://www.beyondoutcomes.in/quizzes.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Beyond Outcomes">
   <meta property="og:url" content="https://www.beyondoutcomes.in/quizzes.html">
   <meta property="og:title" content="Self-Inquiry Quizzes — Beyond Outcomes">
-  <meta property="og:description" content="A library of AI-powered Gita-rooted self-inquiry quizzes. Discover your dominant Guna, your Karma Yoga style, and more.">
+  <meta property="og:description" content="A library of AI-powered self-inquiry quizzes — Gita-rooted explorations and NLP pattern tools. Discover your dominant Guna, your stress pattern, your limiting beliefs, and more.">
   <meta property="og:image" content="https://www.beyondoutcomes.in/images/og/guna-sattva.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Self-Inquiry Quizzes — Beyond Outcomes">
-  <meta name="twitter:description" content="A library of AI-powered Gita-rooted self-inquiry quizzes. Discover your dominant Guna, your Karma Yoga style, and more.">
+  <meta name="twitter:description" content="A library of AI-powered self-inquiry quizzes — Gita-rooted and NLP-rooted. Discover what drives you, what blocks you, and what is possible.">
   <meta name="twitter:image" content="https://www.beyondoutcomes.in/images/og/guna-sattva.png">
   <link rel="stylesheet" href="css/beyond-outcomes.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bo-cream); }
     .page { background: var(--bo-gradient-page); min-height: 100vh; padding: 0 0 4rem; }
+
+    /* Nav */
     .nav { padding: 1.5rem 1.5rem 0; max-width: 720px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; transition: color 0.2s; }
     .nav a:hover { color: var(--bo-text-primary); }
+    .lang-bar { display: flex; gap: 6px; }
+    .lang-btn { padding: 4px 12px; border: 1px solid var(--bo-border-strong); border-radius: var(--bo-radius-pill); background: rgba(255,253,245,0.6); color: var(--bo-gold-deep); font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s; }
+    .lang-btn.active { border-color: var(--bo-gold); background: var(--bo-gold); color: var(--bo-warm-white); }
+
+    /* Hero */
     .hero { text-align: center; padding: 3rem 1.5rem 2rem; max-width: 640px; margin: 0 auto; }
     .hero-om { font-family: var(--bo-font-body); font-size: 2.4rem; color: var(--bo-gold); display: block; margin-bottom: 0.75rem; }
     .hero-tagline { font-family: var(--bo-font-body); font-size: 1.2rem; font-style: italic; color: var(--bo-text-muted); margin-top: 0.5rem; }
     .hero-desc { font-family: var(--bo-font-body); font-size: 1.1rem; line-height: 1.85; color: var(--bo-text-secondary); max-width: 540px; margin: 1.5rem auto 0; }
-    .quiz-grid { max-width: 720px; margin: 2rem auto 0; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* Section headers */
+    .section-wrap { max-width: 720px; margin: 2.5rem auto 0; padding: 0 1.5rem; }
+    .section-header { margin-bottom: 1.25rem; }
+    .section-eyebrow { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bo-gold-deep); opacity: 0.75; margin-bottom: 0.4rem; }
+    .section-title { font-family: var(--bo-font-display); font-size: 1.35rem; font-weight: 500; color: var(--bo-text-primary); }
+    .section-desc { font-family: var(--bo-font-body); font-size: 0.97rem; font-style: italic; color: var(--bo-text-muted); margin-top: 0.4rem; line-height: 1.75; }
+    .section-rule { border: none; border-top: 1px solid var(--bo-border); margin-bottom: 1.5rem; }
+
+    /* NLP section — subtle tonal shift */
+    .section-wrap.nlp { margin-top: 3.5rem; }
+    .section-wrap.nlp .section-eyebrow { color: #7a6a4a; }
+    .section-wrap.nlp .section-title { color: var(--bo-text-primary); }
+    .nlp-attr { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bo-text-faint); margin-top: 0.35rem; }
+
+    /* Quiz grid */
+    .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media (max-width: 600px) { .quiz-grid { grid-template-columns: 1fr; } }
+
+    /* Quiz cards — base */
     .quiz-card { background: var(--bo-warm-white); border: 1px solid var(--bo-border); border-radius: 14px; padding: 1.75rem 1.5rem; text-decoration: none; color: var(--bo-text-primary); transition: all 0.4s var(--bo-ease); cursor: pointer; display: flex; flex-direction: column; position: relative; overflow: hidden; }
     .quiz-card.live:hover { border-color: var(--bo-gold); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(160,120,48,0.15); }
     .quiz-card.live:hover .card-arrow { transform: translateX(4px); color: var(--bo-gold-dark); }
     .quiz-card.coming-soon { opacity: 0.7; cursor: not-allowed; background: linear-gradient(135deg, #faf3e0, #f4ead0); }
     .quiz-card.coming-soon:hover { opacity: 0.85; }
+
+    /* NLP card variant */
+    .quiz-card.nlp-card { background: linear-gradient(135deg, var(--bo-warm-white), #f9f3e4); border-color: rgba(169,126,48,0.25); }
+    .quiz-card.nlp-card.live:hover { border-color: var(--bo-gold); box-shadow: 0 12px 36px rgba(120,95,40,0.18); }
+    .nlp-badge { display: inline-block; background: rgba(169,126,48,0.12); color: var(--bo-gold-deep); font-family: var(--bo-font-ui); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; margin-bottom: 0.6rem; border: 1px solid rgba(169,126,48,0.2); }
+
     .card-status { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bo-gold-deep); margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; }
     .card-soon-badge { background: rgba(169,126,48,0.15); color: var(--bo-gold-dark); padding: 3px 10px; border-radius: 12px; font-size: 9px; letter-spacing: 0.15em; }
     .card-title { font-family: var(--bo-font-display); font-size: 1.15rem; font-weight: 500; color: var(--bo-text-primary); margin-bottom: 0.4rem; line-height: 1.3; }
@@ -42,13 +73,11 @@
     .card-desc { font-family: var(--bo-font-body); font-size: 0.95rem; line-height: 1.7; color: var(--bo-text-muted); margin-bottom: 1.25rem; flex: 1; }
     .card-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--bo-border-faint); font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.1em; color: var(--bo-text-faint); text-transform: uppercase; }
     .card-arrow { color: var(--bo-gold-deep); transition: all 0.3s; font-size: 1.2rem; line-height: 1; }
-    .lang-bar { display: flex; gap: 6px; }
-    .lang-btn { padding: 4px 12px; border: 1px solid var(--bo-border-strong); border-radius: var(--bo-radius-pill); background: rgba(255,253,245,0.6); color: var(--bo-gold-deep); font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s; }
-    .lang-btn.active { border-color: var(--bo-gold); background: var(--bo-gold); color: var(--bo-warm-white); }
-    .footer { text-align: center; padding: 3rem 1.5rem 1rem; max-width: 640px; margin: 0 auto; }
-    .footer p { font-family: var(--bo-font-body); font-size: 1rem; font-style: italic; color: var(--bo-text-muted); }
+
+    /* Footer */
+    .page-footer { text-align: center; padding: 3rem 1.5rem 1rem; max-width: 640px; margin: 0 auto; }
+    .page-footer p { font-family: var(--bo-font-body); font-size: 1rem; font-style: italic; color: var(--bo-text-muted); }
   </style>
-  <!-- Google Analytics 4 — Replace G-70BM48WVYR with your Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -56,10 +85,10 @@
     gtag('js', new Date());
     gtag('config', 'G-70BM48WVYR');
   </script>
-
 </head>
 <body class="bo-body">
 <div class="page">
+
 <div class="nav">
   <a href="index.html">← Beyond Outcomes</a>
   <div class="lang-bar">
@@ -67,55 +96,142 @@
     <button class="lang-btn" onclick="setLang('hi')">हिं</button>
   </div>
 </div>
+
 <div class="hero">
   <span class="hero-om bo-anim-om-pulse">ॐ</span>
   <h1 class="bo-title-hero" id="hero-title">Self-Inquiry</h1>
-  <p class="hero-tagline" id="hero-sub">A library of Gita-rooted explorations</p>
+  <p class="hero-tagline" id="hero-sub">Gita-rooted wisdom · NLP pattern tools</p>
   <div class="bo-divider" style="margin: 1.5rem auto 1rem; max-width: 240px;"><div class="bo-divider-line"></div><div class="bo-divider-dot"></div><div class="bo-divider-line"></div></div>
-  <p class="hero-desc" id="hero-desc">Each quiz is a doorway. Drawn from different chapters of the Bhagavad Gita, each reveals a different facet of your inner landscape. Choose what calls to you today.</p>
+  <p class="hero-desc" id="hero-desc">Two traditions, one direction — inward. The Gita names your nature; NLP reveals the pattern beneath your behaviour. Choose what calls to you today.</p>
 </div>
-<div class="quiz-grid" id="quiz-grid"></div>
-<div class="footer">
-  <p id="footer-text">More quizzes coming soon. Each one rooted in a different Gita teaching.</p>
+
+<!-- Section 1: Gita Self-Inquiry -->
+<div class="section-wrap gita" id="gita-section">
+  <div class="section-header">
+    <div class="section-eyebrow" id="gita-eyebrow">Bhagavad Gita</div>
+    <div class="section-title" id="gita-title">Gita Self-Inquiry</div>
+    <div class="section-desc" id="gita-desc">Ancient maps of the inner landscape — drawn directly from the Gita's chapters.</div>
+  </div>
+  <hr class="section-rule">
+  <div class="quiz-grid" id="gita-grid"></div>
 </div>
+
+<!-- Section 2: NLP Pattern Tools -->
+<div class="section-wrap nlp" id="nlp-section">
+  <div class="section-header">
+    <div class="section-eyebrow" id="nlp-eyebrow">NLP Pattern Tools</div>
+    <div class="section-title" id="nlp-title">Pattern Awareness</div>
+    <div class="section-desc" id="nlp-desc">Find the pattern beneath the pattern — and where the Gita points the way out.</div>
+    <div class="nlp-attr" id="nlp-attr">With R. Satyamoorthy · Certified NLP Practitioner</div>
+  </div>
+  <hr class="section-rule">
+  <div class="quiz-grid" id="nlp-grid"></div>
 </div>
+
+<div class="page-footer">
+  <p id="footer-text">More quizzes coming. Each one a doorway — inward.</p>
+</div>
+
+</div><!-- .page -->
 
 <script src="js/quizzes-index.js"></script>
 <script>
 let lang = 'en';
+
 const COPY = {
-  en: { title: 'Self-Inquiry', sub: 'A library of Gita-rooted explorations', desc: 'Each quiz is a doorway. Drawn from different chapters of the Bhagavad Gita, each reveals a different facet of your inner landscape. Choose what calls to you today.', soon: 'Coming Soon', explore: 'Explore', footer: 'More quizzes coming soon. Each one rooted in a different Gita teaching.' },
-  hi: { title: 'आत्म-जिज्ञासा', sub: 'गीता-आधारित अन्वेषणों का संग्रह', desc: 'प्रत्येक प्रश्नोत्तरी एक द्वार है। भगवद्गीता के विभिन्न अध्यायों से ली गई, प्रत्येक आपके आंतरिक स्वरूप का एक भिन्न पहलू प्रकट करती है।', soon: 'जल्द आ रहा', explore: 'अन्वेषण करें', footer: 'और प्रश्नोत्तरियां जल्द आ रही हैं।' }
+  en: {
+    heroTitle: 'Self-Inquiry',
+    heroSub: 'Gita-rooted wisdom · NLP pattern tools',
+    heroDesc: 'Two traditions, one direction — inward. The Gita names your nature; NLP reveals the pattern beneath your behaviour. Choose what calls to you today.',
+    gitaEyebrow: 'Bhagavad Gita',
+    gitaTitle: 'Gita Self-Inquiry',
+    gitaDesc: 'Ancient maps of the inner landscape — drawn directly from the Gita\'s chapters.',
+    nlpEyebrow: 'NLP Pattern Tools',
+    nlpTitle: 'Pattern Awareness',
+    nlpDesc: 'Find the pattern beneath the pattern — and where the Gita points the way out.',
+    nlpAttr: 'With R. Satyamoorthy · Certified NLP Practitioner',
+    soon: 'Coming Soon',
+    footer: 'More quizzes coming. Each one a doorway — inward.'
+  },
+  hi: {
+    heroTitle: 'आत्म-जिज्ञासा',
+    heroSub: 'गीता-ज्ञान · NLP पैटर्न टूल्स',
+    heroDesc: 'दो परंपराएं, एक दिशा — अंदर की ओर। गीता आपकी प्रकृति बताती है; NLP आपके व्यवहार के नीचे के पैटर्न को उजागर करता है।',
+    gitaEyebrow: 'भगवद्गीता',
+    gitaTitle: 'गीता आत्म-जिज्ञासा',
+    gitaDesc: 'आंतरिक भूदृश्य के प्राचीन मानचित्र — गीता के अध्यायों से सीधे लिए गए।',
+    nlpEyebrow: 'NLP पैटर्न टूल्स',
+    nlpTitle: 'पैटर्न जागरूकता',
+    nlpDesc: 'पैटर्न के नीचे के पैटर्न को खोजें — और जानें कि गीता कहाँ रास्ता दिखाती है।',
+    nlpAttr: 'R. सत्यमूर्ति के साथ · प्रमाणित NLP प्रैक्टिशनर',
+    soon: 'जल्द आ रहा',
+    footer: 'और प्रश्नोत्तरियां जल्द आ रही हैं। प्रत्येक एक द्वार — अंदर की ओर।'
+  }
 };
 
 function setLang(l) {
   lang = l;
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', (l === 'en' && b.textContent === 'EN') || (l === 'hi' && b.textContent === 'हिं')));
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', (l === 'en' && b.textContent === 'EN') || (l === 'hi' && b.textContent === 'हिं'));
+  });
   render();
+}
+
+function buildCard(q, isNLP) {
+  const c = COPY[lang];
+  const isLive = q.status === 'live';
+  const card = document.createElement(isLive ? 'a' : 'div');
+  if (isLive) card.href = 'quiz-' + q.id + '.html';
+  card.className = 'quiz-card ' + q.status + (isNLP ? ' nlp-card' : '');
+
+  const statusBadge = isLive ? '' : '<span class="card-soon-badge">' + c.soon + '</span>';
+  const nlpBadge = isNLP ? '<div class="nlp-badge">NLP · Satya</div>' : '';
+
+  card.innerHTML =
+    nlpBadge +
+    '<div class="card-status">' + q.chapter + statusBadge + '</div>' +
+    '<div class="card-title">' + q.title[lang] + '</div>' +
+    '<div class="card-subtitle">' + q.subtitle[lang] + '</div>' +
+    '<div class="card-desc">' + q.description[lang] + '</div>' +
+    '<div class="card-meta"><span>' + q.duration[lang] + '</span><span class="card-arrow">' + (isLive ? '→' : '✦') + '</span></div>';
+
+  return card;
 }
 
 function render() {
   const c = COPY[lang];
-  document.getElementById('hero-title').textContent = c.title;
-  document.getElementById('hero-sub').textContent = c.sub;
-  document.getElementById('hero-desc').textContent = c.desc;
+
+  // Hero
+  document.getElementById('hero-title').textContent = c.heroTitle;
+  document.getElementById('hero-sub').textContent = c.heroSub;
+  document.getElementById('hero-desc').textContent = c.heroDesc;
+
+  // Gita section
+  document.getElementById('gita-eyebrow').textContent = c.gitaEyebrow;
+  document.getElementById('gita-title').textContent = c.gitaTitle;
+  document.getElementById('gita-desc').textContent = c.gitaDesc;
+
+  // NLP section
+  document.getElementById('nlp-eyebrow').textContent = c.nlpEyebrow;
+  document.getElementById('nlp-title').textContent = c.nlpTitle;
+  document.getElementById('nlp-desc').textContent = c.nlpDesc;
+  document.getElementById('nlp-attr').textContent = c.nlpAttr;
+
+  // Footer
   document.getElementById('footer-text').textContent = c.footer;
 
-  const grid = document.getElementById('quiz-grid');
-  grid.innerHTML = '';
-  window.QUIZZES_INDEX.forEach(q => {
-    const isLive = q.status === 'live';
-    const card = document.createElement(isLive ? 'a' : 'div');
-    if (isLive) card.href = 'quiz-' + q.id + '.html';
-    card.className = 'quiz-card ' + q.status;
-    const statusBadge = isLive ? '' : '<span class="card-soon-badge">' + c.soon + '</span>';
-    card.innerHTML =
-      '<div class="card-status">' + q.chapter + statusBadge + '</div>' +
-      '<div class="card-title">' + q.title[lang] + '</div>' +
-      '<div class="card-subtitle">' + q.subtitle[lang] + '</div>' +
-      '<div class="card-desc">' + q.description[lang] + '</div>' +
-      '<div class="card-meta"><span>' + q.duration[lang] + '</span><span class="card-arrow">' + (isLive ? '→' : '✦') + '</span></div>';
-    grid.appendChild(card);
+  // Gita grid
+  const gitaGrid = document.getElementById('gita-grid');
+  gitaGrid.innerHTML = '';
+  window.QUIZZES_INDEX.filter(q => q.category === 'gita').forEach(q => {
+    gitaGrid.appendChild(buildCard(q, false));
+  });
+
+  // NLP grid
+  const nlpGrid = document.getElementById('nlp-grid');
+  nlpGrid.innerHTML = '';
+  window.QUIZZES_INDEX.filter(q => q.category === 'nlp').forEach(q => {
+    nlpGrid.appendChild(buildCard(q, true));
   });
 }
 

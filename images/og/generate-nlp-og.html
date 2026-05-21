@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NLP OG Image Generator — Beyond Outcomes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #1a1510; color: #f5ead0; font-family: 'Georgia', serif; padding: 2rem; }
+  h1 { font-size: 1.4rem; color: #C9A84C; margin-bottom: 0.5rem; }
+  p { font-size: 0.9rem; color: #a09070; margin-bottom: 2rem; }
+  .grid { display: grid; grid-template-columns: repeat(3, auto); gap: 1.5rem; align-items: start; }
+  .card { background: #231e16; border: 1px solid #3a3020; border-radius: 8px; padding: 1rem; }
+  .card h3 { font-size: 0.85rem; color: #C9A84C; margin-bottom: 0.5rem; letter-spacing: 0.1em; }
+  canvas { display: block; width: 400px; height: 210px; border-radius: 4px; }
+  .btn { display: block; margin-top: 0.6rem; padding: 6px 14px; background: #C9A84C; color: #1a1510;
+         border: none; border-radius: 4px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+         cursor: pointer; width: 100%; font-weight: bold; }
+  .btn:hover { background: #e8c060; }
+  .section-label { grid-column: 1 / -1; color: #C9A84C; font-size: 11px; letter-spacing: 0.2em;
+                   text-transform: uppercase; padding: 0.5rem 0; border-bottom: 1px solid #3a3020;
+                   margin-top: 1rem; }
+</style>
+</head>
+<body>
+<h1>NLP Quiz OG Image Generator</h1>
+<p>Each canvas renders at 1200×630 (standard OG size). Click "Download" to save. Drop each file into <code>/images/og/</code>.</p>
+<div class="grid" id="grid"></div>
+
+<script>
+const IMAGES = [
+  // Stress
+  { file: 'stress-reactive.png',    quiz: 'What Is Your Stress Pattern?',   cat: 'Reactive',       sub: 'The Fighter',          color: '#b05030' },
+  { file: 'stress-withdrawn.png',   quiz: 'What Is Your Stress Pattern?',   cat: 'Withdrawn',      sub: 'The Retreater',         color: '#405070' },
+  { file: 'stress-steady.png',      quiz: 'What Is Your Stress Pattern?',   cat: 'Steady',         sub: 'The Witness',           color: '#3a6a4a' },
+  // Locus
+  { file: 'locus-internal.png',     quiz: 'Where Does Your Power Live?',    cat: 'Internal',       sub: 'Power claimed as yours', color: '#7a4a20' },
+  { file: 'locus-external.png',     quiz: 'Where Does Your Power Live?',    cat: 'External',       sub: 'Power placed outside',  color: '#304a6a' },
+  { file: 'locus-surrendered.png',  quiz: 'Where Does Your Power Live?',    cat: 'Surrendered',    sub: 'Action full, grip released', color: '#3a5a3a' },
+  // Bias
+  { file: 'bias-pattern_seeker.png',  quiz: 'What Is Your Blind Spot?',     cat: 'Pattern Seeker', sub: 'Sees what it expects',  color: '#604880' },
+  { file: 'bias-story_teller.png',    quiz: 'What Is Your Blind Spot?',     cat: 'Story Teller',   sub: 'Narrates over reality', color: '#704030' },
+  { file: 'bias-loss_avoider.png',    quiz: 'What Is Your Blind Spot?',     cat: 'Loss Avoider',   sub: 'Feels losses keenly',   color: '#305060' },
+  // Belief
+  { file: 'belief-self_doubt.png',    quiz: 'What Belief Is Holding You Back?', cat: 'Self Doubt',  sub: 'Beliefs about who you are', color: '#703040' },
+  { file: 'belief-world_view.png',    quiz: 'What Belief Is Holding You Back?', cat: 'World View',  sub: 'Beliefs about how life works', color: '#404060' },
+  { file: 'belief-possibility.png',   quiz: 'What Belief Is Holding You Back?', cat: 'Possibility', sub: 'Beliefs about what can be', color: '#305050' },
+  // Decision
+  { file: 'decision-deliberate.png',  quiz: 'How Do You Make Decisions?',   cat: 'Deliberate',     sub: 'The Sattvic mind',     color: '#3a5a3a' },
+  { file: 'decision-impulsive.png',   quiz: 'How Do You Make Decisions?',   cat: 'Impulsive',      sub: 'The Rajasic mind',     color: '#8a4020' },
+  { file: 'decision-avoidant.png',    quiz: 'How Do You Make Decisions?',   cat: 'Avoidant',       sub: 'The Tamasic mind',     color: '#304060' },
+];
+
+const W = 1200, H = 630;
+const grid = document.getElementById('grid');
+
+const SECTIONS = {
+  0: 'Stress Quiz (3 images)',
+  3: 'Locus of Control Quiz (3 images)',
+  6: 'Cognitive Bias Quiz (3 images)',
+  9: 'Limiting Beliefs Quiz (3 images)',
+  12: 'Decision Style Quiz (3 images)',
+};
+
+IMAGES.forEach((img, i) => {
+  if (SECTIONS[i]) {
+    const label = document.createElement('div');
+    label.className = 'section-label';
+    label.textContent = SECTIONS[i];
+    grid.appendChild(label);
+  }
+
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const title = document.createElement('h3');
+  title.textContent = img.file;
+  card.appendChild(title);
+
+  const canvas = document.createElement('canvas');
+  canvas.width = W;
+  canvas.height = H;
+  canvas.style.width = '400px';
+  canvas.style.height = '210px';
+  card.appendChild(canvas);
+
+  const btn = document.createElement('button');
+  btn.className = 'btn';
+  btn.textContent = 'Download ' + img.file;
+  card.appendChild(btn);
+
+  grid.appendChild(card);
+
+  // Draw
+  const ctx = canvas.getContext('2d');
+  drawOG(ctx, img, W, H);
+
+  // Download
+  btn.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.download = img.file;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+});
+
+function drawOG(ctx, img, W, H) {
+  // Background gradient
+  const bg = ctx.createLinearGradient(0, 0, W, H);
+  bg.addColorStop(0, '#f8f0d8');
+  bg.addColorStop(0.5, '#f2e8c8');
+  bg.addColorStop(1, '#ecdcb0');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // Left accent bar
+  const accent = ctx.createLinearGradient(0, 0, 0, H);
+  accent.addColorStop(0, img.color + 'cc');
+  accent.addColorStop(1, img.color + '44');
+  ctx.fillStyle = accent;
+  ctx.fillRect(0, 0, 8, H);
+
+  // Subtle bottom stripe
+  const stripe = ctx.createLinearGradient(0, H - 80, 0, H);
+  stripe.addColorStop(0, 'rgba(0,0,0,0)');
+  stripe.addColorStop(1, 'rgba(0,0,0,0.06)');
+  ctx.fillStyle = stripe;
+  ctx.fillRect(0, H - 80, W, 80);
+
+  // Gold divider line (top)
+  ctx.strokeStyle = '#C9A84C';
+  ctx.lineWidth = 1;
+  ctx.globalAlpha = 0.3;
+  ctx.beginPath(); ctx.moveTo(60, 90); ctx.lineTo(W - 60, 90); ctx.stroke();
+  ctx.globalAlpha = 1;
+
+  // OM symbol
+  ctx.font = '52px Georgia, serif';
+  ctx.fillStyle = '#C9A84C';
+  ctx.globalAlpha = 0.6;
+  ctx.fillText('ॐ', 64, 78);
+  ctx.globalAlpha = 1;
+
+  // "NLP · Beyond Outcomes" label
+  ctx.font = '500 22px Georgia, serif';
+  ctx.fillStyle = '#9a7830';
+  ctx.letterSpacing = '0.2em';
+  ctx.fillText('NLP  ·  BEYOND OUTCOMES', 64, 144);
+
+  // Quiz name
+  ctx.font = '500 38px Georgia, serif';
+  ctx.fillStyle = '#2a1e0e';
+  const quizLines = wrapText(ctx, img.quiz, W - 128, 38);
+  quizLines.forEach((line, li) => {
+    ctx.fillText(line, 64, 210 + li * 52);
+  });
+
+  // Gold divider dot
+  const midY = 210 + quizLines.length * 52 + 36;
+  ctx.fillStyle = '#C9A84C';
+  ctx.globalAlpha = 0.6;
+  ctx.beginPath();
+  ctx.arc(64 + 120, midY, 3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#C9A84C';
+  ctx.globalAlpha = 0.2;
+  ctx.fillRect(64, midY - 1, 100, 2);
+  ctx.fillRect(64 + 246, midY - 1, W - 64 - 246 - 64, 2);
+  ctx.globalAlpha = 1;
+
+  // Category name
+  ctx.font = 'bold 64px Georgia, serif';
+  ctx.fillStyle = img.color;
+  ctx.fillText(img.cat, 64, midY + 80);
+
+  // Sub-label
+  ctx.font = 'italic 30px Georgia, serif';
+  ctx.fillStyle = '#5a4a2a';
+  ctx.fillText(img.sub, 64, midY + 124);
+
+  // Bottom: URL
+  ctx.font = '22px Georgia, serif';
+  ctx.fillStyle = '#9a7830';
+  ctx.globalAlpha = 0.7;
+  ctx.fillText('beyondoutcomes.in', W - 64 - ctx.measureText('beyondoutcomes.in').width, H - 38);
+  ctx.globalAlpha = 1;
+}
+
+function wrapText(ctx, text, maxWidth, fontSize) {
+  const words = text.split(' ');
+  const lines = [];
+  let current = '';
+  words.forEach(word => {
+    const test = current ? current + ' ' + word : word;
+    if (ctx.measureText(test).width > maxWidth && current) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = test;
+    }
+  });
+  if (current) lines.push(current);
+  return lines;
+}
+</script>
+</body>
+</html>

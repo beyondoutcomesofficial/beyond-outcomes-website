@@ -133,6 +133,68 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- NLP Quiz landing pages -->
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz-stress.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz-locus.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz-bias.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz-belief.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz-decision.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- NLP Quiz engine pages -->
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz.html?q=stress</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz.html?q=locus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz.html?q=bias</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz.html?q=belief</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/quiz.html?q=decision</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://www.beyondoutcomes.in/resources.html</loc>
     <changefreq>monthly</changefreq>
