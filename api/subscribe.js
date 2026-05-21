@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Invalid email' });
     }
 
-    const validSources = ['quiz-taker', 'nlp-waitlist', 'newsletter-waitlist', 'groups-waitlist'];
+    const validSources = ['quiz-taker', 'quiz-gate-nlp', 'nlp-waitlist', 'newsletter-waitlist', 'groups-waitlist'];
     const sourceTag = validSources.includes(source) ? source : 'unknown';
 
     // Add contact to Brevo list
