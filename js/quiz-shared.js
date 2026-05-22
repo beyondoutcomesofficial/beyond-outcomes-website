@@ -90,6 +90,7 @@ function startQuiz() {
   questions = [...QD.questions[lang] || QD.questions.en].sort(() => Math.random() - 0.5).slice(0, selectedDepth);
   answers = new Array(selectedDepth).fill(null);
   currentQ = 0; showQ(); showScreen('screen-quiz');
+  if (typeof gtag === 'function') gtag('event', 'quiz_started', { quiz_id: QD.id, depth: selectedDepth, language: lang });
 }
 
 function showQ() {
@@ -193,6 +194,7 @@ async function submitQuiz() {
   }, 500);
 
   showScreen('screen-result');
+  if (typeof gtag === 'function') gtag('event', 'quiz_completed', { quiz_id: QD.id, dominant: dom, depth: selectedDepth, language: lang });
 
   // NLP quizzes: show email gate, hide reflection until unlocked
   const isNLP = NLP_QUIZZES.includes(QD.id);
@@ -295,10 +297,12 @@ async function submitEmail() {
     s.textContent = ui.emailSuccess;
     s.style.display = 'block';
     document.getElementById('email-input').value = '';
+    if (typeof gtag === 'function') gtag('event', 'email_submitted', { quiz_id: QD.id, dominant: resultData._dom, language: lang });
   } catch (e) {
     s.style.color = '#a04040';
     s.textContent = 'Something went wrong. Please try again.';
     s.style.display = 'block';
+    if (typeof gtag === 'function') gtag('event', 'email_submit_failed', { quiz_id: QD.id, language: lang });
   } finally {
     if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
   }
