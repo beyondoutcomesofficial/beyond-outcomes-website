@@ -103,8 +103,8 @@
   --bo-radius-xl:        14px;
   --bo-radius-pill:      20px;      /* badges, chips, language toggle           */
 
-  --bo-container:        640px;     /* max content width — keep narrow & sacred */
-  --bo-container-wide:   720px;     /* for landing pages with offerings         */
+  --bo-container:        860px;     /* max content width */
+  --bo-container-wide:   960px;     /* for landing pages with offerings */
 
   /* === MOTION === */
   --bo-ease:             cubic-bezier(0.16, 1, 0.3, 1);
