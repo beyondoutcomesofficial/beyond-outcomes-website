@@ -373,6 +373,7 @@ window.GITA_CHAPTER_04 = {
         { word: 'kṛtvā api na nibadhyate', meaning: 'even while acting, is not bound / does not get tied even by doing' }
       ],
       commentary: `Yadṛcchā — "that which comes of its own accord." The sage is content with what life naturally brings, without manipulation, without anxious seeking, without comparing what has arrived with what might have arrived. This is not passivity. It is a kind of radical acceptance that is only possible after you have genuinely stopped needing things to be different from what they are.\n\nDvandvātīta — beyond the pairs of opposites: pleasure and pain, honour and insult, gain and loss, success and failure. These pairs are the weather of human life, moving through constantly, touching everyone. The question is whether you are moved by them — whether your inner state rises and falls with each change in weather — or whether there is something in you that remains constant underneath.\n\nFreedom from envy (vimatsara) is mentioned specifically. Envy is the pain of someone else's good fortune — a particularly corrosive form of comparison. Its root is the belief that there is a limited supply of good things and that what another has taken away from you. The person who has genuinely transcended this comparison-mind is free from one of the most persistent sources of suffering.`
+      youtubeShort: { title: 'Comparison Is Quietly Destroying Your Peace | Bhagavad Gita 4.22', url: 'https://www.youtube.com/shorts/qpOhaev0x5Y' }
     },
 
     23: {

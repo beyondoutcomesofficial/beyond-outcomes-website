@@ -136,6 +136,7 @@ window.GITA_CHAPTER_03 = {
         { word: 'te na prasidhyet akarmaṇaḥ', meaning: 'would not be accomplished without action / cannot succeed through inaction' }
       ],
       commentary: `After the subtle discussions of Chapters 2 and the opening of Chapter 3, Krishna returns to the simplest and most grounded instruction: act. Not theoretical action, not action in principle — your actual prescribed duty, right now. Niyatam karma — the action that is appointed to you, that fits your role and situation.\n\nAction is jyāyaḥ — superior, better — than inaction. Not in every conceivable metaphysical sense, but practically: the world does not sustain itself through non-doing. Even your own body — breathing, digesting, moving — requires continuous action. The fantasy of the perfectly uninvolved person who escapes the cycle by doing nothing is, at the most basic level, biologically impossible.\n\nThis is also a teaching about the paralysis of over-thinking. Arjuna has been in his head for two chapters. Krishna's response, at this point, is essentially: enough analysis. Act. The doing will clarify what the thinking cannot. There is wisdom available in action that is simply not available in deliberation.`
+      youtubeShort: { title: 'Life Changes Through Action | Gita 3.8', url: 'https://www.youtube.com/shorts/zeGhS4T5_NY' }
     },
 
     9: {
@@ -549,6 +550,7 @@ window.GITA_CHAPTER_03 = {
         { word: 'tau hi asya paripanthinau', meaning: 'for they are indeed this person\'s adversaries / enemies on the path' }
       ],
       commentary: `Every sense has its objects, and in the meeting of sense with object, two forces are always present: rāga (attraction, the pull toward what is pleasant) and dveṣa (aversion, the push away from what is unpleasant). This is not abnormal or pathological — it is the structure of sense experience. Every moment you see, hear, taste, touch, or smell, this pair is active.\n\nThe teaching is not to eliminate these — that would be impossible and is not what the Gita recommends. The teaching is: do not come under their power. Do not let attraction drag you toward things that are not good for you. Do not let aversion push you away from things that are necessary. Be present to both without being ruled by either.\n\nParipanthinau — adversaries, those who block the path. Rāga and dveṣa are your path-blockers precisely because they are automatic. They fire before you choose. The practice is the space between the firing and the response — the moment of recognition, the pause in which you can choose your next move rather than being dragged by the pull.`
+      youtubeShort: { title: 'Your Mind Is Being Controlled Without You Realizing It | Bhagavad Gita 3.34', url: 'https://www.youtube.com/shorts/_mRj6kjRUnk' }
     },
 
     35: {
