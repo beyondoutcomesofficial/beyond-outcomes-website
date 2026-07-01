@@ -461,7 +461,7 @@ window.GITA_CHAPTER_13 = {
         { word: 'saḥ paśyati', meaning: 'that one truly sees / he or she genuinely sees / real seeing has occurred' }
       ],
       commentary: `Yaḥ paśyati sa paśyati — one who sees thus, that one truly sees. The repetition of the verb paśyati is the Gita's way of emphasizing that most of what passes for seeing is not seeing at all. Most perception registers only the surface: this person, that tree, this joy, that loss. The one who truly sees looks through the impermanent and perceives what is not perishing when everything around it perishes.\n\nVinaśyatsu avinaśyantam — imperishable among the perishable. The bodies are dying. The forms are constantly changing. The personalities, the relationships, the civilizations — all of it moves toward dissolution. And within all of it, equally present in every single one, is the parameśvara — the Supreme Lord — who does not diminish when the form diminishes, who is not touched when the body is destroyed.\n\nSamaṁ sarveṣu bhūteṣu — equally in all beings. Not more present in the holy man, not less present in the sinner, not absent in the criminal, not concentrated in the saint. Equally. This verse, immediately preceding the famous verse 28, sets up the completion: when you genuinely perceive this equal presence, the next verse will tell you what happens. The seeing of the divine equally in all transforms not just belief but behavior — how you treat others, how you regard your own pain and theirs, what becomes possible in relationship.`,
-      youtubeShort: { title: 'Look Deeper | Gita 13.28', url: 'https://www.youtube.com/shorts/EYfVS72wA4c' }
+      youtubeShort: { title: 'Look Deeper | Gita 13.27', url: 'https://www.youtube.com/shorts/EYfVS72wA4c' }
     },
 
     28: {
