@@ -134,7 +134,7 @@ window.GITA_CHAPTER_02 = {
         { word: 'śādhi mām tvām prapannam', meaning: 'instruct me who am surrendered to you' }
       ],
       commentary: `This is the pivot of everything that has come before. Arjuna stops arguing and asks to be taught. The word prapannam — surrendered — is significant. This is not the surrender of defeat. It is the surrender of a student who recognises that what he needs is beyond what he currently knows, and who chooses to place himself genuinely under someone else's guidance.\n\nKārpaṇya-doṣa — the flaw of miserliness — is a precise self-diagnosis. Kārpaṇa means a miser, one who hoards and cannot let go. Arjuna is being miserly with his suffering — holding it tightly, unable to see past it, unable to give himself fully to what is being asked of him. He names his own condition before asking to be freed from it.\n\nThe Gita properly begins here. All the philosophy that follows — about the soul, about action, about yoga — is the answer to this moment of genuine asking. The quality of the question determines the depth of the answer. Arjuna has finally asked the right kind of question: not "what should I do in this situation?" but "tell me what is truly best — I cannot see it myself."`,
-      youtubeShort: { title: 'How to Ask for Help the Right Way | Bhagavad Gita 2.7', url: '' }
+      youtubeShort: { title: 'The Strongest Sentence Arjuna Ever Spoke | Gita 2.7', url: 'https://www.youtube.com/shorts/RPTcNapgQRk' }
     },
 
     8: {
@@ -502,7 +502,8 @@ window.GITA_CHAPTER_02 = {
         { word: 'aparihārye arthe', meaning: 'in this unavoidable matter' },
         { word: 'na tvam śocitum arhasi', meaning: 'you should not grieve' }
       ],
-      commentary: `Dhruva means certain, fixed, inevitable — the way that north is fixed, the way that 2+2 is fixed. For everything born, death is dhruva. For everything that has died, rebirth is dhruva. These are not unfortunate accidents in the fabric of existence. They are the fabric itself.\n\nThis is a teaching on the futility of grieving the inevitable. We spend enormous psychological energy resisting what is structurally unavoidable. Someone you love will die. You will die. These are not outcomes that could have gone differently. And yet we grieve them — or more precisely, we grieve the idea of them, the anticipation of them, the memory of those who have gone — as if our grief could somehow undo the structure of existence.\n\nThe invitation here is not to suppress grief but to locate it accurately. There is grief appropriate to loss, which is human and real. And there is grief that protests the very structure of existence — which is like being angry at rain for being wet. The Gita asks you to be honest about which one you're doing.`
+      commentary: `Dhruva means certain, fixed, inevitable — the way that north is fixed, the way that 2+2 is fixed. For everything born, death is dhruva. For everything that has died, rebirth is dhruva. These are not unfortunate accidents in the fabric of existence. They are the fabric itself.\n\nThis is a teaching on the futility of grieving the inevitable. We spend enormous psychological energy resisting what is structurally unavoidable. Someone you love will die. You will die. These are not outcomes that could have gone differently. And yet we grieve them — or more precisely, we grieve the idea of them, the anticipation of them, the memory of those who have gone — as if our grief could somehow undo the structure of existence.\n\nThe invitation here is not to suppress grief but to locate it accurately. There is grief appropriate to loss, which is human and real. And there is grief that protests the very structure of existence — which is like being angry at rain for being wet. The Gita asks you to be honest about which one you're doing.`,
+      youtubeShort: { title: 'Some things are painful because they are unavoidable. | Gita 2.27', url: 'https://www.youtube.com/shorts/fk1Wgppxypk' }
     },
 
     28: {
@@ -1237,7 +1238,7 @@ window.GITA_CHAPTER_02 = {
         { word: 'paśyataḥ muneḥ', meaning: 'to the sage who truly sees / to the discerning contemplative' }
       ],
       commentary: `This is one of the most poetic and philosophically precise verses in the chapter. Two planes of experience are described, each of which is night to the other. What all ordinary beings experience as the richness and reality of waking life — the world of sense objects, desires, social concerns, ambitions — is night to the sage. Darkness. Not really seen.\n\nAnd what is night to all ordinary beings — the inner world, the realm of the Self, the stillness beneath thought, the awareness that watches without becoming anything it watches — the sage is awake in that. Vividly, actively, fully awake.\n\nThis verse captures the complete inversion of ordinary and awakened consciousness. It is not that the sage stops experiencing the world. It is that the world has been relativised — seen from a vantage point that makes it look different. What seemed like everything is seen as the surface. What seemed like nothing is seen as the ground of everything. The sage and the ordinary person share the same world. They are awake in completely different places within it.`,
-      youtubeShort: { title: 'What the Wise Are Awake To That You Are Not | Bhagavad Gita 2.69', url: '' }
+      youtubeShort: { title: 'Awake While the World Sleeps — The Sage’s Inverted Clock | Gita 2.69', url: 'https://www.youtube.com/shorts/6HHSFRmTtqc' }
     },
 
     70: {
