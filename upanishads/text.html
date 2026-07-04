@@ -10,9 +10,23 @@
   <link rel="stylesheet" href="../css/upanishads.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    /* two-column top: invocation+about | episodes */
-    .text-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.25rem; align-items: start; margin-bottom: 2rem; }
-    @media (max-width: 880px) { .text-grid { grid-template-columns: 1fr; } }
+    /* two-column layout: invocation + about + verse table (left) | sticky episodes (right) */
+    .text-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      grid-template-areas: 'main side' 'verses side';
+      gap: 1.25rem;
+      align-items: start;
+      margin-bottom: 2rem;
+    }
+    .tg-main   { grid-area: main; }
+    .tg-side   { grid-area: side; }
+    .tg-verses { grid-area: verses; }
+    .tg-side .up-panel { position: sticky; top: 1.25rem; }
+    @media (max-width: 880px) {
+      .text-grid { grid-template-columns: 1fr; grid-template-areas: 'main' 'side' 'verses'; }
+      .tg-side .up-panel { position: static; }
+    }
     .invocation-devanagari { font-family: 'Noto Sans Devanagari', 'Mangal', serif; font-size: 1.2rem; color: var(--bo-text-primary); line-height: 1.95; margin-bottom: 0.85rem; white-space: pre-line; text-align: center; }
     .invocation-translation { font-family: var(--bo-font-body); font-size: 0.95rem; font-style: italic; color: var(--bo-text-secondary); line-height: 1.75; text-align: center; }
     .summary-text { font-family: var(--bo-font-body); font-size: 1.05rem; color: var(--bo-text-secondary); line-height: 1.85; }
@@ -48,8 +62,8 @@
 
 <div class="up-wide" style="padding-bottom: 1rem;">
 
-  <div class="text-grid">
-    <div>
+  <div class="text-grid" id="textGrid">
+    <div class="tg-main">
       <div id="invocationSlot"></div>
       <div class="bo-card-manuscript up-manuscript">
         <div class="up-section-label">About This Upanishad</div>
@@ -57,29 +71,30 @@
         <div class="themes" id="themesRow"></div>
       </div>
     </div>
-    <div id="episodeSection" style="display:none;">
+    <div class="tg-side" id="episodeSection" style="display:none;">
       <div class="up-panel">
         <div class="up-panel-label">The Episodes — Watch the Season</div>
         <div id="episodeList"></div>
       </div>
     </div>
-  </div>
-
-  <div class="bo-card-manuscript up-manuscript">
-    <div class="verse-section-header">
-      <div class="up-section-label" style="margin-bottom:0;">All Verses</div>
-      <div class="verse-count-badge" id="verseCountBadge"></div>
+    <div class="tg-verses">
+      <div class="bo-card-manuscript up-manuscript">
+        <div class="verse-section-header">
+          <div class="up-section-label" style="margin-bottom:0;">All Verses</div>
+          <div class="verse-count-badge" id="verseCountBadge"></div>
+        </div>
+        <table class="up-verse-table">
+          <thead>
+            <tr>
+              <th>Verse</th>
+              <th>Name</th>
+              <th style="text-align:center;">Study</th>
+            </tr>
+          </thead>
+          <tbody id="verseTableBody"></tbody>
+        </table>
+      </div>
     </div>
-    <table class="up-verse-table">
-      <thead>
-        <tr>
-          <th>Verse</th>
-          <th>Name</th>
-          <th style="text-align:center;">Study</th>
-        </tr>
-      </thead>
-      <tbody id="verseTableBody"></tbody>
-    </table>
   </div>
 
 </div>
@@ -137,7 +152,12 @@
       themesRow.appendChild(chip);
     });
 
-    // Episodes
+    // Episodes (no episodes → collapse to a single column, no empty side area)
+    if (!text.episodes.length) {
+      const g = document.getElementById('textGrid');
+      g.style.gridTemplateColumns = '1fr';
+      g.style.gridTemplateAreas = "'main' 'verses'";
+    }
     if (text.episodes.length) {
       document.getElementById('episodeSection').style.display = '';
       const list = document.getElementById('episodeList');
