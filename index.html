@@ -21,13 +21,13 @@
   <link rel="stylesheet" href="css/beyond-outcomes.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    .hero { position: relative; width: 100%; overflow: hidden; background: var(--bo-gradient-page); }
+    .hero { position: relative; width: 100%; overflow: hidden; }
     .hero-glow { position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(232,201,122,0.45) 0%, rgba(249,240,210,0.3) 40%, transparent 70%); pointer-events: none; }
     .hero-leaf-left, .hero-leaf-right { position: absolute; top: 15%; opacity: 0.25; pointer-events: none; }
     .hero-leaf-left { left: 0; }
     .hero-leaf-right { right: 0; transform: scaleX(-1); }
     .hero-mandala { position: absolute; top: 8%; left: 50%; transform: translateX(-50%); opacity: 0.12; pointer-events: none; }
-    .hero-content { position: relative; z-index: 2; text-align: center; padding: 4rem 1.5rem 3.5rem; max-width: 640px; margin: 0 auto; }
+    .hero-content { position: relative; z-index: 2; text-align: center; padding: 4.5rem 1.5rem 4rem; max-width: 760px; margin: 0 auto; }
     .hero-om { font-family: var(--bo-font-body); font-size: 2.1rem; color: var(--bo-gold); margin-bottom: 1rem; display: block; }
     .hero-lotus { margin: 1.5rem auto 2rem; display: flex; justify-content: center; }
     .hero-desc { font-family: var(--bo-font-body); font-size: 1.15rem; line-height: 1.9; color: var(--bo-text-secondary); margin-bottom: 2.5rem; opacity: 0.9; }
@@ -82,6 +82,8 @@
 
 </head>
 <body class="bo-body">
+
+<div class="bo-backdrop bo-backdrop-day"><div class="bo-sheen"></div></div>
 
 <div class="hero">
   <div class="hero-glow"></div>
@@ -234,6 +236,16 @@
     </div>
     <div class="offering-card">
       <div class="offering-header">
+        <div class="bo-label-tag" style="margin-bottom: 0.3rem;">Library · New</div>
+        <div class="offering-title">The Upanishads — Walking Upstream</div>
+      </div>
+      <div class="offering-body">
+        <div class="offering-desc">The source behind the Gita, studied verse by verse and season by season — starting with the Isha Upanishad. Each season pairs written study with a long-form video series.</div>
+        <a href="upanishads/" class="offering-link">Begin the Journey →</a>
+      </div>
+    </div>
+    <div class="offering-card">
+      <div class="offering-header">
         <div class="bo-label-tag" style="margin-bottom: 0.3rem;">YouTube · Free</div>
         <div class="offering-title">Beyond Outcomes Channel</div>
       </div>
@@ -294,6 +306,7 @@
   <div class="footer-links">
     <a href="https://www.youtube.com/@BeyondOutcomes" class="footer-link">YouTube</a>
     <a href="gita/" class="footer-link">Shloka Library</a>
+    <a href="upanishads/" class="footer-link">Upanishads</a>
     <a href="quizzes.html" class="footer-link">Quizzes</a>
     <a href="resources.html" class="footer-link">Reading</a>
     <a href="about.html" class="footer-link">About</a>

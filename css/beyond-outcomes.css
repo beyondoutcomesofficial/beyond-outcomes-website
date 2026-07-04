@@ -103,8 +103,8 @@
   --bo-radius-xl:        14px;
   --bo-radius-pill:      20px;      /* badges, chips, language toggle           */
 
-  --bo-container:        860px;     /* max content width */
-  --bo-container-wide:   960px;     /* for landing pages with offerings */
+  --bo-container:        min(1140px, 92vw);   /* max content width */
+  --bo-container-wide:   min(1240px, 94vw);   /* for landing pages with offerings */
 
   /* === MOTION === */
   --bo-ease:             cubic-bezier(0.16, 1, 0.3, 1);
@@ -461,6 +461,74 @@ body.bo-body {
   flex: 1;
   height: 1px;
   background: var(--bo-border);
+}
+
+
+/* ------------------------------------------------------------
+   ONE SKY, THREE TIMES OF DAY — v3 visual system
+   Daylight (Gita/home) · Dawn (Upanishads) · Night (Vedas, later)
+   The manuscript card is the constant reading surface on every sky.
+   ------------------------------------------------------------ */
+
+/* --- Backdrop shell: full-viewport layer painted behind content.
+       Sits above the body background, below all in-flow content.
+       Pages using it should keep their page wrapper transparent. --- */
+.bo-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* --- DAYLIGHT: slowly rotating yantra line-work + a breathing gold sheen --- */
+.bo-backdrop-day::before,
+.bo-backdrop-day::after {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23a97e30' stroke-width='0.45'><circle cx='100' cy='100' r='96'/><circle cx='100' cy='100' r='78'/><circle cx='100' cy='100' r='58'/><polygon points='100,12 176,144 24,144'/><polygon points='100,188 24,56 176,56'/><polygon points='100,30 160,134 40,134'/><polygon points='100,170 40,66 160,66'/><circle cx='100' cy='100' r='30'/><circle cx='100' cy='100' r='8'/><line x1='100' y1='4' x2='100' y2='196'/><line x1='4' y1='100' x2='196' y2='100'/></svg>");
+}
+.bo-backdrop-day::before {
+  width: 1050px; height: 1050px;
+  right: -400px; top: 50%; margin-top: -525px;
+  opacity: 0.4;
+  animation: bo-spin 140s linear infinite;
+}
+.bo-backdrop-day::after {
+  width: 640px; height: 640px;
+  left: -280px; bottom: -280px;
+  opacity: 0.3;
+  animation: bo-spin 100s linear infinite reverse;
+}
+.bo-backdrop-day .bo-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(201,168,76,0.12) 48%, transparent 62%);
+  background-size: 260% 100%;
+  animation: bo-sheen 10s ease-in-out infinite;
+}
+
+@keyframes bo-spin  { to { transform: rotate(360deg); } }
+@keyframes bo-sheen { 0%, 100% { background-position: 120% 0; } 50% { background-position: -40% 0; } }
+
+/* --- MANUSCRIPT CARD: the reading surface, constant across all skies.
+       Palm-leaf warmth, faint ruled lines, pressed-edge shadow. --- */
+.bo-card-manuscript {
+  background:
+    repeating-linear-gradient(0deg, rgba(140,100,50,0.045) 0 1px, transparent 1px 34px),
+    linear-gradient(150deg, #fdf4dd 0%, #f6e8c4 60%, #f0dfb4 100%);
+  border: 1px solid rgba(140,100,50,0.5);
+  border-radius: 10px;
+  box-shadow: 3px 5px 0 rgba(120,84,40,0.12), var(--bo-shadow-warm-sm);
+}
+
+/* Respect reduced-motion preferences across the sky system */
+@media (prefers-reduced-motion: reduce) {
+  .bo-backdrop-day::before,
+  .bo-backdrop-day::after,
+  .bo-backdrop-day .bo-sheen { animation: none; }
 }
 
 

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Upanishads — Verse by Verse, Season by Season | Beyond Outcomes</title>
+  <meta name="description" content="Study the principal Upanishads — Isha, Katha, Kena, Mandukya — verse by verse with Sanskrit, transliteration, translation and commentary for modern life. Companion to the Beyond Outcomes long-form video series.">
+  <link rel="canonical" href="https://www.beyondoutcomes.in/upanishads/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Beyond Outcomes">
+  <meta property="og:url" content="https://www.beyondoutcomes.in/upanishads/">
+  <meta property="og:title" content="The Upanishads — Verse by Verse, Season by Season | Beyond Outcomes">
+  <meta property="og:description" content="Isha, Katha, Kena, Mandukya — studied verse by verse, with commentary for modern life.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <link rel="stylesheet" href="../css/upanishads.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .journey-wrap { margin: 0 auto 2.75rem; }
+    .texts-heading { text-align: center; margin: 0 0 1.5rem; }
+
+    /* ---------- episode 0: start here ---------- */
+    .ep0-wrap { margin: 0 auto 2.75rem; }
+    .ep0-panel { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2rem; align-items: center; }
+    @media (max-width: 880px) { .ep0-panel { grid-template-columns: 1fr; } }
+    .ep0-badge {
+      display: inline-block; font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #14102b; background: #ffd98a;
+      border-radius: 20px; padding: 5px 14px; margin-bottom: 0.9rem;
+    }
+    .ep0-title { font-family: var(--bo-font-display); font-size: clamp(1.4rem, 2.2vw, 1.9rem); font-weight: 500; color: #fffdf5; line-height: 1.25; margin-bottom: 0.75rem; }
+    .ep0-desc { font-family: var(--bo-font-body); font-size: 1.02rem; font-style: italic; color: rgba(245,233,210,0.85); line-height: 1.8; }
+    .ep0-meta { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd98a; margin-top: 1rem; opacity: 0.9; }
+    .ep0-screen {
+      position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 14px; overflow: hidden;
+      background: radial-gradient(circle at 50% 70%, rgba(255,217,138,0.25) 0%, rgba(24,17,48,0.6) 65%);
+      border: 1px solid rgba(255,217,138,0.4);
+    }
+    .ep0-screen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .ep0-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.8rem; text-align: center; padding: 1rem;
+    }
+    .ep0-play {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 1.5px solid rgba(255,217,138,0.7); color: #ffd98a;
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+      animation: bo-om-pulse 4s ease-in-out infinite;
+    }
+    .ep0-soon { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,233,210,0.75); }
+
+    /* ---------- context section: before the Gita ---------- */
+    .context-wrap { margin: 0 auto 3rem; display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.25rem; align-items: stretch; }
+    @media (max-width: 880px) { .context-wrap { grid-template-columns: 1fr; } }
+    .context-title {
+      font-family: var(--bo-font-display); font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 500;
+      color: var(--bo-text-primary); line-height: 1.25; margin-bottom: 1rem;
+    }
+    .context-text { font-family: var(--bo-font-body); font-size: 1.05rem; color: var(--bo-text-secondary); line-height: 1.9; }
+    .context-text p { margin-bottom: 0.9rem; }
+    .context-text em { color: var(--bo-text-primary); }
+    .why-title { font-family: var(--bo-font-display); font-size: 1.25rem; font-weight: 500; color: #fffdf5; line-height: 1.3; margin-bottom: 1rem; }
+    .why-list { list-style: none; }
+    .why-list li {
+      font-family: var(--bo-font-body); font-size: 1rem; font-style: italic;
+      color: rgba(245,233,210,0.9); line-height: 1.75;
+      padding: 0.75rem 0 0.75rem 1.6rem; position: relative;
+      border-bottom: 1px solid rgba(255,217,138,0.15);
+    }
+    .why-list li:last-child { border-bottom: none; }
+    .why-list li::before { content: '✦'; position: absolute; left: 0; top: 0.8rem; color: #ffd98a; font-style: normal; font-size: 0.8rem; }
+
+    /* ---------- chronology timeline ---------- */
+    .timeline-wrap { margin: 0 auto 3rem; }
+    .tl-title { font-family: var(--bo-font-display); font-size: 1.25rem; font-weight: 500; color: #fffdf5; margin-bottom: 0.4rem; }
+    .tl-sub { font-family: var(--bo-font-body); font-size: 0.95rem; font-style: italic; color: rgba(245,233,210,0.75); line-height: 1.7; margin-bottom: 1.75rem; }
+    .tl-rows { position: relative; }
+    .tl-row { display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: center; margin-bottom: 0.9rem; }
+    @media (max-width: 620px) { .tl-row { grid-template-columns: 100px 1fr; } }
+    .tl-label { font-family: var(--bo-font-display); font-size: 0.82rem; letter-spacing: 0.06em; color: #ffe1a8; text-align: right; line-height: 1.35; }
+    .tl-label small { display: block; font-family: var(--bo-font-ui); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,233,210,0.6); margin-top: 2px; }
+    .tl-track { position: relative; height: 26px; }
+    .tl-bar {
+      position: absolute; top: 0; height: 26px; border-radius: 20px;
+      font-family: var(--bo-font-ui); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase;
+      display: flex; align-items: center; justify-content: center; white-space: nowrap; overflow: visible;
+    }
+    .tl-bar.vedas      { background: linear-gradient(90deg, rgba(146,110,255,0.35), rgba(146,110,255,0.18)); border: 1px solid rgba(146,110,255,0.5); color: #d8ccff; }
+    .tl-bar.upanishads { background: linear-gradient(90deg, rgba(255,150,90,0.32), rgba(255,150,90,0.16)); border: 1px solid rgba(255,150,90,0.55); color: #ffd3b0; }
+    .tl-bar.gita       { background: linear-gradient(90deg, rgba(255,217,138,0.35), rgba(255,217,138,0.18)); border: 1px solid rgba(255,217,138,0.6); color: #ffe9be; }
+    .tl-axis { position: relative; height: 1px; background: rgba(245,233,210,0.3); margin: 1.1rem 0 0.4rem; margin-left: 162px; }
+    @media (max-width: 620px) { .tl-axis { margin-left: 112px; } }
+    .tl-tick { position: absolute; top: -4px; width: 1px; height: 9px; background: rgba(245,233,210,0.45); }
+    .tl-tick span { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); font-family: var(--bo-font-ui); font-size: 9px; letter-spacing: 0.08em; color: rgba(245,233,210,0.65); white-space: nowrap; }
+    .tl-marker { position: absolute; top: -7px; width: 9px; height: 9px; border-radius: 50%; background: #ffd98a; border: 2px solid #14102b; transform: translateX(-50%); }
+    .tl-marker span { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); font-family: var(--bo-font-ui); font-size: 9px; letter-spacing: 0.08em; color: #ffd98a; white-space: nowrap; }
+    .tl-note { font-family: var(--bo-font-body); font-size: 0.88rem; font-style: italic; color: rgba(245,233,210,0.65); line-height: 1.7; margin-top: 1.75rem; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body up-body">
+
+<div class="bo-backdrop up-dawn-backdrop"><div class="up-sun"></div></div>
+
+<div class="up-wide up-nav"><a href="../index.html">← Beyond Outcomes</a></div>
+
+<div class="up-hero up-wide">
+  <span class="up-hero-om bo-anim-om-pulse">ॐ</span>
+  <div class="up-hero-label">The Upanishads</div>
+  <h1 class="up-hero-title">Walking Upstream</h1>
+  <div class="up-divider">
+    <div class="up-divider-line"></div>
+    <div class="up-divider-dot"></div>
+    <div class="up-divider-line"></div>
+  </div>
+  <p class="up-hero-intro">The Gita gave us the answers — distilled, practical, ready for the battlefield of a Monday morning. The Upanishads are where those answers were worked out: conversations at the edge of what can be said, between students who would not settle and teachers who would not simplify. We study them the way they were meant to be met — verse by verse, season by season.</p>
+  <div class="up-stats">
+    <span class="up-chip">4 Texts · 4 Seasons</span>
+    <span class="up-chip">Sanskrit · Transliteration · Commentary</span>
+    <span class="up-chip">Long-form Video Companion</span>
+  </div>
+</div>
+
+<div class="up-wide journey-wrap">
+  <div class="up-panel" style="text-align:center;">
+    <div class="up-panel-label">The Journey</div>
+    <div class="up-journey-steps">
+      <span class="up-step done">Bhagavad Gita — the milk ✓</span>
+      <span class="up-arrow">→</span>
+      <span class="up-step here">The Upanishads — the cows</span>
+      <span class="up-arrow">→</span>
+      <span class="up-step">The Vedas — the pasture</span>
+    </div>
+    <p class="up-journey-note">We are travelling to the source, in reverse. Started with the <a href="../gita/index.html">Gita</a>? Everything it asserts, the Upanishads derive. New here? Any door works — begin with Season 1 below.</p>
+  </div>
+</div>
+
+<div class="up-wide ep0-wrap">
+  <div class="up-panel">
+    <div class="ep0-panel" id="ep0Panel"></div>
+  </div>
+</div>
+
+<div class="up-wide context-wrap">
+  <div class="bo-card-manuscript up-manuscript">
+    <div class="up-section-label">Before the Gita</div>
+    <h2 class="context-title">The Gita's most famous lines are quotations. This is the book they are quoting.</h2>
+    <div class="context-text">
+      <p>The chariot of the body with the self as its rider — that image is from the <em>Katha Upanishad</em>, centuries before Krishna spoke it on the battlefield. "The Self is not slain when the body is slain" — Katha again, almost word for word. The tradition itself says it plainly: <em>the Upanishads are the cows, the Gita is the milk.</em> If the Gita ever moved you, you have already tasted these texts without knowing it.</p>
+      <p><em>Upanishad</em> means, roughly, "sitting down close" — teachings given quietly, at close quarters, to someone who asked and refused to stop asking. They are the final layer of the Vedas, which is why they are called <em>Vedanta</em> — the end of the Vedas, in both senses: last in sequence, and the destination the whole journey was for.</p>
+      <p>And they are not sermons. They are conversations — a teenager interrogating Death itself. A father teaching his son with nothing but salt and water. A sage asking the question every notification on your phone is secretly arguing with: <em>by whom commanded does the mind alight on its objects?</em> More than a hundred survive; about ten principal ones carry the core. We are studying the shortest and deepest of them, one season at a time.</p>
+    </div>
+  </div>
+  <div class="up-panel">
+    <div class="up-panel-label">Why Now</div>
+    <div class="why-title">Why sit with 3,000-year-old texts in the age of AI?</div>
+    <ul class="why-list">
+      <li>AI has collapsed the value of knowing <em>how</em>. What remains is knowing <em>why</em> — and knowing <em>who</em>. Yourself is the one subject no machine can study for you.</li>
+      <li>When your output can be automated, "what I do" stops working as an identity. The Upanishads spent centuries on exactly that question — and refused every cheap answer.</li>
+      <li>We have infinite information and a wisdom famine. The Katha Upanishad drew the line 2,500 years early: the pleasant or the good — both approach; the wise examine, and choose.</li>
+      <li>Every screen is engineered to harvest your attention. These are the oldest systematic studies of where attention comes from — and who directs it.</li>
+      <li>No belief required at the door. These are texts honest enough to include "perhaps even He does not know." Only the willingness to inquire.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="up-wide timeline-wrap">
+  <div class="up-panel">
+    <div class="up-panel-label">The Chronology</div>
+    <div class="tl-title">When these texts were born</div>
+    <div class="tl-sub">Our journey runs in reverse — from the newest layer back to the source. By the time the oldest Vedic hymns were composed, the Pyramids of Giza were already a thousand years old.</div>
+    <div class="tl-rows">
+      <div class="tl-row">
+        <div class="tl-label">The Vedas<small>oral hymns · ritual</small></div>
+        <div class="tl-track"><div class="tl-bar vedas" style="left:0%; width:53%;">~1500–600 BCE</div></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label">The Upanishads<small>the turn inward</small></div>
+        <div class="tl-track"><div class="tl-bar upanishads" style="left:41%; width:29.5%;">~800–300 BCE</div></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-label">The Bhagavad Gita<small>the distillation</small></div>
+        <div class="tl-track"><div class="tl-bar gita" style="left:76.5%; width:23.5%;">~200 BCE–200 CE</div></div>
+      </div>
+    </div>
+    <div class="tl-axis">
+      <div class="tl-tick" style="left:0%;"><span>1500 BCE</span></div>
+      <div class="tl-tick" style="left:29.4%;"><span>1000 BCE</span></div>
+      <div class="tl-tick" style="left:58.8%;"><span>500 BCE</span></div>
+      <div class="tl-tick" style="left:88.2%;"><span>0</span></div>
+      <div class="tl-tick" style="left:100%;"><span>200 CE</span></div>
+      <div class="tl-marker" style="left:60%;"><span>the Buddha ~480 BCE</span></div>
+    </div>
+    <div class="tl-note">All dates are scholarly estimates with error bars of centuries — these texts were composed and carried orally for generations before anything was written down. And the Upanishadic centuries are no local event: they overlap the Buddha, Socrates, Confucius and Lao Tzu. Across unconnected civilizations, humanity turned inward almost at once. We are reading one civilization's record of that turn — the longest and most sustained of them all.</div>
+  </div>
+</div>
+
+<div class="up-wide" style="padding-bottom: 2rem;">
+  <div class="up-texts-grid" id="textsWrap"></div>
+</div>
+
+<div class="up-footer">
+  <div class="up-footer-brand">Beyond Outcomes</div>
+  <div class="up-footer-sub">Timeless Wisdom for Modern Life</div>
+  <div class="up-footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../gita/index.html">Gita Library</a>
+    <a href="../quizzes.html">Quizzes</a>
+    <a href="../about.html">About</a>
+    <a href="../feedback.html">Feedback</a>
+  </div>
+  <div class="up-footer-copy">© 2026 Beyond Outcomes · beyondoutcomes.in</div>
+</div>
+
+<script src="../js/upanishads/texts.js"></script>
+<script>
+  // Episode 0 — featured launch video
+  const ep0 = window.UPANISHAD_EPISODE_ZERO;
+  const ep0Screen = ep0.youtube
+    ? `<div class="ep0-screen">
+         <iframe src="https://www.youtube-nocookie.com/embed/${ep0.youtube.id}?rel=0" title="${ep0.title}"
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+           allowfullscreen loading="lazy"></iframe>
+       </div>`
+    : `<div class="ep0-screen">
+         <div class="ep0-placeholder">
+           <div class="ep0-play">▶</div>
+           <div class="ep0-soon">In production — premiering soon</div>
+         </div>
+       </div>`;
+  document.getElementById('ep0Panel').innerHTML = `
+    <div>
+      <span class="ep0-badge">Episode 0 · Start Here</span>
+      <div class="ep0-title">${ep0.title}</div>
+      <p class="ep0-desc">${ep0.description}</p>
+      <div class="ep0-meta">${ep0.duration} · The invitation to the whole journey</div>
+    </div>
+    ${ep0Screen}
+  `;
+
+  const wrap = document.getElementById('textsWrap');
+  window.UPANISHAD_TEXTS.forEach(t => {
+    const live = t.status === 'live';
+    const card = document.createElement(live ? 'a' : 'div');
+    card.className = 'up-text-card ' + (live ? 'live' : 'soon');
+    if (live) card.href = 'text.html?u=' + t.id;
+    const epCount = t.episodes.length;
+    card.innerHTML = `
+      <div class="up-text-top">
+        <span class="up-text-season">Season ${t.season}</span>
+        <span class="up-text-status ${live ? 'live' : 'soon'}">${live ? 'Now Studying' : 'Coming Soon'}</span>
+      </div>
+      <div class="up-text-name">${t.name}</div>
+      <div class="up-text-sanskrit">${t.sanskrit} · ${t.meaning}</div>
+      <p class="up-text-tagline">${t.tagline}</p>
+      <div class="up-text-meta">
+        <span class="up-chip">${t.verses} Verses</span>
+        ${epCount ? `<span class="up-chip">${epCount} Episodes</span>` : ''}
+        <span class="up-chip">${t.veda}</span>
+      </div>
+      ${live ? '<div class="up-text-cta">Enter the text →</div>' : ''}
+    `;
+    wrap.appendChild(card);
+  });
+</script>
+</body>
+</html>

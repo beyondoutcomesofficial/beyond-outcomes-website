@@ -14,6 +14,36 @@
   </url>
 
   <url>
+    <loc>https://www.beyondoutcomes.in/upanishads/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/upanishads/text.html?u=isha</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/upanishads/verse.html?u=isha&amp;v=1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/upanishads/verse.html?u=isha&amp;v=2</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/upanishads/verse.html?u=isha&amp;v=3</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.beyondoutcomes.in/quiz.html?q=guna</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

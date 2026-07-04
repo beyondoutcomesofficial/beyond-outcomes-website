@@ -1,0 +1,395 @@
+/* ============================================================
+   THE UPANISHADS — DAWN HORIZON THEME
+   Part of the "One Sky, Three Times of Day" system:
+   Daylight (Gita/home) · DAWN (this) · Night (Vedas, later).
+   Night melts into gold down every viewport; content is read
+   on the constant manuscript surface (.bo-card-manuscript).
+   Load AFTER css/beyond-outcomes.css.
+   ============================================================ */
+
+/* ---------- page shell ---------- */
+body.bo-body.up-body {
+  background: #1a1233; /* fallback under the fixed backdrop */
+  color: #f5e9d2;
+  min-height: 100vh;
+}
+.up-wide {
+  width: var(--bo-container-wide);
+  margin: 0 auto;
+}
+
+/* ---------- the dawn backdrop ---------- */
+.up-dawn-backdrop {
+  background: linear-gradient(180deg,
+    #14102b 0%, #2c1c47 26%, #5f2d55 48%,
+    #b05a4c 70%, #e59d55 86%, #f2c97c 100%);
+}
+/* rotating rays fanning up from below the horizon */
+.up-dawn-backdrop::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: repeating-conic-gradient(from 0deg at 50% 96%,
+    rgba(255,220,150,0.05) 0deg 6deg, transparent 6deg 14deg);
+  animation: bo-spin 160s linear infinite;
+}
+/* the breathing sun — the golden lid */
+.up-sun {
+  position: absolute;
+  left: 50%;
+  bottom: -190px;
+  width: 480px;
+  height: 480px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    #ffe9ad 0%, #ffcf6a 34%,
+    rgba(255,183,77,0.5) 58%, rgba(255,166,77,0) 72%);
+  animation: up-sunrise 16s ease-in-out infinite alternate;
+}
+@keyframes up-sunrise {
+  from { transform: translateX(-50%) translateY(50px) scale(0.97); opacity: 0.85; }
+  to   { transform: translateX(-50%) translateY(-36px) scale(1.03); opacity: 1; }
+}
+/* a few faint stars in the night band */
+.up-dawn-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 55% 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 18% 30%, rgba(255,255,255,0.9) 50%, transparent 51%),
+    radial-gradient(1px 1px at 42% 62%, rgba(255,233,173,0.8) 50%, transparent 51%),
+    radial-gradient(2px 2px at 64% 22%, rgba(207,216,255,0.8) 50%, transparent 51%),
+    radial-gradient(1px 1px at 81% 48%, rgba(255,255,255,0.7) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 90% 76%, rgba(255,233,173,0.7) 50%, transparent 51%),
+    radial-gradient(1px 1px at 8% 74%, rgba(207,216,255,0.7) 50%, transparent 51%);
+  animation: up-twinkle 6s ease-in-out infinite alternate;
+}
+@keyframes up-twinkle { from { opacity: 0.35; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .up-dawn-backdrop::before, .up-dawn-backdrop::after, .up-sun { animation: none; }
+}
+
+/* ---------- nav ---------- */
+.up-nav {
+  padding: 1.6rem 0 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.up-nav a {
+  font-family: var(--bo-font-ui);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffd98a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.up-nav a:hover { color: #fffdf5; }
+.up-nav-sep { font-family: var(--bo-font-ui); font-size: 12px; color: rgba(245,233,210,0.4); }
+
+/* ---------- hero ---------- */
+.up-hero { text-align: center; padding: 4rem 1.5rem 2.5rem; }
+.up-hero-om {
+  font-family: var(--bo-font-body);
+  font-size: 2.4rem;
+  color: #ffd98a;
+  display: block;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 30px rgba(255,217,138,0.5);
+}
+.up-hero-label {
+  font-family: var(--bo-font-display);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #e8c97a;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+.up-hero-title {
+  font-family: var(--bo-font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 500;
+  color: #fffdf5;
+  line-height: 1.12;
+  text-shadow: 0 2px 30px rgba(20,16,43,0.6);
+}
+.up-hero-sanskrit {
+  font-family: var(--bo-font-display);
+  font-size: 1rem;
+  color: #ffd98a;
+  letter-spacing: 0.08em;
+  margin-top: 0.6rem;
+  opacity: 0.9;
+}
+.up-hero-intro {
+  font-family: var(--bo-font-body);
+  font-size: 1.12rem;
+  color: rgba(245,233,210,0.92);
+  line-height: 1.85;
+  font-style: italic;
+  margin: 1rem auto 0;
+  max-width: 720px;
+}
+.up-divider { display: flex; align-items: center; gap: 14px; max-width: 300px; margin: 1.25rem auto; }
+.up-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,217,138,0.6), transparent); }
+.up-divider-dot { width: 5px; height: 5px; border-radius: 50%; background: #ffd98a; opacity: 0.7; flex-shrink: 0; }
+
+.up-stats { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 1.6rem; }
+.up-chip {
+  font-family: var(--bo-font-ui);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffe1a8;
+  background: rgba(20,16,43,0.35);
+  border: 1px solid rgba(255,217,138,0.4);
+  border-radius: 30px;
+  padding: 6px 15px;
+  backdrop-filter: blur(4px);
+}
+
+/* ---------- frosted night panel (hero-adjacent info) ---------- */
+.up-panel {
+  background: rgba(24,17,48,0.5);
+  border: 1px solid rgba(255,217,138,0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  padding: 1.75rem 2rem;
+}
+.up-panel-label {
+  font-family: var(--bo-font-display);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #ffd98a;
+  opacity: 0.85;
+  margin-bottom: 0.9rem;
+}
+
+/* ---------- manuscript reading surface ---------- */
+.up-manuscript {
+  color: var(--bo-text-primary);
+  padding: 2rem 2.2rem;
+}
+.up-manuscript .up-panel-label,
+.up-manuscript .up-section-label { color: #8c6432; }
+.up-section-label {
+  font-family: var(--bo-font-display);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.9rem;
+}
+
+/* ---------- journey strip (index) ---------- */
+.up-journey-steps {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: var(--bo-font-display);
+  font-size: 0.92rem;
+  color: rgba(245,233,210,0.85);
+}
+.up-step { padding: 5px 12px; border-radius: 20px; }
+.up-step.done { color: #ffd98a; }
+.up-step.here { background: rgba(255,217,138,0.15); border: 1px solid rgba(255,217,138,0.5); color: #fffdf5; }
+.up-arrow { color: #ffd98a; opacity: 0.6; }
+.up-journey-note {
+  font-family: var(--bo-font-body);
+  font-size: 0.92rem;
+  font-style: italic;
+  color: rgba(245,233,210,0.7);
+  margin-top: 0.9rem;
+  line-height: 1.7;
+  text-align: center;
+}
+.up-journey-note a { color: #ffd98a; }
+
+/* ---------- text/season cards (index) ---------- */
+.up-texts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+@media (max-width: 880px) { .up-texts-grid { grid-template-columns: 1fr; } }
+.up-text-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 16px;
+  padding: 1.9rem 2rem;
+  background: rgba(24,17,48,0.45);
+  border: 1px solid rgba(255,217,138,0.28);
+  backdrop-filter: blur(6px);
+  color: #f5e9d2;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s;
+}
+.up-text-card.live:hover {
+  border-color: #ffd98a;
+  background: rgba(24,17,48,0.62);
+  transform: translateY(-3px);
+}
+.up-text-card.soon { opacity: 0.65; cursor: default; }
+.up-text-top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+.up-text-season { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #ffd98a; }
+.up-text-status {
+  font-family: var(--bo-font-ui); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: 20px; padding: 3px 10px;
+}
+.up-text-status.live { color: #ffe1a8; background: rgba(255,217,138,0.15); border: 1px solid rgba(255,217,138,0.5); }
+.up-text-status.soon { color: rgba(245,233,210,0.55); border: 1px solid rgba(245,233,210,0.25); }
+.up-text-name { font-family: var(--bo-font-display); font-size: 1.5rem; font-weight: 500; color: #fffdf5; }
+.up-text-sanskrit { font-family: var(--bo-font-display); font-size: 0.88rem; color: #ffd98a; letter-spacing: 0.05em; margin-top: 3px; opacity: 0.9; }
+.up-text-tagline { font-family: var(--bo-font-body); font-size: 1rem; font-style: italic; color: rgba(245,233,210,0.85); line-height: 1.75; margin-top: 0.75rem; }
+.up-text-meta { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 1rem; }
+.up-text-meta .up-chip { font-size: 9.5px; padding: 4px 11px; }
+.up-text-cta { font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #ffd98a; margin-top: 1.1rem; }
+
+/* ---------- sanskrit showcase (verse page) ---------- */
+.up-sanskrit-card {
+  text-align: center;
+  padding: 2.5rem 2.2rem;
+}
+.up-devanagari {
+  font-family: 'Noto Sans Devanagari', 'Mangal', serif;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  color: var(--bo-text-primary);
+  line-height: 2;
+  margin-bottom: 1.25rem;
+  white-space: pre-line;
+}
+.up-transliteration {
+  font-family: var(--bo-font-body);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--bo-text-secondary);
+  line-height: 1.85;
+  white-space: pre-line;
+}
+
+/* ---------- two-column verse layout ---------- */
+.up-verse-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 880px) { .up-verse-grid { grid-template-columns: 1fr; } }
+.up-translation-text {
+  font-family: var(--bo-font-body);
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  color: var(--bo-text-primary);
+  line-height: 1.8;
+  font-style: italic;
+  font-weight: 500;
+}
+.up-commentary-text {
+  font-family: var(--bo-font-body);
+  font-size: 1.08rem;
+  color: var(--bo-text-primary);
+  line-height: 1.95;
+}
+.up-commentary-text p { margin-bottom: 1rem; }
+.up-commentary-cols { column-count: 2; column-gap: 3rem; }
+@media (max-width: 880px) { .up-commentary-cols { column-count: 1; } }
+.up-commentary-cols p { break-inside: avoid-column; }
+
+.up-word-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.up-word-chip {
+  background: rgba(140,100,50,0.07);
+  border: 1px solid rgba(140,100,50,0.25);
+  border-radius: 8px;
+  padding: 7px 12px;
+}
+.up-word-sanskrit { font-family: var(--bo-font-display); font-size: 0.8rem; color: #8c6432; letter-spacing: 0.04em; margin-bottom: 2px; }
+.up-word-meaning { font-family: var(--bo-font-body); font-size: 0.85rem; color: var(--bo-text-secondary); font-style: italic; }
+
+/* ---------- episode cards & video ---------- */
+.up-episode-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.2rem 1.6rem;
+  margin-bottom: 0.75rem;
+  border-radius: 14px;
+  background: rgba(24,17,48,0.45);
+  border: 1px solid rgba(255,217,138,0.28);
+  backdrop-filter: blur(6px);
+}
+.up-ep-num { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #ffd98a; margin-bottom: 0.2rem; }
+.up-ep-title { font-family: var(--bo-font-display); font-size: 1.08rem; color: #fffdf5; }
+.up-ep-verses { font-family: var(--bo-font-body); font-size: 0.85rem; font-style: italic; color: rgba(245,233,210,0.6); margin-top: 0.15rem; }
+.up-ep-watch {
+  font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 8px 18px; border-radius: 20px; text-decoration: none; white-space: nowrap;
+}
+.up-ep-watch.live { border: 1px solid rgba(255,120,100,0.55); color: #ffb3a0; }
+.up-ep-watch.live:hover { background: rgba(255,120,100,0.12); }
+.up-ep-watch.soon { border: 1px solid rgba(245,233,210,0.25); color: rgba(245,233,210,0.55); }
+
+.up-episode-embed { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden; margin-top: 1rem; }
+.up-episode-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.up-episode-soon { font-family: var(--bo-font-body); font-size: 0.95rem; font-style: italic; color: rgba(245,233,210,0.7); }
+
+/* ---------- verse table ---------- */
+.up-verse-table { width: 100%; border-collapse: collapse; }
+.up-verse-table thead tr { border-bottom: 1px solid rgba(140,100,50,0.4); }
+.up-verse-table th {
+  font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #8c6432; padding: 0 0 0.75rem 0; text-align: left; font-weight: 400;
+}
+.up-verse-table th:last-child { text-align: center; }
+.up-verse-table tbody tr { border-bottom: 1px solid rgba(140,100,50,0.15); transition: background 0.15s; }
+.up-verse-table tbody tr:hover { background: rgba(140,100,50,0.06); }
+.up-verse-table td { padding: 0.72rem 0; vertical-align: middle; }
+.up-verse-table td:last-child { text-align: center; }
+.up-td-num { font-family: var(--bo-font-display); font-size: 0.9rem; color: var(--bo-text-secondary); width: 64px; }
+.up-td-name { font-family: var(--bo-font-body); font-size: 0.98rem; font-style: italic; color: var(--bo-text-primary); }
+.up-td-study a {
+  font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 20px; text-decoration: none;
+  border: 1px solid rgba(140,100,50,0.45); color: #8c6432; display: inline-block;
+  transition: background 0.15s, border-color 0.15s;
+}
+.up-td-study a:hover { background: rgba(140,100,50,0.1); border-color: #8c6432; }
+
+/* ---------- verse prev/next nav ---------- */
+.up-verse-nav { display: flex; gap: 12px; margin-top: 1.5rem; }
+.up-verse-nav a {
+  flex: 1; text-align: center; padding: 0.9rem;
+  border: 1px solid rgba(255,217,138,0.4); border-radius: 14px;
+  font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #ffd98a; text-decoration: none; transition: border-color 0.2s, background 0.2s;
+  background: rgba(24,17,48,0.35); backdrop-filter: blur(4px);
+}
+.up-verse-nav a:hover { border-color: #ffd98a; background: rgba(24,17,48,0.55); }
+
+/* ---------- coming-soon state ---------- */
+.up-coming { text-align: center; padding: 5rem 1.5rem; max-width: 560px; margin: 0 auto; }
+.up-coming-title { font-family: var(--bo-font-display); font-size: 1.9rem; color: #fffdf5; margin-bottom: 1.25rem; }
+.up-coming-text { font-family: var(--bo-font-body); font-size: 1.02rem; font-style: italic; color: rgba(245,233,210,0.85); line-height: 1.8; }
+
+/* ---------- footer (sits over the gold horizon) ---------- */
+.up-footer {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(90,50,20,0.3);
+  padding: 2.2rem 1.5rem 2.6rem;
+  text-align: center;
+  color: #4a3416;
+}
+.up-footer-brand { font-family: var(--bo-font-display); font-size: 1.15rem; color: #3a2505; margin-bottom: 0.25rem; }
+.up-footer-sub { font-family: var(--bo-font-body); font-size: 0.92rem; font-style: italic; color: rgba(74,52,22,0.75); margin-bottom: 1rem; }
+.up-footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.up-footer-links a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6b4a18; text-decoration: none; }
+.up-footer-links a:hover { color: #3a2505; }
+.up-footer-copy { font-family: var(--bo-font-ui); font-size: 12px; color: rgba(74,52,22,0.65); margin-top: 1.2rem; }

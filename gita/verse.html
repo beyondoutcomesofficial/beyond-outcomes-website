@@ -9,23 +9,26 @@
   <link rel="stylesheet" href="../css/beyond-outcomes.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    .page { background: var(--bo-gradient-page); min-height: 100vh; }
+    .page { min-height: 100vh; }
 
     /* Nav */
-    .nav { padding: 1.5rem 1.5rem 0; max-width: 680px; margin: 0 auto; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .nav { padding: 1.5rem 1.5rem 0; max-width: var(--bo-container); margin: 0 auto; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
     .nav a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bo-gold-deep); text-decoration: none; transition: color 0.2s; }
     .nav a:hover { color: var(--bo-text-primary); }
     .nav-sep { font-family: var(--bo-font-ui); font-size: 12px; color: var(--bo-text-faint); }
 
     /* Hero */
-    .hero { text-align: center; padding: 3rem 1.5rem 1.5rem; max-width: 680px; margin: 0 auto; }
+    .hero { text-align: center; padding: 3rem 1.5rem 1.5rem; max-width: 820px; margin: 0 auto; }
     .hero-ref { font-family: var(--bo-font-display); font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bo-text-primary); margin-bottom: 1.5rem; }
 
-    /* Sanskrit block */
+    /* Sanskrit block — manuscript reading surface */
     .sanskrit-card {
-      background: linear-gradient(135deg, #f0e0b0, #f7ead0);
-      border: 1px solid rgba(169,126,48,0.6);
-      border-radius: var(--bo-radius-lg);
+      background:
+        repeating-linear-gradient(0deg, rgba(140,100,50,0.045) 0 1px, transparent 1px 34px),
+        linear-gradient(150deg, #fdf4dd 0%, #f6e8c4 60%, #f0dfb4 100%);
+      border: 1px solid rgba(140,100,50,0.5);
+      border-radius: 10px;
+      box-shadow: 3px 5px 0 rgba(120,84,40,0.12);
       padding: 2.25rem 2rem;
       text-align: center;
       margin-bottom: 1rem;
@@ -48,7 +51,7 @@
     }
 
     /* Content */
-    .content { max-width: 680px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+    .content { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 3rem; }
 
     .section-card {
       background: linear-gradient(135deg, var(--bo-warm-white), var(--bo-cream-deep));
@@ -189,6 +192,7 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
 </head>
 <body class="bo-body">
+<div class="bo-backdrop bo-backdrop-day"><div class="bo-sheen"></div></div>
 <div class="page" id="pageRoot">
 
   <div class="nav">

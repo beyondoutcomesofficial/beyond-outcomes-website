@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Upanishad Verse | Beyond Outcomes</title>
+  <meta name="description" id="pageDesc" content="Upanishad verse with Sanskrit, transliteration, translation and commentary for modern life.">
+  <link id="canonical" rel="canonical" href="https://www.beyondoutcomes.in/upanishads/verse.html">
+  <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <link rel="stylesheet" href="../css/upanishads.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .hero-ref { font-family: var(--bo-font-display); font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; color: #ffd98a; margin-bottom: 1rem; }
+    .episode-panel-title { font-family: var(--bo-font-display); font-size: 1rem; color: #fffdf5; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body up-body">
+
+<div class="bo-backdrop up-dawn-backdrop"><div class="up-sun"></div></div>
+
+<div class="up-wide up-nav">
+  <a href="../index.html">← Beyond Outcomes</a>
+  <span class="up-nav-sep">/</span>
+  <a href="index.html">The Upanishads</a>
+  <span class="up-nav-sep">/</span>
+  <a id="textLink" href="text.html">Text</a>
+</div>
+
+<div id="mainContent" class="up-wide" style="padding-bottom: 1rem;"></div>
+
+<div class="up-footer">
+  <div class="up-footer-brand">Beyond Outcomes</div>
+  <div class="up-footer-sub">Timeless Wisdom for Modern Life</div>
+  <div class="up-footer-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html">The Upanishads</a>
+    <a href="../gita/index.html">Gita Library</a>
+    <a href="../quizzes.html">Quizzes</a>
+  </div>
+  <div class="up-footer-copy">© 2026 Beyond Outcomes · beyondoutcomes.in</div>
+</div>
+
+<script src="../js/upanishads/texts.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const uId  = (params.get('u') || 'isha').toLowerCase();
+  const vId  = parseInt(params.get('v')) || 1;
+  const text = window.UPANISHAD_TEXTS.find(t => t.id === uId);
+  const tName  = text ? text.name : 'Upanishad';
+  const totalV = text ? text.verses : 0;
+  const episode = text ? text.episodes.find(e => vId >= e.from && vId <= e.to) : null;
+
+  document.getElementById('textLink').textContent = tName;
+  document.getElementById('textLink').href = `text.html?u=${uId}`;
+
+  const script = document.createElement('script');
+  script.src = `../js/upanishads/${uId}.js`;
+  script.onload = render;
+  script.onerror = renderComingSoon;
+  document.head.appendChild(script);
+
+  function episodeHTML(verse) {
+    if (!episode) return '';
+    if (episode.youtube) {
+      const start = verse && verse.videoStart ? `&start=${verse.videoStart}` : '';
+      return `
+        <div class="up-panel" style="margin-bottom: 1.25rem;">
+          <div class="up-panel-label">Watch the Episode · Beyond Outcomes</div>
+          <div class="episode-panel-title">Episode ${episode.id} — ${episode.title} · Verses ${episode.from}–${episode.to}</div>
+          <div class="up-episode-embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/${episode.youtube.id}?rel=0${start}"
+              title="${episode.youtube.title || episode.title}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>`;
+    }
+    return `
+      <div class="up-panel" style="margin-bottom: 1.25rem;">
+        <div class="up-panel-label">The Episode</div>
+        <div class="episode-panel-title">Episode ${episode.id} — ${episode.title} · Verses ${episode.from}–${episode.to}</div>
+        <div class="up-episode-soon" style="margin-top: 0.6rem;">The long-form video for this episode is in production. The written study is ahead of the season — read on.</div>
+      </div>`;
+  }
+
+  function navHTML() {
+    const prev = vId > 1      ? `<a href="verse.html?u=${uId}&v=${vId-1}">← ${tName} ${vId-1}</a>` : '';
+    const next = vId < totalV ? `<a href="verse.html?u=${uId}&v=${vId+1}">${tName} ${vId+1} →</a>` : '';
+    return `
+      <div class="up-verse-nav">${prev}${next}</div>
+      <div class="up-verse-nav" style="margin-top: 10px;">
+        <a href="text.html?u=${uId}">← Back to ${tName}</a>
+        <a href="index.html">← All Upanishads</a>
+      </div>`;
+  }
+
+  function render() {
+    const data = window[`UPANISHAD_${uId.toUpperCase()}`];
+    const verse = data && data.verses && data.verses[vId];
+
+    if (!verse) { renderComingSoon(); return; }
+    if (!verse.transliteration) { renderPartial(verse); return; }
+
+    document.getElementById('pageTitle').textContent = `${tName} ${vId} — ${verse.name} | Beyond Outcomes`;
+    document.getElementById('pageDesc').setAttribute('content', verse.translation);
+    document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/upanishads/verse.html?u=${uId}&v=${vId}`);
+
+    const wordsHTML = verse.words ? `
+      <div class="bo-card-manuscript up-manuscript" style="margin-bottom: 1.25rem;">
+        <div class="up-section-label">Word by Word</div>
+        <div class="up-word-grid">
+          ${verse.words.map(w => `
+            <div class="up-word-chip">
+              <div class="up-word-sanskrit">${w.word}</div>
+              <div class="up-word-meaning">${w.meaning}</div>
+            </div>`).join('')}
+        </div>
+      </div>` : '';
+
+    const commentaryParas = verse.commentary.split('\n\n').map(p => `<p>${p}</p>`).join('');
+
+    document.getElementById('mainContent').innerHTML = `
+      <div class="up-hero" style="padding-top: 2.5rem;">
+        <div class="hero-ref">${tName} · Verse ${vId}${episode ? ` · Episode ${episode.id}` : ''}</div>
+        <h1 class="up-hero-title">${verse.name}</h1>
+        <div class="up-divider">
+          <div class="up-divider-line"></div>
+          <div class="up-divider-dot"></div>
+          <div class="up-divider-line"></div>
+        </div>
+      </div>
+
+      <div class="up-verse-grid">
+        <div class="bo-card-manuscript up-manuscript up-sanskrit-card">
+          <div class="up-devanagari">${verse.devanagari}</div>
+          <div class="up-transliteration">${verse.transliteration}</div>
+        </div>
+        <div class="bo-card-manuscript up-manuscript" style="display:flex; flex-direction:column; justify-content:center;">
+          <div class="up-section-label">Translation</div>
+          <div class="up-translation-text">${verse.translation}</div>
+        </div>
+      </div>
+
+      ${episodeHTML(verse)}
+
+      ${wordsHTML}
+
+      <div class="bo-card-manuscript up-manuscript">
+        <div class="up-section-label">Commentary</div>
+        <div class="up-commentary-text up-commentary-cols">${commentaryParas}</div>
+      </div>
+
+      ${navHTML()}
+    `;
+  }
+
+  function renderPartial(verse) {
+    document.getElementById('pageTitle').textContent = `${tName} ${vId} — ${verse.name} | Beyond Outcomes`;
+    document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/upanishads/verse.html?u=${uId}&v=${vId}`);
+    document.getElementById('mainContent').innerHTML = `
+      <div class="up-coming">
+        <span class="up-hero-om bo-anim-om-pulse">ॐ</span>
+        <div class="hero-ref">${tName} · Verse ${vId}</div>
+        <h1 class="up-coming-title">${verse.name}</h1>
+        <p class="up-coming-text">Sanskrit text, word meanings and commentary for this verse are being written — the study moves episode by episode. Check back soon.</p>
+      </div>
+      <div style="max-width: 680px; margin: 0 auto;">
+        ${episodeHTML(verse)}
+        ${navHTML()}
+      </div>
+    `;
+  }
+
+  function renderComingSoon() {
+    document.getElementById('pageTitle').textContent = `${tName} ${vId} | Beyond Outcomes`;
+    document.getElementById('mainContent').innerHTML = `
+      <div class="up-coming">
+        <span class="up-hero-om bo-anim-om-pulse">ॐ</span>
+        <div class="hero-ref">${tName} · Verse ${vId}</div>
+        <h1 class="up-coming-title">Coming Soon</h1>
+        <p class="up-coming-text">We are studying the principal Upanishads verse by verse — Sanskrit, transliteration, translation, and reflection for modern life. This verse will be available soon.</p>
+        <div class="up-verse-nav" style="max-width: 420px; margin: 2rem auto 0;">
+          <a href="text.html?u=${uId}">← Back to ${tName}</a>
+        </div>
+      </div>
+    `;
+  }
+</script>
+</body>
+</html>

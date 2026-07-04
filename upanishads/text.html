@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Upanishad | Beyond Outcomes</title>
+  <meta name="description" id="pageDesc" content="Study this Upanishad verse by verse — Sanskrit, transliteration, translation and commentary for modern life. Free on Beyond Outcomes.">
+  <link id="canonical" rel="canonical" href="https://www.beyondoutcomes.in/upanishads/text.html">
+  <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <link rel="stylesheet" href="../css/upanishads.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* two-column top: invocation+about | episodes */
+    .text-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.25rem; align-items: start; margin-bottom: 2rem; }
+    @media (max-width: 880px) { .text-grid { grid-template-columns: 1fr; } }
+    .invocation-devanagari { font-family: 'Noto Sans Devanagari', 'Mangal', serif; font-size: 1.2rem; color: var(--bo-text-primary); line-height: 1.95; margin-bottom: 0.85rem; white-space: pre-line; text-align: center; }
+    .invocation-translation { font-family: var(--bo-font-body); font-size: 0.95rem; font-style: italic; color: var(--bo-text-secondary); line-height: 1.75; text-align: center; }
+    .summary-text { font-family: var(--bo-font-body); font-size: 1.05rem; color: var(--bo-text-secondary); line-height: 1.85; }
+    .themes { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1.1rem; }
+    .theme-chip { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #8c6432; background: rgba(140,100,50,0.08); border: 1px solid rgba(140,100,50,0.25); border-radius: 20px; padding: 5px 12px; }
+    .verse-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .verse-count-badge { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(140,100,50,0.7); }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body up-body">
+
+<div class="bo-backdrop up-dawn-backdrop"><div class="up-sun"></div></div>
+
+<div class="up-wide up-nav">
+  <a href="../index.html">← Beyond Outcomes</a>
+  <span class="up-nav-sep">/</span>
+  <a href="index.html">The Upanishads</a>
+</div>
+
+<div class="up-hero up-wide">
+  <div class="up-hero-label" id="heroLabel">Loading…</div>
+  <h1 class="up-hero-title" id="heroName"></h1>
+  <div class="up-hero-sanskrit" id="heroSanskrit"></div>
+  <div class="up-divider">
+    <div class="up-divider-line"></div>
+    <div class="up-divider-dot"></div>
+    <div class="up-divider-line"></div>
+  </div>
+  <p class="up-hero-intro" id="heroTagline"></p>
+</div>
+
+<div class="up-wide" style="padding-bottom: 1rem;">
+
+  <div class="text-grid">
+    <div>
+      <div id="invocationSlot"></div>
+      <div class="bo-card-manuscript up-manuscript">
+        <div class="up-section-label">About This Upanishad</div>
+        <div class="summary-text" id="summaryText"></div>
+        <div class="themes" id="themesRow"></div>
+      </div>
+    </div>
+    <div id="episodeSection" style="display:none;">
+      <div class="up-panel">
+        <div class="up-panel-label">The Episodes — Watch the Season</div>
+        <div id="episodeList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bo-card-manuscript up-manuscript">
+    <div class="verse-section-header">
+      <div class="up-section-label" style="margin-bottom:0;">All Verses</div>
+      <div class="verse-count-badge" id="verseCountBadge"></div>
+    </div>
+    <table class="up-verse-table">
+      <thead>
+        <tr>
+          <th>Verse</th>
+          <th>Name</th>
+          <th style="text-align:center;">Study</th>
+        </tr>
+      </thead>
+      <tbody id="verseTableBody"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="up-footer">
+  <div class="up-footer-brand">Beyond Outcomes</div>
+  <div class="up-footer-sub">Timeless Wisdom for Modern Life</div>
+  <div class="up-footer-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html">The Upanishads</a>
+    <a href="../gita/index.html">Gita Library</a>
+    <a href="../quizzes.html">Quizzes</a>
+    <a href="../about.html">About</a>
+  </div>
+  <div class="up-footer-copy">© 2026 Beyond Outcomes · beyondoutcomes.in</div>
+</div>
+
+<script src="../js/upanishads/texts.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const uId = (params.get('u') || 'isha').toLowerCase();
+  const text = window.UPANISHAD_TEXTS.find(t => t.id === uId);
+
+  if (!text) {
+    document.getElementById('heroLabel').textContent = 'Text not found';
+  } else {
+    // Meta
+    document.getElementById('pageTitle').textContent = `${text.name} — ${text.sanskrit} | The Upanishads | Beyond Outcomes`;
+    document.getElementById('pageDesc').setAttribute('content', text.summary.slice(0, 160));
+    document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/upanishads/text.html?u=${text.id}`);
+
+    // Hero
+    document.getElementById('heroLabel').textContent = `Season ${text.season} · The Upanishads`;
+    document.getElementById('heroSanskrit').textContent = `${text.sanskrit} · ${text.meaning} · ${text.veda}`;
+    document.getElementById('heroName').textContent = text.name;
+    document.getElementById('heroTagline').textContent = text.tagline;
+
+    // Invocation
+    if (text.invocation) {
+      document.getElementById('invocationSlot').innerHTML = `
+        <div class="bo-card-manuscript up-manuscript" style="margin-bottom: 1.25rem;">
+          <div class="up-section-label" style="text-align:center;">Shanti Mantra · The Invocation</div>
+          <div class="invocation-devanagari">${text.invocation.devanagari}</div>
+          <div class="invocation-translation">${text.invocation.translation}</div>
+        </div>`;
+    }
+
+    // Summary + themes
+    document.getElementById('summaryText').textContent = text.summary;
+    const themesRow = document.getElementById('themesRow');
+    text.themes.forEach(t => {
+      const chip = document.createElement('span');
+      chip.className = 'theme-chip';
+      chip.textContent = t;
+      themesRow.appendChild(chip);
+    });
+
+    // Episodes
+    if (text.episodes.length) {
+      document.getElementById('episodeSection').style.display = '';
+      const list = document.getElementById('episodeList');
+      text.episodes.forEach(ep => {
+        const card = document.createElement('div');
+        card.className = 'up-episode-card';
+        card.style.background = 'transparent';
+        card.style.backdropFilter = 'none';
+        card.innerHTML = `
+          <div>
+            <div class="up-ep-num">Episode ${ep.id}</div>
+            <div class="up-ep-title">${ep.title}</div>
+            <div class="up-ep-verses">Verses ${ep.from}–${ep.to}</div>
+          </div>
+          ${ep.youtube
+            ? `<a class="up-ep-watch live" href="https://www.youtube.com/watch?v=${ep.youtube.id}" target="_blank" rel="noopener">▶ Watch</a>`
+            : `<span class="up-ep-watch soon">Video coming soon</span>`}
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    // Verse table — load the text's data file for verse names
+    document.getElementById('verseCountBadge').textContent = `${text.verses} verses`;
+    const dataScript = document.createElement('script');
+    dataScript.src = `../js/upanishads/${text.id}.js`;
+    dataScript.onload = buildVerseTable;
+    dataScript.onerror = buildVerseTable;
+    document.head.appendChild(dataScript);
+
+    function buildVerseTable() {
+      const data = window[`UPANISHAD_${text.id.toUpperCase()}`];
+      const tbody = document.getElementById('verseTableBody');
+      for (let v = 1; v <= text.verses; v++) {
+        const verse = data && data.verses && data.verses[v];
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="up-td-num">${v}</td>
+          <td class="up-td-name">${verse && verse.name ? verse.name : ''}</td>
+          <td class="up-td-study"><a href="verse.html?u=${text.id}&v=${v}">Study →</a></td>
+        `;
+        tbody.appendChild(tr);
+      }
+    }
+  }
+</script>
+</body>
+</html>
