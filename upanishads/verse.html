@@ -103,7 +103,7 @@
     if (!verse) { renderComingSoon(); return; }
     if (!verse.transliteration) { renderPartial(verse); return; }
 
-    document.getElementById('pageTitle').textContent = `${tName} ${vId} — ${verse.name} | Beyond Outcomes`;
+    document.getElementById('pageTitle').textContent = `${tName} ${verse.ref || vId} — ${verse.name} | Beyond Outcomes`;
     document.getElementById('pageDesc').setAttribute('content', verse.translation);
     document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/upanishads/verse.html?u=${uId}&v=${vId}`);
 
@@ -123,7 +123,7 @@
 
     document.getElementById('mainContent').innerHTML = `
       <div class="up-hero" style="padding-top: 2.5rem;">
-        <div class="hero-ref">${tName} · Verse ${vId}${episode ? ` · Episode ${episode.id}` : ''}</div>
+        <div class="hero-ref">${tName} · Verse ${verse.ref || vId}${episode ? ` · Episode ${episode.id}` : ''}</div>
         <h1 class="up-hero-title">${verse.name}</h1>
         <div class="up-divider">
           <div class="up-divider-line"></div>
@@ -157,12 +157,12 @@
   }
 
   function renderPartial(verse) {
-    document.getElementById('pageTitle').textContent = `${tName} ${vId} — ${verse.name} | Beyond Outcomes`;
+    document.getElementById('pageTitle').textContent = `${tName} ${verse.ref || vId} — ${verse.name} | Beyond Outcomes`;
     document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/upanishads/verse.html?u=${uId}&v=${vId}`);
     document.getElementById('mainContent').innerHTML = `
       <div class="up-coming">
         <span class="up-hero-om bo-anim-om-pulse">ॐ</span>
-        <div class="hero-ref">${tName} · Verse ${vId}</div>
+        <div class="hero-ref">${tName} · Verse ${verse.ref || vId}</div>
         <h1 class="up-coming-title">${verse.name}</h1>
         <p class="up-coming-text">Sanskrit text, word meanings and commentary for this verse are being written — the study moves episode by episode. Check back soon.</p>
       </div>

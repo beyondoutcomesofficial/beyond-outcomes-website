@@ -175,7 +175,7 @@
         const verse = data && data.verses && data.verses[v];
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td class="up-td-num">${v}</td>
+          <td class="up-td-num">${verse && verse.ref ? verse.ref : v}</td>
           <td class="up-td-name">${verse && verse.name ? verse.name : ''}</td>
           <td class="up-td-study"><a href="verse.html?u=${text.id}&v=${v}">Study →</a></td>
         `;

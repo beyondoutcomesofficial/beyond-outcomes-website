@@ -241,15 +241,18 @@
 
   const wrap = document.getElementById('textsWrap');
   window.UPANISHAD_TEXTS.forEach(t => {
-    const live = t.status === 'live';
-    const card = document.createElement(live ? 'a' : 'div');
-    card.className = 'up-text-card ' + (live ? 'live' : 'soon');
-    if (live) card.href = 'text.html?u=' + t.id;
+    const clickable = t.status !== 'coming-soon';
+    const statusLabel = t.status === 'live' ? 'Now Studying'
+                      : t.status === 'open' ? 'Study Open · Season Ahead'
+                      : 'Coming Soon';
+    const card = document.createElement(clickable ? 'a' : 'div');
+    card.className = 'up-text-card ' + (clickable ? 'live' : 'soon');
+    if (clickable) card.href = 'text.html?u=' + t.id;
     const epCount = t.episodes.length;
     card.innerHTML = `
       <div class="up-text-top">
         <span class="up-text-season">Season ${t.season}</span>
-        <span class="up-text-status ${live ? 'live' : 'soon'}">${live ? 'Now Studying' : 'Coming Soon'}</span>
+        <span class="up-text-status ${clickable ? 'live' : 'soon'}">${statusLabel}</span>
       </div>
       <div class="up-text-name">${t.name}</div>
       <div class="up-text-sanskrit">${t.sanskrit} · ${t.meaning}</div>
@@ -259,7 +262,7 @@
         ${epCount ? `<span class="up-chip">${epCount} Episodes</span>` : ''}
         <span class="up-chip">${t.veda}</span>
       </div>
-      ${live ? '<div class="up-text-cta">Enter the text →</div>' : ''}
+      ${clickable ? '<div class="up-text-cta">Enter the text →</div>' : ''}
     `;
     wrap.appendChild(card);
   });
