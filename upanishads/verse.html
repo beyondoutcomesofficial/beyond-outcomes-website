@@ -101,7 +101,7 @@
     const verse = data && data.verses && data.verses[vId];
 
     if (!verse) { renderComingSoon(); return; }
-    if (!verse.transliteration) { renderPartial(verse); return; }
+    if (!verse.devanagari) { renderPartial(verse); return; }
 
     document.getElementById('pageTitle').textContent = `${tName} ${verse.ref || vId} — ${verse.name} | Beyond Outcomes`;
     document.getElementById('pageDesc').setAttribute('content', verse.translation);
@@ -119,7 +119,15 @@
         </div>
       </div>` : '';
 
-    const commentaryParas = verse.commentary.split('\n\n').map(p => `<p>${p}</p>`).join('');
+    const commentaryHTML = verse.commentary
+      ? `<div class="bo-card-manuscript up-manuscript">
+           <div class="up-section-label">Commentary</div>
+           <div class="up-commentary-text up-commentary-cols">${verse.commentary.split('\n\n').map(p => `<p>${p}</p>`).join('')}</div>
+         </div>`
+      : `<div class="up-panel" style="text-align:center;">
+           <div class="up-panel-label">The Full Study</div>
+           <div class="up-episode-soon">Word-by-word meanings and commentary for this verse arrive with${episode ? ` Episode ${episode.id} — “${episode.title}”` : ' its episode'}. The Sanskrit and translation above are ready now.</div>
+         </div>`;
 
     document.getElementById('mainContent').innerHTML = `
       <div class="up-hero" style="padding-top: 2.5rem;">
@@ -147,10 +155,7 @@
 
       ${wordsHTML}
 
-      <div class="bo-card-manuscript up-manuscript">
-        <div class="up-section-label">Commentary</div>
-        <div class="up-commentary-text up-commentary-cols">${commentaryParas}</div>
-      </div>
+      ${commentaryHTML}
 
       ${navHTML()}
     `;

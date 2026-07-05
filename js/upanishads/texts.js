@@ -78,7 +78,7 @@ window.UPANISHAD_TEXTS = [
     name: 'Kena Upanishad',
     meaning: 'By Whom?',
     veda: 'Sama Veda',
-    verses: 34,
+    verses: 35,
     tagline: 'By whom commanded does the mind alight on its objects?',
     summary: 'The attention season. Kena opens with the question behind every distracted hour of modern life: who — or what — directs the mind? What sees through the eye that the eye cannot see? The text answers in riddles on purpose: "it is other than the known, and beyond the unknown." Then it tells a story — the gods, drunk on a victory that was never theirs, are humbled by a spirit they cannot identify. A text for an age in which everyone is bidding for your attention and almost no one asks where it comes from.',
     themes: ['Attention', 'The Knower', 'Humility', 'The Limits of Knowledge'],
@@ -88,10 +88,10 @@ window.UPANISHAD_TEXTS = [
       translation: 'May my limbs grow strong — speech, breath, eye, ear, and every power. All is the Brahman of the Upanishads. May I never deny Brahman; may Brahman never deny me. Om, peace, peace, peace.'
     },
     episodes: [
-      { id: 1, title: 'By Whom? — the Opening Question',       from: 1,  to: 8,  youtube: null },
-      { id: 2, title: 'Beyond Knowing and Not-Knowing',        from: 9,  to: 13, youtube: null },
-      { id: 3, title: 'The Spirit the Gods Could Not Name',    from: 14, to: 25, youtube: null },
-      { id: 4, title: 'The Lightning Flash',                   from: 26, to: 34, youtube: null }
+      { id: 1, title: 'By Whom? — the Opening Question',       from: 1,  to: 9,  youtube: null },
+      { id: 2, title: 'Beyond Knowing and Not-Knowing',        from: 10, to: 14, youtube: null },
+      { id: 3, title: 'The Spirit the Gods Could Not Name',    from: 15, to: 26, youtube: null },
+      { id: 4, title: 'The Lightning Flash',                   from: 27, to: 35, youtube: null }
     ]
   },
   {
