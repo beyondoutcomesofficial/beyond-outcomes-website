@@ -20,6 +20,18 @@
   </url>
 
   <url>
+    <loc>https://www.beyondoutcomes.in/vedas/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.beyondoutcomes.in/vedas/gem.html?g=nasadiya</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.beyondoutcomes.in/upanishads/text.html?u=isha</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

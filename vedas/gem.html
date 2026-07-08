@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Vedic Hymn | Beyond Outcomes</title>
+  <meta name="description" id="pageDesc" content="A Vedic hymn with Sanskrit, transliteration, translation and honest context.">
+  <link id="canonical" rel="canonical" href="https://www.beyondoutcomes.in/vedas/gem.html">
+  <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <link rel="stylesheet" href="../css/upanishads.css">
+  <link rel="stylesheet" href="../css/vedas.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .hymn-wrap { max-width: min(920px, 92vw); margin: 0 auto; padding-bottom: 1rem; }
+    .about-text { font-family: var(--bo-font-body); font-size: 1.08rem; color: var(--bo-text-secondary); line-height: 1.9; }
+    .vd-devanagari { font-family: 'Noto Sans Devanagari', 'Mangal', serif; font-size: clamp(1.25rem, 2vw, 1.6rem); color: var(--bo-text-primary); line-height: 2; margin-bottom: 1rem; white-space: pre-line; text-align: center; }
+    .vd-translit { font-family: var(--bo-font-body); font-size: 1rem; font-style: italic; color: var(--bo-text-secondary); line-height: 1.85; white-space: pre-line; text-align: center; margin-bottom: 1.2rem; }
+    .vd-translation { font-family: var(--bo-font-body); font-size: clamp(1.15rem, 1.6vw, 1.35rem); color: var(--bo-text-primary); line-height: 1.8; font-style: italic; font-weight: 500; border-top: 1px solid rgba(140,100,50,0.3); padding-top: 1.1rem; }
+    .vd-commentary { font-family: var(--bo-font-body); font-size: 1.05rem; color: var(--bo-text-primary); line-height: 1.95; margin-top: 1.2rem; border-top: 1px solid rgba(140,100,50,0.3); padding-top: 1.1rem; }
+    .vd-commentary p { margin-bottom: 1rem; }
+    .vd-words { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.2rem; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body up-body vd-body">
+
+<div class="bo-backdrop vd-cosmos-backdrop"><div class="vd-nebula"></div><div class="vd-nebula second"></div><div class="vd-om">ॐ</div></div>
+
+<div class="up-wide up-nav">
+  <a href="../index.html">← Beyond Outcomes</a>
+  <span class="up-nav-sep">/</span>
+  <a href="index.html">Gems of the Vedas</a>
+</div>
+
+<div id="mainContent"></div>
+
+<div class="up-footer">
+  <div class="up-footer-brand">Beyond Outcomes</div>
+  <div class="up-footer-sub">Timeless Wisdom for Modern Life</div>
+  <div class="up-footer-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html">Gems of the Vedas</a>
+    <a href="../upanishads/">The Upanishads</a>
+    <a href="../gita/index.html">Gita Library</a>
+  </div>
+  <div class="up-footer-copy">© 2026 Beyond Outcomes · beyondoutcomes.in</div>
+</div>
+
+<script src="../js/vedas/gems.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const gId = (params.get('g') || 'nasadiya').toLowerCase();
+  const gem = window.VEDA_GEMS.find(x => x.id === gId);
+
+  const script = document.createElement('script');
+  script.src = `../js/vedas/${gId}.js`;
+  script.onload = render;
+  script.onerror = renderComingSoon;
+  document.head.appendChild(script);
+
+  function render() {
+    const data = window[`VEDA_GEM_${gId.toUpperCase()}`];
+    if (!gem || !data) { renderComingSoon(); return; }
+
+    document.getElementById('pageTitle').textContent = `${gem.title} — ${gem.sanskrit} (${gem.ref}) | Beyond Outcomes`;
+    document.getElementById('pageDesc').setAttribute('content', gem.tagline + ' Sanskrit, transliteration, translation and commentary.');
+    document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/vedas/gem.html?g=${gId}`);
+
+    const ids = Object.keys(data.verses).map(Number).sort((a, b) => a - b);
+    const versesHTML = ids.map(v => {
+      const x = data.verses[v];
+      const wordsHTML = x.words ? `
+        <div class="vd-words">
+          ${x.words.map(w => `
+            <div class="up-word-chip">
+              <div class="up-word-sanskrit">${w.word}</div>
+              <div class="up-word-meaning">${w.meaning}</div>
+            </div>`).join('')}
+        </div>` : '';
+      const commentaryHTML = x.commentary
+        ? `<div class="vd-commentary">${x.commentary.split('\n\n').map(p => `<p>${p}</p>`).join('')}</div>`
+        : '';
+      return `
+        <div class="vd-verse-block">
+          <div class="vd-verse-head">
+            <span class="vd-verse-num">Verse ${x.ref}</span>
+            <span class="vd-verse-name">${x.name}</span>
+          </div>
+          <div class="bo-card-manuscript up-manuscript">
+            <div class="vd-devanagari">${x.devanagari}</div>
+            <div class="vd-translit">${x.transliteration}</div>
+            <div class="vd-translation">${x.translation}</div>
+            ${wordsHTML}
+            ${commentaryHTML}
+          </div>
+        </div>`;
+    }).join('');
+
+    const ytHTML = gem.youtube ? `
+      <div class="up-panel" style="margin-bottom: 1.5rem;">
+        <div class="up-panel-label">Watch · Beyond Outcomes</div>
+        <div class="up-episode-embed" style="margin-top: 0.8rem;">
+          <iframe src="https://www.youtube-nocookie.com/embed/${gem.youtube.id}?rel=0" title="${gem.title}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>` : '';
+
+    document.getElementById('mainContent').innerHTML = `
+      <div class="up-hero up-wide" style="padding-top: 2.5rem;">
+        <div class="up-hero-label">${gem.ref} · Gems of the Vedas</div>
+        <h1 class="up-hero-title">${gem.title}</h1>
+        <div class="up-hero-sanskrit">${gem.sanskrit}</div>
+        <div class="up-divider">
+          <div class="up-divider-line"></div>
+          <div class="up-divider-dot"></div>
+          <div class="up-divider-line"></div>
+        </div>
+        <p class="up-hero-intro">${gem.tagline}</p>
+      </div>
+
+      <div class="hymn-wrap">
+        ${ytHTML}
+        ${data.about ? `
+          <div class="up-panel" style="margin-bottom: 2rem;">
+            <div class="up-panel-label">About This Hymn</div>
+            <div style="font-family: var(--bo-font-body); font-style: italic; font-size: 1.05rem; line-height: 1.9; color: rgba(213,220,255,0.92);">${data.about}</div>
+          </div>` : ''}
+        ${versesHTML}
+        <div class="up-verse-nav" style="margin-top: 2rem;">
+          <a href="index.html">← All Gems</a>
+          <a href="../upanishads/">The Upanishads →</a>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderComingSoon() {
+    document.getElementById('pageTitle').textContent = `Coming Soon | Gems of the Vedas | Beyond Outcomes`;
+    document.getElementById('mainContent').innerHTML = `
+      <div class="up-coming">
+        <span class="up-hero-om bo-anim-om-pulse">ॐ</span>
+        <h1 class="up-coming-title">${gem ? gem.title : 'This Hymn'} — Coming Soon</h1>
+        <p class="up-coming-text">This gem is being prepared — Sanskrit, transliteration, translation, and honest context. The gallery grows one hymn at a time.</p>
+        <div class="up-verse-nav" style="max-width: 420px; margin: 2rem auto 0;">
+          <a href="index.html">← All Gems</a>
+        </div>
+      </div>
+    `;
+  }
+</script>
+</body>
+</html>

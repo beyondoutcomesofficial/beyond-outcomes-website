@@ -1,0 +1,116 @@
+/* ============================================================
+   GEMS OF THE VEDAS — INDIGO COSMOS THEME
+   Part of the "One Sky, Three Times of Day" system:
+   Daylight (Gita/home) · Dawn (Upanishads) · NIGHT (this).
+   The ancient night sky the hymns were composed under.
+   Load AFTER css/beyond-outcomes.css AND css/upanishads.css —
+   this file restyles the backdrop and accents; the layout
+   components (.up-*) and manuscript cards are shared.
+   ============================================================ */
+
+body.vd-body {
+  background: #0a0d1f;
+  color: #eae4ff;
+  min-height: 100vh;
+}
+
+/* ---------- the cosmos backdrop ---------- */
+.vd-cosmos-backdrop {
+  background: radial-gradient(ellipse at 30% 20%, #1d2b53 0%, #101733 45%, #0a0d1f 100%);
+}
+/* dense twinkling starfield (two layers, phase-shifted) */
+.vd-cosmos-backdrop::before,
+.vd-cosmos-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 70%, #ffe9ad 50%, transparent 51%),
+    radial-gradient(2px 2px at 60% 20%, #cfd8ff 50%, transparent 51%),
+    radial-gradient(1px 1px at 80% 50%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 90% 80%, #ffe9ad 50%, transparent 51%),
+    radial-gradient(1px 1px at 10% 80%, #cfd8ff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 70% 90%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 33% 12%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 52% 45%, #ffe9ad 50%, transparent 51%),
+    radial-gradient(1px 1px at 6% 40%, #fff 50%, transparent 51%);
+  animation: vd-twinkle 5s ease-in-out infinite alternate;
+}
+.vd-cosmos-backdrop::after {
+  background-position: 41px 67px;
+  animation-delay: 2.5s;
+  opacity: 0.6;
+}
+@keyframes vd-twinkle { from { opacity: 0.35; } to { opacity: 1; } }
+
+/* breathing nebula */
+.vd-nebula {
+  position: absolute;
+  width: 62vw;
+  height: 62vw;
+  top: -20vw;
+  right: -18vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(146,110,255,0.22) 0%, rgba(255,170,120,0.10) 45%, transparent 70%);
+  animation: vd-breathe 18s ease-in-out infinite alternate;
+}
+.vd-nebula.second {
+  width: 44vw;
+  height: 44vw;
+  top: auto;
+  right: auto;
+  bottom: -16vw;
+  left: -14vw;
+  background: radial-gradient(circle, rgba(90,130,255,0.16) 0%, rgba(146,110,255,0.08) 45%, transparent 70%);
+  animation-delay: 9s;
+}
+@keyframes vd-breathe { from { transform: scale(1); } to { transform: scale(1.16); } }
+
+/* faint drifting om */
+.vd-om {
+  position: absolute;
+  right: 7%;
+  top: 20%;
+  font-family: var(--bo-font-body);
+  font-size: 8rem;
+  color: rgba(255,220,150,0.12);
+  animation: vd-floaty 12s ease-in-out infinite alternate;
+}
+@keyframes vd-floaty { from { transform: translateY(0); } to { transform: translateY(-30px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .vd-cosmos-backdrop::before, .vd-cosmos-backdrop::after, .vd-nebula, .vd-om { animation: none; }
+}
+
+/* ---------- accent overrides on shared components ---------- */
+.vd-body .up-hero-om { color: #ffe1a8; text-shadow: 0 0 34px rgba(185,196,255,0.5); }
+.vd-body .up-hero-title { text-shadow: 0 2px 34px rgba(6,8,20,0.8); }
+.vd-body .up-panel { background: rgba(16,20,44,0.62); border-color: rgba(146,155,255,0.32); }
+.vd-body .up-chip { background: rgba(12,16,38,0.5); border-color: rgba(185,196,255,0.35); color: #d5dcff; }
+.vd-body .up-text-card { background: rgba(16,20,44,0.55); border-color: rgba(146,155,255,0.3); }
+.vd-body .up-text-card.live:hover { border-color: #ffd98a; background: rgba(16,20,44,0.75); }
+.vd-body .up-step.here { background: rgba(146,155,255,0.16); border-color: rgba(185,196,255,0.6); }
+.vd-body .up-verse-nav a { background: rgba(16,20,44,0.5); }
+
+/* the gem's verses flow as one hymn — spacing between verse blocks */
+.vd-verse-block { margin-bottom: 1.5rem; }
+.vd-verse-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.7rem;
+  padding: 0 0.4rem;
+}
+.vd-verse-num { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #b9c4ff; }
+.vd-verse-name { font-family: var(--bo-font-display); font-size: 1.15rem; color: #fffdf5; }
+
+/* footer sits over deep night — light text */
+.vd-body .up-footer { border-top-color: rgba(146,155,255,0.25); color: rgba(213,220,255,0.8); }
+.vd-body .up-footer-brand { color: #eef; }
+.vd-body .up-footer-sub { color: rgba(213,220,255,0.65); }
+.vd-body .up-footer-links a { color: #b9c4ff; }
+.vd-body .up-footer-links a:hover { color: #fff; }
+.vd-body .up-footer-copy { color: rgba(213,220,255,0.55); }
