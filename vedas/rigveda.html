@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">The Rig Veda — Complete Index of All 1,028 Hymns | Beyond Outcomes</title>
+  <meta name="description" id="pageDesc" content="Browse every hymn of the Rig Veda — all 10 mandalas, 1,028 suktas — with deity, seer, meter and verse count. The gems we have studied in depth are linked.">
+  <link id="canonical" rel="canonical" href="https://www.beyondoutcomes.in/vedas/rigveda.html">
+  <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <link rel="stylesheet" href="../css/upanishads.css">
+  <link rel="stylesheet" href="../css/vedas.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .mandala-nav { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 0 auto 2rem; }
+    .mandala-chip {
+      font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #d5dcff; background: rgba(12,16,38,0.5); border: 1px solid rgba(185,196,255,0.35);
+      border-radius: 30px; padding: 8px 18px; text-decoration: none; transition: all 0.2s; cursor: pointer;
+    }
+    .mandala-chip:hover { border-color: #ffd98a; color: #ffd98a; }
+    .mandala-chip.active { background: #ffd98a; color: #14102b; border-color: #ffd98a; }
+
+    .mandala-intro { font-family: var(--bo-font-body); font-style: italic; font-size: 1rem; color: rgba(213,220,255,0.85); line-height: 1.8; text-align: center; max-width: 720px; margin: 0 auto 1.75rem; }
+
+    .rv-table { width: 100%; border-collapse: collapse; }
+    .rv-table th { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8c6432; text-align: left; padding: 0 0.7rem 0.7rem 0; border-bottom: 1px solid rgba(140,100,50,0.4); font-weight: 400; }
+    .rv-table td { font-family: var(--bo-font-body); font-size: 0.95rem; color: var(--bo-text-primary); padding: 0.55rem 0.7rem 0.55rem 0; border-bottom: 1px solid rgba(140,100,50,0.13); vertical-align: top; }
+    .rv-table tr:hover td { background: rgba(140,100,50,0.05); }
+    .rv-num { font-family: var(--bo-font-display); white-space: nowrap; color: var(--bo-text-secondary); }
+    .rv-gem-link { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
+    .rv-gem-link.live { color: #7a5210; background: rgba(201,168,76,0.25); border: 1px solid rgba(160,120,48,0.5); }
+    .rv-gem-link.soon { color: #8c6432; border: 1px solid rgba(140,100,50,0.35); }
+    .rv-count-badge { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(140,100,50,0.75); }
+    .rv-head-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+    .table-scroll { overflow-x: auto; }
+    .rv-loading { text-align: center; font-family: var(--bo-font-body); font-style: italic; color: rgba(213,220,255,0.7); padding: 3rem 0; }
+    @media (max-width: 640px) { .rv-meter-col { display: none; } }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body up-body vd-body">
+
+<div class="bo-backdrop vd-cosmos-backdrop"><div class="vd-nebula"></div><div class="vd-nebula second"></div><div class="vd-om">ॐ</div></div>
+
+<div class="up-wide up-nav">
+  <a href="../index.html">← Beyond Outcomes</a>
+  <span class="up-nav-sep">/</span>
+  <a href="index.html">Gems of the Vedas</a>
+  <span class="up-nav-sep">/</span>
+  <a href="map.html">The Map</a>
+  <span class="up-nav-sep">/</span>
+  <a href="rigveda.html">Rig Veda Index</a>
+</div>
+
+<div class="up-hero up-wide" style="padding-bottom: 1.5rem;">
+  <div class="up-hero-label">The Complete Index</div>
+  <h1 class="up-hero-title">The Rig Veda, Hymn by Hymn</h1>
+  <div class="up-divider">
+    <div class="up-divider-line"></div>
+    <div class="up-divider-dot"></div>
+    <div class="up-divider-line"></div>
+  </div>
+  <p class="up-hero-intro">All ten mandalas, all 1,028 suktas — every hymn locatable, with its deity, seer, meter and length. The hymns we have studied in depth glow gold; the rest of the ocean is here so you can see exactly where the pearls sit. Index data from Sanskrit Wikisource.</p>
+</div>
+
+<div class="up-wide" style="max-width: min(1000px, 94vw);">
+  <div class="mandala-nav" id="mandalaNav"></div>
+  <div class="mandala-intro" id="mandalaIntro"></div>
+  <div class="bo-card-manuscript up-manuscript">
+    <div class="rv-head-row">
+      <div class="up-section-label" style="margin-bottom:0;" id="tableTitle">Mandala</div>
+      <div class="rv-count-badge" id="countBadge"></div>
+    </div>
+    <div class="table-scroll">
+      <table class="rv-table">
+        <thead>
+          <tr>
+            <th>Sukta</th>
+            <th>Deity</th>
+            <th>Seer</th>
+            <th class="rv-meter-col">Meter</th>
+            <th>Verses</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rvBody"><tr><td colspan="6"><div class="rv-loading">Loading mandala…</div></td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="up-footer">
+  <div class="up-footer-brand">Beyond Outcomes</div>
+  <div class="up-footer-sub">Timeless Wisdom for Modern Life</div>
+  <div class="up-footer-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html">Gems of the Vedas</a>
+    <a href="map.html">The Map of the Vedas</a>
+    <a href="../upanishads/">The Upanishads</a>
+  </div>
+  <div class="up-footer-copy">© 2026 Beyond Outcomes · beyondoutcomes.in</div>
+</div>
+
+<script>
+  // suktas that are (or will be) gems — live ones link, others show the plan
+  const GEMS = {
+    '1.1':   { id: 'agni',          live: false },
+    '1.113': { id: 'ushas',         live: false },
+    '2.12':  { id: 'indra',         live: false },
+    '3.62':  { id: 'gayatri',       live: false },
+    '10.34': { id: 'gambler',       live: false },
+    '10.90': { id: 'purusha',       live: false },
+    '10.121':{ id: 'hiranyagarbha', live: false },
+    '10.125':{ id: 'vak',           live: false },
+    '10.127':{ id: 'ratri',         live: false },
+    '10.129':{ id: 'nasadiya',      live: true  },
+    '10.191':{ id: 'samjnana',      live: false }
+  };
+
+  const MANDALA_NOTES = {
+    1: 'The great opening book — 191 hymns from many seers, beginning with Agni. Home of the Dawn hymn (1.113).',
+    2: 'The first of the "family books" (2–7), the oldest core — this one from the Gritsamada line. Home of "He, O People, Is Indra" (2.12).',
+    3: 'The family book of Vishvamitra — including sukta 3.62, whose tenth verse is the Gayatri mantra.',
+    4: 'The family book of Vamadeva.',
+    5: 'The family book of Atri.',
+    6: 'The family book of Bharadvaja.',
+    7: 'The family book of Vasishtha — many count its Varuna hymns among the most personal poetry in the Veda.',
+    8: 'Mixed lineages, distinctive meters — includes the eleven supplementary Valakhilya hymns.',
+    9: 'The Soma book: every hymn addressed to Soma Pavamana, the pressed and purifying draught.',
+    10: 'The youngest book — and the philosophical one. Creation (10.129), the Cosmic Person (10.90), Speech (10.125), the Gambler (10.34), Night (10.127), and the Unity Hymn (10.191) that closes the whole collection.'
+  };
+
+  const params = new URLSearchParams(location.search);
+  let mandala = Math.min(10, Math.max(1, parseInt(params.get('m')) || 1));
+
+  const nav = document.getElementById('mandalaNav');
+  for (let m = 1; m <= 10; m++) {
+    const chip = document.createElement('a');
+    chip.className = 'mandala-chip' + (m === mandala ? ' active' : '');
+    chip.textContent = 'Mandala ' + m;
+    chip.href = 'rigveda.html?m=' + m;
+    nav.appendChild(chip);
+  }
+
+  document.getElementById('mandalaIntro').textContent = MANDALA_NOTES[mandala];
+  document.getElementById('tableTitle').textContent = 'Mandala ' + mandala;
+  document.getElementById('pageTitle').textContent = `Rig Veda Mandala ${mandala} — Complete Hymn Index | Beyond Outcomes`;
+  document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/vedas/rigveda.html?m=${mandala}`);
+
+  const s = document.createElement('script');
+  s.src = `../js/vedas/rv-index-${mandala}.js`;
+  s.onload = renderTable;
+  s.onerror = () => { document.getElementById('rvBody').innerHTML = '<tr><td colspan="6"><div class="rv-loading">Index for this mandala is being prepared.</div></td></tr>'; };
+  document.head.appendChild(s);
+
+  function renderTable() {
+    const data = window['RV_INDEX_' + mandala];
+    if (!data) return;
+    document.getElementById('countBadge').textContent = data.suktas.length + ' suktas';
+    const rows = data.suktas.map(x => {
+      const key = mandala + '.' + x.s;
+      const gem = GEMS[key];
+      const gemHTML = gem
+        ? (gem.live
+            ? `<a class="rv-gem-link live" href="gem.html?g=${gem.id}">✦ Read the gem</a>`
+            : `<span class="rv-gem-link soon">✦ Gem planned</span>`)
+        : '';
+      return `<tr>
+        <td class="rv-num">${key}</td>
+        <td>${x.d || '—'}</td>
+        <td>${x.r || '—'}</td>
+        <td class="rv-meter-col">${x.mt || '—'}</td>
+        <td>${x.v || '—'}</td>
+        <td>${gemHTML}</td>
+      </tr>`;
+    }).join('');
+    document.getElementById('rvBody').innerHTML = rows;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Map of the Vedas — All Four Vedas, All Four Layers | Beyond Outcomes</title>
+  <meta name="description" content="Orient yourself in the Vedic corpus: the four Vedas (Rig, Sama, Yajur, Atharva), their hymn and verse counts, the four layers from Samhita to Upanishad, and where the famous material lives.">
+  <link rel="canonical" href="https://www.beyondoutcomes.in/vedas/map.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Beyond Outcomes">
+  <meta property="og:url" content="https://www.beyondoutcomes.in/vedas/map.html">
+  <meta property="og:title" content="The Map of the Vedas | Beyond Outcomes">
+  <meta property="og:description" content="Four Vedas, four layers, ~20,400 mantras — the whole territory on one page, so you know exactly where you are.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <link rel="stylesheet" href="../css/upanishads.css">
+  <link rel="stylesheet" href="../css/vedas.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .section-heading { text-align: center; margin: 3rem 0 1.5rem; }
+    .section-heading .sh-label { font-family: var(--bo-font-display); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #b9c4ff; margin-bottom: 0.5rem; }
+    .section-heading .sh-title { font-family: var(--bo-font-display); font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-weight: 500; color: #fffdf5; }
+
+    /* four vedas grid */
+    .vedas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .veda-card { background: rgba(16,20,44,0.6); border: 1px solid rgba(146,155,255,0.3); border-radius: 16px; padding: 1.75rem; }
+    .veda-kicker { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #b9c4ff; margin-bottom: 0.6rem; }
+    .veda-name { font-family: var(--bo-font-display); font-size: 1.5rem; color: #fffdf5; margin-bottom: 0.2rem; }
+    .veda-epithet { font-family: var(--bo-font-body); font-style: italic; font-size: 1rem; color: #ffd98a; margin-bottom: 0.9rem; }
+    .veda-desc { font-family: var(--bo-font-body); font-size: 0.98rem; font-style: italic; color: rgba(213,220,255,0.88); line-height: 1.75; margin-bottom: 1rem; }
+    .veda-stats { display: flex; gap: 8px; flex-wrap: wrap; }
+    .veda-lineage { margin-top: 1rem; font-family: var(--bo-font-ui); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(213,220,255,0.65); line-height: 1.9; }
+    .veda-lineage a { color: #ffd98a; text-decoration: none; }
+    .veda-lineage a:hover { color: #fff; }
+
+    /* four layers flow */
+    .layers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.9rem; align-items: stretch; }
+    .layer { background: rgba(16,20,44,0.55); border: 1px solid rgba(146,155,255,0.28); border-radius: 14px; padding: 1.4rem; position: relative; }
+    .layer-step { font-family: var(--bo-font-ui); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #b9c4ff; margin-bottom: 0.5rem; }
+    .layer-name { font-family: var(--bo-font-display); font-size: 1.2rem; color: #fffdf5; margin-bottom: 0.15rem; }
+    .layer-gloss { font-family: var(--bo-font-body); font-style: italic; font-size: 0.9rem; color: #ffd98a; margin-bottom: 0.7rem; }
+    .layer-desc { font-family: var(--bo-font-body); font-style: italic; font-size: 0.92rem; color: rgba(213,220,255,0.85); line-height: 1.7; }
+    .layer.final { border-color: rgba(255,217,138,0.55); background: rgba(24,17,48,0.7); }
+
+    /* numbers table on manuscript */
+    .num-table { width: 100%; border-collapse: collapse; }
+    .num-table th { font-family: var(--bo-font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8c6432; text-align: left; padding: 0 0.8rem 0.7rem 0; border-bottom: 1px solid rgba(140,100,50,0.4); font-weight: 400; }
+    .num-table td { font-family: var(--bo-font-body); font-size: 1rem; color: var(--bo-text-primary); padding: 0.75rem 0.8rem 0.75rem 0; border-bottom: 1px solid rgba(140,100,50,0.15); vertical-align: top; }
+    .num-table td:first-child { font-family: var(--bo-font-display); white-space: nowrap; }
+    .num-note { font-family: var(--bo-font-body); font-style: italic; font-size: 0.9rem; color: var(--bo-text-secondary); margin-top: 1rem; line-height: 1.7; }
+    .table-scroll { overflow-x: auto; }
+
+    /* treasure section */
+    .treasure-text { font-family: var(--bo-font-body); font-size: 1.05rem; font-style: italic; color: rgba(213,220,255,0.9); line-height: 1.9; }
+    .treasure-text a { color: #ffd98a; }
+    .treasure-text p { margin-bottom: 0.9rem; }
+
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 2.5rem 0 1rem; }
+    .cta-row a { font-family: var(--bo-font-ui); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0.95rem 1.8rem; border-radius: 14px; border: 1px solid rgba(255,217,138,0.5); color: #ffd98a; background: rgba(16,20,44,0.5); transition: all 0.2s; }
+    .cta-row a:hover { border-color: #ffd98a; background: rgba(16,20,44,0.75); }
+    .cta-row a.primary { background: #ffd98a; color: #14102b; border-color: #ffd98a; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body up-body vd-body">
+
+<div class="bo-backdrop vd-cosmos-backdrop"><div class="vd-nebula"></div><div class="vd-nebula second"></div><div class="vd-om">ॐ</div></div>
+
+<div class="up-wide up-nav">
+  <a href="../index.html">← Beyond Outcomes</a>
+  <span class="up-nav-sep">/</span>
+  <a href="index.html">Gems of the Vedas</a>
+  <span class="up-nav-sep">/</span>
+  <a href="map.html">The Map</a>
+</div>
+
+<div class="up-hero up-wide">
+  <span class="up-hero-om bo-anim-om-pulse">ॐ</span>
+  <div class="up-hero-label">Orientation</div>
+  <h1 class="up-hero-title">The Map of the Vedas</h1>
+  <div class="up-divider">
+    <div class="up-divider-line"></div>
+    <div class="up-divider-dot"></div>
+    <div class="up-divider-line"></div>
+  </div>
+  <p class="up-hero-intro">Four collections. Four layers. Roughly twenty thousand four hundred mantras. Before diving for pearls, it helps to see the whole ocean — what each Veda is, how the layers stack, and where the material that still speaks to modern life actually lives. This page is the territory; the <a href="index.html" style="color:#ffd98a;">gems</a> are the treasure.</p>
+</div>
+
+<div class="up-wide">
+
+  <!-- THE FOUR VEDAS -->
+  <div class="section-heading">
+    <div class="sh-label">The Four Collections</div>
+    <div class="sh-title">One revelation, four instruments</div>
+  </div>
+  <div class="vedas-grid">
+    <div class="veda-card">
+      <div class="veda-kicker">The Poetry</div>
+      <div class="veda-name">Rig Veda</div>
+      <div class="veda-epithet">ṛc — the verse of praise</div>
+      <div class="veda-desc">The oldest and greatest: 1,028 hymns of praise-poetry to fire, dawn, storm, night — and, in its final book, to the unanswerable. Everything else in the Vedic world orbits this collection.</div>
+      <div class="veda-stats">
+        <span class="up-chip">1,028 hymns</span>
+        <span class="up-chip">~10,600 verses</span>
+        <span class="up-chip">10 mandalas</span>
+      </div>
+      <div class="veda-lineage">Most of our <a href="index.html">gems</a> live here</div>
+    </div>
+    <div class="veda-card">
+      <div class="veda-kicker">The Melody</div>
+      <div class="veda-name">Sama Veda</div>
+      <div class="veda-epithet">sāman — the chant</div>
+      <div class="veda-desc">The Rig's verses rearranged for singing — only about 75 of its 1,875 verses are its own. The root of Indian music, and proof that the tradition heard these words as much as it thought them.</div>
+      <div class="veda-stats">
+        <span class="up-chip">1,875 verses</span>
+        <span class="up-chip">~75 original</span>
+        <span class="up-chip">2 song-books</span>
+      </div>
+      <div class="veda-lineage">Its Upanishad: <a href="../upanishads/text.html?u=kena">Kena — Season 3</a></div>
+    </div>
+    <div class="veda-card">
+      <div class="veda-kicker">The Procedure</div>
+      <div class="veda-name">Yajur Veda</div>
+      <div class="veda-epithet">yajus — the sacrificial formula</div>
+      <div class="veda-desc">The ritual handbook: the words spoken while the hands work the sacrifice. Two lineages — Shukla (White) and Krishna (Black) — and, hidden in its endings, two of the deepest Upanishads.</div>
+      <div class="veda-stats">
+        <span class="up-chip">~1,975 formulas</span>
+        <span class="up-chip">40 chapters (Shukla)</span>
+        <span class="up-chip">2 recensions</span>
+      </div>
+      <div class="veda-lineage">Its Upanishads: <a href="../upanishads/text.html?u=isha">Isha — Season 1</a> · <a href="../upanishads/text.html?u=katha">Katha — Season 2</a></div>
+    </div>
+    <div class="veda-card">
+      <div class="veda-kicker">The Everyday</div>
+      <div class="veda-name">Atharva Veda</div>
+      <div class="veda-epithet">the Veda of the householder</div>
+      <div class="veda-desc">The odd one out, and the most human: healing charms, blessings for the house and the field, love and fear and fever — plus hymns of startling depth, like the great address to the Earth.</div>
+      <div class="veda-stats">
+        <span class="up-chip">~730 hymns</span>
+        <span class="up-chip">~6,000 verses</span>
+        <span class="up-chip">20 kandas</span>
+      </div>
+      <div class="veda-lineage">Its Upanishad: <a href="../upanishads/text.html?u=mandukya">Mandukya — Season 4</a></div>
+    </div>
+  </div>
+
+  <!-- THE FOUR LAYERS -->
+  <div class="section-heading">
+    <div class="sh-label">The Four Layers</div>
+    <div class="sh-title">Every Veda deepens inward</div>
+  </div>
+  <div class="layers">
+    <div class="layer">
+      <div class="layer-step">Layer 1 · the core</div>
+      <div class="layer-name">Samhita</div>
+      <div class="layer-gloss">the hymns</div>
+      <div class="layer-desc">The mantras themselves — the poetry and formulas. When people say "the Veda," they usually mean this layer. All the counts above are Samhita counts.</div>
+    </div>
+    <div class="layer">
+      <div class="layer-step">Layer 2 · the manual</div>
+      <div class="layer-name">Brahmana</div>
+      <div class="layer-gloss">the ritual explained</div>
+      <div class="layer-desc">Prose commentaries on how and why the rites are performed — the engineering documentation of the sacrificial world.</div>
+    </div>
+    <div class="layer">
+      <div class="layer-step">Layer 3 · the turn</div>
+      <div class="layer-name">Aranyaka</div>
+      <div class="layer-gloss">the forest books</div>
+      <div class="layer-desc">Composed for those who withdrew to the forest — the ritual begins to be internalized, contemplated rather than performed. The hinge between doing and knowing.</div>
+    </div>
+    <div class="layer final">
+      <div class="layer-step">Layer 4 · the destination</div>
+      <div class="layer-name">Upanishad</div>
+      <div class="layer-gloss">vedanta — the end of the Veda</div>
+      <div class="layer-desc">The philosophy the whole journey was for: who is the one performing all this? This is the layer we study season by season in <a href="../upanishads/" style="color:#ffd98a;">Walking Upstream</a>.</div>
+    </div>
+  </div>
+
+  <!-- THE NUMBERS -->
+  <div class="section-heading">
+    <div class="sh-label">The Numbers</div>
+    <div class="sh-title">The whole ocean, counted</div>
+  </div>
+  <div class="bo-card-manuscript up-manuscript">
+    <div class="table-scroll">
+      <table class="num-table">
+        <thead>
+          <tr><th>Veda</th><th>Hymns / Units</th><th>Verses (Mantras)</th><th>Organized As</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Rig Veda</td><td>1,028 hymns (suktas)</td><td>~10,600</td><td>10 mandalas (books)</td></tr>
+          <tr><td>Sama Veda</td><td>counted in verses</td><td>1,875 (≈75 original)</td><td>Purvarchika + Uttararchika</td></tr>
+          <tr><td>Yajur Veda (Shukla)</td><td>40 adhyayas</td><td>~1,975 formulas</td><td>prose + verse formulas</td></tr>
+          <tr><td>Atharva Veda</td><td>~730 hymns</td><td>~6,000</td><td>20 kandas (books)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="num-note">Total: roughly 20,400 mantras. All figures follow the standard recensions (Shakala Rig, Kauthuma Sama, Madhyandina Shukla-Yajur, Shaunaka Atharva) — other recensions differ slightly, and the Rig's 1,028 includes the eleven supplementary Valakhilya hymns of mandala 8. Counts of ancient oral literature always carry a margin; anyone who gives you exact-to-the-digit certainty is selling something.</div>
+  </div>
+
+  <!-- WHERE THE TREASURE LIVES -->
+  <div class="section-heading">
+    <div class="sh-label">Where the Treasure Clusters</div>
+    <div class="sh-title">Why our diving spots are where they are</div>
+  </div>
+  <div class="up-panel">
+    <div class="treasure-text">
+      <p><b style="color:#fffdf5;">Mandala 10 of the Rig Veda</b> is the youngest book — and the philosophical one. This is where the tradition turns from praising the gods to questioning the whole frame: the <a href="gem.html?g=nasadiya">Creation Hymn</a> (10.129), the <a href="index.html">Cosmic Person</a> (10.90), the Golden Embryo (10.121), Speech herself taking the microphone (10.125), the Gambler's Lament (10.34), and the Unity Hymn (10.191) that closes the entire collection. If the Upanishads have a birthplace, it is this book.</p>
+      <p><b style="color:#fffdf5;">Mandalas 2–7</b> are the "family books" — the oldest core, each preserved by one priestly family, mostly hymns to Agni and Indra. <b style="color:#fffdf5;">Mandala 9</b> is entirely dedicated to Soma. Beautiful, formulaic, and largely ritual — we visit for individual gems like the Dawn hymn (1.113) and "He, O People, Is Indra" (2.12), not for full coverage.</p>
+      <p><b style="color:#fffdf5;">The Atharva Veda</b> hides its treasure in plain domestic life — above all the Earth Hymn (12.1), sixty-three verses of ecological conscience three thousand years early.</p>
+      <p>That is the honest shape of the corpus: a vast ritual ocean with concentrated clusters of the extraordinary. We map all of it — and dive where the pearls are.</p>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a href="rigveda.html" class="primary">Browse the Complete Rig Veda Index →</a>
+    <a href="index.html">The Gems Gallery</a>
+    <a href="../upanishads/">Walking Upstream</a>
+  </div>
+
+</div>
+
+<div class="up-footer">
+  <div class="up-footer-brand">Beyond Outcomes</div>
+  <div class="up-footer-sub">Timeless Wisdom for Modern Life</div>
+  <div class="up-footer-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html">Gems of the Vedas</a>
+    <a href="../upanishads/">The Upanishads</a>
+    <a href="../gita/index.html">Gita Library</a>
+  </div>
+  <div class="up-footer-copy">© 2026 Beyond Outcomes · beyondoutcomes.in</div>
+</div>
+
+</body>
+</html>
