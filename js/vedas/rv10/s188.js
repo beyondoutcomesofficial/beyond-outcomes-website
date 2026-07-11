@@ -1,0 +1,2 @@
+// Rig Veda 10.188 — full Devanagari text (Sanskrit Wikisource) + auto IAST.
+window.RV_TEXT_10_188 = {"m": 10, "s": 188, "verses": {"1": {"d": "प्र नूनं जातवेदसमश्वं हिनोत वाजिनम् ।\nइदं नो बर्हिरासदे ॥", "t": "pra nūnaṁ jātavedasamaśvaṁ hinota vājinam\nidaṁ no barhirāsade"}, "2": {"d": "अस्य प्र जातवेदसो विप्रवीरस्य मीळ्हुषः ।\nमहीमियर्मि सुष्टुतिम् ॥", "t": "asya pra jātavedaso vipravīrasya mīḷhuṣaḥ\nmahīmiyarmi suṣṭutim"}, "3": {"d": "या रुचो जातवेदसो देवत्रा हव्यवाहनीः ।\nताभिर्नो यज्ञमिन्वतु ॥", "t": "yā ruco jātavedaso devatrā havyavāhanīḥ\ntābhirno yajñaminvatu"}}};

@@ -1,0 +1,2 @@
+// Rig Veda 10.185 — full Devanagari text (Sanskrit Wikisource) + auto IAST.
+window.RV_TEXT_10_185 = {"m": 10, "s": 185, "verses": {"1": {"d": "महि त्रीणामवोऽस्तु द्युक्षं मित्रस्यार्यम्णः ।\nदुराधर्षं वरुणस्य ॥", "t": "mahi trīṇāmavo'stu dyukṣaṁ mitrasyāryamṇaḥ\ndurādharṣaṁ varuṇasya"}, "2": {"d": "नहि तेषाममा चन नाध्वसु वारणेषु ।\nईशे रिपुरघशंसः ॥", "t": "nahi teṣāmamā cana nādhvasu vāraṇeṣu\nīśe ripuraghaśaṁsaḥ"}, "3": {"d": "यस्मै पुत्रासो अदितेः प्र जीवसे मर्त्याय ।\nज्योतिर्यच्छन्त्यजस्रम् ॥", "t": "yasmai putrāso aditeḥ pra jīvase martyāya\njyotiryacchantyajasram"}}};

@@ -119,6 +119,9 @@
     '10.191':{ id: 'samjnana',      live: false }
   };
 
+  // mandalas whose full Sanskrit text is on the site (sukta.html reader)
+  const TEXT_READY = [10];
+
   const MANDALA_NOTES = {
     1: 'The great opening book — 191 hymns from many seers, beginning with Agni. Home of the Dawn hymn (1.113).',
     2: 'The first of the "family books" (2–7), the oldest core — this one from the Gritsamada line. Home of "He, O People, Is Indra" (2.12).',
@@ -159,6 +162,7 @@
     const data = window['RV_INDEX_' + mandala];
     if (!data) return;
     document.getElementById('countBadge').textContent = data.suktas.length + ' suktas';
+    const hasText = TEXT_READY.includes(mandala);
     const rows = data.suktas.map(x => {
       const key = mandala + '.' + x.s;
       const gem = GEMS[key];
@@ -166,9 +170,14 @@
         ? (gem.live
             ? `<a class="rv-gem-link live" href="gem.html?g=${gem.id}">✦ Read the gem</a>`
             : `<span class="rv-gem-link soon">✦ Gem planned</span>`)
-        : '';
+        : (hasText
+            ? `<a class="rv-gem-link soon" href="sukta.html?m=${mandala}&s=${x.s}">Read →</a>`
+            : '');
+      const numCell = hasText
+        ? `<a href="sukta.html?m=${mandala}&s=${x.s}" style="color:inherit;text-decoration:none;">${key}</a>`
+        : key;
       return `<tr>
-        <td class="rv-num">${key}</td>
+        <td class="rv-num">${numCell}</td>
         <td>${x.d || '—'}</td>
         <td>${x.r || '—'}</td>
         <td class="rv-meter-col">${x.mt || '—'}</td>

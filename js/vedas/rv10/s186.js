@@ -1,0 +1,2 @@
+// Rig Veda 10.186 — full Devanagari text (Sanskrit Wikisource) + auto IAST.
+window.RV_TEXT_10_186 = {"m": 10, "s": 186, "verses": {"1": {"d": "वात आ वातु भेषजं शम्भु मयोभु नो हृदे ।\nप्र ण आयूंषि तारिषत् ॥", "t": "vāta ā vātu bheṣajaṁ śambhu mayobhu no hṛde\npra ṇa āyūṁṣi tāriṣat"}, "2": {"d": "उत वात पितासि न उत भ्रातोत नः सखा ।\nस नो जीवातवे कृधि ॥", "t": "uta vāta pitāsi na uta bhrātota naḥ sakhā\nsa no jīvātave kṛdhi"}, "3": {"d": "यददो वात ते गृहेऽमृतस्य निधिर्हितः ।\nततो नो देहि जीवसे ॥", "t": "yadado vāta te gṛhe'mṛtasya nidhirhitaḥ\ntato no dehi jīvase"}}};

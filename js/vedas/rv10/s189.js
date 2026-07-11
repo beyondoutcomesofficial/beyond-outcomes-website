@@ -1,0 +1,2 @@
+// Rig Veda 10.189 — full Devanagari text (Sanskrit Wikisource) + auto IAST.
+window.RV_TEXT_10_189 = {"m": 10, "s": 189, "verses": {"1": {"d": "आयं गौः पृश्निरक्रमीदसदन्मातरं पुरः ।\nपितरं च प्रयन्स्वः ॥", "t": "āyaṁ gauḥ pṛśnirakramīdasadanmātaraṁ puraḥ\npitaraṁ ca prayansvaḥ"}, "2": {"d": "अन्तश्चरति रोचनास्य प्राणादपानती ।\nव्यख्यन्महिषो दिवम् ॥", "t": "antaścarati rocanāsya prāṇādapānatī\nvyakhyanmahiṣo divam"}, "3": {"d": "त्रिंशद्धाम वि राजति वाक्पतंगाय धीयते ।\nप्रति वस्तोरह द्युभिः ॥", "t": "triṁśaddhāma vi rājati vākpataṁgāya dhīyate\nprati vastoraha dyubhiḥ"}}};

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Rig Veda Sukta | Beyond Outcomes</title>
+  <meta name="description" id="pageDesc" content="Read a Rig Veda hymn — full Sanskrit text with transliteration.">
+  <link id="canonical" rel="canonical" href="https://www.beyondoutcomes.in/vedas/sukta.html">
+  <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <link rel="stylesheet" href="../css/upanishads.css">
+  <link rel="stylesheet" href="../css/vedas.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .hymn-wrap { max-width: min(920px, 92vw); margin: 0 auto; padding-bottom: 1rem; }
+    .meta-chips { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 1.2rem; }
+    .sk-devanagari { font-family: 'Noto Sans Devanagari', 'Mangal', serif; font-size: clamp(1.15rem, 1.8vw, 1.45rem); color: var(--bo-text-primary); line-height: 2; margin-bottom: 0.9rem; white-space: pre-line; text-align: center; }
+    .sk-translit { font-family: var(--bo-font-body); font-size: 0.98rem; font-style: italic; color: var(--bo-text-secondary); line-height: 1.8; white-space: pre-line; text-align: center; }
+    .sk-translation { font-family: var(--bo-font-body); font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--bo-text-primary); line-height: 1.8; font-style: italic; font-weight: 500; border-top: 1px solid rgba(140,100,50,0.3); padding-top: 1rem; margin-top: 1rem; }
+    .sk-note { font-family: var(--bo-font-body); font-style: italic; font-size: 0.98rem; color: rgba(213,220,255,0.85); line-height: 1.8; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-70BM48WVYR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-70BM48WVYR');</script>
+</head>
+<body class="bo-body up-body vd-body">
+
+<div class="bo-backdrop vd-cosmos-backdrop"><div class="vd-nebula"></div><div class="vd-nebula second"></div><div class="vd-om">ॐ</div></div>
+
+<div class="up-wide up-nav">
+  <a href="../index.html">← Beyond Outcomes</a>
+  <span class="up-nav-sep">/</span>
+  <a href="index.html">Gems of the Vedas</a>
+  <span class="up-nav-sep">/</span>
+  <a id="mandalaLink" href="rigveda.html">Rig Veda Index</a>
+</div>
+
+<div id="mainContent"></div>
+
+<div class="up-footer">
+  <div class="up-footer-brand">Beyond Outcomes</div>
+  <div class="up-footer-sub">Timeless Wisdom for Modern Life</div>
+  <div class="up-footer-links">
+    <a href="../index.html">Home</a>
+    <a href="rigveda.html">Rig Veda Index</a>
+    <a href="map.html">The Map of the Vedas</a>
+    <a href="index.html">Gems of the Vedas</a>
+  </div>
+  <div class="up-footer-copy">© 2026 Beyond Outcomes · beyondoutcomes.in</div>
+</div>
+
+<script>
+  const params = new URLSearchParams(location.search);
+  const m = parseInt(params.get('m')) || 10;
+  const s = parseInt(params.get('s')) || 1;
+
+  const GEMS = { '10.90':'purusha', '10.121':'hiranyagarbha', '10.125':'vak', '10.34':'gambler',
+                 '10.127':'ratri', '10.129':'nasadiya', '10.191':'samjnana' };
+  const GEMS_LIVE = ['nasadiya'];
+
+  document.getElementById('mandalaLink').textContent = 'Rig Veda · Mandala ' + m;
+  document.getElementById('mandalaLink').href = 'rigveda.html?m=' + m;
+
+  let meta = null, text = null, pending = 2;
+  function loadScript(src, cb) {
+    const el = document.createElement('script');
+    el.src = src; el.onload = cb; el.onerror = cb;
+    document.head.appendChild(el);
+  }
+  loadScript(`../js/vedas/rv-index-${m}.js`, done);
+  loadScript(`../js/vedas/rv${m}/s${s}.js`, done);
+  function done() { if (--pending === 0) render(); }
+
+  function render() {
+    const idx = window['RV_INDEX_' + m];
+    meta = idx && idx.suktas.find(x => x.s === s);
+    text = window[`RV_TEXT_${m}_${s}`];
+    const main = document.getElementById('mainContent');
+
+    if (!text || !text.verses || !Object.keys(text.verses).length) {
+      main.innerHTML = `
+        <div class="up-coming">
+          <span class="up-hero-om bo-anim-om-pulse">ॐ</span>
+          <h1 class="up-coming-title">Rig Veda ${m}.${s}</h1>
+          <p class="up-coming-text">The text of this sukta is being prepared. Mandala 10 is complete — other mandalas follow one at a time.</p>
+          <div class="up-verse-nav" style="max-width:420px;margin:2rem auto 0;"><a href="rigveda.html?m=${m}">← Mandala ${m} Index</a></div>
+        </div>`;
+      return;
+    }
+
+    const key = m + '.' + s;
+    document.getElementById('pageTitle').textContent = `Rig Veda ${key}${meta && meta.d ? ' — to ' + meta.d : ''} | Full Sanskrit Text | Beyond Outcomes`;
+    document.getElementById('pageDesc').setAttribute('content', `Rig Veda ${key}: full Sanskrit text with transliteration${meta && meta.d ? ' — a hymn to ' + meta.d : ''}.`);
+    document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/vedas/sukta.html?m=${m}&s=${s}`);
+
+    const gemId = GEMS[key];
+    const gemHTML = gemId
+      ? (GEMS_LIVE.includes(gemId)
+          ? `<div class="up-panel" style="margin-bottom:1.5rem;text-align:center;">
+               <div class="sk-note">✦ This hymn is one of our <b style="color:#ffd98a;">gems</b> — it has a full study with translation and commentary.</div>
+               <div class="up-verse-nav" style="max-width:420px;margin:1rem auto 0;"><a href="gem.html?g=${gemId}">Read the full study →</a></div>
+             </div>`
+          : `<div class="up-panel" style="margin-bottom:1.5rem;text-align:center;">
+               <div class="sk-note">✦ This hymn is on our gems list — a full study with translation and commentary is planned.</div>
+             </div>`)
+      : '';
+
+    const nums = Object.keys(text.verses).map(Number).sort((a, b) => a - b);
+    const anyTr = nums.some(n => text.verses[n].tr);
+    const statusHTML = anyTr ? '' : `
+      <div class="up-panel" style="margin-bottom:1.5rem;text-align:center;">
+        <div class="sk-note">The complete Sanskrit text and transliteration are below. An English translation for this hymn is being added — hymn by hymn, honestly, in order of what readers seek most.</div>
+      </div>`;
+
+    const versesHTML = nums.map(n => {
+      const v = text.verses[n];
+      return `
+        <div class="vd-verse-block">
+          <div class="vd-verse-head"><span class="vd-verse-num">Verse ${m}.${s}.${n}</span></div>
+          <div class="bo-card-manuscript up-manuscript" style="padding:1.6rem 2rem;">
+            <div class="sk-devanagari">${v.d}</div>
+            <div class="sk-translit">${v.t}</div>
+            ${v.tr ? `<div class="sk-translation">${v.tr}</div>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+
+    const prev = s > 1 ? `<a href="sukta.html?m=${m}&s=${s - 1}">← ${m}.${s - 1}</a>` : '';
+    const total = idx ? idx.suktas.length : 191;
+    const next = s < total ? `<a href="sukta.html?m=${m}&s=${s + 1}">${m}.${s + 1} →</a>` : '';
+
+    main.innerHTML = `
+      <div class="up-hero up-wide" style="padding-top:2.5rem;">
+        <div class="up-hero-label">Rig Veda · Mandala ${m}</div>
+        <h1 class="up-hero-title">Sukta ${key}</h1>
+        <div class="up-divider"><div class="up-divider-line"></div><div class="up-divider-dot"></div><div class="up-divider-line"></div></div>
+        <div class="meta-chips">
+          ${meta && meta.d ? `<span class="up-chip">Deity: ${meta.d}</span>` : ''}
+          ${meta && meta.r ? `<span class="up-chip">Seer: ${meta.r}</span>` : ''}
+          ${meta && meta.mt ? `<span class="up-chip">Meter: ${meta.mt}</span>` : ''}
+          <span class="up-chip">${nums.length} verses</span>
+        </div>
+      </div>
+      <div class="hymn-wrap">
+        ${gemHTML}
+        ${statusHTML}
+        ${versesHTML}
+        <div class="up-verse-nav" style="margin-top:2rem;">${prev}${next}</div>
+        <div class="up-verse-nav" style="margin-top:10px;">
+          <a href="rigveda.html?m=${m}">← Mandala ${m} Index</a>
+          <a href="index.html">The Gems Gallery</a>
+        </div>
+      </div>`;
+  }
+</script>
+</body>
+</html>
