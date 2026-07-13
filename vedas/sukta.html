@@ -105,10 +105,23 @@
 
     const nums = Object.keys(text.verses).map(Number).sort((a, b) => a - b);
     const anyTr = nums.some(n => text.verses[n].tr);
-    const statusHTML = anyTr ? '' : `
+    let statusHTML = '';
+    if (!anyTr) {
+      statusHTML = `
       <div class="up-panel" style="margin-bottom:1.5rem;text-align:center;">
         <div class="sk-note">The complete Sanskrit text and transliteration are below. An English translation for this hymn is being added — hymn by hymn, honestly, in order of what readers seek most.</div>
       </div>`;
+    } else if (text.trSource === 'griffith') {
+      statusHTML = `
+      <div class="up-panel" style="margin-bottom:1.5rem;text-align:center;">
+        <div class="sk-note">English translation: <b style="color:#ffd98a;">Ralph T.H. Griffith (1896)</b>, public domain — a monument of its era, but dated and occasionally imprecise. A Beyond Outcomes translation will replace it here, hymn by hymn.</div>
+      </div>`;
+    } else if (text.trSource === 'bo') {
+      statusHTML = `
+      <div class="up-panel" style="margin-bottom:1.5rem;text-align:center;">
+        <div class="sk-note">English translation: <b style="color:#ffd98a;">Beyond Outcomes</b> — our own rendering from the Sanskrit, to be verified against Jamison–Brereton as the study deepens.</div>
+      </div>`;
+    }
 
     const versesHTML = nums.map(n => {
       const v = text.verses[n];
