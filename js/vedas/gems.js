@@ -20,7 +20,16 @@ window.VEDA_GEMS = [
   { id: 'samjnana',     status: 'coming-soon', title: 'The Unity Hymn',           sanskrit: 'Saṁjñāna Sūkta',     ref: 'Rig Veda 10.191',  verses: 4,  tagline: 'The Rig Veda\'s closing words: walk together, speak together, know one another\'s minds.' },
   { id: 'ushas',        status: 'coming-soon', title: 'Hymn to the Dawn',         sanskrit: 'Uṣas Sūkta',         ref: 'Rig Veda 1.113',   verses: 20, tagline: 'The most beautiful poetry in the Veda — dawn as a young woman who has woken every morning forever.' },
   { id: 'agni',         status: 'coming-soon', title: 'The First Word',           sanskrit: 'Agni Sūkta',         ref: 'Rig Veda 1.1',     verses: 9,  tagline: 'The very first hymn of the very first book — where three thousand years of recitation begin.' },
-  { id: 'gambler',      status: 'coming-soon', title: 'The Gambler\'s Lament',    sanskrit: 'Akṣa Sūkta',         ref: 'Rig Veda 10.34',   verses: 14, tagline: 'An addict\'s confession, three millennia old — the dice "like magnets, hot with longing."' },
+  {
+    id: 'gambler',
+    status: 'live',
+    title: 'The Gambler\'s Lament',
+    sanskrit: 'Akṣa Sūkta',
+    ref: 'Rig Veda 10.34',
+    verses: 14,
+    tagline: 'The oldest confession of addiction on earth — he sees the whole wreckage clearly, and cannot stop.',
+    themes: ['Addiction', 'Craving', 'Relapse', 'The Way Out']
+  },
   { id: 'ratri',        status: 'coming-soon', title: 'Hymn to the Night',        sanskrit: 'Rātrī Sūkta',        ref: 'Rig Veda 10.127',  verses: 8,  tagline: 'Night arrives as a goddess filling the valleys — and the poet asks her for safe passage.' },
   { id: 'indra',        status: 'coming-soon', title: '"He, O People, Is Indra"', sanskrit: 'Sa Janāsa Indraḥ',   ref: 'Rig Veda 2.12',    verses: 15, tagline: 'A hymn built on a refrain — and on the startling admission that some doubt the god exists.' },
   { id: 'prithvi',      status: 'coming-soon', title: 'Hymn to the Earth',        sanskrit: 'Pṛthvī Sūkta',       ref: 'Atharva Veda 12.1',verses: 63, tagline: 'The oldest environmental text: whatever I dig from you, Earth, may it grow back again.' }
