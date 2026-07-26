@@ -18,7 +18,16 @@ window.VEDA_GEMS = [
   { id: 'hiranyagarbha',status: 'coming-soon', title: 'The Golden Embryo',        sanskrit: 'Hiraṇyagarbha Sūkta',ref: 'Rig Veda 10.121',  verses: 10, tagline: 'Ten verses that keep asking: to which god shall we offer? — and answer with a riddle.' },
   { id: 'vak',          status: 'coming-soon', title: 'The Word Speaks',          sanskrit: 'Vāk Sūkta (Devī Sūkta)', ref: 'Rig Veda 10.125', verses: 8, tagline: 'Language itself takes the microphone — the earliest first-person voice of the goddess.' },
   { id: 'samjnana',     status: 'coming-soon', title: 'The Unity Hymn',           sanskrit: 'Saṁjñāna Sūkta',     ref: 'Rig Veda 10.191',  verses: 4,  tagline: 'The Rig Veda\'s closing words: walk together, speak together, know one another\'s minds.' },
-  { id: 'ushas',        status: 'coming-soon', title: 'Hymn to the Dawn',         sanskrit: 'Uṣas Sūkta',         ref: 'Rig Veda 1.113',   verses: 20, tagline: 'The most beautiful poetry in the Veda — dawn as a young woman who has woken every morning forever.' },
+  {
+    id: 'ushas',
+    status: 'live',
+    title: 'Hymn to the Dawn',
+    sanskrit: 'Uṣas Sūkta',
+    ref: 'Rig Veda 1.113',
+    verses: 20,
+    tagline: 'The most beautiful poetry in the Veda — and its oldest meditation on time: she wakes the living, but not the dead.',
+    themes: ['Dawn', 'Transience', 'The Deathless', 'Gratitude']
+  },
   { id: 'agni',         status: 'coming-soon', title: 'The First Word',           sanskrit: 'Agni Sūkta',         ref: 'Rig Veda 1.1',     verses: 9,  tagline: 'The very first hymn of the very first book — where three thousand years of recitation begin.' },
   {
     id: 'gambler',

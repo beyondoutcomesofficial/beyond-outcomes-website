@@ -38,6 +38,12 @@
   </url>
 
   <url>
+    <loc>https://www.beyondoutcomes.in/vedas/gem.html?g=ushas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.beyondoutcomes.in/vedas/map.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
