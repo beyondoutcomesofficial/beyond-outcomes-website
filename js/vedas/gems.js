@@ -44,7 +44,16 @@ window.VEDA_GEMS = [
     tagline: 'Speech herself takes the microphone — the earliest first-person voice of the divine feminine, saying: you live inside me and do not know it.',
     themes: ['Language', 'The Goddess', 'The Word', 'The Medium of Mind']
   },
-  { id: 'samjnana',     status: 'coming-soon', title: 'The Unity Hymn',           sanskrit: 'Saṁjñāna Sūkta',     ref: 'Rig Veda 10.191',  verses: 4,  tagline: 'The Rig Veda\'s closing words: walk together, speak together, know one another\'s minds.' },
+  {
+    id: 'samjnana',
+    status: 'live',
+    title: 'The Unity Hymn',
+    sanskrit: 'Saṁjñāna Sūkta',
+    ref: 'Rig Veda 10.191',
+    verses: 4,
+    tagline: 'The last words of the Rig Veda — a plea for concord: walk together, speak together, let your minds be of one accord.',
+    themes: ['Unity', 'Concord', 'Community', 'The Veda\'s Last Words']
+  },
   {
     id: 'ushas',
     status: 'live',
