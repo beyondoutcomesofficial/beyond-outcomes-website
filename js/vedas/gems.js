@@ -14,7 +14,16 @@ window.VEDA_GEMS = [
     themes: ['Origins', 'Doubt as Reverence', 'The One', 'Before Being']
   },
   { id: 'purusha',      status: 'coming-soon', title: 'The Cosmic Person',        sanskrit: 'Puruṣa Sūkta',       ref: 'Rig Veda 10.90',   verses: 16, tagline: 'The universe imagined as a single body — and society\'s oldest self-description.' },
-  { id: 'gayatri',      status: 'coming-soon', title: 'The Gayatri Mantra',       sanskrit: 'Gāyatrī',            ref: 'Rig Veda 3.62.10', verses: 1,  tagline: 'Twenty-four syllables recited for three thousand years: a prayer to sharpen the mind.' },
+  {
+    id: 'gayatri',
+    status: 'live',
+    title: 'The Gayatri Mantra',
+    sanskrit: 'Gāyatrī',
+    ref: 'Rig Veda 3.62.10',
+    verses: 1,
+    tagline: 'The most recited verse on earth — and, read plainly, a prayer not for power but for a clearer mind.',
+    themes: ['Illumination', 'The Mind', 'Savitar', 'Clarity']
+  },
   { id: 'hiranyagarbha',status: 'coming-soon', title: 'The Golden Embryo',        sanskrit: 'Hiraṇyagarbha Sūkta',ref: 'Rig Veda 10.121',  verses: 10, tagline: 'Ten verses that keep asking: to which god shall we offer? — and answer with a riddle.' },
   { id: 'vak',          status: 'coming-soon', title: 'The Word Speaks',          sanskrit: 'Vāk Sūkta (Devī Sūkta)', ref: 'Rig Veda 10.125', verses: 8, tagline: 'Language itself takes the microphone — the earliest first-person voice of the goddess.' },
   { id: 'samjnana',     status: 'coming-soon', title: 'The Unity Hymn',           sanskrit: 'Saṁjñāna Sūkta',     ref: 'Rig Veda 10.191',  verses: 4,  tagline: 'The Rig Veda\'s closing words: walk together, speak together, know one another\'s minds.' },
