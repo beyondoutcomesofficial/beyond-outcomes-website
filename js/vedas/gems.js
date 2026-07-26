@@ -75,7 +75,16 @@ window.VEDA_GEMS = [
     tagline: 'The oldest confession of addiction on earth — he sees the whole wreckage clearly, and cannot stop.',
     themes: ['Addiction', 'Craving', 'Relapse', 'The Way Out']
   },
-  { id: 'ratri',        status: 'coming-soon', title: 'Hymn to the Night',        sanskrit: 'Rātrī Sūkta',        ref: 'Rig Veda 10.127',  verses: 8,  tagline: 'Night arrives as a goddess filling the valleys — and the poet asks her for safe passage.' },
+  {
+    id: 'ratri',
+    status: 'live',
+    title: 'Hymn to the Night',
+    sanskrit: 'Rātrī Sūkta',
+    ref: 'Rig Veda 10.127',
+    verses: 8,
+    tagline: 'The Dawn hymn\'s twin — Night as a goddess whose eyes are the stars, who lays even the hunting hawk to rest.',
+    themes: ['Night', 'Rest', 'The Goddess', 'Safe Passage']
+  },
   { id: 'indra',        status: 'coming-soon', title: '"He, O People, Is Indra"', sanskrit: 'Sa Janāsa Indraḥ',   ref: 'Rig Veda 2.12',    verses: 15, tagline: 'A hymn built on a refrain — and on the startling admission that some doubt the god exists.' },
   { id: 'prithvi',      status: 'coming-soon', title: 'Hymn to the Earth',        sanskrit: 'Pṛthvī Sūkta',       ref: 'Atharva Veda 12.1',verses: 63, tagline: 'The oldest environmental text: whatever I dig from you, Earth, may it grow back again.' }
 ];
