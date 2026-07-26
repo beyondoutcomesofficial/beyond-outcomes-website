@@ -34,7 +34,16 @@ window.VEDA_GEMS = [
     tagline: 'Nine verses of praise addressed to an unknown — "to which god, then, shall we offer our worship?"',
     themes: ['Creation', 'The Unknown God', 'Reverent Doubt', 'Origins']
   },
-  { id: 'vak',          status: 'coming-soon', title: 'The Word Speaks',          sanskrit: 'Vāk Sūkta (Devī Sūkta)', ref: 'Rig Veda 10.125', verses: 8, tagline: 'Language itself takes the microphone — the earliest first-person voice of the goddess.' },
+  {
+    id: 'vak',
+    status: 'live',
+    title: 'The Word Speaks',
+    sanskrit: 'Vāk Sūkta (Devī Sūkta)',
+    ref: 'Rig Veda 10.125',
+    verses: 8,
+    tagline: 'Speech herself takes the microphone — the earliest first-person voice of the divine feminine, saying: you live inside me and do not know it.',
+    themes: ['Language', 'The Goddess', 'The Word', 'The Medium of Mind']
+  },
   { id: 'samjnana',     status: 'coming-soon', title: 'The Unity Hymn',           sanskrit: 'Saṁjñāna Sūkta',     ref: 'Rig Veda 10.191',  verses: 4,  tagline: 'The Rig Veda\'s closing words: walk together, speak together, know one another\'s minds.' },
   {
     id: 'ushas',
