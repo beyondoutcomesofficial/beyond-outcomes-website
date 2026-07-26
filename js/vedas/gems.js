@@ -24,7 +24,16 @@ window.VEDA_GEMS = [
     tagline: 'The most recited verse on earth — and, read plainly, a prayer not for power but for a clearer mind.',
     themes: ['Illumination', 'The Mind', 'Savitar', 'Clarity']
   },
-  { id: 'hiranyagarbha',status: 'coming-soon', title: 'The Golden Embryo',        sanskrit: 'Hiraṇyagarbha Sūkta',ref: 'Rig Veda 10.121',  verses: 10, tagline: 'Ten verses that keep asking: to which god shall we offer? — and answer with a riddle.' },
+  {
+    id: 'hiranyagarbha',
+    status: 'live',
+    title: 'The Golden Embryo',
+    sanskrit: 'Hiraṇyagarbha Sūkta',
+    ref: 'Rig Veda 10.121',
+    verses: 10,
+    tagline: 'Nine verses of praise addressed to an unknown — "to which god, then, shall we offer our worship?"',
+    themes: ['Creation', 'The Unknown God', 'Reverent Doubt', 'Origins']
+  },
   { id: 'vak',          status: 'coming-soon', title: 'The Word Speaks',          sanskrit: 'Vāk Sūkta (Devī Sūkta)', ref: 'Rig Veda 10.125', verses: 8, tagline: 'Language itself takes the microphone — the earliest first-person voice of the goddess.' },
   { id: 'samjnana',     status: 'coming-soon', title: 'The Unity Hymn',           sanskrit: 'Saṁjñāna Sūkta',     ref: 'Rig Veda 10.191',  verses: 4,  tagline: 'The Rig Veda\'s closing words: walk together, speak together, know one another\'s minds.' },
   {
