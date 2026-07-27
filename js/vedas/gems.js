@@ -94,6 +94,15 @@ window.VEDA_GEMS = [
     tagline: 'The Dawn hymn\'s twin — Night as a goddess whose eyes are the stars, who lays even the hunting hawk to rest.',
     themes: ['Night', 'Rest', 'The Goddess', 'Safe Passage']
   },
-  { id: 'indra',        status: 'coming-soon', title: '"He, O People, Is Indra"', sanskrit: 'Sa Janāsa Indraḥ',   ref: 'Rig Veda 2.12',    verses: 15, tagline: 'A hymn built on a refrain — and on the startling admission that some doubt the god exists.' },
+  {
+    id: 'indra',
+    status: 'live',
+    title: '"He, O People, Is Indra"',
+    sanskrit: 'Sa Janāsa Indraḥ',
+    ref: 'Rig Veda 2.12',
+    verses: 15,
+    tagline: 'A thundering refrain-hymn to the king of the gods — that pauses, mid-praise, to admit some say "he does not exist."',
+    themes: ['Indra', 'Faith & Doubt', 'The Deeds of a God', 'Śraddhā']
+  },
   { id: 'prithvi',      status: 'coming-soon', title: 'Hymn to the Earth',        sanskrit: 'Pṛthvī Sūkta',       ref: 'Atharva Veda 12.1',verses: 63, tagline: 'The oldest environmental text: whatever I dig from you, Earth, may it grow back again.' }
 ];
