@@ -13,7 +13,16 @@ window.VEDA_GEMS = [
     tagline: 'The creation hymn that dares to end in a question mark.',
     themes: ['Origins', 'Doubt as Reverence', 'The One', 'Before Being']
   },
-  { id: 'purusha',      status: 'coming-soon', title: 'The Cosmic Person',        sanskrit: 'Puruṣa Sūkta',       ref: 'Rig Veda 10.90',   verses: 16, tagline: 'The universe imagined as a single body — and society\'s oldest self-description.' },
+  {
+    id: 'purusha',
+    status: 'live',
+    title: 'The Cosmic Person',
+    sanskrit: 'Puruṣa Sūkta',
+    ref: 'Rig Veda 10.90',
+    verses: 16,
+    tagline: 'The universe imagined as a single body — and, in one verse, society\'s oldest and most consequential self-description.',
+    themes: ['Cosmic Unity', 'Self-Sacrifice', 'The Caste Verse', 'Read With Open Eyes']
+  },
   {
     id: 'gayatri',
     status: 'live',

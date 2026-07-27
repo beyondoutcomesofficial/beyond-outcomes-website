@@ -1,2 +1,87 @@
-// Rig Veda 10.90 — Devanagari (Sanskrit Wikisource) + IAST + English (Griffith 1896, PD) unless BO.
-window.RV_TEXT_10_90 = {"m": 10, "s": 90, "verses": {"1": {"d": "सहस्रशीर्षा पुरुषः सहस्राक्षः सहस्रपात् ।\nस भूमिं विश्वतो वृत्वात्यतिष्ठद्दशाङ्गुलम् ॥", "t": "sahasraśīrṣā puruṣaḥ sahasrākṣaḥ sahasrapāt\nsa bhūmiṁ viśvato vṛtvātyatiṣṭhaddaśāṅgulam", "tr": "A THOUSAND heads hath Purusa, a thousand eyes, a thousand feet. On every side pervading earth he fills a space ten fingers wide."}, "2": {"d": "पुरुष एवेदं सर्वं यद्भूतं यच्च भव्यम् ।\nउतामृतत्वस्येशानो यदन्नेनातिरोहति ॥", "t": "puruṣa evedaṁ sarvaṁ yadbhūtaṁ yacca bhavyam\nutāmṛtatvasyeśāno yadannenātirohati", "tr": "This Purusa is all that yet hath been and all that is to be; The Lord of Immortality which waxes greater still by food."}, "3": {"d": "एतावानस्य महिमातो ज्यायाँश्च पूरुषः ।\nपादोऽस्य विश्वा भूतानि त्रिपादस्यामृतं दिवि ॥", "t": "etāvānasya mahimāto jyāyām̐śca pūruṣaḥ\npādo'sya viśvā bhūtāni tripādasyāmṛtaṁ divi", "tr": "So mighty is his greatness; yea, greater than this is Purusa. All creatures are one-fourth of him, three-fourths eternal life in heaven."}, "4": {"d": "त्रिपादूर्ध्व उदैत्पुरुषः पादोऽस्येहाभवत्पुनः ।\nततो विष्वङ्व्यक्रामत्साशनानशने अभि ॥", "t": "tripādūrdhva udaitpuruṣaḥ pādo'syehābhavatpunaḥ\ntato viṣvaṅvyakrāmatsāśanānaśane abhi", "tr": "With three-fourths Purusa went up: one fourth of him again was here. Thence he strode out to every side over what not and what ."}, "5": {"d": "तस्माद्विराळजायत विराजो अधि पूरुषः ।\nस जातो अत्यरिच्यत पश्चाद्भूमिमथो पुरः ॥", "t": "tasmādvirāḷajāyata virājo adhi pūruṣaḥ\nsa jāto atyaricyata paścādbhūmimatho puraḥ", "tr": "From him Viraj was born; again Purusa from Viraj was born. As soon as he was born he spread eastward and westward o'er the earth."}, "6": {"d": "यत्पुरुषेण हविषा देवा यज्ञमतन्वत ।\nवसन्तो अस्यासीदाज्यं ग्रीष्म इध्मः शरद्धविः ॥", "t": "yatpuruṣeṇa haviṣā devā yajñamatanvata\nvasanto asyāsīdājyaṁ grīṣma idhmaḥ śaraddhaviḥ", "tr": "When Gods prepared the sacrifice with Purusa as their offering, Its oil was spring, the holy gift was autumn; summer was the wood."}, "7": {"d": "तं यज्ञं बर्हिषि प्रौक्षन्पुरुषं जातमग्रतः ।\nतेन देवा अयजन्त साध्या ऋषयश्च ये ॥", "t": "taṁ yajñaṁ barhiṣi praukṣanpuruṣaṁ jātamagrataḥ\ntena devā ayajanta sādhyā ṛṣayaśca ye", "tr": "They balmed as victim on the grass Purusa born in earliest time. With him the Deities and all Sadhyas and Rsis sacrificed."}, "8": {"d": "तस्माद्यज्ञात्सर्वहुतः सम्भृतं पृषदाज्यम् ।\nपशून् ताँश्चक्रे वायव्यानारण्यान्ग्राम्याश्च ये ॥", "t": "tasmādyajñātsarvahutaḥ sambhṛtaṁ pṛṣadājyam\npaśūn tām̐ścakre vāyavyānāraṇyāngrāmyāśca ye", "tr": "From that great general sacrifice the dripping fat was gathered up. He formed the creatures of-the air, and animals both wild and tame."}, "9": {"d": "तस्माद्यज्ञात्सर्वहुत ऋचः सामानि जज्ञिरे ।\nछन्दांसि जज्ञिरे तस्माद्यजुस्तस्मादजायत ॥", "t": "tasmādyajñātsarvahuta ṛcaḥ sāmāni jajñire\nchandāṁsi jajñire tasmādyajustasmādajāyata", "tr": "From that great general sacrifice Rcas and Sama-hymns were born: Therefrom were spells and charms produced; the Yajus had its birth from it."}, "10": {"d": "तस्मादश्वा अजायन्त ये के चोभयादतः ।\nगावो ह जज्ञिरे तस्मात्तस्माज्जाता अजावयः ॥", "t": "tasmādaśvā ajāyanta ye ke cobhayādataḥ\ngāvo ha jajñire tasmāttasmājjātā ajāvayaḥ", "tr": "From it were horses born, from it all cattle with two rows of teeth: From it were generated kine, from it the goats and sheep were born."}, "11": {"d": "यत्पुरुषं व्यदधुः कतिधा व्यकल्पयन् ।\nमुखं किमस्य कौ बाहू का ऊरू पादा उच्येते ॥", "t": "yatpuruṣaṁ vyadadhuḥ katidhā vyakalpayan\nmukhaṁ kimasya kau bāhū kā ūrū pādā ucyete", "tr": "When they divided Purusa how many portions did they make? What do they call his mouth, his arms? What do they call his thighs and feet?"}, "12": {"d": "ब्राह्मणोऽस्य मुखमासीद्बाहू राजन्यः कृतः ।\nऊरू तदस्य यद्वैश्यः पद्भ्यां शूद्रो अजायत ॥", "t": "brāhmaṇo'sya mukhamāsīdbāhū rājanyaḥ kṛtaḥ\nūrū tadasya yadvaiśyaḥ padbhyāṁ śūdro ajāyata", "tr": "The Brahman was his mouth, of both his arms was the Rajanya made. His thighs became the Vaisya, from his feet the Sudra was produced."}, "13": {"d": "चन्द्रमा मनसो जातश्चक्षोः सूर्यो अजायत ।\nमुखादिन्द्रश्चाग्निश्च प्राणाद्वायुरजायत ॥", "t": "candramā manaso jātaścakṣoḥ sūryo ajāyata\nmukhādindraścāgniśca prāṇādvāyurajāyata", "tr": "The Moon was gendered from his mind, and from his eye the Sun had birth; Indra and Agni from his mouth were born, and Vayu from his breath."}, "14": {"d": "नाभ्या आसीदन्तरिक्षं शीर्ष्णो द्यौः समवर्तत ।\nपद्भ्यां भूमिर्दिशः श्रोत्रात्तथा लोकाँ अकल्पयन् ॥", "t": "nābhyā āsīdantarikṣaṁ śīrṣṇo dyauḥ samavartata\npadbhyāṁ bhūmirdiśaḥ śrotrāttathā lokām̐ akalpayan", "tr": "Forth from his navel came mid-air the sky was fashioned from his head Earth from his feet, and from his car the regions. Thus they formed the worlds."}, "15": {"d": "सप्तास्यासन्परिधयस्त्रिः सप्त समिधः कृताः ।\nदेवा यद्यज्ञं तन्वाना अबध्नन्पुरुषं पशुम् ॥", "t": "saptāsyāsanparidhayastriḥ sapta samidhaḥ kṛtāḥ\ndevā yadyajñaṁ tanvānā abadhnanpuruṣaṁ paśum", "tr": "Seven fencing-sticks had he, thrice seven layers of fuel were prepared, When the Gods, offering sacrifice, bound, as their victim, Purusa."}, "16": {"d": "यज्ञेन यज्ञमयजन्त देवास्तानि धर्माणि प्रथमान्यासन् ।\nते ह नाकं महिमानः सचन्त यत्र पूर्वे साध्याः सन्ति देवाः ॥", "t": "yajñena yajñamayajanta devāstāni dharmāṇi prathamānyāsan\nte ha nākaṁ mahimānaḥ sacanta yatra pūrve sādhyāḥ santi devāḥ", "tr": "Gods, sacrificing, sacrificed the victim these were the earliest holy ordinances. The Mighty Ones attained the height of heaven, there where the Sidhyas, Gods of old, are dwelling."}}, "trSource": "griffith"};
+window.RV_TEXT_10_90 = {
+  "m": 10,
+  "s": 90,
+  "verses": {
+    "1": {
+      "d": "सहस्रशीर्षा पुरुषः सहस्राक्षः सहस्रपात् ।\nस भूमिं विश्वतो वृत्वात्यतिष्ठद्दशाङ्गुलम् ॥",
+      "t": "sahasraśīrṣā puruṣaḥ sahasrākṣaḥ sahasrapāt\nsa bhūmiṁ viśvato vṛtvātyatiṣṭhaddaśāṅgulam",
+      "tr": "The Person has a thousand heads, a thousand eyes, a thousand feet. Having covered the earth on every side, he stood beyond it, ten fingers' width."
+    },
+    "2": {
+      "d": "पुरुष एवेदं सर्वं यद्भूतं यच्च भव्यम् ।\nउतामृतत्वस्येशानो यदन्नेनातिरोहति ॥",
+      "t": "puruṣa evedaṁ sarvaṁ yadbhūtaṁ yacca bhavyam\nutāmṛtatvasyeśāno yadannenātirohati",
+      "tr": "The Person is all this — all that has been and all that is yet to be. He is the lord of immortality, and of that which grows by food."
+    },
+    "3": {
+      "d": "एतावानस्य महिमातो ज्यायाँश्च पूरुषः ।\nपादोऽस्य विश्वा भूतानि त्रिपादस्यामृतं दिवि ॥",
+      "t": "etāvānasya mahimāto jyāyām̐śca pūruṣaḥ\npādo'sya viśvā bhūtāni tripādasyāmṛtaṁ divi",
+      "tr": "So great is his greatness — and the Person is greater still than this. All beings are a quarter of him; three quarters are the immortal in heaven."
+    },
+    "4": {
+      "d": "त्रिपादूर्ध्व उदैत्पुरुषः पादोऽस्येहाभवत्पुनः ।\nततो विष्वङ्व्यक्रामत्साशनानशने अभि ॥",
+      "t": "tripādūrdhva udaitpuruṣaḥ pādo'syehābhavatpunaḥ\ntato viṣvaṅvyakrāmatsāśanānaśane abhi",
+      "tr": "With three quarters the Person rose upward; one quarter of him came to be here again. From there he strode out in every direction, over what eats and what does not eat."
+    },
+    "5": {
+      "d": "तस्माद्विराळजायत विराजो अधि पूरुषः ।\nस जातो अत्यरिच्यत पश्चाद्भूमिमथो पुरः ॥",
+      "t": "tasmādvirāḷajāyata virājo adhi pūruṣaḥ\nsa jāto atyaricyata paścādbhūmimatho puraḥ",
+      "tr": "From him Viraj was born, and from Viraj, the Person again. Once born, he reached beyond the earth, behind and before."
+    },
+    "6": {
+      "d": "यत्पुरुषेण हविषा देवा यज्ञमतन्वत ।\nवसन्तो अस्यासीदाज्यं ग्रीष्म इध्मः शरद्धविः ॥",
+      "t": "yatpuruṣeṇa haviṣā devā yajñamatanvata\nvasanto asyāsīdājyaṁ grīṣma idhmaḥ śaraddhaviḥ",
+      "tr": "When the gods spread out the sacrifice with the Person as their offering, spring was its clarified butter, summer its firewood, autumn its oblation."
+    },
+    "7": {
+      "d": "तं यज्ञं बर्हिषि प्रौक्षन्पुरुषं जातमग्रतः ।\nतेन देवा अयजन्त साध्या ऋषयश्च ये ॥",
+      "t": "taṁ yajñaṁ barhiṣi praukṣanpuruṣaṁ jātamagrataḥ\ntena devā ayajanta sādhyā ṛṣayaśca ye",
+      "tr": "They sprinkled the Person — born in the beginning — as the sacrifice upon the sacred grass. With him the gods performed the rite, and the Sadhyas, and the seers."
+    },
+    "8": {
+      "d": "तस्माद्यज्ञात्सर्वहुतः सम्भृतं पृषदाज्यम् ।\nपशून् ताँश्चक्रे वायव्यानारण्यान्ग्राम्याश्च ये ॥",
+      "t": "tasmādyajñātsarvahutaḥ sambhṛtaṁ pṛṣadājyam\npaśūn tām̐ścakre vāyavyānāraṇyāngrāmyāśca ye",
+      "tr": "From that sacrifice, wholly offered, the curds-and-butter were gathered; from it he made the creatures of the air, and the beasts of the wild and of the village."
+    },
+    "9": {
+      "d": "तस्माद्यज्ञात्सर्वहुत ऋचः सामानि जज्ञिरे ।\nछन्दांसि जज्ञिरे तस्माद्यजुस्तस्मादजायत ॥",
+      "t": "tasmādyajñātsarvahuta ṛcaḥ sāmāni jajñire\nchandāṁsi jajñire tasmādyajustasmādajāyata",
+      "tr": "From that sacrifice, wholly offered, the Rig verses and the Sama chants were born; the metres were born from it, and from it the Yajus was born."
+    },
+    "10": {
+      "d": "तस्मादश्वा अजायन्त ये के चोभयादतः ।\nगावो ह जज्ञिरे तस्मात्तस्माज्जाता अजावयः ॥",
+      "t": "tasmādaśvā ajāyanta ye ke cobhayādataḥ\ngāvo ha jajñire tasmāttasmājjātā ajāvayaḥ",
+      "tr": "From it were born the horses, and all creatures with teeth in both jaws; from it the cattle were born, and from it the goats and sheep."
+    },
+    "11": {
+      "d": "यत्पुरुषं व्यदधुः कतिधा व्यकल्पयन् ।\nमुखं किमस्य कौ बाहू का ऊरू पादा उच्येते ॥",
+      "t": "yatpuruṣaṁ vyadadhuḥ katidhā vyakalpayan\nmukhaṁ kimasya kau bāhū kā ūrū pādā ucyete",
+      "tr": "When they divided the Person, into how many parts did they arrange him? What was his mouth, what his arms, what were his thighs and his feet called?"
+    },
+    "12": {
+      "d": "ब्राह्मणोऽस्य मुखमासीद्बाहू राजन्यः कृतः ।\nऊरू तदस्य यद्वैश्यः पद्भ्यां शूद्रो अजायत ॥",
+      "t": "brāhmaṇo'sya mukhamāsīdbāhū rājanyaḥ kṛtaḥ\nūrū tadasya yadvaiśyaḥ padbhyāṁ śūdro ajāyata",
+      "tr": "The Brahmin was his mouth; the Rajanya (warrior-noble) was made his two arms; the Vaishya was his thighs; from his feet the Shudra was born."
+    },
+    "13": {
+      "d": "चन्द्रमा मनसो जातश्चक्षोः सूर्यो अजायत ।\nमुखादिन्द्रश्चाग्निश्च प्राणाद्वायुरजायत ॥",
+      "t": "candramā manaso jātaścakṣoḥ sūryo ajāyata\nmukhādindraścāgniśca prāṇādvāyurajāyata",
+      "tr": "The moon was born from his mind; from his eye the sun was born; from his mouth, Indra and Agni; from his breath, the wind was born."
+    },
+    "14": {
+      "d": "नाभ्या आसीदन्तरिक्षं शीर्ष्णो द्यौः समवर्तत ।\nपद्भ्यां भूमिर्दिशः श्रोत्रात्तथा लोकाँ अकल्पयन् ॥",
+      "t": "nābhyā āsīdantarikṣaṁ śīrṣṇo dyauḥ samavartata\npadbhyāṁ bhūmirdiśaḥ śrotrāttathā lokām̐ akalpayan",
+      "tr": "From his navel came the mid-air; from his head, the sky evolved; from his feet, the earth; from his ear, the directions. So they fashioned the worlds."
+    },
+    "15": {
+      "d": "सप्तास्यासन्परिधयस्त्रिः सप्त समिधः कृताः ।\nदेवा यद्यज्ञं तन्वाना अबध्नन्पुरुषं पशुम् ॥",
+      "t": "saptāsyāsanparidhayastriḥ sapta samidhaḥ kṛtāḥ\ndevā yadyajñaṁ tanvānā abadhnanpuruṣaṁ paśum",
+      "tr": "Seven were his enclosing sticks; thrice seven were the kindling-logs prepared, when the gods, spreading the sacrifice, bound the Person as the offering."
+    },
+    "16": {
+      "d": "यज्ञेन यज्ञमयजन्त देवास्तानि धर्माणि प्रथमान्यासन् ।\nते ह नाकं महिमानः सचन्त यत्र पूर्वे साध्याः सन्ति देवाः ॥",
+      "t": "yajñena yajñamayajanta devāstāni dharmāṇi prathamānyāsan\nte ha nākaṁ mahimānaḥ sacanta yatra pūrve sādhyāḥ santi devāḥ",
+      "tr": "With the sacrifice the gods sacrificed to the sacrifice; these were the first ordinances. Those mighty ones reached the height of heaven, where the ancient gods, the Sadhyas, dwell."
+    }
+  },
+  "trSource": "bo"
+};
