@@ -64,7 +64,16 @@ window.VEDA_GEMS = [
     tagline: 'The most beautiful poetry in the Veda — and its oldest meditation on time: she wakes the living, but not the dead.',
     themes: ['Dawn', 'Transience', 'The Deathless', 'Gratitude']
   },
-  { id: 'agni',         status: 'coming-soon', title: 'The First Word',           sanskrit: 'Agni Sūkta',         ref: 'Rig Veda 1.1',     verses: 9,  tagline: 'The very first hymn of the very first book — where three thousand years of recitation begin.' },
+  {
+    id: 'agni',
+    status: 'live',
+    title: 'The First Word',
+    sanskrit: 'Agni Sūkta',
+    ref: 'Rig Veda 1.1',
+    verses: 9,
+    tagline: 'The opening words of the oldest recited text on earth — and the sacred begins, of all places, at the hearth-fire.',
+    themes: ['Fire', 'The Beginning', 'The Sacred at Home', 'Rta']
+  },
   {
     id: 'gambler',
     status: 'live',
