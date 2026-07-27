@@ -6,6 +6,18 @@
   <title id="pageTitle">Rig Veda Sukta | Beyond Outcomes</title>
   <meta name="description" id="pageDesc" content="Read a Rig Veda hymn — full Sanskrit text with transliteration.">
   <link id="canonical" rel="canonical" href="https://www.beyondoutcomes.in/vedas/sukta.html">
+  <!-- Open Graph / social sharing. Brand-level fallback for scrapers (which don't run JS);
+       the render() script below updates the per-hymn <title> and description for browsers & Google. -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Beyond Outcomes">
+  <meta id="ogTitle" property="og:title" content="The Rig Veda, hymn by hymn — Beyond Outcomes">
+  <meta id="ogDesc" property="og:description" content="Read the Rig Veda in full: every hymn with its Sanskrit text, transliteration, and translation.">
+  <meta property="og:image" content="https://www.beyondoutcomes.in/images/og/guna-sattva.png">
+  <meta id="ogUrl" property="og:url" content="https://www.beyondoutcomes.in/vedas/sukta.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta id="twTitle" name="twitter:title" content="The Rig Veda, hymn by hymn — Beyond Outcomes">
+  <meta id="twDesc" name="twitter:description" content="Read the Rig Veda in full: every hymn with its Sanskrit text, transliteration, and translation.">
+  <meta name="twitter:image" content="https://www.beyondoutcomes.in/images/og/guna-sattva.png">
   <link rel="stylesheet" href="../css/beyond-outcomes.css">
   <link rel="stylesheet" href="../css/upanishads.css">
   <link rel="stylesheet" href="../css/vedas.css">
@@ -91,6 +103,13 @@
     document.getElementById('pageTitle').textContent = `Rig Veda ${key}${meta && meta.d ? ' — to ' + meta.d : ''} | Full Sanskrit Text | Beyond Outcomes`;
     document.getElementById('pageDesc').setAttribute('content', `Rig Veda ${key}: full Sanskrit text with transliteration${meta && meta.d ? ' — a hymn to ' + meta.d : ''}.`);
     document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/vedas/sukta.html?m=${m}&s=${s}`);
+    const ogT = `Rig Veda ${key}${meta && meta.d ? ' — to ' + meta.d : ''} | Beyond Outcomes`;
+    const ogD = `Rig Veda ${key}: full Sanskrit text with transliteration${meta && meta.d ? ' — a hymn to ' + meta.d : ''}.`;
+    document.getElementById('ogTitle').setAttribute('content', ogT);
+    document.getElementById('twTitle').setAttribute('content', ogT);
+    document.getElementById('ogDesc').setAttribute('content', ogD);
+    document.getElementById('twDesc').setAttribute('content', ogD);
+    document.getElementById('ogUrl').setAttribute('content', `https://www.beyondoutcomes.in/vedas/sukta.html?m=${m}&s=${s}`);
 
     const gemId = GEMS[key];
     const gemHTML = gemId
