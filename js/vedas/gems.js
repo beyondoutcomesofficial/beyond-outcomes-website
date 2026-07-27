@@ -113,5 +113,14 @@ window.VEDA_GEMS = [
     tagline: 'A thundering refrain-hymn to the king of the gods — that pauses, mid-praise, to admit some say "he does not exist."',
     themes: ['Indra', 'Faith & Doubt', 'The Deeds of a God', 'Śraddhā']
   },
-  { id: 'prithvi',      status: 'coming-soon', title: 'Hymn to the Earth',        sanskrit: 'Pṛthvī Sūkta',       ref: 'Atharva Veda 12.1',verses: 63, tagline: 'The oldest environmental text: whatever I dig from you, Earth, may it grow back again.' }
+  {
+    id: 'prithvi',
+    status: 'live',
+    title: 'Hymn to the Earth',
+    sanskrit: 'Pṛthvī Sūkta',
+    ref: 'Atharva Veda 12.1',
+    verses: 63,
+    tagline: 'The oldest environmental text on earth: whatever I dig from you, Earth, may it grow back again — and let me not wound your heart.',
+    themes: ['The Earth', 'Ecology', 'Kinship With Nature', 'Reverence']
+  }
 ];
