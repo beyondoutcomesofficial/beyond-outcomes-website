@@ -42,6 +42,7 @@
   <div class="up-footer-copy">© 2026 Beyond Outcomes · beyondoutcomes.in</div>
 </div>
 
+<script src="../js/video-schema.js"></script>
 <script src="../js/upanishads/texts.js"></script>
 <script>
   const params = new URLSearchParams(window.location.search);
@@ -64,6 +65,7 @@
   function episodeHTML(verse) {
     if (!episode) return '';
     if (episode.youtube) {
+      if (window.injectVideoSchema) injectVideoSchema({ id: episode.youtube.id, name: episode.youtube.title || `Episode ${episode.id} — ${episode.title}`, description: `Episode ${episode.id} — ${episode.title}`, date: episode.youtube.date });
       const start = verse && verse.videoStart ? `&start=${verse.videoStart}` : '';
       return `
         <div class="up-panel" style="margin-bottom: 1.25rem;">

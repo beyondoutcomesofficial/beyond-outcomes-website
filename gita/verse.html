@@ -219,6 +219,7 @@
 
 </div>
 
+<script src="../js/video-schema.js"></script>
 <script src="../js/gita/chapters.js"></script>
 <script>
   const params  = new URLSearchParams(window.location.search);
@@ -245,6 +246,16 @@
 
     // If no verse data at all, show coming soon
     if (!verse) { renderComingSoon(); return; }
+
+    // Emit VideoObject schema for this verse's Short (covers both partial & full render)
+    if (verse.youtubeShort && window.injectVideoSchema) {
+      injectVideoSchema({
+        url: verse.youtubeShort.url,
+        name: verse.youtubeShort.title,
+        description: verse.translation || verse.youtubeShort.title,
+        date: verse.youtubeShort.date
+      });
+    }
 
     // If verse exists but has no full content yet (only name/youtubeShort), show partial page
     if (!verse.transliteration) { renderPartial(verse); return; }

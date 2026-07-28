@@ -213,10 +213,14 @@
   <div class="up-footer-copy">© 2026 Beyond Outcomes · beyondoutcomes.in</div>
 </div>
 
+<script src="../js/video-schema.js"></script>
 <script src="../js/upanishads/texts.js"></script>
 <script>
   // Episode 0 — featured launch video
   const ep0 = window.UPANISHAD_EPISODE_ZERO;
+  if (ep0.youtube && window.injectVideoSchema) {
+    injectVideoSchema({ id: ep0.youtube.id, name: ep0.youtube.title || ep0.title, description: ep0.blurb || ep0.title, date: ep0.youtube.date });
+  }
   const ep0Screen = ep0.youtube
     ? `<div class="ep0-screen">
          <iframe src="https://www.youtube-nocookie.com/embed/${ep0.youtube.id}?rel=0" title="${ep0.title}"
