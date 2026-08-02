@@ -21,6 +21,7 @@
   <meta name="twitter:image" content="https://www.beyondoutcomes.in/images/og/upanishads-dawn.png">
   <link rel="stylesheet" href="../css/beyond-outcomes.css">
   <link rel="stylesheet" href="../css/upanishads.css">
+  <script src="../js/schema.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     .hero-ref { font-family: var(--bo-font-display); font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; color: #ffd98a; margin-bottom: 1rem; }
@@ -124,6 +125,12 @@
     document.getElementById('pageTitle').textContent = `${tName} ${verse.ref || vId} — ${verse.name} | Beyond Outcomes`;
     document.getElementById('pageDesc').setAttribute('content', verse.translation);
     document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/upanishads/verse.html?u=${uId}&v=${vId}`);
+    if (window.injectBreadcrumbs) injectBreadcrumbs([
+      { name: 'Beyond Outcomes', url: 'https://www.beyondoutcomes.in/' },
+      { name: 'The Upanishads', url: 'https://www.beyondoutcomes.in/upanishads/' },
+      { name: uId.charAt(0).toUpperCase() + uId.slice(1) + ' Upanishad', url: `https://www.beyondoutcomes.in/upanishads/text.html?u=${uId}` },
+      { name: 'Verse ' + vId, url: `https://www.beyondoutcomes.in/upanishads/verse.html?u=${uId}&v=${vId}` }
+    ]);
 
     const wordsHTML = verse.words ? `
       <div class="bo-card-manuscript up-manuscript" style="margin-bottom: 1.25rem;">
@@ -182,6 +189,12 @@
   function renderPartial(verse) {
     document.getElementById('pageTitle').textContent = `${tName} ${verse.ref || vId} — ${verse.name} | Beyond Outcomes`;
     document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/upanishads/verse.html?u=${uId}&v=${vId}`);
+    if (window.injectBreadcrumbs) injectBreadcrumbs([
+      { name: 'Beyond Outcomes', url: 'https://www.beyondoutcomes.in/' },
+      { name: 'The Upanishads', url: 'https://www.beyondoutcomes.in/upanishads/' },
+      { name: uId.charAt(0).toUpperCase() + uId.slice(1) + ' Upanishad', url: `https://www.beyondoutcomes.in/upanishads/text.html?u=${uId}` },
+      { name: 'Verse ' + vId, url: `https://www.beyondoutcomes.in/upanishads/verse.html?u=${uId}&v=${vId}` }
+    ]);
     document.getElementById('mainContent').innerHTML = `
       <div class="up-coming">
         <span class="up-hero-om bo-anim-om-pulse">ॐ</span>

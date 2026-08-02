@@ -66,6 +66,7 @@
 </div>
 
 <script src="../js/video-schema.js"></script>
+<script src="../js/schema.js"></script>
 <script src="../js/vedas/gems.js"></script>
 <script>
   const params = new URLSearchParams(window.location.search);
@@ -93,6 +94,14 @@
     document.getElementById('ogUrl').setAttribute('content', `https://www.beyondoutcomes.in/vedas/gem.html?g=${gId}`);
     if (gem.youtube && window.injectVideoSchema) {
       injectVideoSchema({ id: gem.youtube.id, name: `${gem.title} — ${gem.sanskrit}`, description: gem.tagline, date: gem.youtube.date });
+    }
+    if (window.injectBreadcrumbs) {
+      injectBreadcrumbs([
+        { name: 'Beyond Outcomes', url: 'https://www.beyondoutcomes.in/' },
+        { name: 'Gems of the Vedas', url: 'https://www.beyondoutcomes.in/vedas/' },
+        { name: gem.title, url: `https://www.beyondoutcomes.in/vedas/gem.html?g=${gId}` }
+      ]);
+      injectArticle({ headline: `${gem.title} — ${gem.sanskrit} (${gem.ref})`, description: gem.tagline, url: `https://www.beyondoutcomes.in/vedas/gem.html?g=${gId}`, image: 'https://www.beyondoutcomes.in/images/og/vedas-cosmos.png' });
     }
 
     const ids = Object.keys(data.verses).map(Number).sort((a, b) => a - b);
@@ -135,6 +144,15 @@
         </div>
       </div>` : '';
 
+    const moreGems = (window.VEDA_GEMS || []).filter(x => x.status === 'live' && x.id !== gId).sort(() => 0.5 - Math.random()).slice(0, 4);
+    const moreGemsHTML = moreGems.length ? `
+      <div class="up-panel" style="margin: 2.5rem 0 0.5rem; text-align:center;">
+        <div class="up-panel-label">More Gems of the Vedas</div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:0.9rem;">
+          ${moreGems.map(x => `<a href="gem.html?g=${x.id}" class="up-chip" style="text-decoration:none;">${x.title}</a>`).join('')}
+        </div>
+      </div>` : '';
+
     document.getElementById('mainContent').innerHTML = `
       <div class="up-hero up-wide" style="padding-top: 2.5rem;">
         <div class="up-hero-label">${gem.ref} · Gems of the Vedas</div>
@@ -156,6 +174,7 @@
             <div style="font-family: var(--bo-font-body); font-style: italic; font-size: 1.05rem; line-height: 1.9; color: rgba(213,220,255,0.92);">${data.about}</div>
           </div>` : ''}
         ${versesHTML}
+        ${moreGemsHTML}
         <div class="up-verse-nav" style="margin-top: 2rem;">
           <a href="index.html">← All Gems</a>
           <a href="../upanishads/">The Upanishads →</a>

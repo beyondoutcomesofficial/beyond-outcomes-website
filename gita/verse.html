@@ -20,6 +20,7 @@
   <meta name="twitter:description" content="A Bhagavad Gita verse with Sanskrit, transliteration, translation, and commentary for modern life.">
   <meta name="twitter:image" content="https://www.beyondoutcomes.in/images/og/gita-daylight.png">
   <link rel="stylesheet" href="../css/beyond-outcomes.css">
+  <script src="../js/schema.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     .page { min-height: 100vh; }
@@ -280,6 +281,12 @@
     document.getElementById('pageTitle').textContent = `BG ${cId}.${vId} — ${verse.transliteration.split('\n')[0].slice(0,40)}… | Beyond Outcomes`;
     document.getElementById('pageDesc').setAttribute('content', verse.translation);
     document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/gita/verse.html?c=${cId}&v=${vId}`);
+    if (window.injectBreadcrumbs) injectBreadcrumbs([
+      { name: 'Beyond Outcomes', url: 'https://www.beyondoutcomes.in/' },
+      { name: 'Bhagavad Gita', url: 'https://www.beyondoutcomes.in/gita/' },
+      { name: 'Chapter ' + cId, url: `https://www.beyondoutcomes.in/gita/chapter.html?c=${cId}` },
+      { name: `Verse ${cId}.${vId}`, url: `https://www.beyondoutcomes.in/gita/verse.html?c=${cId}&v=${vId}` }
+    ]);
 
     // Word meanings HTML
     const wordsHTML = verse.words ? `
@@ -376,6 +383,12 @@
     // Verse exists (has name + YouTube short) but full commentary not written yet
     document.getElementById('pageTitle').textContent = `BG ${cId}.${vId}${verse.name ? ' — ' + verse.name : ''} | Bhagavad Gita | Beyond Outcomes`;
     document.getElementById('canonical').setAttribute('href', `https://www.beyondoutcomes.in/gita/verse.html?c=${cId}&v=${vId}`);
+    if (window.injectBreadcrumbs) injectBreadcrumbs([
+      { name: 'Beyond Outcomes', url: 'https://www.beyondoutcomes.in/' },
+      { name: 'Bhagavad Gita', url: 'https://www.beyondoutcomes.in/gita/' },
+      { name: 'Chapter ' + cId, url: `https://www.beyondoutcomes.in/gita/chapter.html?c=${cId}` },
+      { name: `Verse ${cId}.${vId}`, url: `https://www.beyondoutcomes.in/gita/verse.html?c=${cId}&v=${vId}` }
+    ]);
 
     const ytHTML = verse.youtubeShort ? `
       <a href="${verse.youtubeShort.url}" target="_blank" rel="noopener" class="yt-card">
