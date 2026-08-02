@@ -1,7 +1,7 @@
 // Katha Upanishad — verse data. 119 verses across six vallis.
 // Sanskrit sourced from Sanskrit Wikisource; transliteration auto-generated (IAST).
 // Translations are Beyond Outcomes editorial renderings.
-// words + commentary added valli by valli.
+// words + commentary complete for all 119 verses.
 
 window.UPANISHAD_KATHA = {
   "id": "katha",
@@ -1365,7 +1365,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Senses Were Pierced Outward",
       "devanagari": "पराञ्चि खानि व्यतृणत् स्वयम्भू- \nस्तस्मात्पराङ्पश्यति नान्तरात्मन् ।\nकश्चिद्धीरः प्रत्यगात्मानमैक्ष- \nदावृत्तचक्षुरमृतत्वमिच्छन् ॥",
       "transliteration": "parāñci khāni vyatṛṇat svayambhū-\nstasmātparāṅpaśyati nāntarātman\nkaściddhīraḥ pratyagātmānamaikṣa-\ndāvṛttacakṣuramṛtatvamicchan",
-      "translation": "The Self-Existent pierced the openings outward — therefore one looks out, and not into the inner self. Some rare wise one, desiring immortality, turned his gaze inward and saw the Self face to face."
+      "translation": "The Self-Existent pierced the openings outward — therefore one looks out, and not into the inner self. Some rare wise one, desiring immortality, turned his gaze inward and saw the Self face to face.",
+      "words": [
+        {
+          "word": "parāñci khāni vyatṛṇat svayambhūḥ",
+          "meaning": "the Self-Existent pierced the openings (senses) outward"
+        },
+        {
+          "word": "āvṛtta-cakṣuḥ ... antar-ātmānam aikṣat",
+          "meaning": "turning the gaze inward, saw the inner Self"
+        }
+      ],
+      "commentary": "The fourth valli opens with the single most important diagnosis of the human condition in the whole text — an explanation of why realization is so rare. The Self-Existent, in fashioning us, \"pierced the senses outward\": the eyes open outward, the ears face outward, the whole sensory apparatus is built to look away from its own source, toward the world. And so, the verse says, one naturally looks out, and not into the inner Self. We are constructed, by our very design, to attend to everything except the one who is attending. But then — the exception that makes the whole path possible — some rare wise one, āvṛtta-cakṣuḥ, \"with gaze turned around,\" desiring immortality, reverses the natural direction and looks inward, and there sees the Self face to face. This is the essential spiritual act, named with perfect economy: the turning around of attention. The senses run outward by nature; realization begins the moment someone dares to run against that current, to turn the gaze back upon its own root. All meditation, all self-inquiry, is contained in that reversal."
     },
     "73": {
       "id": 73,
@@ -1373,7 +1384,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Childish Chase Outer Pleasures",
       "devanagari": "पराचः कामाननुयन्ति बाला- \nस्ते मृत्योर्यन्ति विततस्य पाशम् ।\nअथ धीरा अमृतत्वं विदित्वा\nध्रुवमध्रुवेष्विह न प्रार्थयन्ते ॥",
       "transliteration": "parācaḥ kāmānanuyanti bālā-\nste mṛtyoryanti vitatasya pāśam\natha dhīrā amṛtatvaṁ viditvā\ndhruvamadhruveṣviha na prārthayante",
-      "translation": "The childish chase after outer pleasures — they walk straight into the wide-spread net of death. But the wise, knowing what immortality is, seek not the constant here among things inconstant."
+      "translation": "The childish chase after outer pleasures — they walk straight into the wide-spread net of death. But the wise, knowing what immortality is, seek not the constant here among things inconstant.",
+      "words": [
+        {
+          "word": "parācaḥ kāmān anuyanti bālāḥ",
+          "meaning": "the childish chase outer pleasures"
+        },
+        {
+          "word": "na icchanti nityam a-nityeṣu",
+          "meaning": "the wise seek not the constant among things inconstant"
+        }
+      ],
+      "commentary": "The verse draws the contrast the previous one set up. The childish — bālāḥ, the spiritually immature, whatever their age — chase after outer pleasures, and by facing always outward, walk straight into the wide-spread net of death. Their very orientation is their trap: attending only to the fleeting outer world, they never find anything in themselves that outlasts it. But the wise do not look for the nitya, the permanent, among a-nitya, the impermanent — they do not make the fundamental error of seeking lasting satisfaction from things that by nature cannot last. This is the mistake beneath most human unhappiness, named exactly: expecting permanence from the impermanent, demanding that fleeting things — pleasures, possessions, praise, even people — deliver a security only the eternal can give. They cannot, and the demand only tightens death's net. The wise stop asking the impermanent for what it can never provide, and turn instead toward the one thing that abides. Having named the turn inward and the folly of not making it, the text now points, again and again, to what is found when one does."
     },
     "74": {
       "id": 74,
@@ -1381,7 +1403,18 @@ window.UPANISHAD_KATHA = {
       "name": "By Whom the Knower Knows — This Is That",
       "devanagari": "येन रूपं रसं गन्धं शब्दान् स्पर्शाँश्च मैथुनान् ।\nएतेनैव विजानाति किमत्र परिशिष्यते ।\nएतद्वै तत् ॥",
       "transliteration": "yena rūpaṁ rasaṁ gandhaṁ śabdān sparśām̐śca maithunān\netenaiva vijānāti kimatra pariśiṣyate\netadvai tat",
-      "translation": "That by which one knows form and taste and smell, sounds, touches, and the joys of union — what remains here unknown to it? This, truly, is That."
+      "translation": "That by which one knows form and taste and smell, sounds, touches, and the joys of union — what remains here unknown to it? This, truly, is That.",
+      "words": [
+        {
+          "word": "yena rūpaṁ rasaṁ gandhaṁ ... vijānāti",
+          "meaning": "that by which one knows form, taste, smell, sound, touch"
+        },
+        {
+          "word": "etat vai tat",
+          "meaning": "this, truly, is That"
+        }
+      ],
+      "commentary": "Now the Upanishad begins its great refrain — etad vai tat, \"this, truly, is That\" — which will toll like a bell through the coming verses, each time pointing past some description straight to the Self. And the pointing here is masterful: that by which you know form and taste and smell, sounds and touches and the joys of love — what could possibly remain unknown to it? This — the very knower behind every act of knowing — this, truly, is That, the deathless Self you seek. The move is the same the Kena made: turn from the known back to the knower. You spend your life attending to the objects of experience — sights, flavors, textures, pleasures — but the one constant in every experience is the awareness knowing them, and that awareness is the Self. It is not hidden in some far place; it is the nearest thing there is, the knower present in this very moment of knowing these words. \"What here remains unknown to it?\" — nothing, for it is the light in which all is known. And that knower, the verse insists, is the immortal. This, truly, is That."
     },
     "75": {
       "id": 75,
@@ -1389,7 +1422,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Witness of Dream and Waking",
       "devanagari": "स्वप्नान्तं जागरितान्तं चोभौ येनानुपश्यति ।\nमहान्तं विभुमात्मानं मत्वा धीरो न शोचति ॥",
       "transliteration": "svapnāntaṁ jāgaritāntaṁ cobhau yenānupaśyati\nmahāntaṁ vibhumātmānaṁ matvā dhīro na śocati",
-      "translation": "That by which one witnesses both the dream state and the waking state — realizing that as the great, all-pervading Self, the wise one does not grieve."
+      "translation": "That by which one witnesses both the dream state and the waking state — realizing that as the great, all-pervading Self, the wise one does not grieve.",
+      "words": [
+        {
+          "word": "svapna-antaṁ jāgarita-antaṁ ca ubhau yena anupaśyati",
+          "meaning": "by which one witnesses both dream and waking"
+        },
+        {
+          "word": "mahāntaṁ vibhum ātmānaṁ matvā na śocati",
+          "meaning": "knowing it as the great pervading Self, one does not grieve"
+        }
+      ],
+      "commentary": "The pointing sharpens. That by which one witnesses both the dream state and the waking state — realizing that as the great, all-pervading Self, the wise one does not grieve. Here is a beautiful and practical instruction. You pass every night through dream and every day through waking; these two worlds could hardly be more different, and each dissolves the other. Yet something knows both. The same awareness that witnessed last night's dream witnesses this morning's waking, unbroken across the gap of sleep between them. That constant witness, present through all your changing states and belonging to none of them, is the Self. This is a doorway anyone can use: notice that you are the one aware of waking and aware of dreaming, the changeless knower behind every changing state. And the fruit, once more, is the end of grief — na śocati — because the one who has found his identity in the unchanging witness rather than in any passing state has found the one ground that cannot be taken from him."
     },
     "76": {
       "id": 76,
@@ -1397,7 +1441,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Eater of Honey, Close at Hand",
       "devanagari": "य इमं मध्वदं वेद आत्मानं जीवमन्तिकात् ।\nईशानं भूतभव्यस्य न ततो विजुगुप्सते ।\nएतद्वै तत् ॥",
       "transliteration": "ya imaṁ madhvadaṁ veda ātmānaṁ jīvamantikāt\nīśānaṁ bhūtabhavyasya na tato vijugupsate\netadvai tat",
-      "translation": "Whoever knows this honey-eater — the living self, closest of all, lord of what was and what will be — no longer shrinks away from anything. This, truly, is That."
+      "translation": "Whoever knows this honey-eater — the living self, closest of all, lord of what was and what will be — no longer shrinks away from anything. This, truly, is That.",
+      "words": [
+        {
+          "word": "madhu-adaṁ ... prāṇa-adhipaṁ",
+          "meaning": "the honey-eater, lord of life, closest of all"
+        },
+        {
+          "word": "na tataḥ vijugupsate",
+          "meaning": "no longer shrinks away from anything"
+        }
+      ],
+      "commentary": "The Self is named the honey-eater — the living self that tastes the sweetness of experience — and the lord of what was and what will be, closest of all, nearer than anything. And whoever knows this, the verse says, na tataḥ vijugupsate: no longer shrinks away, recoils, or hides from anything. That word, vijugupsate, we met in the Isha and the Kena, and it means the same here: the revulsion, the fear, the defensive turning-away that governs so much of ordinary life simply ceases. Why? Because the one who has recognized the Self as the innermost reality — closest of all, lord of past and future — has nothing left to defend and nowhere left to hide. Fear and disgust both arise from a small, threatened self bracing against a world of others; when that self is seen to rest on the boundless Self that is the ground of all, the bracing relaxes. He no longer flinches from the world, because he has found, at his own center, the one thing that cannot be threatened. This, truly, is That."
     },
     "77": {
       "id": 77,
@@ -1405,7 +1460,18 @@ window.UPANISHAD_KATHA = {
       "name": "The First-Born, Looking Through All Eyes",
       "devanagari": "यः पूर्वं तपसो जातमद्भ्यः पूर्वमजायत ।\nगुहां प्रविश्य तिष्ठन्तं यो भूतेभिर्व्यपश्यत ।\nएतद्वै तत् ॥",
       "transliteration": "yaḥ pūrvaṁ tapaso jātamadbhyaḥ pūrvamajāyata\nguhāṁ praviśya tiṣṭhantaṁ yo bhūtebhirvyapaśyata\netadvai tat",
-      "translation": "The one born of old from the heat of creation, born before the waters, who entered the cave of the heart and stands there, looking out through beings. This, truly, is That."
+      "translation": "The one born of old from the heat of creation, born before the waters, who entered the cave of the heart and stands there, looking out through beings. This, truly, is That.",
+      "words": [
+        {
+          "word": "pūrvaṁ ... tapaso jātaṁ ... guhāṁ praviśya tiṣṭhantam",
+          "meaning": "born of old, entered the cave and abiding there"
+        },
+        {
+          "word": "etat vai tat",
+          "meaning": "this, truly, is That"
+        }
+      ],
+      "commentary": "A cosmic pointing now: the one born before all, from the heat of creation's beginning, born even before the waters, who entered the cave of the heart and stands there — looking out through all beings. This, truly, is That. The verse fuses the vast and the intimate in a single breath. The reality that existed before the universe, before the primal waters, before time as we count it, is the very same presence now seated in the cave of your heart, gazing out through your eyes and every creature's. The most ancient thing there is, is also the most present; the source of the cosmos is also the seer behind your own face. This is the Upanishadic vision at its most breathtaking: no gap between the origin of all things and the awareness reading this line. The One that was before the beginning has \"entered the cave\" of each being and looks out from within. When you look out at the world, it is that primordial presence looking. This, truly, is That."
     },
     "78": {
       "id": 78,
@@ -1413,7 +1479,18 @@ window.UPANISHAD_KATHA = {
       "name": "Aditi, in Whom the Gods Are Held",
       "devanagari": "या प्राणेन संभवत्यदितिर्देवतामयी ।\nगुहां प्रविश्य तिष्ठन्तीं या भूतेभिर्व्यजायत ।\nएतद्वै तत् ॥",
       "transliteration": "yā prāṇena saṁbhavatyaditirdevatāmayī\nguhāṁ praviśya tiṣṭhantīṁ yā bhūtebhirvyajāyata\netadvai tat",
-      "translation": "She who arises with the breath of life — Aditi, mother of gods, made of all divinity — who entered the cave of the heart and stands there, born forth among beings. This, truly, is That."
+      "translation": "She who arises with the breath of life — Aditi, mother of gods, made of all divinity — who entered the cave of the heart and stands there, born forth among beings. This, truly, is That.",
+      "words": [
+        {
+          "word": "aditiṁ deva-tā-mayīm",
+          "meaning": "Aditi, made of all divinity, mother of the gods"
+        },
+        {
+          "word": "guhāṁ praviśya tiṣṭhantīm",
+          "meaning": "who entered the cave and abides there"
+        }
+      ],
+      "commentary": "The pointing continues through another great image: Aditi — the boundless, the mother of the gods, she who is made of all divine powers — who arises with the very breath of life, and who has likewise entered the cave of the heart and stands there, born forth among all beings. The name Aditi means \"the unbounded, the un-cut, the infinite,\" the cosmic mother in whom all the gods and all life are held. And again the same astonishing identification: this boundless source of all divinity is not elsewhere but here, in the secret cave, present in every breath and every being. The Upanishad keeps circling the one point from every mythic and cosmic angle — through the primordial firstborn, through the infinite mother — so that it cannot be mistaken for an abstraction. Whatever grand name the tradition gives the ultimate, the text keeps pulling it home to the same place: the cave of your own heart, where it has entered and abides, arising with your very breath. This, truly, is That."
     },
     "79": {
       "id": 79,
@@ -1421,7 +1498,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Fire Hidden in the Fire-Sticks",
       "devanagari": "अरण्योर्निहितो जातवेदा गर्भ इव सुभृतो गर्भिणीभिः ।\nदिवे दिवे ईड्यो जागृवद्भिर्हविष्मद्भिर्मनुष्येभिरग्निः ।\nएतद्वै तत् ॥",
       "transliteration": "araṇyornihito jātavedā garbha iva subhṛto garbhiṇībhiḥ\ndive dive īḍyo jāgṛvadbhirhaviṣmadbhirmanuṣyebhiragniḥ\netadvai tat",
-      "translation": "Hidden in the fire-sticks like an embryo carefully carried by a woman with child — the fire, worthy of worship day after day by wakeful men bearing offerings. This, truly, is That."
+      "translation": "Hidden in the fire-sticks like an embryo carefully carried by a woman with child — the fire, worthy of worship day after day by wakeful men bearing offerings. This, truly, is That.",
+      "words": [
+        {
+          "word": "araṇyoḥ nihitaṁ jāta-vedāḥ garbha iva su-bhṛtaṁ garbhiṇībhiḥ",
+          "meaning": "hidden in the fire-sticks like an embryo carefully carried"
+        },
+        {
+          "word": "etat vai tat",
+          "meaning": "this, truly, is That"
+        }
+      ],
+      "commentary": "A homely, luminous image drawn from the daily ritual of kindling fire. In the old sacrifice, fire was born by rubbing two sticks (araṇi) together — and so the fire is said to lie hidden within the fire-sticks, latent, waiting, \"like an embryo carefully carried by a woman with child.\" That latent fire, worthy of worship day after day by wakeful people bearing their offerings — this, truly, is That. The teaching is about hiddenness and potential. Just as fire is really present in the wood, invisible until the friction of effort draws it forth, so the Self is really present in every being, hidden, latent, needing only the right effort of attention to blaze into recognition. And note the qualifier: worshipped by the wakeful, the jāgṛvat, those who are awake — the same wakefulness the razor's-edge verse demanded. The fire is in the sticks whether or not anyone kindles it; the Self is in the heart whether or not anyone turns to it. But it takes a wakeful one, patiently bearing the friction of practice, to bring the hidden flame to light. This, truly, is That."
     },
     "80": {
       "id": 80,
@@ -1429,7 +1517,18 @@ window.UPANISHAD_KATHA = {
       "name": "Where the Sun Rises and Sets",
       "devanagari": "यतश्चोदेति सूर्योऽस्तं यत्र च गच्छति ।\nतं देवाः सर्वेऽर्पितास्तदु नात्येति कश्चन ।\nएतद्वै तत् ॥",
       "transliteration": "yataścodeti sūryo'staṁ yatra ca gacchati\ntaṁ devāḥ sarve'rpitāstadu nātyeti kaścana\netadvai tat",
-      "translation": "That from which the sun rises, and into which it sets — on that all the gods are fixed; none whatsoever goes beyond it. This, truly, is That."
+      "translation": "That from which the sun rises, and into which it sets — on that all the gods are fixed; none whatsoever goes beyond it. This, truly, is That.",
+      "words": [
+        {
+          "word": "yataḥ ca udeti sūryaḥ astaṁ yatra ca gacchati",
+          "meaning": "from which the sun rises and into which it sets"
+        },
+        {
+          "word": "tat u na atyeti kaḥ cana",
+          "meaning": "none whatsoever goes beyond it"
+        }
+      ],
+      "commentary": "The pointing widens to the whole cosmos. That from which the sun rises and into which it sets — the source and ground of the very light of the world — on that all the gods are fixed, and none whatsoever passes beyond it. This, truly, is That. The sun, the most obvious deity of the ancient world, the source of all life and light, is here shown to rise and set within something greater — the Self, the reality on which even the sun and all the gods depend and beyond which nothing can go. The image expands the seeker's sense of scale to its limit: whatever you can conceive as high, powerful, or divine — the blazing sun, the shining gods — all of it rests upon and within this one reality, and nothing in all existence stands outside it. And yet, as every etad vai tat insists, this all-encompassing ground is the very same presence in the cave of your heart. The reality on which the sun rises is the reality that is your own innermost awareness. The infinitely vast and the infinitely near are one. This, truly, is That."
     },
     "81": {
       "id": 81,
@@ -1437,7 +1536,18 @@ window.UPANISHAD_KATHA = {
       "name": "What Is Here Is There",
       "devanagari": "यदेवेह तदमुत्र यदमुत्र तदन्विह ।\nमृत्योः स मृत्युमाप्नोति य इह नानेव पश्यति ॥",
       "transliteration": "yadeveha tadamutra yadamutra tadanviha\nmṛtyoḥ sa mṛtyumāpnoti ya iha nāneva paśyati",
-      "translation": "What is here — that is there. What is there — that is here too. From death to death runs the one who sees difference here."
+      "translation": "What is here — that is there. What is there — that is here too. From death to death runs the one who sees difference here.",
+      "words": [
+        {
+          "word": "yat eva iha tat amutra yat amutra tat anu iha",
+          "meaning": "what is here is there; what is there is here"
+        },
+        {
+          "word": "mṛtyoḥ sa mṛtyum āpnoti ya iha nānā iva paśyati",
+          "meaning": "from death to death goes the one who sees difference here"
+        }
+      ],
+      "commentary": "Now the Upanishad states its non-dual heart directly, and issues a stern warning. What is here is also there; what is there is here too — the same one reality, whole and undivided, everywhere. And whoever sees nānā, manifoldness, essential difference and separation, \"goes from death to death.\" This is among the text's most uncompromising lines. To perceive reality as fundamentally fragmented — a collection of truly separate things, a self walled off from all others — is to remain caught in the realm of death, moving from one dying thing to the next, endlessly. The seeing of difference is not merely an intellectual error; it is the very structure of bondage, the perception that keeps one bound to the mortal wheel. Beneath the countless forms, the Upanishad insists, there is one reality, appearing here and there and everywhere, and salvation lies in perceiving that oneness. The one who sees only the many, and misses the one shining through them, condemns himself to the endless round of the many's ceaseless dying. The next verse names the faculty by which the oneness is grasped — and repeats the warning, to be sure it lands."
     },
     "82": {
       "id": 82,
@@ -1445,7 +1555,18 @@ window.UPANISHAD_KATHA = {
       "name": "No Difference Here At All",
       "devanagari": "मनसैवेदमाप्तव्यं नेह नानाऽस्ति किंचन ।\nमृत्योः स मृत्युं गच्छति य इह नानेव पश्यति ॥",
       "transliteration": "manasaivedamāptavyaṁ neha nānā'sti kiṁcana\nmṛtyoḥ sa mṛtyuṁ gacchati ya iha nāneva paśyati",
-      "translation": "By mind alone is this to be grasped: there is no difference here at all. From death to death goes the one who sees any difference here."
+      "translation": "By mind alone is this to be grasped: there is no difference here at all. From death to death goes the one who sees any difference here.",
+      "words": [
+        {
+          "word": "manasā eva idam āptavyaṁ",
+          "meaning": "by mind alone is this to be grasped"
+        },
+        {
+          "word": "na iha nānā asti kiṁ cana",
+          "meaning": "there is no difference here at all"
+        }
+      ],
+      "commentary": "The verse presses the point with even greater force: this is to be grasped by mind alone — by the purified, discerning intellect, not by the senses that report only surfaces — and there is no difference here at all, na iha nānā asti kiṁ cana, none whatsoever. And once more the warning tolls: from death to death goes the one who sees any difference here. The repetition, nearly verbatim from the previous verse, is deliberate; the tradition doubles a teaching to seal its importance. Two things are being insisted on. First, the underlying oneness of reality is not perceived by the outward senses, which are built to register distinctions; it is grasped only by a mind trained and refined enough to see past the many to the one. Second, the stakes could not be higher — clinging to the vision of essential separateness is precisely what binds one to the realm of repeated death. This is not a call to deny the obvious plurality of forms, but to see through it to the single reality they all express — the way one recognizes gold in a thousand ornaments. Miss that, and you wander from death to death; see it, and you are free. This, truly, is That."
     },
     "83": {
       "id": 83,
@@ -1453,7 +1574,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Person the Size of a Thumb",
       "devanagari": "अङ्गुष्ठमात्रः पुरुषो मध्य आत्मनि तिष्ठति ।\nईशानं भूतभव्यस्य न ततो विजुगुप्सते ।\nएतद्वै तत् ॥",
       "transliteration": "aṅguṣṭhamātraḥ puruṣo madhya ātmani tiṣṭhati\nīśānaṁ bhūtabhavyasya na tato vijugupsate\netadvai tat",
-      "translation": "A Person the size of a thumb stands in the middle of the self — lord of what was and what will be. Knowing him, one no longer shrinks away. This, truly, is That."
+      "translation": "A Person the size of a thumb stands in the middle of the self — lord of what was and what will be. Knowing him, one no longer shrinks away. This, truly, is That.",
+      "words": [
+        {
+          "word": "aṅguṣṭha-mātraḥ puruṣaḥ madhye ātmani tiṣṭhati",
+          "meaning": "a Person the size of a thumb stands in the middle of the self"
+        },
+        {
+          "word": "īśānaṁ bhūta-bhavyasya",
+          "meaning": "lord of what was and what will be"
+        }
+      ],
+      "commentary": "A famous and intimate image: a Person the size of a thumb — aṅguṣṭha-mātraḥ — dwells in the middle of the self, in the heart. Lord of what was and what will be, master of past and future. Knowing him, one no longer shrinks away. This, truly, is That. The \"thumb-sized Person\" is not a literal claim about dimensions; it is a contemplative image locating the immeasurable Self within the small space of the heart, giving the meditator something the mind can hold and dwell upon. The infinite is imaged as intimate, the boundless as seated in the heart's small chamber, so that the seeker's attention has a home. And note what this thumb-sized presence is: not a limited thing, but the very lord of all time, past and future both. The vast is found in the small; the ruler of all ages sits in the space of a thumb within your own chest. And the fruit, yet again, is the ceasing of all recoil and fear — for the one who has found this presence at his own center has found what nothing can threaten. This, truly, is That."
     },
     "84": {
       "id": 84,
@@ -1461,7 +1593,18 @@ window.UPANISHAD_KATHA = {
       "name": "A Flame Without Smoke",
       "devanagari": "अङ्गुष्ठमात्रः पुरुषो ज्योतिरिवाधूमकः ।\nईशानो भूतभव्यस्य स एवाद्य स उ श्वः ।\nएतद्वै तत् ॥",
       "transliteration": "aṅguṣṭhamātraḥ puruṣo jyotirivādhūmakaḥ\nīśāno bhūtabhavyasya sa evādya sa u śvaḥ\netadvai tat",
-      "translation": "The Person the size of a thumb is like a flame without smoke — lord of what was and what will be. He is today; he is tomorrow also. This, truly, is That."
+      "translation": "The Person the size of a thumb is like a flame without smoke — lord of what was and what will be. He is today; he is tomorrow also. This, truly, is That.",
+      "words": [
+        {
+          "word": "aṅguṣṭha-mātraḥ puruṣaḥ jyotiḥ iva a-dhūmakaḥ",
+          "meaning": "the thumb-sized Person, like a flame without smoke"
+        },
+        {
+          "word": "saḥ eva adya saḥ u śvaḥ",
+          "meaning": "he is today, he is tomorrow also"
+        }
+      ],
+      "commentary": "The image deepens with a detail of great beauty: the thumb-sized Person in the heart is like a flame without smoke — jyotir iva adhūmakaḥ. A pure light, clear and steady, with no smoke to cloud or obscure it — an image of consciousness in its own nature: self-luminous, unmixed, undimmed. Ordinary fire produces smoke; the light of the Self is pure radiance without any darkening residue. And this flame is the lord of past and future, and — the verse adds with quiet finality — \"he is today; he is tomorrow also.\" That is, this presence is not subject to time's passing; it is the same today as tomorrow, unchanged across all the days that change around it. Here is the deathless answer to Nachiketa's question rendered as a single steady flame in the heart: a smokeless light that does not flicker with the days, that was here yesterday and will be here tomorrow and is here now, the same. To find that unwavering flame within is to find what time cannot touch. This, truly, is That."
     },
     "85": {
       "id": 85,
@@ -1469,7 +1612,18 @@ window.UPANISHAD_KATHA = {
       "name": "Rain Scattered on the Hills",
       "devanagari": "यथोदकं दुर्गे वृष्टं पर्वतेषु विधावति ।\nएवं धर्मान् पृथक् पश्यंस्तानेवानुविधावति ॥",
       "transliteration": "yathodakaṁ durge vṛṣṭaṁ parvateṣu vidhāvati\nevaṁ dharmān pṛthak paśyaṁstānevānuvidhāvati",
-      "translation": "As rain fallen on rough high ground runs scattered down the slopes — so one who sees the qualities of things as separate runs scattered after them."
+      "translation": "As rain fallen on rough high ground runs scattered down the slopes — so one who sees the qualities of things as separate runs scattered after them.",
+      "words": [
+        {
+          "word": "yathā udakaṁ durge vṛṣṭaṁ parvateṣu vidhāvati",
+          "meaning": "as rain fallen on rough heights runs scattered down the slopes"
+        },
+        {
+          "word": "evaṁ dharmān pṛthak paśyan tān eva anuvidhāvati",
+          "meaning": "so one who sees things as separate runs scattered after them"
+        }
+      ],
+      "commentary": "A vivid image of what goes wrong when one misses the underlying oneness. As rainwater fallen on rough, high ground runs scattering down the slopes in a hundred directions, dispersed and wasted — so the one who sees the qualities of things, the dharmas, as separate and self-existent runs scattering after them, his life and energy dissipated in chasing the many. The picture is of fragmentation and waste: attention and vitality, like rain on a peak, splintering into countless runnels, pouring themselves out after a thousand separate objects, never gathering, never arriving. This is the inner cost of the vision of difference the previous verses warned against — not only bondage to death, but the felt experience of a scattered, dissipated life, forever running after this and that, exhausted and unfulfilled. The one who perceives only the many separate things becomes himself many and scattered, poured out among them. The contrast — what the gathered, unified life is like — comes in the next verse, in one of the loveliest images in all the Upanishads."
     },
     "86": {
       "id": 86,
@@ -1477,7 +1631,18 @@ window.UPANISHAD_KATHA = {
       "name": "Pure Water Poured Into Pure Water",
       "devanagari": "यथोदकं शुद्धे शुद्धमासिक्तं तादृगेव भवति ।\nएवं मुनेर्विजानत आत्मा भवति गौतम ॥",
       "transliteration": "yathodakaṁ śuddhe śuddhamāsiktaṁ tādṛgeva bhavati\nevaṁ munervijānata ātmā bhavati gautama",
-      "translation": "As pure water poured into pure water becomes one with it, the very same — so becomes the self of the silent sage who knows, O Gautama."
+      "translation": "As pure water poured into pure water becomes one with it, the very same — so becomes the self of the silent sage who knows, O Gautama.",
+      "words": [
+        {
+          "word": "yathā udakaṁ śuddhe śuddham āsiktaṁ tādṛg eva bhavati",
+          "meaning": "as pure water poured into pure water becomes the very same"
+        },
+        {
+          "word": "evaṁ muneḥ ātmā bhavati",
+          "meaning": "so becomes the self of the silent sage"
+        }
+      ],
+      "commentary": "After the scattered rain, the perfect image of the gathered, realized self: as pure water poured into pure water becomes simply one with it, indistinguishable, the very same — so becomes the self of the muni, the silent sage who knows, O Gautama. Where the one who sees difference is scattered like rain splintering down a mountainside, the one who knows the oneness merges into it like clear water into clear water, without a seam, without a boundary, wholly one. It is a picture of the end of separation, of the individual awareness recognizing its complete identity with the boundless Self — not absorbed and annihilated, but discovering it was never truly other, as water poured into water was never really two. And note the word muni, the silent one: this realization belongs to silence, to the stilled mind that has ceased its restless chasing. The valli that began by asking why we look outward ends here, in the image of a self so purified and gathered that, poured toward the Self, it simply becomes one water with it. The next valli takes up the dwelling place of this Self — the mysterious city of the body, with its eleven gates."
     },
     "87": {
       "id": 87,
@@ -1485,7 +1650,18 @@ window.UPANISHAD_KATHA = {
       "name": "The City of Eleven Gates",
       "devanagari": "पुरमेकादशद्वारमजस्यावक्रचेतसः ।\nअनुष्ठाय न शोचति विमुक्तश्च विमुच्यते ।\nएतद्वै तत् ॥",
       "transliteration": "puramekādaśadvāramajasyāvakracetasaḥ\nanuṣṭhāya na śocati vimuktaśca vimucyate\netadvai tat",
-      "translation": "There is a city of eleven gates belonging to the Unborn, whose thinking is never crooked. One who rules that city does not grieve — and freed, is free indeed. This, truly, is That."
+      "translation": "There is a city of eleven gates belonging to the Unborn, whose thinking is never crooked. One who rules that city does not grieve — and freed, is free indeed. This, truly, is That.",
+      "words": [
+        {
+          "word": "pura ekādaśa-dvāram",
+          "meaning": "a city of eleven gates"
+        },
+        {
+          "word": "vimuktaḥ ca vimucyate",
+          "meaning": "and freed, is free indeed"
+        }
+      ],
+      "commentary": "The fifth valli opens with a striking image of the body: a city of eleven gates belonging to the Unborn, the Self, \"whose thinking is never crooked.\" The eleven gates are the body's openings — the two eyes, two ears, two nostrils, the mouth, the two lower openings, the navel, and the crown of the head — the portals through which life meets the world. And the Self dwells within this city as its rightful sovereign, itself unborn, undistorted, serene. One who rules that city, the verse says — one who governs the body-city from the seat of the Self rather than being dragged about by its gates — does not grieve, and being freed, is free indeed. The image reframes the whole spiritual task: you are not the city, nor its gates, nor the traffic that pours through them; you are the unborn ruler seated at its center. Most people live as servants in their own city, ruled by the sensations coming through the gates. The wise take the throne. And the one who truly rules the city of the body is, the verse promises, free — vimuktaḥ ca vimucyate — free now and free forever. This, truly, is That."
     },
     "88": {
       "id": 88,
@@ -1493,7 +1669,18 @@ window.UPANISHAD_KATHA = {
       "name": "Swan in the Sky, Guest in the House",
       "devanagari": "हँसः शुचिषद्वसुरान्तरिक्षसद्- \nहोता वेदिषदतिथिर्दुरोणसत् ।\nनृषद्वरसदृतसद्व्योमसद्\nअब्जा गोजा ऋतजा अद्रिजा ऋतं बृहत् ॥",
       "transliteration": "ham̐saḥ śuciṣadvasurāntarikṣasad-\nhotā vediṣadatithirduroṇasat\nnṛṣadvarasadṛtasadvyomasad\nabjā gojā ṛtajā adrijā ṛtaṁ bṛhat",
-      "translation": "The swan dwelling in the bright sky; the god in mid-air; the priest at the altar; the guest in the house. Dwelling in men, in gods, in truth, in space — born of water, born of earth, born of rite, born of mountain — it is the Real, the Great."
+      "translation": "The swan dwelling in the bright sky; the god in mid-air; the priest at the altar; the guest in the house. Dwelling in men, in gods, in truth, in space — born of water, born of earth, born of rite, born of mountain — it is the Real, the Great.",
+      "words": [
+        {
+          "word": "haṁsaḥ śuciṣat ... atithiḥ",
+          "meaning": "the swan in the bright sky ... the guest in the house"
+        },
+        {
+          "word": "ṛtaṁ bṛhat",
+          "meaning": "the Real, the Great"
+        }
+      ],
+      "commentary": "One of the most soaring verses in the Upanishads, a hymn to the omnipresence of the one Self. It is the swan (haṁsa) dwelling in the bright heavens; the god moving in mid-air; the priest standing at the altar; the guest arriving in the house. It dwells in humans, in gods, in truth, in vast space; it is born of water, of earth, of the sacred rite, of the mountains. It is ṛtam bṛhat — the Real, the Great. The verse piles image upon image, high and low, sacred and ordinary, celestial and earthly, not to confuse but to overwhelm the mind's habit of locating the divine in one special place. The same one reality is the swan in the sky and the guest at your door, the god in the air and the fire on the altar, present in gods and mortals alike, arising in water and stone and ritual. There is nowhere it is not. The single Self wears every form and fills every realm. This lyrical flood is the Upanishad's answer to any notion that the sacred is confined — to a temple, a heaven, a chosen form. It is the Real, the Great, and it is everywhere, as everything. This, truly, is That."
     },
     "89": {
       "id": 89,
@@ -1501,7 +1688,18 @@ window.UPANISHAD_KATHA = {
       "name": "Seated at the Center of the Breaths",
       "devanagari": "ऊर्ध्वं प्राणमुन्नयत्यपानं प्रत्यगस्यति ।\nमध्ये वामनमासीनं विश्वे देवा उपासते ॥",
       "transliteration": "ūrdhvaṁ prāṇamunnayatyapānaṁ pratyagasyati\nmadhye vāmanamāsīnaṁ viśve devā upāsate",
-      "translation": "He leads the out-breath upward and casts the in-breath downward. The dwarf seated at the center — all the gods adore him."
+      "translation": "He leads the out-breath upward and casts the in-breath downward. The dwarf seated at the center — all the gods adore him.",
+      "words": [
+        {
+          "word": "ūrdhvaṁ prāṇam unnayati apānaṁ pratyag asyati",
+          "meaning": "leads the out-breath up, casts the in-breath down"
+        },
+        {
+          "word": "madhye vāmanam āsīnaṁ viśve devāḥ upāsate",
+          "meaning": "the dwarf seated at the center, all the gods adore"
+        }
+      ],
+      "commentary": "The verse turns to the Self as the hidden power within the very breath. It leads the out-breath upward and drives the in-breath downward — that is, it governs the whole rhythm of the life-force, the ceaseless rising and falling that keeps the body alive, though we never consciously direct it. And at the center of this living process sits the vāmana, \"the dwarf\" — again the image of the immeasurable Self appearing small, seated in the middle of the body's breathing life, whom all the powers, all the gods, adore. The teaching is that the Self is not a distant abstraction but the intimate animating presence at the very core of your physical existence, the silent power behind the breath you are taking right now. You do not make yourself breathe; something breathes you, and that something is seated at your center, worshipped by every force that keeps you alive. The \"dwarf at the center\" is the same thumb-sized flame in the heart, now shown as the master of the breath — the small, hidden ruler whom the whole living organism, and all its gods, quietly serve."
     },
     "90": {
       "id": 90,
@@ -1509,7 +1707,18 @@ window.UPANISHAD_KATHA = {
       "name": "When the Dweller Slips Away",
       "devanagari": "अस्य विस्रंसमानस्य शरीरस्थस्य देहिनः ।\nदेहाद्विमुच्यमानस्य किमत्र परिशिष्यते ।\nएतद्वै तत् ॥",
       "transliteration": "asya visraṁsamānasya śarīrasthasya dehinaḥ\ndehādvimucyamānasya kimatra pariśiṣyate\netadvai tat",
-      "translation": "When this embodied one, dwelling in the body, slips loose and is freed from the body — what remains here? This, truly, is That."
+      "translation": "When this embodied one, dwelling in the body, slips loose and is freed from the body — what remains here? This, truly, is That.",
+      "words": [
+        {
+          "word": "asya visraṁsamānasya śarīra-sthasya dehinaḥ",
+          "meaning": "of this embodied one, slipping loose from the body"
+        },
+        {
+          "word": "dehāt vimucyamānasya kim atra pariśiṣyate",
+          "meaning": "freed from the body — what then remains here?"
+        }
+      ],
+      "commentary": "A pointed question that turns the mind toward the moment of death and beyond it. When this embodied one — the dweller in the body-city — slips loose and is freed from the body at death, kim atra pariśiṣyate: what remains here? The question is a koan, meant to stop the mind. If the Self departs when the body dies, what is left? And the answer, held in the refrain that follows — this, truly, is That — points not to the corpse left behind but to the Self itself, which was never the body and is not diminished by leaving it. What remains, in the deepest sense, is precisely That: the deathless Self, unchanged, the reality that was only ever wearing the body as a garment. The verse presses the seeker to distinguish, once and for all, between the dweller and the dwelling, the one who departs and the body that is departed from. At death the body-city empties, but its unborn ruler is untouched — for he was never one of the city's perishable things. What survives is not a ghost of the person but the very awareness that the person always most truly was. This, truly, is That."
     },
     "91": {
       "id": 91,
@@ -1517,7 +1726,18 @@ window.UPANISHAD_KATHA = {
       "name": "Not by Breath Alone Do We Live",
       "devanagari": "न प्राणेन नापानेन मर्त्यो जीवति कश्चन ।\nइतरेण तु जीवन्ति यस्मिन्नेतावुपाश्रितौ ॥",
       "transliteration": "na prāṇena nāpānena martyo jīvati kaścana\nitareṇa tu jīvanti yasminnetāvupāśritau",
-      "translation": "Not by the out-breath, not by the in-breath, does any mortal live. By another do they live — on which both of these depend."
+      "translation": "Not by the out-breath, not by the in-breath, does any mortal live. By another do they live — on which both of these depend.",
+      "words": [
+        {
+          "word": "na prāṇena na apānena martyaḥ jīvati kaḥ cana",
+          "meaning": "not by out-breath or in-breath does any mortal live"
+        },
+        {
+          "word": "itareṇa tu jīvanti yasmin etau upāśritau",
+          "meaning": "by another they live, on which both these depend"
+        }
+      ],
+      "commentary": "A verse that quietly overturns our assumptions about what life is. No mortal lives by the out-breath or the in-breath — not by breathing itself. Rather, all live by \"another,\" by something else, upon which the two breaths themselves depend. We ordinarily equate life with breathing; the breath stops, we say, and life ends. But the Upanishad points past the breath to what animates even the breath — the Self, the consciousness on which the very life-force rests. Breathing is not the source of life; it is one of life's instruments, itself sustained by something deeper. This is the same move the Kena made with every faculty: behind the breath that breathes is that by which breath is breathed. You are not alive because you breathe; you breathe because you are alive, and the aliveness itself is the Self, prior to and independent of the breath it employs. When the breath finally stops, that on which the breath depended is not thereby ended, for it was never the breath. The one who has found that deeper life within, on which even breathing leans, has found the life that outlasts the last breath."
     },
     "92": {
       "id": 92,
@@ -1525,7 +1745,18 @@ window.UPANISHAD_KATHA = {
       "name": "What Happens to the Self at Death",
       "devanagari": "हन्त त इदं प्रवक्ष्यामि गुह्यं ब्रह्म सनातनम् ।\nयथा च मरणं प्राप्य आत्मा भवति गौतम ॥",
       "transliteration": "hanta ta idaṁ pravakṣyāmi guhyaṁ brahma sanātanam\nyathā ca maraṇaṁ prāpya ātmā bhavati gautama",
-      "translation": "'Come — I will tell you this hidden, ancient Brahman: and what becomes of the self when it meets with death, O Gautama.'"
+      "translation": "'Come — I will tell you this hidden, ancient Brahman: and what becomes of the self when it meets with death, O Gautama.'",
+      "words": [
+        {
+          "word": "guhyaṁ brahma sanātanam",
+          "meaning": "the hidden, ancient Brahman"
+        },
+        {
+          "word": "yathā ca bhavati ... pretya",
+          "meaning": "and what becomes of the self after death"
+        }
+      ],
+      "commentary": "Death now returns, in these late verses, to the very question that began it all — the third boon — and offers to speak it plainly at last. \"Come,\" he says, \"I will tell you this hidden, ancient Brahman, the eternal secret: and what becomes of the self when it meets with death, O Gautama.\" The whole Upanishad has been circling this, and here the teacher gathers it up. Notice that the answer to \"what happens after death\" turns out to be inseparable from the knowledge of Brahman, the deathless Self. The two questions are one. To know what becomes of you at death, you must first know what you actually are — and once you know that you are the unborn, undying Self, the question of \"after death\" transforms entirely. The one who has realized the Self does not \"go\" anywhere at death, for he was never the perishable thing that dies; the one who has not realized it is carried onward by his deeds. The next verse gives the two outcomes plainly. But the frame here is crucial: the secret of death is the secret of the Self, hidden and ancient, now openly told to a boy who earned it."
     },
     "93": {
       "id": 93,
@@ -1533,7 +1764,18 @@ window.UPANISHAD_KATHA = {
       "name": "Womb, Tree, or Freedom — by One's Deeds",
       "devanagari": "योनिमन्ये प्रपद्यन्ते शरीरत्वाय देहिनः ।\nस्थाणुमन्येऽनुसंयन्ति यथाकर्म यथाश्रुतम् ॥",
       "transliteration": "yonimanye prapadyante śarīratvāya dehinaḥ\nsthāṇumanye'nusaṁyanti yathākarma yathāśrutam",
-      "translation": "'Some enter a womb, to take on a body. Others pass into the unmoving — each according to their deeds, according to what they have learned.'"
+      "translation": "'Some enter a womb, to take on a body. Others pass into the unmoving — each according to their deeds, according to what they have learned.'",
+      "words": [
+        {
+          "word": "yoniṁ anye prapadyante śarīratvāya dehinaḥ",
+          "meaning": "some enter a womb, to take a body"
+        },
+        {
+          "word": "yathā-karma yathā-śrutam",
+          "meaning": "each according to their deeds, according to what they learned"
+        }
+      ],
+      "commentary": "Death gives the plain answer about what follows death, and it turns on one's own life. Some enter a womb again, to take on another body; others pass into the unmoving, the sthāṇu — the unchanging, whether that means a lower, inert existence or, in the highest reading, the immovable Brahman itself. And the deciding factor is named exactly: yathā-karma yathā-śrutam — according to their deeds and according to their knowledge, what they have done and what they have learned and realized. There is no arbitrary judge here, no external sentence. What one becomes after death is the natural continuation of what one has made of oneself in life — the momentum of one's actions and the depth of one's understanding, carried forward. A life spent in ignorance and unexamined craving carries its own momentum into another embodied round; a life of realized knowledge issues into the deathless. The teaching is sobering and empowering at once: your future is being shaped now, by how you act and what you come to know. Death does not impose a destiny; it reveals the one you have been quietly building. This is why Nachiketa's whole quest matters — and why the razor's-edge summons was to awaken here, before the body falls."
     },
     "94": {
       "id": 94,
@@ -1541,7 +1783,18 @@ window.UPANISHAD_KATHA = {
       "name": "The One Awake in Those Who Sleep",
       "devanagari": "य एष सुप्तेषु जागर्ति कामं कामं पुरुषो निर्मिमाणः ।\nतदेव शुक्रं तद्ब्रह्म तदेवामृतमुच्यते ।\nतस्मिँल्लोकाः श्रिताः सर्वे तदु नात्येति कश्चन ।\nएतद्वै तत् ॥",
       "transliteration": "ya eṣa supteṣu jāgarti kāmaṁ kāmaṁ puruṣo nirmimāṇaḥ\ntadeva śukraṁ tadbrahma tadevāmṛtamucyate\ntasmim̐llokāḥ śritāḥ sarve tadu nātyeti kaścana\netadvai tat",
-      "translation": "The Person who stays awake in those who sleep, shaping desire after desire — that alone is the Bright; that is Brahman; that alone is called the Immortal. On it all worlds rest; none whatsoever goes beyond it. This, truly, is That."
+      "translation": "The Person who stays awake in those who sleep, shaping desire after desire — that alone is the Bright; that is Brahman; that alone is called the Immortal. On it all worlds rest; none whatsoever goes beyond it. This, truly, is That.",
+      "words": [
+        {
+          "word": "yaḥ jāgarti supteṣu",
+          "meaning": "the one who stays awake in those who sleep"
+        },
+        {
+          "word": "tat eva śukraṁ tat brahma tat eva amṛtam ucyate",
+          "meaning": "that alone is the Bright, that is Brahman, that is called the Immortal"
+        }
+      ],
+      "commentary": "A verse of quiet wonder: the Person who stays awake even in those who sleep — the awareness that does not switch off when consciousness withdraws from the world, the presence that shapes desire after desire even in the dreaming and sleeping mind — that alone is the Bright (śukra), that is Brahman, that is called the Immortal. On it all the worlds rest; nothing whatsoever goes beyond it. This, truly, is That. The pointer is subtle and profound. When you fall asleep, the world vanishes, the senses go quiet, the ordinary mind dissolves — yet something remains, some presence that is there through the night, that stirs the dreams, that is unbroken across sleep so that you wake as the same one who lay down. That wakeful-in-sleep presence, never fully extinguished, is the Self, the deathless. It is called \"the Bright\" because it is self-luminous, shining by its own light even in the dark of deep sleep, when every other light has gone out. And on this ever-wakeful presence, all worlds rest. To find the one who is awake even in your sleep is to find the Immortal itself. This, truly, is That."
     },
     "95": {
       "id": 95,
@@ -1549,7 +1802,18 @@ window.UPANISHAD_KATHA = {
       "name": "One Fire, Many Shapes",
       "devanagari": "अग्निर्यथैको भुवनं प्रविष्टो\nरूपं रूपं प्रतिरूपो बभूव ।\nएकस्तथा सर्वभूतान्तरात्मा\nरूपं रूपं प्रतिरूपो बहिश्च ॥",
       "transliteration": "agniryathaiko bhuvanaṁ praviṣṭo\nrūpaṁ rūpaṁ pratirūpo babhūva\nekastathā sarvabhūtāntarātmā\nrūpaṁ rūpaṁ pratirūpo bahiśca",
-      "translation": "As the one fire, having entered the world, takes a form to match every form — so the one Self within all beings takes a form for every form, and yet remains outside them."
+      "translation": "As the one fire, having entered the world, takes a form to match every form — so the one Self within all beings takes a form for every form, and yet remains outside them.",
+      "words": [
+        {
+          "word": "agniḥ yathā ekaḥ ... rūpaṁ rūpaṁ prati-rūpaḥ babhūva",
+          "meaning": "as the one fire takes a form to match every form"
+        },
+        {
+          "word": "ekaḥ tathā ... bahiḥ ca",
+          "meaning": "so the one Self, and yet remains outside"
+        }
+      ],
+      "commentary": "A luminous analogy for how the one Self can appear as the endless many without ceasing to be one. As the single fire, having entered the world, takes on a form to match every form it burns in — a different flame in every lamp, a different blaze on every hearth, yet one fire — so the one Self within all beings takes a form to match every being, appearing as each, and yet remains outside them all, untouched and undivided. This is the Upanishad's answer to the deepest philosophical worry: if there is only one Self, why does the world appear as countless separate individuals? Because the one reality, like fire, conforms itself to every vessel it enters, seeming to become many, while remaining in itself the single, formless source. You and every other being are that one fire, flaming in a particular shape — and the sameness is real, and the difference is only of form. The Self is both fully present as each of us and entirely beyond us all, exactly as one fire is present in every flame and yet is not exhausted or divided by any of them. The next verse makes the identical point with air, to seal it."
     },
     "96": {
       "id": 96,
@@ -1557,7 +1821,18 @@ window.UPANISHAD_KATHA = {
       "name": "One Air, Many Shapes",
       "devanagari": "वायुर्यथैको भुवनं प्रविष्टो\nरूपं रूपं प्रतिरूपो बभूव ।\nएकस्तथा सर्वभूतान्तरात्मा\nरूपं रूपं प्रतिरूपो बहिश्च ॥",
       "transliteration": "vāyuryathaiko bhuvanaṁ praviṣṭo\nrūpaṁ rūpaṁ pratirūpo babhūva\nekastathā sarvabhūtāntarātmā\nrūpaṁ rūpaṁ pratirūpo bahiśca",
-      "translation": "As the one air, having entered the world, takes a form to match every form — so the one Self within all beings takes a form for every form, and yet remains outside them."
+      "translation": "As the one air, having entered the world, takes a form to match every form — so the one Self within all beings takes a form for every form, and yet remains outside them.",
+      "words": [
+        {
+          "word": "vāyuḥ yathā ekaḥ ... rūpaṁ rūpaṁ prati-rūpaḥ babhūva",
+          "meaning": "as the one air takes a form to match every form"
+        },
+        {
+          "word": "ekaḥ tathā ... bahiḥ ca",
+          "meaning": "so the one Self, and yet remains outside"
+        }
+      ],
+      "commentary": "The same teaching, now with air, and the repetition is deliberate — two images to fix one truth. As the single air, having entered the world, takes on a form to match every form — moving as breath in every creature, as wind in every space, seeming to become countless separate currents, yet one air — so the one Self within all beings appears as the form of each, and yet remains outside them all, unbounded. Fire and air are both chosen for the same reason: each is one and formless in itself, yet takes the shape of whatever it fills, present everywhere without being divided. The Self is like that. It is not carved into pieces by the many bodies it dwells in, any more than the air is cut into fragments by the many lungs that breathe it. When you breathe, the very same air is in you and in everyone; when you are aware, the very same awareness looks out through you and through all. The plurality is of forms and vessels; the reality is one. Two images, one insistence: beneath the countless separate selves, there is a single Self, whole in each and beyond them all."
     },
     "97": {
       "id": 97,
@@ -1565,7 +1840,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Sun Unstained by What It Sees",
       "devanagari": "सूर्यो यथा सर्वलोकस्य चक्षुः\nन लिप्यते चाक्षुषैर्बाह्यदोषैः ।\nएकस्तथा सर्वभूतान्तरात्मा\nन लिप्यते लोकदुःखेन बाह्यः ॥",
       "transliteration": "sūryo yathā sarvalokasya cakṣuḥ\nna lipyate cākṣuṣairbāhyadoṣaiḥ\nekastathā sarvabhūtāntarātmā\nna lipyate lokaduḥkhena bāhyaḥ",
-      "translation": "As the sun, the eye of all the world, is not stained by the outer faults that eyes may see — so the one Self within all beings is not stained by the sorrow of the world, being beyond it."
+      "translation": "As the sun, the eye of all the world, is not stained by the outer faults that eyes may see — so the one Self within all beings is not stained by the sorrow of the world, being beyond it.",
+      "words": [
+        {
+          "word": "sūryaḥ yathā sarva-lokasya cakṣuḥ na lipyate",
+          "meaning": "as the sun, the eye of all, is not stained"
+        },
+        {
+          "word": "ekaḥ tathā ... na lipyate loka-duḥkhena bāhyaḥ",
+          "meaning": "so the one Self is not stained by the world's sorrow, being beyond it"
+        }
+      ],
+      "commentary": "A third analogy, and it answers a different worry: if the one Self is present in all beings, does it not then suffer all their suffering, stained by all the world's pain? The verse replies with the image of the sun. As the sun, the single eye of all the world, illumines everything — the beautiful and the foul, the pure and the filthy alike — yet is never stained by any of the ugliness its light falls upon, so the one Self within all beings is not stained by the sorrow of the world, being beyond it. The sun shines on a corpse and on a rose with equal, untouched radiance; its purity is not compromised by what it reveals. Just so, the Self is present in all experience, lending its light to joy and grief alike, yet remains itself untouched, transcendent, bāhyaḥ — \"outside,\" beyond. This is deeply consoling for the seeker. To realize oneself as the Self is not to be condemned to feel all the pain of all beings; it is to discover in oneself a light that illumines all suffering without being wounded by it — present to everything, stained by nothing. The witness shines on the whole drama and is never darkened by it."
     },
     "98": {
       "id": 98,
@@ -1573,7 +1859,18 @@ window.UPANISHAD_KATHA = {
       "name": "Theirs Is Joy That Lasts — Who See It Within",
       "devanagari": "एको वशी सर्वभूतान्तरात्मा\nएकं रूपं बहुधा यः करोति ।\nतमात्मस्थं येऽनुपश्यन्ति धीराः\nतेषां सुखं शाश्वतं नेतरेषाम् ॥",
       "transliteration": "eko vaśī sarvabhūtāntarātmā\nekaṁ rūpaṁ bahudhā yaḥ karoti\ntamātmasthaṁ ye'nupaśyanti dhīrāḥ\nteṣāṁ sukhaṁ śāśvataṁ netareṣām",
-      "translation": "The One, the ruler, the inner Self of all beings, who makes his single form into many — the wise who see him established in themselves: theirs is lasting happiness, and no one else's."
+      "translation": "The One, the ruler, the inner Self of all beings, who makes his single form into many — the wise who see him established in themselves: theirs is lasting happiness, and no one else's.",
+      "words": [
+        {
+          "word": "ekaḥ vaśī sarva-bhūta-antar-ātmā",
+          "meaning": "the one ruler, the inner Self of all beings"
+        },
+        {
+          "word": "teṣāṁ sukhaṁ śāśvataṁ na itareṣām",
+          "meaning": "theirs is lasting happiness, and no one else's"
+        }
+      ],
+      "commentary": "Now the pointing gathers to a promise. The One — the ruler, the inner Self of all beings, who makes his single form into the many — is seen by the wise as established within their own selves. And to them, and to no one else, belongs śāśvata sukha, lasting happiness. The line is emphatic and exclusive: na itareṣām, not to others. Enduring happiness is available, the Upanishad declares flatly, only to those who realize the one Self seated within them; every other happiness, sought in outer things, is by nature temporary and must pass. This is not a threat but a diagnosis of where lasting joy can and cannot be found. Search for permanent happiness among impermanent things — pleasures, achievements, relationships, however precious — and you will find only happiness that ends, because its source ends. Find the one unchanging Self within, and you have found a happiness with nothing outside it to take it away. The many who look outward taste joys that come and go; the few who see the One established in themselves rest in a joy that stays. The next verse says the same again, that it may not be missed."
     },
     "99": {
       "id": 99,
@@ -1581,7 +1878,18 @@ window.UPANISHAD_KATHA = {
       "name": "The One Among the Many",
       "devanagari": "नित्योऽनित्यानां चेतनश्चेतनानाम्\nएको बहूनां यो विदधाति कामान् ।\nतमात्मस्थं येऽनुपश्यन्ति धीराः\nतेषां शान्तिः शाश्वती नेतरेषाम् ॥",
       "transliteration": "nityo'nityānāṁ cetanaścetanānām\neko bahūnāṁ yo vidadhāti kāmān\ntamātmasthaṁ ye'nupaśyanti dhīrāḥ\nteṣāṁ śāntiḥ śāśvatī netareṣām",
-      "translation": "The eternal among the fleeting, the conscious among the conscious, the One among the many, who fulfills all desires — the wise who see him established in themselves: theirs is lasting peace, and no one else's."
+      "translation": "The eternal among the fleeting, the conscious among the conscious, the One among the many, who fulfills all desires — the wise who see him established in themselves: theirs is lasting peace, and no one else's.",
+      "words": [
+        {
+          "word": "nityaḥ anityānāṁ cetanaḥ cetanānām",
+          "meaning": "the eternal among the fleeting, the conscious among the conscious"
+        },
+        {
+          "word": "teṣāṁ śāntiḥ śāśvatī na itareṣām",
+          "meaning": "theirs is lasting peace, and no one else's"
+        }
+      ],
+      "commentary": "The promise repeated, in a formula of great beauty that Vedanta would treasure ever after: the eternal among things that pass, the conscious among conscious beings, the One among the many, who alone fulfills the desires of all — the wise who see him established within themselves have lasting peace, and no one else. Where the previous verse promised śāśvata sukha, lasting happiness, this one promises śāśvatī śānti, lasting peace — the deep, unshakable peace that is perhaps the truest name for the goal. And it stacks the descriptions to a fine point: the Self is the one eternal in the midst of all that is fleeting, the one consciousness within all conscious beings, the single reality behind the many, the source that answers every desire. To recognize that One seated in one's own heart is to come to rest. And once more the stark exclusivity: na itareṣām, not to others. This is not spiritual snobbery but plain truth about the structure of things — peace that lasts can only come from what lasts, and only the Self lasts. All other peace is a truce with circumstances that will change. The peace of the Self changes never, because the Self changes never. This, truly, is That."
     },
     "100": {
       "id": 100,
@@ -1589,7 +1897,18 @@ window.UPANISHAD_KATHA = {
       "name": "Does It Shine — or Reflect?",
       "devanagari": "तदेतदिति मन्यन्तेऽनिर्देश्यं परमं सुखम् ।\nकथं नु तद्विजानीयां किमु भाति विभाति वा ॥",
       "transliteration": "tadetaditi manyante'nirdeśyaṁ paramaṁ sukham\nkathaṁ nu tadvijānīyāṁ kimu bhāti vibhāti vā",
-      "translation": "'This is That' — so they regard the indescribable, highest bliss. But how am I to know it? Does it shine by itself — or shine by reflection?"
+      "translation": "'This is That' — so they regard the indescribable, highest bliss. But how am I to know it? Does it shine by itself — or shine by reflection?",
+      "words": [
+        {
+          "word": "kim u tatra bhāti ... katham u tat vibhāti",
+          "meaning": "does it shine there — and how does it shine?"
+        },
+        {
+          "word": "anukṛti-jyotiḥ",
+          "meaning": "by reflected light?"
+        }
+      ],
+      "commentary": "A question rises — perhaps from the seeker, perhaps as the natural next wonder — about the nature of this supreme reality that is called the highest, indescribable bliss. \"This is That,\" they say of it — but how am I to know it? Does it shine by its own light, or does it shine only by some reflected light, borrowing its radiance from elsewhere? It is a subtle and important question. Everything we normally see is visible only because light falls on it; the moon shines by the sun's light, objects by whatever illumines them. Is the ultimate reality like that — lit from outside — or is it the original light itself? The very asking prepares the ground for one of the most sublime answers in all of scripture, which the next verse gives. The question matters because it distinguishes the Self from everything else in existence. All other things shine by a light not their own; if the Self too were merely lit from outside, it would not be ultimate. The seeker is being brought to the threshold of recognizing that the Self is not one more illumined object but the original, self-existent Light by which all else is lit — the one thing that does not borrow its shining from anything at all."
     },
     "101": {
       "id": 101,
@@ -1597,7 +1916,18 @@ window.UPANISHAD_KATHA = {
       "name": "There the Sun Does Not Shine",
       "devanagari": "न तत्र सूर्यो भाति न चन्द्रतारकं\nनेमा विद्युतो भान्ति कुतोऽयमग्निः ।\nतमेव भान्तमनुभाति सर्वं\nतस्य भासा सर्वमिदं विभाति ॥",
       "transliteration": "na tatra sūryo bhāti na candratārakaṁ\nnemā vidyuto bhānti kuto'yamagniḥ\ntameva bhāntamanubhāti sarvaṁ\ntasya bhāsā sarvamidaṁ vibhāti",
-      "translation": "There the sun does not shine, nor the moon and stars, nor do these lightnings shine — much less this fire. Everything shines only after that shining light: by its light, all this is lit."
+      "translation": "There the sun does not shine, nor the moon and stars, nor do these lightnings shine — much less this fire. Everything shines only after that shining light: by its light, all this is lit.",
+      "words": [
+        {
+          "word": "na tatra sūryaḥ bhāti na candra-tārakaṁ",
+          "meaning": "there the sun does not shine, nor moon and stars"
+        },
+        {
+          "word": "tam eva bhāntam anu bhāti sarvaṁ tasya bhāsā sarvam idaṁ vibhāti",
+          "meaning": "everything shines after that shining; by its light all this is lit"
+        }
+      ],
+      "commentary": "The answer, and it is one of the most sublime verses ever composed — so luminous it echoes across scriptures and centuries. There the sun does not shine, nor the moon and the stars, nor these flashes of lightning — and much less this earthly fire. Rather, everything shines only after that shining One; by its light alone, all this is lit. Here is the answer to the previous verse's question: the Self is not illumined by any other light; it is the original Light, the self-luminous source from which every other light borrows its shining. The sun, blazing at the center of our sky, does not illumine the Self — on the contrary, the sun shines only because the Self, the light of consciousness, shines first. Every light you have ever seen is a lesser, derived glow; the awareness by which you see any light at all is the primordial radiance behind them. This is why the Self can never be seen as an object — it is not lit by anything; it is the lighting itself. And it is nearer than the sun, for it is your own awareness, the light in which this very page appears. The greatest light in the cosmos shines by its borrowed glow. This, truly, is That. The final valli now gathers the whole teaching toward Nachiketa's liberation."
     },
     "102": {
       "id": 102,
@@ -1605,7 +1935,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Tree With Its Roots in Heaven",
       "devanagari": "ऊर्ध्वमूलोऽवाक्शाख एषोऽश्वत्थः सनातनः ।\nतदेव शुक्रं तद्ब्रह्म तदेवामृतमुच्यते ।\nतस्मिँल्लोकाः श्रिताः सर्वे तदु नात्येति कश्चन ।\nएतद्वै तत् ॥",
       "transliteration": "ūrdhvamūlo'vākśākha eṣo'śvatthaḥ sanātanaḥ\ntadeva śukraṁ tadbrahma tadevāmṛtamucyate\ntasmim̐llokāḥ śritāḥ sarve tadu nātyeti kaścana\netadvai tat",
-      "translation": "With roots above and branches below stands this ancient fig tree. That alone is the Bright; that is Brahman; that alone is called the Immortal. On it all worlds rest; none whatsoever goes beyond it. This, truly, is That."
+      "translation": "With roots above and branches below stands this ancient fig tree. That alone is the Bright; that is Brahman; that alone is called the Immortal. On it all worlds rest; none whatsoever goes beyond it. This, truly, is That.",
+      "words": [
+        {
+          "word": "ūrdhva-mūlaḥ avāk-śākhaḥ",
+          "meaning": "roots above, branches below"
+        },
+        {
+          "word": "eṣaḥ aśvatthaḥ sanātanaḥ",
+          "meaning": "this ancient fig tree"
+        }
+      ],
+      "commentary": "The final valli opens with a haunting image that the Bhagavad Gita will later take up and expand: the world as an aśvattha, a great fig tree, but growing upside down — ūrdhva-mūla, its roots above, in the transcendent, and its branches spreading downward, into the manifest world. This ancient inverted tree is rooted in Brahman above and flowers into the whole of creation below. That root — the Bright, the Brahman, the Immortal — is what all the worlds rest upon, and nothing whatsoever goes beyond it. This, truly, is That. The image teaches where reality's true foundation lies. An ordinary tree draws its life up from roots in the earth; but the tree of the world draws its life down from a root above, in the transcendent Self. The visible universe is the foliage, ever-changing, ever-falling; the invisible source is the root, eternal and unmoving. To seek the ground of your existence, then, you must look not downward into matter but upward and inward, to the root from which the whole tree of experience hangs. Everything you see is a branch; the reality is the root you cannot see, from which it all depends. This, truly, is That."
     },
     "103": {
       "id": 103,
@@ -1613,7 +1954,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Upraised Thunderbolt",
       "devanagari": "यदिदं किं च जगत् सर्वं प्राण एजति निःसृतम् ।\nमहद्भयं वज्रमुद्यतं य एतद्विदुरमृतास्ते भवन्ति ॥",
       "transliteration": "yadidaṁ kiṁ ca jagat sarvaṁ prāṇa ejati niḥsṛtam\nmahadbhayaṁ vajramudyataṁ ya etadviduramṛtāste bhavanti",
-      "translation": "Whatever exists — this whole moving world — has come forth from it, and trembles in that life-breath. A great terror, an upraised thunderbolt: those who know it become immortal."
+      "translation": "Whatever exists — this whole moving world — has come forth from it, and trembles in that life-breath. A great terror, an upraised thunderbolt: those who know it become immortal.",
+      "words": [
+        {
+          "word": "sarvaṁ ... prāṇe ejati niḥsṛtam",
+          "meaning": "the whole world trembles in the life-breath, come forth from it"
+        },
+        {
+          "word": "mahat bhayaṁ vajram udyatam",
+          "meaning": "a great terror, an upraised thunderbolt"
+        }
+      ],
+      "commentary": "The image turns awesome and terrible. Whatever exists — this entire moving universe — has come forth from that root and trembles in that life-breath, sustained by it moment to moment. And the reality is described as mahat bhayam, a great terror, and vajram udyatam, an upraised thunderbolt held ready to strike. Those who know it, the verse says, become immortal. Why should the ultimate be pictured as a raised weapon, a thing of dread? Because its power is absolute and its law inexorable — it is the reality against which nothing can rebel, the ground that upholds all and could withdraw its support in an instant. There is a holy fear appropriate to standing before that on which one's entire existence hangs by a thread. This is not the neurotic fear the Self dissolves, but reverence — the awe of a small being before the boundless power that sustains and could unmake it. The whole cosmos trembles in that breath. And the paradox the next verse unfolds is that this very dread-inspiring power is why the great forces of nature perform their duties so faithfully — and why the one who knows it passes beyond all lesser fear into the deathless."
     },
     "104": {
       "id": 104,
@@ -1621,7 +1973,18 @@ window.UPANISHAD_KATHA = {
       "name": "From Fear of It, Fire Burns",
       "devanagari": "भयादस्याग्निस्तपति भयात्तपति सूर्यः ।\nभयादिन्द्रश्च वायुश्च मृत्युर्धावति पञ्चमः ॥",
       "transliteration": "bhayādasyāgnistapati bhayāttapati sūryaḥ\nbhayādindraśca vāyuśca mṛtyurdhāvati pañcamaḥ",
-      "translation": "From fear of it, fire burns. From fear of it, the sun gives heat. From fear of it, Indra and the Wind — and Death, the fifth — all run."
+      "translation": "From fear of it, fire burns. From fear of it, the sun gives heat. From fear of it, Indra and the Wind — and Death, the fifth — all run.",
+      "words": [
+        {
+          "word": "bhaya-āt asya agniḥ tapati",
+          "meaning": "from fear of it, fire burns"
+        },
+        {
+          "word": "mṛtyuḥ dhāvati pañcamaḥ",
+          "meaning": "and Death, the fifth, runs"
+        }
+      ],
+      "commentary": "One of the most majestic verses in the Upanishads, imaging the cosmic order as obedience to a single supreme reality. From fear of it, fire burns; from fear of it, the sun gives its heat; from fear of it, Indra and the Wind, and Death himself as the fifth, all run to their appointed tasks. The great powers of the universe — fire, sun, storm, wind, even Death — perform their duties unfailingly not by accident but in awe of the one reality that commands them, each keeping its law as if in reverence before the Absolute. The picture is of a cosmos held in perfect order by a single sovereign presence, before which even the mightiest forces bow and obey. And there is a quiet consolation folded into the grandeur, especially for Nachiketa: Death itself, the very power in whose house he stands, the terror that ends all things, is here shown running in fearful obedience before something greater still. Death is not the final authority; it too serves, it too fears, it too runs at the command of the Self. The one Nachiketa has been questioning is himself a servant of the reality Nachiketa sought. To know that reality is to stand beyond the one whom Death obeys."
     },
     "105": {
       "id": 105,
@@ -1629,7 +1992,18 @@ window.UPANISHAD_KATHA = {
       "name": "Know It Before the Body Falls",
       "devanagari": "इह चेदशकद्बोद्धुं प्राक्षरीरस्य विस्रसः ।\nततः सर्गेषु लोकेषु शरीरत्वाय कल्पते ॥",
       "transliteration": "iha cedaśakadboddhuṁ prākṣarīrasya visrasaḥ\ntataḥ sargeṣu lokeṣu śarīratvāya kalpate",
-      "translation": "If one is able to awaken to it here, before the body falls apart — well. If not, one becomes fit only for a body again, in the worlds of created things."
+      "translation": "If one is able to awaken to it here, before the body falls apart — well. If not, one becomes fit only for a body again, in the worlds of created things.",
+      "words": [
+        {
+          "word": "iha ced aśakat boddhum prāk śarīrasya visrasaḥ",
+          "meaning": "if one can awaken to it here, before the body falls"
+        },
+        {
+          "word": "sargeṣu lokeṣu śarīratvāya kalpate",
+          "meaning": "if not, one is fit only for a body again"
+        }
+      ],
+      "commentary": "A verse of great urgency that echoes the razor's-edge summons. If one is able to awaken to this reality here — iha, in this very life, before the body falls apart — well and good; the goal is won. But if one fails to realize it here, then one becomes fit only for embodiment again, for another turn through the worlds of created things. Once more the Upanishad presses the preciousness and the finitude of this human opportunity. The realization is to be won here, now, in this body, in this lifetime — not postponed to some afterlife or future existence. This life is the arena; this body, for all its frailty, is the rare vehicle in which awakening is possible; and the chance is not to be squandered. The stakes are laid bare without melodrama: awaken here, and cross beyond; miss it here, and take up the round of embodiment again. There is no scolding in it, only the sober naming of what is at stake — and beneath that, the same rousing call as the razor's edge: do not sleep through this. The door is open now. Awaken here, before the body falls."
     },
     "106": {
       "id": 106,
@@ -1637,7 +2011,18 @@ window.UPANISHAD_KATHA = {
       "name": "As in a Mirror, So in Oneself",
       "devanagari": "यथाऽऽदर्शे तथाऽऽत्मनि यथा स्वप्ने तथा पितृलोके ।\nयथाऽप्सु परीव ददृशे तथा गन्धर्वलोके\nछायातपयोरिव ब्रह्मलोके ॥",
       "transliteration": "yathā''darśe tathā''tmani yathā svapne tathā pitṛloke\nyathā'psu parīva dadṛśe tathā gandharvaloke\nchāyātapayoriva brahmaloke",
-      "translation": "As in a mirror — so is it seen in oneself. As in a dream — so among the ancestors. As glimpsed on the surface of water — so in the world of spirits. As shadow and light — so in the world of Brahman."
+      "translation": "As in a mirror — so is it seen in oneself. As in a dream — so among the ancestors. As glimpsed on the surface of water — so in the world of spirits. As shadow and light — so in the world of Brahman.",
+      "words": [
+        {
+          "word": "yathā ādarśe tathā ātmani",
+          "meaning": "as in a mirror, so in oneself"
+        },
+        {
+          "word": "yathā apsu ... yathā chāyā-tapayoḥ",
+          "meaning": "as glimpsed in water; as shadow and light"
+        }
+      ],
+      "commentary": "The verse describes, with a series of images, how clearly the Self can be seen in different conditions — and where it is seen most clearly of all. As in a mirror, so is the Self seen in one's own purified being — sharply, directly, face to face. As in a dream, dimmer and more distorted, so it is glimpsed in the world of the ancestors. As on the rippling, uncertain surface of water, so it is seen indistinctly in the world of spirits. And as clearly as the sharp contrast of shadow and light, so it is seen in the world of Brahman. The gradation matters: the clarity with which the truth can be known depends on the medium, on the state of the one who seeks. And the crucial point is the first: yathā ādarśe tathā ātmani — as in a mirror, so in one's own self. The clearest possible seeing of the Self is available right here, in one's own purified heart, like a face in a clean mirror. You need not journey to other worlds to see it best; the finest mirror is a purified self, here and now. Clean the mirror of the heart, and the Self stands revealed in it as sharply as your own reflection."
     },
     "107": {
       "id": 107,
@@ -1645,7 +2030,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Senses Rise and Set",
       "devanagari": "इन्द्रियाणां पृथग्भावमुदयास्तमयौ च यत् ।\nपृथगुत्पद्यमानानां मत्वा धीरो न शोचति ॥",
       "transliteration": "indriyāṇāṁ pṛthagbhāvamudayāstamayau ca yat\npṛthagutpadyamānānāṁ matvā dhīro na śocati",
-      "translation": "Knowing that the senses stand apart from the Self — each arising and setting separately as it comes into being — the wise one does not grieve."
+      "translation": "Knowing that the senses stand apart from the Self — each arising and setting separately as it comes into being — the wise one does not grieve.",
+      "words": [
+        {
+          "word": "indriyāṇāṁ pṛthag-bhāvam udaya-astamayau ca yat",
+          "meaning": "the senses stand apart, each arising and setting"
+        },
+        {
+          "word": "matvā dhīraḥ na śocati",
+          "meaning": "knowing this, the wise one does not grieve"
+        }
+      ],
+      "commentary": "A verse of liberating discrimination. Knowing that the senses are pṛthak, separate — distinct from the Self, arising and setting each on its own, coming into being and passing away as their own kind of thing — the wise one does not grieve. Here is the practice of discernment applied to the senses themselves. Each sense, and each experience it brings, has its own rising and setting: sights come and go, sounds arise and fade, the whole sensory world is a ceaseless dawning and dusking of impermanent phenomena. To realize that these are separate from oneself — that one is the changeless witness of their rising and setting, not the rising and setting itself — is to be freed from grief. Grief comes from identifying with what must pass; when a sense-pleasure ends, we mourn, because we took it to be part of us. But the one who sees the senses and their objects as a distinct, self-dawning-and-setting show, witnessed by an awareness that neither rises nor sets, is no longer wounded by their passing. He watches the sun of each experience rise and set without grieving, because he has recognized himself as the sky in which all such suns come and go."
     },
     "108": {
       "id": 108,
@@ -1653,7 +2049,14 @@ window.UPANISHAD_KATHA = {
       "name": "The Ladder, Climbed Again",
       "devanagari": "इन्द्रियेभ्यः परं मनो मनसः सत्त्वमुत्तमम् ।\nसत्त्वादधि महानात्मा महतोऽव्यक्तमुत्तमम् ॥",
       "transliteration": "indriyebhyaḥ paraṁ mano manasaḥ sattvamuttamam\nsattvādadhi mahānātmā mahato'vyaktamuttamam",
-      "translation": "Beyond the senses is the mind; above the mind, the pure understanding; beyond understanding, the great Self; beyond the great, the unmanifest."
+      "translation": "Beyond the senses is the mind; above the mind, the pure understanding; beyond understanding, the great Self; beyond the great, the unmanifest.",
+      "words": [
+        {
+          "word": "indriyebhyaḥ paraṁ manaḥ ... mahataḥ param avyaktam",
+          "meaning": "beyond senses the mind ... beyond the great, the unmanifest"
+        }
+      ],
+      "commentary": "The ladder of subtlety, first given in the third valli, is climbed again here — the repetition deliberate, fixing the map of inwardness in the seeker's mind. Beyond the senses is the mind; above the mind, the pure understanding, the buddhi; beyond understanding, the great Self, the cosmic intelligence; and beyond the great, the unmanifest, the avyakta, the undifferentiated source. Each rung subtler and more inward than the last, each transcending and governing the one below. Why repeat the ladder? Because it is the essential orientation for all inner work, and it deserves to be graven deep. It tells the meditator which way is inward, which way is up: never rest content at the senses, nor at the mind, nor even at the discerning intellect, but keep ascending toward the subtler and more fundamental, rung by rung, toward the source. The path of realization is precisely this progressive interiorization — the withdrawal of attention from the outer and gross toward the inner and subtle, until one reaches the unmanifest and, beyond even that, the Person. The next verse names that final rung, and the freedom that comes of reaching it."
     },
     "109": {
       "id": 109,
@@ -1661,7 +2064,18 @@ window.UPANISHAD_KATHA = {
       "name": "The One Without a Mark",
       "devanagari": "अव्यक्तात्तु परः पुरुषो व्यापकोऽलिङ्ग एव च ।\nयं ज्ञात्वा मुच्यते जन्तुरमृतत्वं च गच्छति ॥",
       "transliteration": "avyaktāttu paraḥ puruṣo vyāpako'liṅga eva ca\nyaṁ jñātvā mucyate janturamṛtatvaṁ ca gacchati",
-      "translation": "Beyond the unmanifest is the Person: all-pervading, without any mark. Knowing him, a creature is freed — and goes to immortality."
+      "translation": "Beyond the unmanifest is the Person: all-pervading, without any mark. Knowing him, a creature is freed — and goes to immortality.",
+      "words": [
+        {
+          "word": "avyaktāt tu paraḥ puruṣaḥ vyāpakaḥ a-liṅgaḥ",
+          "meaning": "beyond the unmanifest, the all-pervading Person, without any mark"
+        },
+        {
+          "word": "jñātvā mucyate ... amṛtatvaṁ ca gacchati",
+          "meaning": "knowing him, a creature is freed and goes to immortality"
+        }
+      ],
+      "commentary": "The top of the ladder, and the promise of freedom. Beyond even the unmanifest is the Puruṣa, the supreme Person — vyāpaka, all-pervading, and a-liṅga, without any mark, any distinguishing sign, any attribute by which the mind could grasp or categorize it. It cannot be marked because it is not a thing among things; it is the awareness in which all marked things appear. And knowing him, the verse says, a creature is freed — mucyate — and goes to immortality. Here is the destination named plainly: not a place, not a state one enters and might leave, but the pure, all-pervading, markless awareness that is the very Self, beyond which there is nothing. To know that — to recognize oneself as that markless, all-pervading Person — is liberation itself, and the deathless. The whole ascent, from the senses up through mind and intellect and the great Self and the unmanifest, arrives here, at the one reality that has no mark because it is the seer of all marks, the ground of all that can be known. Knowing it, one is free; and the freedom is not earned as a reward but recognized as one's own eternal nature, uncovered at the summit of the inward climb."
     },
     "110": {
       "id": 110,
@@ -1669,7 +2083,18 @@ window.UPANISHAD_KATHA = {
       "name": "Seen by Heart, Not by Eye",
       "devanagari": "न संदृशे तिष्ठति रूपमस्य\nन चक्षुषा पश्यति कश्चनैनम् ।\nहृदा मनीषा मनसाऽभिक्लृप्तो\nय एतद्विदुरमृतास्ते भवन्ति ॥",
       "transliteration": "na saṁdṛśe tiṣṭhati rūpamasya\nna cakṣuṣā paśyati kaścanainam\nhṛdā manīṣā manasā'bhiklṛpto\nya etadviduramṛtāste bhavanti",
-      "translation": "His form does not stand within sight; no one sees him with the eye. He is revealed by the heart, by insight, by the mind. Those who know this become immortal."
+      "translation": "His form does not stand within sight; no one sees him with the eye. He is revealed by the heart, by insight, by the mind. Those who know this become immortal.",
+      "words": [
+        {
+          "word": "na sandṛśe tiṣṭhati rūpam asya na cakṣuṣā paśyati kaḥ cana",
+          "meaning": "his form is not within sight; no one sees him with the eye"
+        },
+        {
+          "word": "hṛdā manīṣā manasā abhiklṛptaḥ ... amṛtāḥ bhavanti",
+          "meaning": "revealed by heart, insight, mind — those who know become immortal"
+        }
+      ],
+      "commentary": "How, then, is this markless Person to be known, if no eye can see him? The verse answers. His form does not stand within the field of sight; no one sees him with the physical eye. He is revealed instead by the heart, by insight, by the mind — hṛdā manīṣā manasā — by the inner faculties refined and turned inward. And those who know him thus become immortal. The teaching is clear and consoling: the Self is not to be sought as an outer vision, a form to be beheld with the eyes, a light to be witnessed like an object. It is grasped by a deeper organ — the heart in its purest sense, the intuitive intelligence, the mind gathered and stilled and turned toward its own source. This is why the seeker who waits for a spectacular external vision waits in vain; the Self is not that kind of thing. It is known the way you know your own being — not by looking out and seeing an object, but by a direct inward recognition, an intimate certainty that dawns in the purified heart. See with the heart, the verse says, not the eye — and become immortal. The final verses now describe the precise inner condition in which that heart-seeing occurs."
     },
     "111": {
       "id": 111,
@@ -1677,7 +2102,18 @@ window.UPANISHAD_KATHA = {
       "name": "When the Five Fall Still",
       "devanagari": "यदा पञ्चावतिष्ठन्ते ज्ञानानि मनसा सह ।\nबुद्धिश्च न विचेष्टते तामाहुः परमां गतिम् ॥",
       "transliteration": "yadā pañcāvatiṣṭhante jñānāni manasā saha\nbuddhiśca na viceṣṭate tāmāhuḥ paramāṁ gatim",
-      "translation": "When the five perceptions come to rest together with the mind, and the intellect itself does not stir — that, they say, is the highest state."
+      "translation": "When the five perceptions come to rest together with the mind, and the intellect itself does not stir — that, they say, is the highest state.",
+      "words": [
+        {
+          "word": "yadā pañca avatiṣṭhante jñānāni manasā saha",
+          "meaning": "when the five perceptions come to rest, together with the mind"
+        },
+        {
+          "word": "tām āhuḥ paramāṁ gatim",
+          "meaning": "that, they say, is the highest state"
+        }
+      ],
+      "commentary": "Now the Upanishad describes the precise inner state of realization — and it is a state of profound stillness. When the five perceptions, the five senses, come to rest together with the mind, and even the intellect (buddhi) ceases its stirring — when the whole restless apparatus of knowing falls silent — that, they say, is the paramā gati, the highest state. This is a description of the deepest meditation, samādhi: not a heightening of mental activity but its complete settling, the senses withdrawn and quiet, the mind no longer running, the very intellect grown still. In that total inner stillness, when nothing in the mind is moving to obscure it, the Self shines forth of its own accord. The teaching is that the Self is not reached by doing more but by the mind's coming utterly to rest — for it is only the ceaseless motion of the senses, mind, and intellect that has been hiding what was always present. Still the water completely, and the depths become perfectly clear. This stilling of all the faculties together is named the highest state, the condition in which the markless Person, invisible to every active faculty, is finally known in the silence they leave behind."
     },
     "112": {
       "id": 112,
@@ -1685,7 +2121,18 @@ window.UPANISHAD_KATHA = {
       "name": "Yoga: the Steady Holding of the Reins",
       "devanagari": "तां योगमिति मन्यन्ते स्थिरामिन्द्रियधारणाम् ।\nअप्रमत्तस्तदा भवति योगो हि प्रभवाप्ययौ ॥",
       "transliteration": "tāṁ yogamiti manyante sthirāmindriyadhāraṇām\napramattastadā bhavati yogo hi prabhavāpyayau",
-      "translation": "That firm holding of the senses is what they call yoga. Then one becomes undistracted — for yoga is a thing that comes and goes."
+      "translation": "That firm holding of the senses is what they call yoga. Then one becomes undistracted — for yoga is a thing that comes and goes.",
+      "words": [
+        {
+          "word": "tāṁ yogam iti manyante sthirām indriya-dhāraṇām",
+          "meaning": "that firm holding of the senses they call yoga"
+        },
+        {
+          "word": "apramattaḥ ... yogo hi prabhava-apyayau",
+          "meaning": "then one is undistracted — for yoga comes and goes"
+        }
+      ],
+      "commentary": "The verse gives the classic definition of yoga — and a sober caution. This firm, steady holding of the senses, this disciplined stilling in which they are held quiet and gathered, is what they call yoga. Then one becomes apramatta, undistracted, fully present. But the caution follows at once: yoga is a thing that comes and goes — prabhava-apyayau — it has an arising and a passing; it can be gained and it can be lost. This is one of the most honest and practical lines in the whole text. Yoga, the steady inner discipline, is not a permanent possession seized once and kept forever; it is a state that must be established again and again, watchfully, for it can slip away through inattention. The steadiness of the senses and the undistracted presence it brings require ongoing vigilance; a moment of heedlessness, and the hard-won stillness scatters. There is no resting on past attainment. The seeker must be apramatta, unheedful never, for the yoga that stills the senses is not a trophy on a shelf but a living balance, continually renewed. It comes; it can go. Hold it with steady, wakeful care — the very wakefulness the razor's edge demanded."
     },
     "113": {
       "id": 113,
@@ -1693,7 +2140,18 @@ window.UPANISHAD_KATHA = {
       "name": "Only As \"It Is\" Can It Be Grasped",
       "devanagari": "नैव वाचा न मनसा प्राप्तुं शक्यो न चक्षुषा ।\nअस्तीति ब्रुवतोऽन्यत्र कथं तदुपलभ्यते ॥",
       "transliteration": "naiva vācā na manasā prāptuṁ śakyo na cakṣuṣā\nastīti bruvato'nyatra kathaṁ tadupalabhyate",
-      "translation": "Not by speech, not by mind, not by the eye can it be reached. How can it be grasped except by the one who says: 'It is'?"
+      "translation": "Not by speech, not by mind, not by the eye can it be reached. How can it be grasped except by the one who says: 'It is'?",
+      "words": [
+        {
+          "word": "na eva vācā na manasā prāptuṁ śakyaḥ",
+          "meaning": "not by speech, not by mind can it be reached"
+        },
+        {
+          "word": "asti iti bruvataḥ anyatra kathaṁ tat upalabhyate",
+          "meaning": "how is it grasped, except by one who says 'It is'?"
+        }
+      ],
+      "commentary": "A verse that names both the limit and the doorway. This reality cannot be reached by speech, nor by the mind, nor by the eye — none of the ordinary instruments can seize it, for it is subtler than them all, their very source. So how, then, can it be grasped at all? Only, the verse answers, by the one who says asti — \"It is.\" This is a subtle and crucial teaching. Since the Self cannot be perceived as an object, described in words, or thought as a concept, the first and indispensable movement toward it is a simple, deep affirmation of its being: It is. Not a description of what it is — that is impossible — but a firm conviction that it is, that behind all the changing appearances there is a real, abiding ground. This affirmation is the doorway that mere speech, mind, and sense cannot open. The one who denies it, who says \"there is nothing beyond the visible,\" has closed the door; the one who affirms \"It is,\" even before knowing its nature, has taken the one step that makes realization possible. Everything begins with that quiet, unshakable Yes to the reality of the deathless. The next verse unfolds what follows from it."
     },
     "114": {
       "id": 114,
@@ -1701,7 +2159,18 @@ window.UPANISHAD_KATHA = {
       "name": "First \"It Is\" — Then Its Nature Dawns",
       "devanagari": "अस्तीत्येवोपलब्धव्यस्तत्त्वभावेन चोभयोः ।\nअस्तीत्येवोपलब्धस्य तत्त्वभावः प्रसीदति ॥",
       "transliteration": "astītyevopalabdhavyastattvabhāvena cobhayoḥ\nastītyevopalabdhasya tattvabhāvaḥ prasīdati",
-      "translation": "It must be grasped simply as 'It is' — and then in its real nature. Of these two, for the one who has grasped it as 'It is,' the real nature dawns."
+      "translation": "It must be grasped simply as 'It is' — and then in its real nature. Of these two, for the one who has grasped it as 'It is,' the real nature dawns.",
+      "words": [
+        {
+          "word": "asti iti eva upalabdhavyaḥ tattva-bhāvena ca ubhayoḥ",
+          "meaning": "it must be grasped as 'It is', and then in its real nature"
+        },
+        {
+          "word": "asti iti eva upalabdhasya tattva-bhāvaḥ prasīdati",
+          "meaning": "for one who has grasped it as 'It is', its real nature dawns"
+        }
+      ],
+      "commentary": "The teaching of the previous verse completes itself in a beautiful two-step. The Self is to be grasped first simply as asti — \"It is\" — as a real, existing ground affirmed with conviction; and then, in a second movement, in its tattva-bhāva, its true essential nature, as it actually is in itself. And the order is decisive: for the one who has first grasped it as \"It is,\" its real nature then dawns, prasīdati — a word that means becomes gracious, becomes clear, reveals itself serenely. First the affirmation of being; then, upon that ground, the revelation of essence. This is a profound map of the spiritual path. One does not begin by comprehending the nature of the Absolute — that comes later, and comes as a gift, a dawning. One begins by simply affirming, with faith and conviction, that it is — that behind the flux there is a real, deathless ground. Established firmly in that Yes, the seeker creates the inner condition in which the deeper truth can then unveil itself of its own accord. Faith in the reality comes first; the vision of its nature follows, serenely, as grace. Say \"It is,\" and hold to it — and in time, its very face grows clear."
     },
     "115": {
       "id": 115,
@@ -1709,7 +2178,18 @@ window.UPANISHAD_KATHA = {
       "name": "When All Desires Fall Away",
       "devanagari": "यदा सर्वे प्रमुच्यन्ते कामा येऽस्य हृदि श्रिताः ।\nअथ मर्त्योऽमृतो भवत्यत्र ब्रह्म समश्नुते ॥",
       "transliteration": "yadā sarve pramucyante kāmā ye'sya hṛdi śritāḥ\natha martyo'mṛto bhavatyatra brahma samaśnute",
-      "translation": "When all the desires lodged in the heart are released — then a mortal becomes immortal; here itself, one reaches Brahman."
+      "translation": "When all the desires lodged in the heart are released — then a mortal becomes immortal; here itself, one reaches Brahman.",
+      "words": [
+        {
+          "word": "yadā sarve pramucyante kāmāḥ ye asya hṛdi śritāḥ",
+          "meaning": "when all desires lodged in the heart are released"
+        },
+        {
+          "word": "atha martyaḥ amṛtaḥ bhavati atra brahma samaśnute",
+          "meaning": "then a mortal becomes immortal; here itself one reaches Brahman"
+        }
+      ],
+      "commentary": "Now the Upanishad names the final condition of liberation, and it is not the acquiring of anything but a total release. When all the desires that were lodged in the heart are let go — pramucyante, loosened, released, every last one — then a mortal becomes immortal, and here itself, atra, in this very life and body, one reaches Brahman. Two things shine in this verse. First, what stands between a person and the deathless is not a lack of knowledge or effort but the tangle of clinging desires knotted in the heart; release those, and immortality is not gained from elsewhere but revealed as one's own present nature. The desires were the only veil. Second — atra, here — the goal is reached not after death, not in another world, but here, now, in this embodied life, the moment the heart is emptied of its cravings. This is the liberation the whole Upanishad has been climbing toward: not a future reward but a present realization, available the instant one truly lets go. Nachiketa, who refused a universe of desires at the story's start, has already begun to walk this very path. The one who releases every desire from the heart does not go to Brahman; he finds he was never anywhere else. The next verse says the same in its most surgical image."
     },
     "116": {
       "id": 116,
@@ -1717,7 +2197,18 @@ window.UPANISHAD_KATHA = {
       "name": "When All the Knots of the Heart Are Cut",
       "devanagari": "यथा सर्वे प्रभिद्यन्ते हृदयस्येह ग्रन्थयः ।\nअथ मर्त्योऽमृतो भवत्येतावद्ध्यनुशासनम् ॥",
       "transliteration": "yathā sarve prabhidyante hṛdayasyeha granthayaḥ\natha martyo'mṛto bhavatyetāvaddhyanuśāsanam",
-      "translation": "When all the knots of the heart are cut through, here in this life — then a mortal becomes immortal. This much, and no more, is the teaching."
+      "translation": "When all the knots of the heart are cut through, here in this life — then a mortal becomes immortal. This much, and no more, is the teaching.",
+      "words": [
+        {
+          "word": "yadā sarve prabhidyante hṛdayasya iha granthayaḥ",
+          "meaning": "when all the knots of the heart are cut through, here"
+        },
+        {
+          "word": "etāvat hi anuśāsanam",
+          "meaning": "this much, and no more, is the teaching"
+        }
+      ],
+      "commentary": "The image sharpens to its most precise: when all the granthis, the knots of the heart, are cut through — here, in this very life — then a mortal becomes immortal. \"The knots of the heart\" is one of the great phrases of the Upanishads: the tight tangles of desire, attachment, fear, and ignorance that bind us, the deep coils of clinging that constrict the heart and hold us in bondage. Liberation is imaged not as adding something but as cutting — severing these knots, until the heart, freed of its constrictions, opens into the boundless. And then the verse says something remarkable in its finality: etāvat hi anuśāsanam — \"this much, and no more, is the teaching.\" This is all of it. The entire instruction, the whole of what the Upanishads have to say, comes down to this: cut the knots of the heart, release every binding desire, and here, now, the mortal is immortal. Everything else — the story, the chariot, the ladder, the images — has been in service of this one surgical act. There is nothing further to learn, no deeper secret withheld. Untie the heart, and you are free. The last verses describe the subtle way of that final release, and then the boy who won it."
     },
     "117": {
       "id": 117,
@@ -1725,7 +2216,18 @@ window.UPANISHAD_KATHA = {
       "name": "The Hundred and One Channels",
       "devanagari": "शतं चैका च हृदयस्य नाड्य- \nस्तासां मूर्धानमभिनिःसृतैका ।\nतयोर्ध्वमायन्नमृतत्वमेति\nविष्वङ्ङन्या उत्क्रमणे भवन्ति ॥",
       "transliteration": "śataṁ caikā ca hṛdayasya nāḍya-\nstāsāṁ mūrdhānamabhiniḥsṛtaikā\ntayordhvamāyannamṛtatvameti\nviṣvaṅṅanyā utkramaṇe bhavanti",
-      "translation": "A hundred and one are the channels of the heart. One of them rises up to the crown of the head: going up by that one, a person reaches the deathless. The others lead out every which way — they lead out every which way."
+      "translation": "A hundred and one are the channels of the heart. One of them rises up to the crown of the head: going up by that one, a person reaches the deathless. The others lead out every which way — they lead out every which way.",
+      "words": [
+        {
+          "word": "śataṁ ca ekā ca hṛdayasya nāḍyaḥ",
+          "meaning": "a hundred and one channels of the heart"
+        },
+        {
+          "word": "tayā ūrdhvam āyan amṛtatvam eti",
+          "meaning": "going up by that one (to the crown), one reaches the deathless"
+        }
+      ],
+      "commentary": "The verse turns to the subtle physiology of the yogic tradition. A hundred and one nāḍīs, subtle channels, are said to radiate from the heart. Of these, one alone rises upward to the crown of the head — and going up by that single channel, a person reaches the deathless. The others lead outward in every direction, to the various states and rebirths — \"they lead out every which way,\" the verse repeats, in the doubling that marks emphasis and closing. Whatever one makes of the literal subtle anatomy, the meaning is unmistakable and universal. Among all the directions a human life-energy can flow — outward through the countless channels, dispersing into the world of the senses, of becoming, of repeated embodiment — there is one direction that leads to freedom: upward, inward, toward the crown, toward transcendence. Nearly all of our energy pours out through the many channels, scattered among the world's objects; the rare seeker learns to gather it and turn it up the single channel that rises to the deathless. It is the same teaching as the fourth valli's turning of the gaze inward, now imaged as the ascent of the life-force: of all the ways your energy can go, only the one that rises toward the source leads home. The rest lead out, and out, and out again."
     },
     "118": {
       "id": 118,
@@ -1733,7 +2235,18 @@ window.UPANISHAD_KATHA = {
       "name": "Like a Reed Drawn From Its Sheath",
       "devanagari": "अङ्गुष्ठमात्रः पुरुषोऽन्तरात्मा\nसदा जनानां हृदये संनिविष्टः ।\nतं स्वाच्छरीरात्प्रवृहेन्मुञ्जादिवेषीकां धैर्येण ।\nतं विद्याच्छुक्रममृतं तं विद्याच्छुक्रममृतमिति ॥",
       "transliteration": "aṅguṣṭhamātraḥ puruṣo'ntarātmā\nsadā janānāṁ hṛdaye saṁniviṣṭaḥ\ntaṁ svāccharīrātpravṛhenmuñjādiveṣīkāṁ dhairyeṇa\ntaṁ vidyācchukramamṛtaṁ taṁ vidyācchukramamṛtamiti",
-      "translation": "The Person the size of a thumb, the inner Self, is seated forever in the heart of all creatures. With steadiness, one should draw him out of the body, like a reed drawn from its sheath of grass. Know him as the Bright, the Immortal — know him as the Bright, the Immortal."
+      "translation": "The Person the size of a thumb, the inner Self, is seated forever in the heart of all creatures. With steadiness, one should draw him out of the body, like a reed drawn from its sheath of grass. Know him as the Bright, the Immortal — know him as the Bright, the Immortal.",
+      "words": [
+        {
+          "word": "aṅguṣṭha-mātraḥ puruṣaḥ antar-ātmā sadā janānāṁ hṛdaye sanniviṣṭaḥ",
+          "meaning": "the thumb-sized Person, the inner Self, forever seated in the heart"
+        },
+        {
+          "word": "taṁ sva-śarīrāt pravṛhet muñjāt iva iṣīkām",
+          "meaning": "draw him out of the body, like a reed from its sheath"
+        }
+      ],
+      "commentary": "The teaching's final image, and it is exquisitely practical. The thumb-sized Person — that recurring image of the immeasurable Self held in the heart's small space — the inner Self, is forever seated in the heart of all creatures. And the instruction: with steadiness, with patient, calm effort, one should draw him out from the body, like a reed drawn out from its sheath of grass. The muñja reed, gently and steadily pulled, slides clean out of its enclosing sheath, whole and unbroken. Just so, the seeker is to draw forth the awareness of the Self from its identification with the body — patiently disentangling the inner reality from the outer covering it has been mistaken for, until the Self stands recognized, clear and distinct, no longer confused with the sheath of flesh. And then the verse's ringing conclusion, doubled for emphasis: know him as the Bright, the Immortal — know him as the Bright, the Immortal. This is the whole aim, stated one last time: to distinguish the deathless self from the perishable body that sheathes it, and to know that self as pure radiance, pure deathlessness. Draw the reed from the sheath; know yourself as the Bright, the Immortal. With this, the teaching Death gave Nachiketa is complete."
     },
     "119": {
       "id": 119,
@@ -1741,7 +2254,18 @@ window.UPANISHAD_KATHA = {
       "name": "And So Did Nachiketa",
       "devanagari": "मृत्युप्रोक्तां नचिकेतोऽथ लब्ध्वा\nविद्यामेतां योगविधिं च कृत्स्नम् ।\nब्रह्मप्राप्तो विरजोऽभूद्विमृत्यु- \nरन्योऽप्येवं यो विदध्यात्ममेव ॥",
       "transliteration": "mṛtyuproktāṁ naciketo'tha labdhvā\nvidyāmetāṁ yogavidhiṁ ca kṛtsnam\nbrahmaprāpto virajo'bhūdvimṛtyu-\nranyo'pyevaṁ yo vidadhyātmameva",
-      "translation": "And so Nachiketa, having received this knowledge told by Death, and the whole method of yoga, attained Brahman — free of dust, free of death. And so will any other who knows this concerning the Self."
+      "translation": "And so Nachiketa, having received this knowledge told by Death, and the whole method of yoga, attained Brahman — free of dust, free of death. And so will any other who knows this concerning the Self.",
+      "words": [
+        {
+          "word": "mṛtyu-proktāṁ ... vidyām etāṁ yoga-vidhiṁ ca kṛtsnam",
+          "meaning": "this knowledge told by Death, and the whole method of yoga"
+        },
+        {
+          "word": "brahma-prāptaḥ virajaḥ abhūt vimṛtyuḥ",
+          "meaning": "attained Brahman, became free of dust, free of death"
+        }
+      ],
+      "commentary": "And so the great dialogue reaches its end, and the boy who walked into the house of Death walks out immortal. Nachiketa, having received this whole knowledge told by Death, and the entire method of yoga, attained Brahman — became virajaḥ, free of dust, free of the taint of impurity and ignorance, and vimṛtyuḥ, free of death itself. He won exactly what he refused every pleasure to ask for: not more life, but the deathless; not heaven, but the Self. The frame that opened with a father's angry \"To Death I give you!\" closes with the child that curse sent to Death returning victorious over death — the terror that began the story mastered by its end. And then the Upanishad turns, in its very last words, from Nachiketa to you: \"And so will any other who knows this concerning the Self.\" The promise is not for one legendary boy alone. Whoever truly comes to know this — whoever takes the good over the pleasant, turns the gaze inward, cuts the knots of the heart, and knows the Bright, the Immortal seated in their own heart — becomes, like Nachiketa, free of dust and free of death. The story was never only about a boy and a god. It was always about the reader standing where Nachiketa stood, offered the same third boon, free to ask the same fearless question — and to receive, as he did, the answer that ends the fear of death. This, truly, is That."
     }
   }
 };
