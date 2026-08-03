@@ -116,5 +116,54 @@ window.UPANISHAD_TEXTS = [
       { id: 2, title: 'Waking, Dreaming, Deep Sleep — and the Fourth',     from: 3, to: 7,  youtube: null },
       { id: 3, title: 'A · U · M',                                         from: 8, to: 12, youtube: null }
     ]
+  },
+  {
+    id: 'brihadaranyaka',
+    season: 5,
+    status: 'open',
+    curated: true,
+    sanskrit: 'Bṛhadāraṇyaka Upaniṣad',
+    name: 'Brihadaranyaka Upanishad',
+    meaning: 'The Great Forest Teaching',
+    veda: 'Shukla Yajur Veda',
+    verses: 8,
+    tagline: 'The oldest and largest Upanishad — "I am Brahman," "not this, not this," and the debate with Gargi.',
+    summary: 'The oldest of the principal Upanishads, and the largest — six chapters of cosmology, dialogue, and debate, containing more of the tradition\'s landmark moments than any other text: the mahāvākya "I am Brahman"; the method of "not this, not this"; Yājñavalkya\'s parting teaching to his wife Maitreyī on why we love what we love; the fearless philosopher Gārgī questioning him to the very edge of the sayable; and the three-fold thunder — restrain, give, be compassionate. Because the full text runs to hundreds of verses, this is a curated edition of its landmark passages — its essential teachings, each studied in full — rather than a complete verse-by-verse reading.',
+    themes: ['I Am Brahman', 'Neti Neti', 'Fear & Duality', 'Love & the Self', 'The Imperishable'],
+    invocation: {
+      devanagari: 'ॐ पूर्णमदः पूर्णमिदं पूर्णात्पूर्णमुदच्यते ।\nपूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते ॥\nॐ शान्तिः शान्तिः शान्तिः ॥',
+      transliteration: 'oṁ pūrṇam adaḥ pūrṇam idaṁ pūrṇāt pūrṇam udacyate\npūrṇasya pūrṇam ādāya pūrṇam evāvaśiṣyate\noṁ śāntiḥ śāntiḥ śāntiḥ',
+      translation: 'That is whole; this is whole. From the whole, the whole arises. When the whole is taken from the whole, the whole alone remains. Om, peace, peace, peace. (Shared with the Isha — both belong to the Shukla Yajur Veda.)'
+    },
+    episodes: [
+      { id: 1, title: 'Lead Me to the Real',                    from: 1, to: 1, youtube: null },
+      { id: 2, title: 'The Self Alone — Fear, and "I Am Brahman"', from: 2, to: 3, youtube: null },
+      { id: 3, title: "Yājñavalkya's Teachings",                from: 4, to: 6, youtube: null },
+      { id: 4, title: 'The Imperishable, and the Thunder',      from: 7, to: 8, youtube: null }
+    ]
+  },
+  {
+    id: 'chandogya',
+    season: 6,
+    status: 'open',
+    curated: true,
+    sanskrit: 'Chāndogya Upaniṣad',
+    name: 'Chandogya Upanishad',
+    meaning: "The Chanter's Teaching",
+    veda: 'Sama Veda',
+    verses: 7,
+    tagline: 'The great dialogue of "That thou art" — the salt in the water, the seed of the banyan, all this is Brahman.',
+    summary: 'One of the two oldest and most important Upanishads, and the home of the most famous teaching in all of Vedanta: tat tvam asi — "that thou art." Across its eight chapters a father dissolves salt in water to show his proud son what reality is; the sage Śāṇḍilya declares that all this is Brahman and the infinite is seated in the heart; and Prajāpati leads the gods and demons, step by step, toward the Self that is free from death and sorrow. Because the full text runs to hundreds of verses, this is a curated edition of its landmark passages — its essential teachings, each studied in full — rather than a complete verse-by-verse reading.',
+    themes: ['Tat Tvam Asi', 'All Is Brahman', 'The Subtle Essence', 'Being, One Without a Second', 'The Self in the Heart'],
+    invocation: {
+      devanagari: 'ॐ आप्यायन्तु ममाङ्गानि वाक्प्राणश्चक्षुः श्रोत्रमथो बलमिन्द्रियाणि च सर्वाणि ।\nसर्वं ब्रह्मौपनिषदं माहं ब्रह्म निराकुर्यां मा मा ब्रह्म निराकरोत् ।\nॐ शान्तिः शान्तिः शान्तिः ॥',
+      transliteration: 'oṁ āpyāyantu mamāṅgāni vāk prāṇaś cakṣuḥ śrotram atho balam indriyāṇi ca sarvāṇi\nsarvaṁ brahmaupaniṣadaṁ māhaṁ brahma nirākuryāṁ mā mā brahma nirākarot\noṁ śāntiḥ śāntiḥ śāntiḥ',
+      translation: 'May my limbs grow strong — speech, breath, eye, ear, and every power. All is the Brahman of the Upanishads. May I never deny Brahman; may Brahman never deny me. Om, peace, peace, peace. (Shared with the Kena — both belong to the Sama Veda.)'
+    },
+    episodes: [
+      { id: 1, title: 'Om, and "All This Is Brahman"',          from: 1, to: 3, youtube: null },
+      { id: 2, title: 'That Thou Art — the Uddālaka Dialogue',  from: 4, to: 6, youtube: null },
+      { id: 3, title: 'The Self Free From Evil',                from: 7, to: 7, youtube: null }
+    ]
   }
 ];
