@@ -197,7 +197,7 @@
     }
 
     // Verse table — load the text's data file for verse names
-    document.getElementById('verseCountBadge').textContent = `${text.verses} verses`;
+    document.getElementById('verseCountBadge').textContent = `${text.verses} ${text.curated ? 'landmark passages' : 'verses'}`;
     const dataScript = document.createElement('script');
     dataScript.src = `../js/upanishads/${text.id}.js`;
     dataScript.onload = buildVerseTable;
